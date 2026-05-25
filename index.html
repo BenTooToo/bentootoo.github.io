@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bentootoo / 本2兔的个人主页，展示项目、博客与联系方式。">
+    <title>Bentootoo | 本2兔</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="more-menu">
+        <button class="more-toggle" type="button" aria-expanded="false" aria-controls="moreDropdown" aria-label="More" data-i18n-aria="more.menuLabel">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="more-dropdown" id="moreDropdown">
+          <a href="#contact" data-i18n="more.donate">捐助我</a>
+          <a href="#blog" data-i18n="more.devlog">开发日志</a>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#top" data-i18n="nav.home">首页</a>
+        <a href="#projects" data-i18n="nav.projects">项目</a>
+        <a href="#blog" data-i18n="nav.blog">个人博客</a>
+        <a href="#contact" data-i18n="nav.contact">联系我们</a>
+      </nav>
+
+      <div class="language-switch" aria-label="Language selector">
+        <button class="lang-button is-active" type="button" data-lang="zh">中</button>
+        <button class="lang-button" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="fr">FR</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-section section-panel" data-theme="dark">
+        <canvas id="heroCanvas" aria-hidden="true"></canvas>
+        <div class="hero-shell">
+          <div class="hero-copy" data-reveal>
+            <h1>
+              <span data-i18n="hero.titleLineOne">欢迎，我是</span>
+              <span class="hero-name" data-i18n="name.display">本2兔</span>
+            </h1>
+            <p class="hero-lede" data-i18n="hero.lede">这里会成为本2兔的个人主页：收纳项目、博客和联系方式。它更像一间有光的工作室，而不是冷冰冰的简历。</p>
+          </div>
+
+          <div class="identity-stage" data-reveal>
+            <div class="identity-lines" aria-hidden="true"></div>
+            <div class="avatar-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip contact card">
+              <div class="avatar-card-inner">
+                <div class="avatar-face avatar-front">
+                  <img src="assets/avatar.jpg" alt="Bentootoo portrait">
+                  <span class="identity-kicker" data-i18n="name.display">本2兔</span>
+                </div>
+
+                <div class="avatar-face avatar-back">
+                  <strong data-i18n="name.display">本2兔</strong>
+                  <span class="business-name" data-i18n="card.identity">学生 / 视频创作者 / 游戏制作人 / 独立音乐人</span>
+
+                  <div class="business-links">
+                    <a href="mailto:hello@example.com">
+                      <span data-i18n="card.email">邮箱</span>
+                      <strong>hello@example.com</strong>
+                    </a>
+                    <a href="https://github.com/" target="_blank" rel="noreferrer">
+                      <span>GitHub</span>
+                      <strong>github.com</strong>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                      <span>LinkedIn</span>
+                      <strong>linkedin.com</strong>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="identity-rings" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section section-panel" id="projects">
+        <div class="section-shell">
+          <div class="section-heading" data-reveal>
+            <h2 data-i18n="projects.title">项目展示</h2>
+            <p data-i18n="projects.lede">先留出舞台。之后每一个项目都可以拥有自己的封面、技术标签、故事和入口。</p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card feature-card" data-reveal>
+              <div class="card-number">01</div>
+              <div>
+                <p class="card-label" data-i18n="projects.emptyLabel">等待第一个作品</p>
+                <h3 data-i18n="projects.emptyTitle">作品空间已打开</h3>
+                <p data-i18n="projects.emptyBody">这里暂时为空，但布局已经准备好：以后可以放网站、工具、游戏、研究或任何你想展示的东西。</p>
+              </div>
+              <span class="card-arrow" aria-hidden="true">+</span>
+            </article>
+
+            <article class="project-card mini-card" data-reveal>
+              <p data-i18n="projects.slotOne">精选项目</p>
+              <strong data-i18n="projects.slotOneStatus">即将上线</strong>
+            </article>
+
+            <article class="project-card mini-card accent-card" data-reveal>
+              <p data-i18n="projects.slotTwo">实验作品</p>
+              <strong data-i18n="projects.slotTwoStatus">草稿中</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section section-panel blog-section" id="blog">
+        <div class="section-shell split-shell">
+          <div class="section-heading sticky-heading" data-reveal>
+            <h2 data-i18n="blog.title">个人博客</h2>
+            <p data-i18n="blog.lede">这里可以写学习笔记、创作记录、生活观察，或者那些暂时还没有变成项目的想法。</p>
+          </div>
+
+          <div class="blog-stack">
+            <article class="blog-card" data-reveal>
+              <span class="blog-date" data-i18n="blog.cardOneDate">预留</span>
+              <h3 data-i18n="blog.cardOneTitle">第一篇文章的位置</h3>
+              <p data-i18n="blog.cardOneBody">等你准备好标题和内容，我可以继续帮你做文章页、目录、标签和 Markdown 写作流程。</p>
+            </article>
+            <article class="blog-card" data-reveal>
+              <span class="blog-date" data-i18n="blog.cardTwoDate">构思中</span>
+              <h3 data-i18n="blog.cardTwoTitle">可以是灵感，也可以是长文</h3>
+              <p data-i18n="blog.cardTwoBody">博客区会保持安静、清爽，重点放在文字阅读体验和恰到好处的动效上。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section section-panel contact-section" id="contact">
+        <div class="section-shell contact-shell">
+          <div class="section-heading" data-reveal>
+            <h2 data-i18n="contact.title">联系我</h2>
+            <p data-i18n="contact.lede">这里之后可以放邮箱、GitHub、社交平台或任何你希望别人找到你的地方。</p>
+          </div>
+
+          <div class="contact-grid">
+            <a class="contact-link" href="mailto:hello@example.com" data-reveal>
+              <span>Email</span>
+              <strong data-i18n="contact.email">替换为你的邮箱</strong>
+            </a>
+            <a class="contact-link" href="https://github.com/" target="_blank" rel="noreferrer" data-reveal>
+              <span>GitHub</span>
+              <strong data-i18n="contact.github">替换为你的主页</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a class="back-to-top" href="#top" aria-label="Back to top" data-i18n-aria="contact.backTop">↑</a>
+
+    <footer class="site-footer">
+      <span>© <span id="year">2026</span> <span data-i18n="name.display">本2兔</span></span>
+      <span data-i18n="footer.note">Built for GitHub Pages.</span>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
