@@ -8,6 +8,8 @@ const translations = {
     "more.menuLabel": "更多",
     "more.donate": "捐助我",
     "more.devlog": "开发日志",
+    "donate.onlyfansRegion": "（全球）",
+    "donate.afdianRegion": "（中国）",
     "hero.titleLineOne": "欢迎，我是",
     "hero.lede": "这里是本2兔灵感堆积之所",
     "card.identity": "学生 / 视频创作者 / 游戏制作人 / 独立音乐人",
@@ -31,8 +33,8 @@ const translations = {
     "blog.cardTwoBody": "博客区会保持安静、清爽，重点放在文字阅读体验和恰到好处的动效上。",
     "contact.title": "联系我",
     "contact.lede": "缺席对于本2兔来说是短暂的休息，他一定会回复，无论你是谁。",
-    "contact.email": "hello@example.com",
-    "contact.github": "替换为你的主页",
+    "contact.email": "benson201814@gmail.com",
+    "contact.github": "github.com/BenTooToo",
     "contact.backTop": "回到顶部",
     "footer.note": "为 GitHub Pages 构建。"
   },
@@ -45,6 +47,8 @@ const translations = {
     "more.menuLabel": "More",
     "more.donate": "Support me",
     "more.devlog": "Development log",
+    "donate.onlyfansRegion": "(Global)",
+    "donate.afdianRegion": "(China)",
     "hero.titleLineOne": "Welcome, I am",
     "hero.lede": "This is where Bentootoo lets inspiration pile up.",
     "card.identity": "Student / Video creator / Game maker / Independent musician",
@@ -68,8 +72,8 @@ const translations = {
     "blog.cardTwoBody": "The blog area stays calm and readable, with motion that supports the words instead of competing with them.",
     "contact.title": "Contact",
     "contact.lede": "For Bentootoo, absence is a brief rest. He will reply, whoever you are.",
-    "contact.email": "hello@example.com",
-    "contact.github": "Replace with your profile",
+    "contact.email": "benson201814@gmail.com",
+    "contact.github": "github.com/BenTooToo",
     "contact.backTop": "Back to top",
     "footer.note": "Built for GitHub Pages."
   },
@@ -82,6 +86,8 @@ const translations = {
     "more.menuLabel": "Plus",
     "more.donate": "Me soutenir",
     "more.devlog": "Journal de dev",
+    "donate.onlyfansRegion": "(Monde)",
+    "donate.afdianRegion": "(Chine)",
     "hero.titleLineOne": "Bienvenue, je suis",
     "hero.lede": "C'est ici que Bentootoo laisse les inspirations s'accumuler.",
     "card.identity": "Étudiant / Créateur vidéo / Créateur de jeux / Musicien indépendant",
@@ -105,8 +111,8 @@ const translations = {
     "blog.cardTwoBody": "La zone blog reste calme et lisible, avec des mouvements qui accompagnent le texte sans lui voler la place.",
     "contact.title": "Contact",
     "contact.lede": "Pour Bentootoo, l'absence est un court repos. Il répondra, qui que tu sois.",
-    "contact.email": "hello@example.com",
-    "contact.github": "Remplacer par ton profil",
+    "contact.email": "benson201814@gmail.com",
+    "contact.github": "github.com/BenTooToo",
     "contact.backTop": "Retour en haut",
     "footer.note": "Construit pour GitHub Pages."
   }
@@ -182,11 +188,30 @@ if (avatarCard) {
 
 const moreMenu = document.querySelector(".more-menu");
 const moreToggle = document.querySelector(".more-toggle");
+const donateMenu = document.querySelector(".donate-menu");
+const donateTrigger = document.querySelector(".donate-trigger");
 
 if (moreMenu && moreToggle) {
+  const setDonateSubmenuOpen = (isOpen) => {
+    if (!donateMenu || !donateTrigger) {
+      return;
+    }
+
+    donateMenu.classList.toggle("is-submenu-open", isOpen);
+    donateTrigger.setAttribute("aria-expanded", String(isOpen));
+
+    if (!isOpen) {
+      donateTrigger.blur();
+    }
+  };
+
   const setMoreMenuOpen = (isOpen) => {
     moreMenu.classList.toggle("is-open", isOpen);
     moreToggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (!isOpen) {
+      setDonateSubmenuOpen(false);
+    }
   };
 
   moreToggle.addEventListener("click", (event) => {
@@ -194,19 +219,29 @@ if (moreMenu && moreToggle) {
     setMoreMenuOpen(!moreMenu.classList.contains("is-open"));
   });
 
-  moreMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => setMoreMenuOpen(false));
+  moreMenu.querySelectorAll(".more-dropdown > a, .donate-submenu a").forEach((control) => {
+    control.addEventListener("click", () => setMoreMenuOpen(false));
   });
+
+  if (donateMenu && donateTrigger) {
+    donateTrigger.addEventListener("click", (event) => {
+      event.stopPropagation();
+      setDonateSubmenuOpen(!donateMenu.classList.contains("is-submenu-open"));
+    });
+  }
 
   document.addEventListener("click", (event) => {
     if (!moreMenu.contains(event.target)) {
       setMoreMenuOpen(false);
+    } else if (donateMenu && !donateMenu.contains(event.target)) {
+      setDonateSubmenuOpen(false);
     }
   });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       setMoreMenuOpen(false);
+      setDonateSubmenuOpen(false);
     }
   });
 }

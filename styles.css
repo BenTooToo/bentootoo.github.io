@@ -150,19 +150,103 @@ button {
   transform: translateY(0);
 }
 
-.more-dropdown a {
+.more-dropdown a,
+.donate-trigger {
   padding: 12px 12px;
+  border: 0;
   border-radius: var(--radius);
+  background: transparent;
   color: rgba(21, 21, 20, 0.76);
   font-size: 0.86rem;
   font-weight: 800;
+  text-align: left;
+  cursor: pointer;
 }
 
 .more-dropdown a:hover,
-.more-dropdown a:focus-visible {
+.more-dropdown a:focus-visible,
+.donate-trigger:hover,
+.donate-trigger:focus-visible,
+.donate-menu:hover > .donate-trigger,
+.donate-menu:focus-within > .donate-trigger,
+.donate-menu.is-submenu-open > .donate-trigger {
   background: rgba(21, 21, 20, 0.08);
   color: var(--ink);
   outline: none;
+}
+
+.donate-menu {
+  position: relative;
+}
+
+.donate-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 18px;
+}
+
+.donate-trigger::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid currentColor;
+  opacity: 0.58;
+}
+
+.donate-submenu {
+  position: absolute;
+  top: -6px;
+  left: calc(100% + 7px);
+  display: grid;
+  min-width: 152px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  background: rgba(246, 247, 242, 0.9);
+  box-shadow: 0 18px 55px rgba(16, 17, 15, 0.16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-4px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  backdrop-filter: blur(18px);
+}
+
+.donate-menu::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  width: 8px;
+  height: calc(100% + 12px);
+}
+
+.donate-menu:hover .donate-submenu,
+.donate-menu:focus-within .donate-submenu,
+.donate-menu.is-submenu-open .donate-submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.donate-submenu a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.donate-submenu small {
+  color: rgba(21, 21, 20, 0.52);
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .site-nav {
@@ -506,14 +590,14 @@ html[lang="zh-CN"] .business-name {
 
 .business-links {
   display: grid;
-  gap: 2px;
-  margin-top: 4px;
+  gap: 1px;
+  margin-top: 2px;
 }
 
 .business-links a {
   display: grid;
-  gap: 4px;
-  padding: 6px 0;
+  gap: 2px;
+  padding: 3px 0;
   border-top: 1px solid rgba(246, 247, 242, 0.14);
 }
 
@@ -524,7 +608,7 @@ html[lang="zh-CN"] .business-name {
 
 .business-links strong {
   overflow-wrap: anywhere;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   line-height: 1.2;
 }
 
@@ -813,28 +897,48 @@ html[lang="zh-CN"] .business-name {
   overflow-wrap: anywhere;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .social-links a {
   display: inline-flex;
   align-items: center;
-  min-height: 38px;
-  padding: 0 12px;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
   border: 1px solid rgba(246, 247, 242, 0.2);
-  border-radius: var(--radius);
+  border-radius: 50%;
+  background: rgba(246, 247, 242, 0.06);
   color: rgba(246, 247, 242, 0.76);
-  font-size: 0.84rem;
-  font-weight: 800;
-  transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.social-links img {
+  display: block;
+  width: 22px;
+  height: 22px;
 }
 
 .social-links a:hover,
 .social-links a:focus-visible {
   border-color: rgba(200, 255, 89, 0.7);
+  background: rgba(200, 255, 89, 0.14);
   color: var(--paper);
   outline: none;
   transform: translateY(-2px);
@@ -999,6 +1103,16 @@ html[lang="zh-CN"] .business-name {
     width: 38px;
     height: 42px;
     padding: 0 10px;
+  }
+
+  .donate-submenu {
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 170px;
+  }
+
+  .donate-menu::after {
+    display: none;
   }
 
   .site-nav {

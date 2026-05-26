@@ -12,15 +12,15 @@
     <meta property="og:title" content="Bentootoo | 本2兔">
     <meta property="og:description" content="Bentootoo / 本2兔的个人主页，记录个人项目、开发日志、博客写作、视频创作、游戏制作与联系方式。">
     <meta property="og:url" content="https://bentootoo.github.io/">
-    <meta property="og:image" content="https://bentootoo.github.io/assets/avatar.jpg">
+    <meta property="og:image" content="https://bentootoo.github.io/assets/hornydog.jpg">
     <meta property="og:locale" content="zh_CN">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bentootoo | 本2兔">
     <meta name="twitter:description" content="Bentootoo / 本2兔的个人主页，记录个人项目、开发日志、博客写作、视频创作、游戏制作与联系方式。">
-    <meta name="twitter:image" content="https://bentootoo.github.io/assets/avatar.jpg">
+    <meta name="twitter:image" content="https://bentootoo.github.io/assets/hornydog.jpg">
     <meta name="theme-color" content="#101418">
     <title>Bentootoo | 本2兔</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=donate-menu3">
     <link rel="stylesheet" href="devlog.css">
     <script type="application/ld+json">
       {
@@ -43,9 +43,13 @@
             "name": "Bentootoo",
             "alternateName": "本2兔",
             "url": "https://bentootoo.github.io/",
-            "image": "https://bentootoo.github.io/assets/avatar.jpg",
+            "image": "https://bentootoo.github.io/assets/hornydog.jpg",
+            "email": "mailto:benson201814@gmail.com",
             "sameAs": [
-              "https://github.com/BenTooToo"
+              "https://github.com/BenTooToo",
+              "https://space.bilibili.com/224155770",
+              "https://www.instagram.com/bentootooooo/",
+              "https://x.com/BeisongL"
             ]
           }
         ]
@@ -63,7 +67,19 @@
           <span></span>
         </button>
         <div class="more-dropdown" id="moreDropdown">
-          <a href="#contact" data-i18n="more.donate">捐助我</a>
+          <div class="donate-menu">
+            <button class="donate-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="donateSubmenu" data-i18n="more.donate">捐助我</button>
+            <div class="donate-submenu" id="donateSubmenu" role="menu" aria-label="Support links">
+              <a href="https://onlyfans.com/bentootoo" target="_blank" rel="me noreferrer" role="menuitem">
+                <span>OnlyFans</span>
+                <small data-i18n="donate.onlyfansRegion">（全球）</small>
+              </a>
+              <a href="https://afdian.net/@bentootoo" target="_blank" rel="me noreferrer" role="menuitem">
+                <span>爱发电</span>
+                <small data-i18n="donate.afdianRegion">（中国）</small>
+              </a>
+            </div>
+          </div>
           <a href="#blog" data-i18n="more.devlog">开发日志</a>
         </div>
       </div>
@@ -99,7 +115,7 @@
             <div class="avatar-card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip contact card">
               <div class="avatar-card-inner">
                 <div class="avatar-face avatar-front">
-                  <img src="assets/avatar.jpg" alt="Bentootoo portrait">
+                  <img src="assets/hornydog.jpg" alt="Bentootoo portrait">
                   <span class="identity-kicker" data-i18n="name.display">本2兔</span>
                 </div>
 
@@ -108,17 +124,21 @@
                   <span class="business-name" data-i18n="card.identity">学生 / 视频创作者 / 游戏制作人 / 独立音乐人</span>
 
                   <div class="business-links">
-                    <a href="mailto:hello@example.com">
+                    <a href="mailto:benson201814@gmail.com">
                       <span data-i18n="card.email">邮箱</span>
-                      <strong>hello@example.com</strong>
+                      <strong>benson201814@gmail.com</strong>
                     </a>
                     <a href="https://github.com/BenTooToo" target="_blank" rel="me noreferrer">
                       <span>GitHub</span>
                       <strong>github.com/BenTooToo</strong>
                     </a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-                      <span>LinkedIn</span>
-                      <strong>linkedin.com</strong>
+                    <a href="https://www.instagram.com/bentootooooo/" target="_blank" rel="me noreferrer">
+                      <span>Instagram</span>
+                      <strong>@bentootooooo</strong>
+                    </a>
+                    <a href="https://x.com/BeisongL" target="_blank" rel="me noreferrer">
+                      <span>X</span>
+                      <strong>@BeisongL</strong>
                     </a>
                   </div>
                 </div>
@@ -194,18 +214,32 @@
           </div>
 
           <div class="contact-stack" data-reveal>
-            <a class="email-contact" href="mailto:hello@example.com">
+            <a class="email-contact" href="mailto:benson201814@gmail.com">
               <span>Email</span>
-              <strong data-i18n="contact.email">hello@example.com</strong>
+              <strong data-i18n="contact.email">benson201814@gmail.com</strong>
             </a>
 
             <div class="social-links" aria-label="Social links">
-              <a href="https://github.com/BenTooToo" target="_blank" rel="me noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
-              <a href="https://x.com/" target="_blank" rel="noreferrer">X</a>
-              <a href="https://space.bilibili.com/" target="_blank" rel="noreferrer">bilibili</a>
-              <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube</a>
+              <a href="https://github.com/BenTooToo" target="_blank" rel="me noreferrer" aria-label="GitHub" title="GitHub">
+                <img src="https://cdn.simpleicons.org/github/ffffff" alt="" aria-hidden="true">
+                <span class="sr-only">GitHub</span>
+              </a>
+              <a href="https://space.bilibili.com/224155770" target="_blank" rel="me noreferrer" aria-label="Bilibili" title="Bilibili">
+                <img src="https://cdn.simpleicons.org/bilibili/ffffff" alt="" aria-hidden="true">
+                <span class="sr-only">Bilibili</span>
+              </a>
+              <a href="https://www.instagram.com/bentootooooo/" target="_blank" rel="me noreferrer" aria-label="Instagram" title="Instagram">
+                <img src="https://cdn.simpleicons.org/instagram/ffffff" alt="" aria-hidden="true">
+                <span class="sr-only">Instagram</span>
+              </a>
+              <a href="https://x.com/BeisongL" target="_blank" rel="me noreferrer" aria-label="X" title="X">
+                <img src="https://cdn.simpleicons.org/x/ffffff" alt="" aria-hidden="true">
+                <span class="sr-only">X</span>
+              </a>
+              <a href="https://onlyfans.com/bentootoo" target="_blank" rel="me noreferrer" aria-label="OnlyFans" title="OnlyFans">
+                <img src="https://cdn.simpleicons.org/onlyfans/ffffff" alt="" aria-hidden="true">
+                <span class="sr-only">OnlyFans</span>
+              </a>
             </div>
           </div>
         </div>
@@ -219,7 +253,7 @@
       <span data-i18n="footer.note">Built for GitHub Pages.</span>
     </footer>
 
-    <script src="app.js" defer></script>
+    <script src="app.js?v=donate-menu3" defer></script>
     <script src="devlog.js" defer></script>
   </body>
 </html>
