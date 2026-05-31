@@ -20,7 +20,7 @@
 * {
   box-sizing: border-box;
 }
-
+/* 彩蛋都被你找到了，你真棒 2/2 */
 html {
   scroll-behavior: smooth;
 }
@@ -594,7 +594,8 @@ html[lang="zh-CN"] .business-name {
   margin-top: 2px;
 }
 
-.business-links a {
+.business-links a,
+.business-entry {
   display: grid;
   gap: 2px;
   padding: 3px 0;
@@ -608,7 +609,7 @@ html[lang="zh-CN"] .business-name {
 
 .business-links strong {
   overflow-wrap: anywhere;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   line-height: 1.2;
 }
 
@@ -677,8 +678,7 @@ html[lang="zh-CN"] .business-name {
 
 .project-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  grid-auto-rows: minmax(171px, auto);
+  grid-template-columns: 1fr;
   gap: 18px;
 }
 
@@ -713,22 +713,31 @@ html[lang="zh-CN"] .business-name {
 
 .feature-card {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  grid-row: span 2;
-  gap: 24px;
-  min-height: 360px;
-  padding: clamp(24px, 4vw, 42px);
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(18px, 3vw, 32px);
+  min-height: clamp(460px, 52vw, 620px);
+  padding: clamp(28px, 5vw, 58px);
+  color: var(--paper);
+  background:
+    linear-gradient(90deg, rgba(16, 17, 15, 0.82), rgba(16, 17, 15, 0.42) 45%, rgba(16, 17, 15, 0.1)),
+    linear-gradient(0deg, rgba(16, 17, 15, 0.7), rgba(16, 17, 15, 0.06) 62%),
+    url("assets/project-classroom-credit.png") center / cover no-repeat;
+}
+
+.feature-card::after {
+  background: var(--lime);
 }
 
 .card-number {
-  color: var(--coral);
+  color: var(--lime);
   font-size: 0.8rem;
   font-weight: 800;
 }
 
 .card-label {
   margin-bottom: 20px;
-  color: rgba(21, 21, 20, 0.58);
+  color: rgba(246, 247, 242, 0.7);
   font-size: 0.76rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -743,54 +752,9 @@ html[lang="zh-CN"] .business-name {
 
 .feature-card p:last-child {
   max-width: 560px;
-  color: rgba(21, 21, 20, 0.64);
+  color: rgba(246, 247, 242, 0.76);
   font-size: 1rem;
   line-height: 1.8;
-}
-
-.card-arrow {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  color: var(--dark);
-  background: var(--lime);
-  border-radius: 50%;
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-
-.mini-card {
-  display: grid;
-  align-content: end;
-  min-height: 171px;
-  padding: 24px;
-}
-
-.mini-card p {
-  margin-bottom: 12px;
-  color: rgba(21, 21, 20, 0.55);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.mini-card strong {
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
-  line-height: 1;
-}
-
-.accent-card {
-  color: var(--paper);
-  background: var(--ink);
-}
-
-.accent-card::after {
-  background: var(--paper);
-}
-
-.accent-card p {
-  color: rgba(246, 247, 242, 0.6);
 }
 
 .split-shell {
@@ -875,13 +839,6 @@ html[lang="zh-CN"] .business-name {
   display: grid;
   gap: 10px;
   color: var(--paper);
-  transition: color 180ms ease;
-}
-
-.email-contact:hover,
-.email-contact:focus-visible {
-  color: var(--lime);
-  outline: none;
 }
 
 .email-contact span {
@@ -892,8 +849,8 @@ html[lang="zh-CN"] .business-name {
 }
 
 .email-contact strong {
-  font-size: clamp(2.15rem, 5.4vw, 5.2rem);
-  line-height: 0.95;
+  font-size: clamp(1.45rem, 3.5vw, 3.2rem);
+  line-height: 1.05;
   overflow-wrap: anywhere;
 }
 
@@ -1140,7 +1097,6 @@ html[lang="zh-CN"] .business-name {
   }
 
   .feature-card,
-  .mini-card,
   .blog-card {
     padding: 20px;
   }
@@ -1156,11 +1112,7 @@ html[lang="zh-CN"] .business-name {
 
   .feature-card {
     grid-template-columns: 1fr;
-    min-height: 310px;
-  }
-
-  .card-arrow {
-    justify-self: start;
+    min-height: 420px;
   }
 
   .site-footer {
