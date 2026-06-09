@@ -1,13 +1,16 @@
 const devlogContent = {
   zh: {
-    kicker: "Development log",
     title: "开发日志",
     intro: "这个intro已经被隐藏了",
     closeLabel: "关闭开发日志",
-    sections: {
-      done: "完成"
-    },
     entries: [
+      {
+        date: "2026-06-09",
+        version: "v0.2",
+        done: [
+          "为个人博客设计了新的独立页面，并加入博客文章与类别之间的弹力绳交互逻辑。"
+        ]
+      },
       {
         date: "2026-05-25",
         version: "v0.1",
@@ -23,14 +26,17 @@ const devlogContent = {
   },
 
   en: {
-    kicker: "开发日志",
     title: "Development Log",
     intro: "This intro has been hidden",
     closeLabel: "Close development log",
-    sections: {
-      done: "Done"
-    },
     entries: [
+      {
+        date: "2026-06-09",
+        version: "v0.2",
+        done: [
+          "Designed a new standalone page for the personal blog and added spring-rope interaction logic between posts and categories."
+        ]
+      },
       {
         date: "2026-05-25",
         version: "v0.1",
@@ -46,14 +52,17 @@ const devlogContent = {
   },
 
   fr: {
-    kicker: "Journal de développement",
     title: "Journal de dev",
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
-    sections: {
-      done: "Fait"
-    },
     entries: [
+      {
+        date: "2026-06-09",
+        version: "v0.2",
+        done: [
+          "Conception d’une nouvelle page indépendante pour le blog personnel, avec ajout d’une logique de corde élastique entre les articles et les catégories."
+        ]
+      },
       {
         date: "2026-05-25",
         version: "v0.1",
@@ -101,7 +110,7 @@ function createList(items) {
   `;
 }
 
-function createEntry(entry, labels) {
+function createEntry(entry) {
   return `
     <article class="devlog-entry">
       <div class="devlog-entry-header">
@@ -109,7 +118,6 @@ function createEntry(entry, labels) {
         <span class="devlog-version">${entry.version}</span>
       </div>
 
-      <p class="devlog-section-title">${labels.done}</p>
       ${createList(entry.done)}
     </article>
   `;
@@ -130,12 +138,11 @@ function renderDevlog() {
         ×
       </button>
 
-      <span class="devlog-kicker">${content.kicker}</span>
       <h2 class="devlog-title" id="devlogTitle">${content.title}</h2>
       <p class="devlog-intro">${content.intro}</p>
 
       <div class="devlog-list">
-        ${content.entries.map((entry) => createEntry(entry, content.sections)).join("")}
+        ${content.entries.map((entry) => createEntry(entry)).join("")}
       </div>
     </div>
   `;

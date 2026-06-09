@@ -63,15 +63,6 @@
   outline: none;
 }
 
-.devlog-kicker {
-  display: inline-flex;
-  margin-bottom: 16px;
-  color: var(--lime);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
 .devlog-title {
   max-width: 620px;
   margin-bottom: 12px;
@@ -118,14 +109,6 @@
   color: rgba(246, 247, 242, 0.58);
   font-size: 0.86rem;
   font-weight: 800;
-}
-
-.devlog-section-title {
-  margin: 16px 0 8px;
-  color: var(--lime);
-  font-size: 0.84rem;
-  font-weight: 800;
-  text-transform: uppercase;
 }
 
 .devlog-entry ul {
