@@ -5,6 +5,21 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-06-20",
+        version: "v0.4",
+        done: [
+          "为blog增加了三国语言支持。",
+          "新增《AI 的反思》文章，并接入哲学 / 技术双大类。"
+        ]
+      },
+      {
+        date: "2026-06-10",
+        version: "v0.3",
+        done: [
+          "修改blog界面的弹力绳逻辑。"
+        ]
+      },
+      {
         date: "2026-06-09",
         version: "v0.2",
         done: [
@@ -31,6 +46,21 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-06-20",
+        version: "v0.4",
+        done: [
+          "Added Chinese, English, and French support to the blog.",
+          "Added the AI's Reflection essay and connected it to both Philosophy and Technology."
+        ]
+      },
+      {
+        date: "2026-06-10",
+        version: "v0.3",
+        done: [
+          "Refined the spring-rope logic on the blog interface."
+        ]
+      },
+      {
         date: "2026-06-09",
         version: "v0.2",
         done: [
@@ -56,6 +86,21 @@ const devlogContent = {
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
     entries: [
+      {
+        date: "2026-06-20",
+        version: "v0.4",
+        done: [
+          "Ajout du support chinois, anglais et français pour le blog.",
+          "Ajout du texte Réflexion sur l'IA et rattachement aux deux grandes catégories Philosophie et Technologie."
+        ]
+      },
+      {
+        date: "2026-06-10",
+        version: "v0.3",
+        done: [
+          "Ajustement de la logique de corde élastique dans l’interface du blog."
+        ]
+      },
       {
         date: "2026-06-09",
         version: "v0.2",

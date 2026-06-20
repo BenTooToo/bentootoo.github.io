@@ -1191,6 +1191,14 @@ html[lang="zh-CN"] .business-name {
   background: rgba(255, 255, 255, 0.92);
 }
 
+.subcategory-node span {
+  max-width: 82%;
+  color: rgba(21, 21, 20, 0.78);
+  font-size: clamp(1rem, 1.5vw, 1.32rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
 .article-node {
   z-index: 4;
   padding: 0;
