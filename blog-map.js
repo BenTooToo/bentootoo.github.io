@@ -81,6 +81,7 @@ const blogGraph = {
       title: "AI 的反思",
       problem: "当 AI 复制脸、声音甚至情感时，人类的不完美还意味着什么？",
       date: "2026-06-20",
+      mainCategoryId: "philosophy",
       categoryIds: ["philosophy", "technology"],
       subcategoryId: null,
       x: 50,
@@ -281,9 +282,104 @@ const blogMap = document.querySelector("#blogMap");
 const nodeLayer = document.querySelector("#blogMapNodes");
 const lineLayer = document.querySelector(".map-lines");
 const reader = document.querySelector("#articleReader");
+const blogStarCanvas = document.querySelector("#blogStarCanvas");
+
+function initializeBlogStars() {
+  if (!blogStarCanvas) {
+    return;
+  }
+
+  const starContext = blogStarCanvas.getContext("2d");
+
+  if (!starContext) {
+    return;
+  }
+
+  const reduceStarMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let starWidth = 0;
+  let starHeight = 0;
+  let starDpr = 1;
+  let stars = [];
+  let starAnimationFrame = 0;
+
+  function seededRandomFactory(seed) {
+    let state = seed >>> 0;
+
+    return () => {
+      state += 0x6D2B79F5;
+      let value = state;
+      value = Math.imul(value ^ (value >>> 15), value | 1);
+      value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+      return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function buildStars() {
+    const random = seededRandomFactory(0xB2E7A5);
+    const starCount = Math.min(180, Math.max(64, Math.round((starWidth * starHeight) / 7600)));
+
+    stars = Array.from({ length: starCount }, () => {
+      const radiusRoll = random();
+
+      return {
+        x: random() * starWidth,
+        y: random() * starHeight,
+        radius: radiusRoll > 0.94 ? 1.45 : radiusRoll > 0.72 ? 0.9 : 0.55,
+        baseAlpha: 0.18 + random() * 0.46,
+        pulse: 0.08 + random() * 0.26,
+        phase: random() * Math.PI * 2,
+        speed: 0.00045 + random() * 0.00115,
+        tint: random()
+      };
+    });
+  }
+
+  function resizeStarCanvas() {
+    starDpr = Math.min(window.devicePixelRatio || 1, 2);
+    starWidth = blogStarCanvas.clientWidth;
+    starHeight = blogStarCanvas.clientHeight;
+    blogStarCanvas.width = Math.max(1, Math.floor(starWidth * starDpr));
+    blogStarCanvas.height = Math.max(1, Math.floor(starHeight * starDpr));
+    starContext.setTransform(starDpr, 0, 0, starDpr, 0, 0);
+    buildStars();
+  }
+
+  function drawStars(time = 0) {
+    starContext.clearRect(0, 0, starWidth, starHeight);
+
+    stars.forEach((star) => {
+      const flicker = reduceStarMotion ? 0 : Math.sin(time * star.speed + star.phase) * star.pulse;
+      const alpha = Math.max(0.08, Math.min(0.92, star.baseAlpha + flicker));
+      const blue = star.tint > 0.82 ? 255 : star.tint > 0.48 ? 238 : 218;
+
+      starContext.beginPath();
+      starContext.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      starContext.fillStyle = `rgba(${blue - 18}, ${blue - 8}, ${blue}, ${alpha})`;
+      starContext.fill();
+    });
+
+    if (!reduceStarMotion) {
+      starAnimationFrame = requestAnimationFrame(drawStars);
+    }
+  }
+
+  function handleStarResize() {
+    cancelAnimationFrame(starAnimationFrame);
+    resizeStarCanvas();
+    drawStars();
+  }
+
+  window.addEventListener("resize", handleStarResize, { passive: true });
+  resizeStarCanvas();
+  drawStars();
+}
+
+initializeBlogStars();
+
 const graphState = {
   nodes: new Map(),
   links: [],
+  springLinks: [],
   width: 0,
   height: 0,
   view: {
@@ -306,6 +402,15 @@ const CENTER_NODE_ID = blogGraph.center.id;
 const CENTER_MASS = 5.6;
 const RELEASE_RECOIL = 0.045;
 const MAX_RELEASE_SPEED = 18;
+const WALL_OVERSCAN_RATIO = 0.48;
+const WALL_REVEAL_RATIO = 0.12;
+const WALL_REVEAL_MIN = 70;
+const WALL_REVEAL_MAX = 150;
+const WALL_MIN_VISIBLE_STRENGTH = 0.24;
+const WALL_SEGMENT_RATIO = 0.24;
+const WALL_SEGMENT_MIN = 190;
+const WALL_SEGMENT_MAX = 360;
+const WALL_SEGMENT_MERGE_GAP = 18;
 const BLOG_LANGUAGE_STORAGE_KEY = "bentootoo-language";
 const BLOG_HTML_LANGUAGES = {
   zh: "zh-CN",
@@ -382,11 +487,15 @@ function findArticle(id) {
 }
 
 function getArticleCategoryIds(article) {
-  if (Array.isArray(article.categoryIds) && article.categoryIds.length > 0) {
-    return article.categoryIds;
-  }
+  return [
+    article.mainCategoryId,
+    article.categoryId,
+    ...(Array.isArray(article.categoryIds) ? article.categoryIds : [])
+  ].filter((categoryId, index, categoryIds) => categoryId && categoryIds.indexOf(categoryId) === index);
+}
 
-  return article.categoryId ? [article.categoryId] : [];
+function getMainArticleCategoryId(article) {
+  return article.mainCategoryId || article.categoryId || getArticleCategoryIds(article)[0] || null;
 }
 
 function getArticleCategories(article) {
@@ -448,12 +557,13 @@ function renderArticleNode(article) {
   const categories = getArticleCategories(article);
   const subcategory = article.subcategoryId ? findSubcategory(article.subcategoryId) : null;
   const articleText = getArticleText(article);
-  const metadata = [
-    categories.length > 0
-      ? categories.map((category) => getNodeLabel("categories", category)).join(" / ")
-      : null,
+  const metadataLabels = [
+    ...categories.map((category) => getNodeLabel("categories", category)),
     subcategory ? getNodeLabel("subcategories", subcategory) : null
-  ].filter(Boolean).join(" / ");
+  ].filter(Boolean);
+  const metadata = metadataLabels
+    .map((label) => escapeHtml(label))
+    .join(currentBlogLanguage === "zh" ? " / " : "<br>");
 
   return `
     <button
@@ -466,7 +576,7 @@ function renderArticleNode(article) {
     >
       <span class="article-title">${escapeHtml(articleText.title)}</span>
       <span class="article-problem">${escapeHtml(articleText.problem)}</span>
-      <small>${escapeHtml(metadata)}</small>
+      <small>${metadata}</small>
     </button>
   `;
 }
@@ -491,13 +601,98 @@ function createLine(fromId, toId, type) {
   return `<path class="map-line map-line-${type}" d="M ${from.x.toFixed(2)} ${from.y.toFixed(2)} L ${to.x.toFixed(2)} ${to.y.toFixed(2)}"></path>`;
 }
 
+function getWallSegmentLength(axisLength) {
+  return Math.min(Math.max(axisLength * WALL_SEGMENT_RATIO, WALL_SEGMENT_MIN), WALL_SEGMENT_MAX);
+}
+
+function createWallSegmentPath(side, segment, geometry) {
+  const opacity = segment.strength.toFixed(3);
+
+  if (side === "left" || side === "right") {
+    const x = side === "left" ? geometry.left : geometry.right;
+
+    return `<path class="map-wall-border map-wall-border-${side}" style="opacity: ${opacity}" d="M ${x.toFixed(2)} ${segment.start.toFixed(2)} L ${x.toFixed(2)} ${segment.end.toFixed(2)}"></path>`;
+  }
+
+  const y = side === "top" ? geometry.top : geometry.bottom;
+
+  return `<path class="map-wall-border map-wall-border-${side}" style="opacity: ${opacity}" d="M ${segment.start.toFixed(2)} ${y.toFixed(2)} L ${segment.end.toFixed(2)} ${y.toFixed(2)}"></path>`;
+}
+
+function createWallSegmentSpan(wall, axisStart, axisEnd, halfLength) {
+  return {
+    start: Math.max(axisStart, wall.position - halfLength),
+    end: Math.min(axisEnd, wall.position + halfLength),
+    strength: wall.strength
+  };
+}
+
+function mergeWallSegmentSpans(spans) {
+  return spans
+    .filter((span) => span.end > span.start)
+    .sort((first, second) => first.start - second.start)
+    .reduce((merged, span) => {
+      const previous = merged[merged.length - 1];
+
+      if (previous && span.start <= previous.end + WALL_SEGMENT_MERGE_GAP) {
+        previous.end = Math.max(previous.end, span.end);
+        previous.strength = Math.max(previous.strength, span.strength);
+      } else {
+        merged.push({ ...span });
+      }
+
+      return merged;
+    }, []);
+}
+
+function createWallLine(side, wallSegments, geometry) {
+  if (!wallSegments.length) {
+    return "";
+  }
+
+  const segmentLength = side === "left" || side === "right"
+    ? getWallSegmentLength(geometry.height)
+    : getWallSegmentLength(geometry.width);
+  const halfLength = segmentLength / 2;
+  const axisStart = side === "left" || side === "right" ? geometry.top : geometry.left;
+  const axisEnd = side === "left" || side === "right" ? geometry.bottom : geometry.right;
+  const segments = mergeWallSegmentSpans(
+    wallSegments.map((wall) => createWallSegmentSpan(wall, axisStart, axisEnd, halfLength))
+  );
+
+  return segments
+    .map((segment) => createWallSegmentPath(side, segment, geometry))
+    .join("");
+}
+
+function createWallLines() {
+  const walls = updateWallReveal();
+  const overscan = getWallOverscan();
+  const geometry = {
+    left: -overscan.x,
+    right: graphState.width + overscan.x,
+    top: -overscan.y,
+    bottom: graphState.height + overscan.y
+  };
+
+  geometry.width = geometry.right - geometry.left;
+  geometry.height = geometry.bottom - geometry.top;
+
+  return ["left", "right", "top", "bottom"]
+    .map((side) => createWallLine(side, walls[side], geometry))
+    .join("");
+}
+
 function drawLines() {
   if (!blogMap || !lineLayer) {
     return;
   }
 
   lineLayer.setAttribute("viewBox", `0 0 ${graphState.width} ${graphState.height}`);
-  lineLayer.innerHTML = graphState.links.map((link) => createLine(link.from, link.to, link.type)).join("");
+  lineLayer.innerHTML = [
+    createWallLines(),
+    graphState.links.map((link) => createLine(link.from, link.to, link.type)).join("")
+  ].join("");
 }
 
 function applyViewportTransform() {
@@ -544,23 +739,47 @@ function getNodeKind(item) {
 
 function createGraphLinks() {
   const articleLinks = blogGraph.articles.flatMap((article) => {
+    const mainCategoryId = getMainArticleCategoryId(article);
+    const relatedCategoryIds = getArticleCategoryIds(article)
+      .filter((categoryId) => categoryId !== mainCategoryId);
+
     if (article.subcategoryId) {
-      return [{
-        from: article.subcategoryId,
+      return [
+        {
+          from: article.subcategoryId,
+          to: article.id,
+          type: "article",
+          lengthRatio: 0.24,
+          stiffness: 0.024
+        },
+        ...relatedCategoryIds.map((categoryId) => ({
+          from: categoryId,
+          to: article.id,
+          type: "article-related",
+          affectsPhysics: false
+        }))
+      ];
+    }
+
+    if (!mainCategoryId) {
+      return [];
+    }
+
+    return [
+      {
+        from: mainCategoryId,
         to: article.id,
         type: "article",
         lengthRatio: 0.24,
         stiffness: 0.024
-      }];
-    }
-
-    return getArticleCategoryIds(article).map((categoryId) => ({
-      from: categoryId,
-      to: article.id,
-      type: "article",
-      lengthRatio: 0.24,
-      stiffness: 0.024
-    }));
+      },
+      ...relatedCategoryIds.map((categoryId) => ({
+        from: categoryId,
+        to: article.id,
+        type: "article-related",
+        affectsPhysics: false
+      }))
+    ];
   });
 
   return [
@@ -582,6 +801,10 @@ function createGraphLinks() {
   ];
 }
 
+function getSpringLinks(links) {
+  return links.filter((link) => link.affectsPhysics !== false);
+}
+
 function buildGraphState() {
   if (!blogMap) {
     return;
@@ -595,6 +818,7 @@ function buildGraphState() {
   graphState.height = mapRect.height;
   graphState.nodes.clear();
   graphState.links = createGraphLinks();
+  graphState.springLinks = getSpringLinks(graphState.links);
 
   getAllGraphItems().forEach((item) => {
     const element = blogMap.querySelector(`[data-map-node="${item.id}"]`);
@@ -647,6 +871,86 @@ function updateNodeElements() {
   });
 }
 
+function getWallOverscan() {
+  return {
+    x: graphState.width * WALL_OVERSCAN_RATIO,
+    y: graphState.height * WALL_OVERSCAN_RATIO
+  };
+}
+
+function getWallRevealDistance() {
+  return {
+    x: Math.min(Math.max(graphState.width * WALL_REVEAL_RATIO, WALL_REVEAL_MIN), WALL_REVEAL_MAX),
+    y: Math.min(Math.max(graphState.height * WALL_REVEAL_RATIO, WALL_REVEAL_MIN), WALL_REVEAL_MAX)
+  };
+}
+
+function getWallStrength(edgeDistance, revealDistance, fadeDistance) {
+  let strength = 0;
+
+  if (edgeDistance >= revealDistance) {
+    return 0;
+  }
+
+  if (edgeDistance >= 0) {
+    strength = 1 - edgeDistance / revealDistance;
+  } else {
+    strength = Math.max(0, 1 + edgeDistance / fadeDistance);
+  }
+
+  return strength > 0
+    ? WALL_MIN_VISIBLE_STRENGTH + strength * (1 - WALL_MIN_VISIBLE_STRENGTH)
+    : 0;
+}
+
+function addWallCandidate(walls, side, strength, position) {
+  if (strength <= 0) {
+    return;
+  }
+
+  walls[side].push({ strength, position });
+}
+
+function createEmptyWallReveal() {
+  return {
+    left: [],
+    right: [],
+    top: [],
+    bottom: []
+  };
+}
+
+function updateWallReveal() {
+  if (!blogMap || graphState.width <= 0 || graphState.height <= 0) {
+    return createEmptyWallReveal();
+  }
+
+  const overscan = getWallOverscan();
+  const revealDistance = getWallRevealDistance();
+  const walls = createEmptyWallReveal();
+  const wallEdges = {
+    left: -overscan.x,
+    right: graphState.width + overscan.x,
+    top: -overscan.y,
+    bottom: graphState.height + overscan.y
+  };
+
+  graphState.nodes.forEach((node) => {
+    const fadeDistance = Math.max(node.radius * 1.7, 52);
+    const leftDistance = node.x - node.radius - wallEdges.left;
+    const rightDistance = wallEdges.right - (node.x + node.radius);
+    const topDistance = node.y - node.radius - wallEdges.top;
+    const bottomDistance = wallEdges.bottom - (node.y + node.radius);
+
+    addWallCandidate(walls, "left", getWallStrength(leftDistance, revealDistance.x, fadeDistance), node.y);
+    addWallCandidate(walls, "right", getWallStrength(rightDistance, revealDistance.x, fadeDistance), node.y);
+    addWallCandidate(walls, "top", getWallStrength(topDistance, revealDistance.y, fadeDistance), node.x);
+    addWallCandidate(walls, "bottom", getWallStrength(bottomDistance, revealDistance.y, fadeDistance), node.x);
+  });
+
+  return walls;
+}
+
 function getPointerPosition(event) {
   const mapRect = blogMap.getBoundingClientRect();
   const x = event.clientX - mapRect.left;
@@ -659,8 +963,9 @@ function getPointerPosition(event) {
 }
 
 function clampNode(node) {
-  const overscanX = graphState.width * 0.28;
-  const overscanY = graphState.height * 0.28;
+  const overscan = getWallOverscan();
+  const overscanX = overscan.x;
+  const overscanY = overscan.y;
   const minX = node.radius - overscanX;
   const maxX = graphState.width - node.radius + overscanX;
   const minY = node.radius - overscanY;
@@ -699,7 +1004,7 @@ function getRestLength(link) {
 }
 
 function applySpringForces() {
-  graphState.links.forEach((link) => {
+  graphState.springLinks.forEach((link) => {
     const from = graphState.nodes.get(link.from);
     const to = graphState.nodes.get(link.to);
 
@@ -812,22 +1117,77 @@ function startGraphPhysics() {
   graphState.animationFrame = requestAnimationFrame(stepGraphPhysics);
 }
 
-function fitArticleTitles() {
-  nodeLayer.querySelectorAll(".article-title").forEach((title) => {
-    const node = title.closest(".article-node");
+function shrinkTextToFit(element, options = {}) {
+  if (!element) {
+    return;
+  }
 
-    if (!node) {
-      return;
+  const {
+    minSize = 9,
+    maxWidth = element.clientWidth,
+    maxHeight = element.clientHeight || Number.POSITIVE_INFINITY
+  } = options;
+
+  element.style.fontSize = "";
+  let size = parseFloat(getComputedStyle(element).fontSize);
+
+  while (
+    (element.scrollWidth > maxWidth + 0.5 || element.scrollHeight > maxHeight + 0.5)
+    && size > minSize
+  ) {
+    size -= 0.5;
+    element.style.fontSize = `${size}px`;
+  }
+}
+
+function fitMapNodeText() {
+  if (!nodeLayer) {
+    return;
+  }
+
+  nodeLayer.querySelectorAll(".map-center > span").forEach((label) => {
+    const node = label.closest(".map-center");
+
+    if (node) {
+      shrinkTextToFit(label, {
+        minSize: 13,
+        maxWidth: label.clientWidth,
+        maxHeight: node.clientHeight * 0.46
+      });
     }
+  });
 
-    title.style.fontSize = "";
-    const availableWidth = node.clientWidth - 28;
-    let size = parseFloat(getComputedStyle(title).fontSize);
+  nodeLayer.querySelectorAll(".category-node > span").forEach((label) => {
+    const node = label.closest(".category-node");
 
-    while (title.scrollWidth > availableWidth && size > 9) {
-      size -= 0.5;
-      title.style.fontSize = `${size}px`;
+    if (node) {
+      shrinkTextToFit(label, {
+        minSize: 12,
+        maxWidth: label.clientWidth,
+        maxHeight: node.clientHeight * 0.5
+      });
     }
+  });
+
+  nodeLayer.querySelectorAll(".subcategory-node > span").forEach((label) => {
+    const node = label.closest(".subcategory-node");
+
+    if (node) {
+      shrinkTextToFit(label, {
+        minSize: 10,
+        maxWidth: label.clientWidth,
+        maxHeight: node.clientHeight * 0.56
+      });
+    }
+  });
+
+  nodeLayer.querySelectorAll(".article-node").forEach((node) => {
+    shrinkTextToFit(node.querySelector(".article-title"), { minSize: 8.5 });
+    shrinkTextToFit(node.querySelector(".article-problem"), { minSize: 8 });
+    shrinkTextToFit(node.querySelector("small"), {
+      minSize: 6,
+      maxHeight: node.clientHeight * 0.26
+    });
   });
 }
 
@@ -1139,7 +1499,7 @@ function renderMap() {
 
   requestAnimationFrame(() => {
     buildGraphState();
-    fitArticleTitles();
+    fitMapNodeText();
     setupDragInteractions();
     setupViewportInteractions();
     startGraphPhysics();
@@ -1260,7 +1620,7 @@ window.addEventListener("keydown", (event) => {
 
 window.addEventListener("resize", () => {
   buildGraphState();
-  fitArticleTitles();
+  fitMapNodeText();
 });
 window.addEventListener("hashchange", openArticleFromHash);
 

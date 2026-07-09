@@ -5,6 +5,20 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-07-01",
+        version: "v0.5B",
+        done: [
+          "改善blog界面的双线逻辑。"
+        ]
+      },
+      {
+        date: "2026-06-28",
+        version: "v0.5A",
+        done: [
+          "增加blog界面的双线逻辑。"
+        ]
+      },
+      {
         date: "2026-06-20",
         version: "v0.4",
         done: [
@@ -46,6 +60,20 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-07-01",
+        version: "v0.5B",
+        done: [
+          "Improved the dual-line logic on the blog interface."
+        ]
+      },
+      {
+        date: "2026-06-28",
+        version: "v0.5A",
+        done: [
+          "Added dual-line logic to the blog interface."
+        ]
+      },
+      {
         date: "2026-06-20",
         version: "v0.4",
         done: [
@@ -86,6 +114,20 @@ const devlogContent = {
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
     entries: [
+      {
+        date: "2026-07-01",
+        version: "v0.5B",
+        done: [
+          "Amélioration de la logique à double ligne dans l'interface du blog."
+        ]
+      },
+      {
+        date: "2026-06-28",
+        version: "v0.5A",
+        done: [
+          "Ajout de la logique à double ligne dans l'interface du blog."
+        ]
+      },
       {
         date: "2026-06-20",
         version: "v0.4",

@@ -29,10 +29,9 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(90deg, rgba(21, 21, 20, 0.045) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(21, 21, 20, 0.035) 1px, transparent 1px),
-    var(--paper);
-  background-size: 56px 56px;
+    linear-gradient(rgba(4, 6, 20, 0.54), rgba(4, 6, 20, 0.54)),
+    url("assets/cosmic-background.png") center / cover fixed no-repeat,
+    #050817;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   letter-spacing: 0;
   min-width: 320px;
@@ -58,7 +57,7 @@ button {
   z-index: 80;
   width: var(--progress);
   height: 3px;
-  background: linear-gradient(90deg, var(--cyan), var(--lime), var(--coral));
+  background: #071a3d;
   transform-origin: left center;
 }
 
@@ -334,10 +333,7 @@ button {
   min-height: 94svh;
   padding: calc(var(--header-height) + 74px) 24px 32px;
   color: var(--paper);
-  background:
-    linear-gradient(135deg, rgba(25, 211, 197, 0.16), transparent 31%),
-    linear-gradient(220deg, rgba(255, 106, 87, 0.12), transparent 36%),
-    var(--dark);
+  background: transparent;
 }
 
 #heroCanvas {
@@ -347,6 +343,8 @@ button {
   width: 100%;
   height: 100%;
   opacity: 0.82;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
 }
 
 .hero-section::after {
@@ -354,9 +352,7 @@ button {
   inset: 0;
   z-index: 1;
   content: "";
-  background:
-    linear-gradient(180deg, rgba(16, 17, 15, 0.05), rgba(16, 17, 15, 0.68)),
-    repeating-linear-gradient(90deg, transparent 0 92px, rgba(255, 255, 255, 0.04) 92px 93px);
+  background: rgba(5, 8, 23, 0.08);
   pointer-events: none;
 }
 
@@ -594,17 +590,11 @@ html[lang="zh-CN"] .business-name {
   margin-top: 2px;
 }
 
-.business-links a,
 .business-entry {
   display: grid;
   gap: 2px;
   padding: 3px 0;
   border-top: 1px solid rgba(246, 247, 242, 0.14);
-}
-
-.business-links a:hover strong,
-.business-links a:focus-visible strong {
-  color: var(--lime);
 }
 
 .business-links strong {
@@ -651,6 +641,11 @@ html[lang="zh-CN"] .business-name {
   padding: 116px 24px;
 }
 
+.content-section:not(.contact-section) {
+  color: var(--paper);
+  background: transparent;
+}
+
 .section-shell {
   width: min(1120px, 100%);
   margin: 0 auto;
@@ -670,10 +665,19 @@ html[lang="zh-CN"] .business-name {
   letter-spacing: 0;
 }
 
+.content-section:not(.contact-section) .section-heading h2 {
+  color: var(--paper);
+  text-shadow: 0 10px 36px rgba(0, 0, 0, 0.28);
+}
+
 .section-heading p:last-child {
   color: rgba(21, 21, 20, 0.68);
   font-size: clamp(1rem, 1.3vw, 1.16rem);
   line-height: 1.8;
+}
+
+.content-section:not(.contact-section) .section-heading p:last-child {
+  color: rgba(246, 247, 242, 0.72);
 }
 
 .project-grid {
@@ -684,10 +688,10 @@ html[lang="zh-CN"] .business-name {
 
 .project-card,
 .blog-card {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.64);
-  box-shadow: var(--shadow);
+  background: rgba(10, 14, 38, 0.64);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(18px);
 }
 
@@ -700,7 +704,7 @@ html[lang="zh-CN"] .business-name {
   position: absolute;
   inset: auto 0 0;
   height: 4px;
-  background: var(--ink);
+  background: #071a3d;
   content: "";
   transform: scaleX(0.28);
   transform-origin: left center;
@@ -726,7 +730,7 @@ html[lang="zh-CN"] .business-name {
 }
 
 .feature-card::after {
-  background: var(--lime);
+  background: #071a3d;
 }
 
 .card-number {
@@ -775,13 +779,14 @@ html[lang="zh-CN"] .business-name {
 }
 
 .blog-card {
+  color: var(--paper);
   padding: clamp(24px, 4vw, 42px);
   display: block;
   transition: transform 220ms ease, background 220ms ease;
 }
 
 .blog-card:hover {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(24, 28, 58, 0.82);
   transform: translateY(-4px);
 }
 
@@ -801,17 +806,14 @@ html[lang="zh-CN"] .business-name {
 }
 
 .blog-card p {
-  color: rgba(21, 21, 20, 0.64);
+  color: rgba(246, 247, 242, 0.68);
   font-size: 1rem;
   line-height: 1.78;
 }
 
 .contact-section {
   color: var(--paper);
-  background:
-    linear-gradient(135deg, rgba(200, 255, 89, 0.14), transparent 32%),
-    linear-gradient(315deg, rgba(25, 211, 197, 0.13), transparent 36%),
-    var(--dark-2);
+  background: transparent;
 }
 
 .contact-section .section-heading h2,
@@ -943,7 +945,7 @@ html[lang="zh-CN"] .business-name {
   gap: 20px;
   padding: 26px 24px;
   color: rgba(246, 247, 242, 0.64);
-  background: var(--dark-2);
+  background: transparent;
   font-size: 0.86rem;
 }
 
@@ -958,13 +960,7 @@ html[lang="zh-CN"] .business-name {
   min-height: 100svh;
   overflow: hidden;
   overscroll-behavior: none;
-  background:
-    linear-gradient(90deg, rgba(21, 21, 20, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(21, 21, 20, 0.035) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(25, 211, 197, 0.12), transparent 31%),
-    linear-gradient(315deg, rgba(255, 106, 87, 0.1), transparent 34%),
-    var(--paper);
-  background-size: 56px 56px, 56px 56px, auto, auto, auto;
+  background: #010204;
 }
 
 .blog-map-body .page-progress,
@@ -987,6 +983,15 @@ html[lang="zh-CN"] .business-name {
   min-height: 0;
   padding: 0;
   overflow: hidden;
+}
+
+#blogStarCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .blog-map-heading {
@@ -1035,6 +1040,7 @@ html[lang="zh-CN"] .business-name {
   margin: 0 auto;
   overflow: hidden;
   cursor: grab;
+  z-index: 1;
   isolation: isolate;
   touch-action: none;
 }
@@ -1054,16 +1060,26 @@ html[lang="zh-CN"] .business-name {
   transform-origin: 0 0;
 }
 
+.map-wall-border {
+  fill: none;
+  stroke: rgba(7, 26, 61, 0.92);
+  stroke-linecap: round;
+  stroke-width: 8;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.38));
+  transition: opacity 120ms ease;
+}
+
 .map-line {
   fill: none;
-  stroke: rgba(21, 21, 20, 0.34);
+  stroke: rgba(220, 229, 255, 0.4);
   stroke-linecap: round;
   stroke-width: 1.35;
   vector-effect: non-scaling-stroke;
 }
 
 .map-line-category {
-  stroke: rgba(21, 21, 20, 0.3);
+  stroke: rgba(220, 229, 255, 0.36);
 }
 
 .map-line-subcategory {
@@ -1073,6 +1089,12 @@ html[lang="zh-CN"] .business-name {
 .map-line-article {
   stroke: rgba(25, 211, 197, 0.84);
   stroke-width: 1.55;
+}
+
+.map-line-article-related {
+  stroke: rgba(25, 211, 197, 0.5);
+  stroke-dasharray: 1.5 7;
+  stroke-width: 1.35;
 }
 
 .map-node-layer {
@@ -1128,9 +1150,12 @@ html[lang="zh-CN"] .business-name {
 }
 
 .map-center span {
+  display: block;
+  width: 78%;
   font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 800;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .map-center small {
@@ -1161,9 +1186,13 @@ html[lang="zh-CN"] .business-name {
 .category-node span {
   position: relative;
   z-index: 1;
+  display: block;
+  width: 74%;
   color: rgba(21, 21, 20, 0.84);
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 800;
+  line-height: 1.04;
+  white-space: nowrap;
 }
 
 .tone-cyan {
@@ -1192,11 +1221,14 @@ html[lang="zh-CN"] .business-name {
 }
 
 .subcategory-node span {
-  max-width: 82%;
+  display: block;
+  width: 74%;
   color: rgba(21, 21, 20, 0.78);
   font-size: clamp(1rem, 1.5vw, 1.32rem);
   font-weight: 800;
   line-height: 1.18;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .article-node {
@@ -1225,11 +1257,12 @@ html[lang="zh-CN"] .business-name {
 }
 
 .article-title {
-  width: calc(100% - 28px);
+  width: auto;
   font-size: clamp(0.8rem, 1.2vw, 1rem);
   font-weight: 800;
-  line-height: 1.32;
-  white-space: nowrap;
+  line-height: 1.16;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .article-problem {
@@ -1258,11 +1291,48 @@ html[lang="zh-CN"] .business-name {
   right: 0;
   bottom: 18px;
   left: 0;
+  width: 80%;
+  margin: 0 auto;
   color: var(--coral);
   font-size: 0.64rem;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  white-space: normal;
   transition: opacity 180ms ease;
+}
+
+html[lang="en"] .category-node span {
+  font-size: clamp(1.1rem, 2.2vw, 1.9rem);
+  letter-spacing: -0.025em;
+}
+
+html[lang="fr"] .category-node span {
+  font-size: clamp(1.05rem, 2vw, 1.8rem);
+  letter-spacing: -0.03em;
+}
+
+html[lang="en"] .subcategory-node span,
+html[lang="fr"] .subcategory-node span {
+  font-size: clamp(0.82rem, 1.2vw, 1.08rem);
+  line-height: 1.12;
+}
+
+html[lang="en"] .article-title,
+html[lang="fr"] .article-title {
+  font-size: clamp(0.72rem, 1vw, 0.92rem);
+}
+
+html[lang="en"] .article-problem,
+html[lang="fr"] .article-problem {
+  font-size: clamp(0.58rem, 0.76vw, 0.7rem);
+  line-height: 1.32;
+}
+
+html[lang="en"] .article-node small,
+html[lang="fr"] .article-node small {
+  font-size: 0.56rem;
 }
 
 .article-node:hover small,
@@ -1278,7 +1348,8 @@ html[lang="zh-CN"] .business-name {
   z-index: 120;
   display: block;
   padding: 0;
-  background: var(--paper);
+  color: var(--paper);
+  background: rgba(1, 2, 4, 0.9);
   clip-path: circle(0 at var(--reader-origin-x) var(--reader-origin-y));
   opacity: 0;
   overflow: hidden;
@@ -1305,9 +1376,7 @@ html[lang="zh-CN"] .business-name {
   padding: clamp(82px, 9vw, 124px) clamp(22px, 8vw, 110px) clamp(54px, 7vw, 96px);
   border: 0;
   border-radius: 0;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.44)),
-    var(--paper);
+  background: rgba(1, 2, 4, 0.34);
   box-shadow: none;
 }
 
@@ -1326,10 +1395,10 @@ html[lang="zh-CN"] .business-name {
   width: 42px;
   height: 42px;
   margin: 0;
-  border: 1px solid rgba(21, 21, 20, 0.14);
+  border: 1px solid rgba(246, 247, 242, 0.18);
   border-radius: 50%;
-  background: rgba(246, 247, 242, 0.88);
-  color: var(--ink);
+  background: rgba(5, 8, 23, 0.74);
+  color: var(--paper);
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
@@ -1337,7 +1406,7 @@ html[lang="zh-CN"] .business-name {
 
 .reader-close:hover,
 .reader-close:focus-visible {
-  background: var(--ink);
+  background: #071a3d;
   color: var(--paper);
   outline: none;
 }
@@ -1351,15 +1420,16 @@ html[lang="zh-CN"] .business-name {
 
 .reader-meta span {
   padding: 8px 10px;
-  border: 1px solid rgba(21, 21, 20, 0.12);
+  border: 1px solid rgba(246, 247, 242, 0.16);
   border-radius: var(--radius);
-  color: rgba(21, 21, 20, 0.68);
+  color: rgba(246, 247, 242, 0.68);
   font-size: 0.74rem;
   font-weight: 800;
 }
 
 .reader-article h2 {
   margin-bottom: 18px;
+  color: var(--paper);
   font-size: clamp(2rem, 5vw, 4.6rem);
   line-height: 0.98;
 }
@@ -1367,7 +1437,7 @@ html[lang="zh-CN"] .business-name {
 .reader-problem {
   max-width: 620px;
   margin-bottom: 36px;
-  color: rgba(21, 21, 20, 0.64);
+  color: rgba(246, 247, 242, 0.68);
   font-size: clamp(1rem, 1.3vw, 1.16rem);
   font-weight: 700;
   line-height: 1.7;
@@ -1376,7 +1446,7 @@ html[lang="zh-CN"] .business-name {
 .reader-body {
   display: grid;
   gap: 18px;
-  color: rgba(21, 21, 20, 0.8);
+  color: rgba(246, 247, 242, 0.82);
   font-size: 1rem;
   line-height: 1.95;
 }

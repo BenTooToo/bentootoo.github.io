@@ -32,7 +32,7 @@ const translations = {
     "blog.cardThreeBody": "哲学、音乐、制作和技术会成为文章系统的类别连接点，未来的子类别也会从这里自然展开。",
     "contact.title": "联系我",
     "contact.lede": "缺席对于本2兔来说是短暂的休息，他一定会回复，无论你是谁。",
-    "contact.email": "benson201814@gmail.com",
+    "contact.email": "beisong.lyu@gmail.com",
     "contact.github": "github.com/BenTooToo",
     "contact.backTop": "回到顶部",
     "footer.note": "为 GitHub Pages 构建。"
@@ -70,7 +70,7 @@ const translations = {
     "blog.cardThreeBody": "Philosophy, music, making, and technology are the category nodes. Future subcategories can grow from them naturally.",
     "contact.title": "Contact",
     "contact.lede": "For Bentootoo, absence is a brief rest. He will reply, whoever you are.",
-    "contact.email": "benson201814@gmail.com",
+    "contact.email": "beisong.lyu@gmail.com",
     "contact.github": "github.com/BenTooToo",
     "contact.backTop": "Back to top",
     "footer.note": "Built for GitHub Pages."
@@ -108,7 +108,7 @@ const translations = {
     "blog.cardThreeBody": "Philosophie, musique, création et technologie deviennent les noeuds de catégorie, prêts à accueillir de futures sous-catégories.",
     "contact.title": "Contact",
     "contact.lede": "Pour Bentootoo, l'absence est un court repos. Il répondra, qui que tu sois.",
-    "contact.email": "benson201814@gmail.com",
+    "contact.email": "beisong.lyu@gmail.com",
     "contact.github": "github.com/BenTooToo",
     "contact.backTop": "Retour en haut",
     "footer.note": "Construit pour GitHub Pages."
