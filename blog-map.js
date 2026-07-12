@@ -48,6 +48,35 @@ const blogGraph = {
   subcategories: [],
   articles: [
     {
+      id: "agent-vibe-coding-future",
+      title: "论 Agent、Vibe Coding 与未来",
+      problem: "花了一个周创作折棠7中同窗录给我的启发",
+      date: "2026-07-12",
+      mainCategoryId: "making",
+      categoryIds: ["making", "technology"],
+      subcategoryId: null,
+      x: 50,
+      y: 27,
+      mobileX: 46,
+      mobileY: 26,
+      size: 170,
+      links: [
+        {
+          text: "银河电灯",
+          url: "https://ginga-light.top/works"
+        }
+      ],
+      paragraphs: [
+        "在众多有理想 (划去)有空闲功夫的程序人来说，使用agent来进行辅助编程，甚至完全变成，也就是我们说的vibe coding，在今天已经并不是一件新鲜事了，作为学习繁重的考研大学生来说，能够接触到codex 这一类的agent，就说明这件事情已经变得越来越accessible。所以，在agent发展的如此迅速的今天，就连讨论这个ai与创作的关系这个问题本身，也不是一件多么新奇的事情了。",
+        "今天，我不会从技术实践角度讲解能耗，也不会把目光放到ai自主科研这种令人憧憬但又心生寒意的目标，而是把目光放在自己更感兴趣的方面，也就是游戏创作方面，更准确来说，就是利用agent来辅助游戏设计，如果说，当像银河电灯这样的自由创作者，能够通过八开claude 窗口来进行vide coding进行arg游戏的创作还需要的是对游戏热情的门槛。那么，当我使用codex 作为主agent，仅仅利用GPT plus 的每周免费额度来进行vibe coding，并且在一个周之内做出了一个像模像样的作品时，我认为，创作的黄金年代不是未来，而是现在了。",
+        "ai本质上是一个放大器",
+        "他所能放大的，是你的执行一个想法的效率，他使你能够不需要读万卷书也可以找到更广阔的思路，他让你不需要学习代码就能创作程序。一个时长两个小时的arg项目，毫不夸张的说，正常可能需要花费我一个暑假才能做出来的东西，我只花了不到一个周就做出来，因为和agent进行vibe coding，就像是和一个志同道合的好友去进行天马行空的想象，你尽可能地说自己的想法，你猜怎么着，ai他就是能给你做出来。仿佛再过个几十年，最重要的不是技术，而是人的想象力了。",
+        "在我进行折棠7中同窗录的创作的时候，我发现最大的问题依然从技术变成了交流。",
+        "ai在创作的时候，如果没有一个长达好几千字的精准prompt来进行知道，ai通常会进行很多画蛇添足的设计，很多时候，我给他说完了想法，看他做的预览效果，然后再告诉他哪里做的不好，哪里不和我的心意，这种对话形式是很令人上瘾的。就仿佛是导演和演员之间的关系。",
+        "游戏真正做出来的时候，剧情，信息的填充，关卡设计都是自己创作的，但是代码我却几乎没怎么动过，这种感觉是很奇妙的。我认为这就是未来，我认为代码就是应该这个样子才能让人类的总体技术水平和创作能力再上一个档次。"
+      ]
+    },
+    {
       id: "choice-effort",
       title: "选择与努力的伪命题",
       problem: "失败真的是不够努力，还是环境、天分与方向共同塑造了结果？",
@@ -472,6 +501,18 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function renderArticleParagraph(article, paragraph) {
+  let content = escapeHtml(paragraph);
+
+  (article.links || []).forEach((link) => {
+    const text = escapeHtml(link.text);
+    const anchor = `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+    content = content.replace(text, anchor);
+  });
+
+  return `<p>${content}</p>`;
 }
 
 function findCategory(id) {
@@ -1557,7 +1598,7 @@ function openArticle(article, sourceNode) {
         <h2 id="readerTitle">${escapeHtml(articleText.title)}</h2>
         <p class="reader-problem">${escapeHtml(articleText.problem)}</p>
         <div class="reader-body">
-          ${articleText.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+          ${articleText.paragraphs.map((paragraph) => renderArticleParagraph(article, paragraph)).join("")}
         </div>
       </article>
     </div>

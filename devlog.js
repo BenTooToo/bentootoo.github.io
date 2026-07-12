@@ -5,6 +5,13 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-07-12",
+        version: "v0.7",
+        done: [
+          "将折棠7中同窗录加入到主页"
+        ]
+      },
+      {
         date: "2026-07-09",
         version: "v0.6",
         done: [

@@ -1495,6 +1495,20 @@ html[lang="fr"] .article-node small {
   margin: 0;
 }
 
+.reader-body a {
+  color: var(--lime);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.reader-body a:hover,
+.reader-body a:focus-visible {
+  color: var(--paper);
+  outline: none;
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translateY(34px);
