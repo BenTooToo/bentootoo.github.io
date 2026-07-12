@@ -1,0 +1,79 @@
+{
+  "head": {
+    "file": "assets/parts/head.png",
+    "width": 339,
+    "height": 334,
+    "source_bbox": [
+      87,
+      86,
+      426,
+      420
+    ]
+  },
+  "body": {
+    "file": "assets/parts/body.png",
+    "width": 479,
+    "height": 383,
+    "source_bbox": [
+      499,
+      115,
+      978,
+      498
+    ]
+  },
+  "front-left-leg": {
+    "file": "assets/parts/front-left-leg.png",
+    "width": 153,
+    "height": 277,
+    "source_bbox": [
+      309,
+      484,
+      462,
+      761
+    ]
+  },
+  "front-right-leg": {
+    "file": "assets/parts/front-right-leg.png",
+    "width": 154,
+    "height": 276,
+    "source_bbox": [
+      580,
+      485,
+      734,
+      761
+    ]
+  },
+  "tail": {
+    "file": "assets/parts/tail.png",
+    "width": 162,
+    "height": 352,
+    "source_bbox": [
+      961,
+      524,
+      1123,
+      876
+    ]
+  },
+  "rear-left-leg": {
+    "file": "assets/parts/rear-left-leg.png",
+    "width": 178,
+    "height": 306,
+    "source_bbox": [
+      295,
+      810,
+      473,
+      1116
+    ]
+  },
+  "rear-right-leg": {
+    "file": "assets/parts/rear-right-leg.png",
+    "width": 182,
+    "height": 312,
+    "source_bbox": [
+      574,
+      811,
+      756,
+      1123
+    ]
+  }
+}

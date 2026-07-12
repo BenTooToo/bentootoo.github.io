@@ -5,6 +5,14 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-07-09",
+        version: "v0.6",
+        done: [
+          "增加奶牛图标。",
+          "将首页背景切换成宇宙主题。"
+        ]
+      },
+      {
         date: "2026-07-01",
         version: "v0.5B",
         done: [
@@ -60,6 +68,14 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-07-09",
+        version: "v0.6",
+        done: [
+          "Added the cow icon.",
+          "Switched the homepage background to a cosmic theme."
+        ]
+      },
+      {
         date: "2026-07-01",
         version: "v0.5B",
         done: [
@@ -114,6 +130,14 @@ const devlogContent = {
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
     entries: [
+      {
+        date: "2026-07-09",
+        version: "v0.6",
+        done: [
+          "Ajout de l'icône de vache.",
+          "Passage du fond de la page d'accueil à un thème cosmique."
+        ]
+      },
       {
         date: "2026-07-01",
         version: "v0.5B",
