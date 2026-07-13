@@ -700,21 +700,91 @@ html[lang="zh-CN"] .business-name {
   overflow: hidden;
 }
 
-a.project-card {
+a.project-card,
+button.project-card {
   cursor: pointer;
   transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
 }
 
-a.project-card:hover {
+a.project-card:hover,
+button.project-card:hover {
   border-color: rgba(200, 255, 89, 0.58);
   box-shadow: 0 30px 82px rgba(0, 0, 0, 0.36);
   transform: translateY(-4px);
 }
 
-a.project-card:focus-visible {
+a.project-card:focus-visible,
+button.project-card:focus-visible {
   border-color: var(--lime);
   outline: 3px solid var(--lime);
   outline-offset: 5px;
+}
+
+button.project-card {
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.game-language-dialog {
+  width: min(90vw, 420px);
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 22px;
+  color: #fff;
+  background: rgba(14, 14, 28, 0.96);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.game-language-dialog::backdrop {
+  background: rgba(3, 3, 12, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.game-language-dialog__panel {
+  position: relative;
+  padding: 40px 32px 32px;
+  text-align: center;
+}
+
+.game-language-dialog__panel h2 {
+  margin: 0 0 28px;
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+}
+
+.game-language-dialog__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: 0;
+  color: rgba(255, 255, 255, 0.72);
+  background: transparent;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.game-language-dialog__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.game-language-dialog__actions a {
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.game-language-dialog__actions a:hover,
+.game-language-dialog__actions a:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
 }
 
 .project-card::after {

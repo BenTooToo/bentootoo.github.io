@@ -164,11 +164,10 @@
           </div>
 
           <div class="project-grid">
-            <a
+            <button
               class="project-card feature-card"
-              href="https://bentootoo.github.io/Empty_classes/"
-              target="_blank"
-              rel="noopener noreferrer"
+              type="button"
+              id="emptyClassLauncher"
               aria-label="进入《折棠7中同窗录》解谜游戏"
               data-i18n-aria="projects.emptyLinkLabel"
               data-reveal
@@ -180,10 +179,21 @@
                 <p data-i18n="projects.emptyBody">虚拟现实解密（ARG），探索正常的班级回忆录背后的秘密……</p>
                 <span class="project-cta" data-i18n="projects.emptyCta">点击图片开始游戏 <span aria-hidden="true">↗</span></span>
               </div>
-            </a>
+            </button>
           </div>
         </div>
       </section>
+
+      <dialog class="game-language-dialog" id="gameLanguageDialog" aria-labelledby="gameLanguageDialogTitle">
+        <form method="dialog" class="game-language-dialog__panel">
+          <button class="game-language-dialog__close" type="submit" value="cancel" aria-label="Close">×</button>
+          <h2 id="gameLanguageDialogTitle">Empty Class</h2>
+          <div class="game-language-dialog__actions">
+            <a href="https://bentootoo.github.io/Empty_classes/">中文</a>
+            <a href="https://bentootoo.github.io/Empty_classes_FR/">Français</a>
+          </div>
+        </form>
+      </dialog>
 
       <section class="content-section section-panel blog-section" id="blog">
         <div class="section-shell split-shell">

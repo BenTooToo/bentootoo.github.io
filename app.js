@@ -60,15 +60,15 @@ const translations = {
     "projects.title": "Projects",
     "projects.lede": "At least lately, he has been trying to make interesting things.",
     "projects.emptyLabel": "Opening work",
-    "projects.emptyTitle": "Zhetang No. 7 Middle School Class Album",
+    "projects.emptyTitle": "Empty Class",
     "projects.emptyBody": "An alternate reality puzzle (ARG) about uncovering the secrets behind an ordinary class memory book.",
     "projects.emptyCta": "Click the image to play ↗",
-    "projects.emptyLinkLabel": "Play the Zhetang No. 7 Middle School Class Album puzzle game",
+    "projects.emptyLinkLabel": "Play Empty Class",
     "blog.title": "Personal Blog",
     "blog.lede": "Bentootoo likes publishing his thoughts here, perhaps because he wants to preserve every minute of himself.",
     "blog.cardAgentDate": "2026-07-12 / Making / Technology",
     "blog.cardAgentTitle": "On Agents, Vibe Coding, and the Future",
-    "blog.cardAgentBody": "Starting from the making of Zhetang No. 7 Middle School Class Album, this essay considers how agents lower the barrier to game creation—and why imagination is becoming more important.",
+    "blog.cardAgentBody": "Starting from the making of Empty Class, this essay considers how agents lower the barrier to game creation—and why imagination is becoming more important.",
     "blog.cardOneDate": "2026-06-20 / Philosophy / Technology",
     "blog.cardOneTitle": "AI's Reflection",
     "blog.cardOneBody": "Starting from an AI voice on the VIVA Tech stage, this essay asks whether humanity, emotion, and imperfection can still resist replacement.",
@@ -103,15 +103,15 @@ const translations = {
     "projects.title": "Projets",
     "projects.lede": "Ces derniers temps, il essaie au moins de fabriquer des choses intéressantes.",
     "projects.emptyLabel": "Projet fondateur",
-    "projects.emptyTitle": "Album de classe du collège Zhetang n° 7",
+    "projects.emptyTitle": "Empty Class",
     "projects.emptyBody": "Un jeu d'énigmes en réalité alternée (ARG) pour explorer les secrets cachés derrière un album de classe ordinaire.",
     "projects.emptyCta": "Cliquez sur l’image pour jouer ↗",
-    "projects.emptyLinkLabel": "Jouer à l’énigme Album de classe du collège Zhetang n° 7",
+    "projects.emptyLinkLabel": "Jouer à Empty Class",
     "blog.title": "Blog personnel",
     "blog.lede": "Bentootoo aime publier ses pensées ici, peut-être parce qu'il veut préserver chaque minute de lui-même.",
     "blog.cardAgentDate": "2026-07-12 / Création / Technologie",
     "blog.cardAgentTitle": "Agents, vibe coding et avenir",
-    "blog.cardAgentBody": "À partir de la création de l’Album de classe du collège Zhetang n° 7, ce texte examine comment les agents abaissent le seuil de la création de jeux et pourquoi l’imagination devient essentielle.",
+    "blog.cardAgentBody": "À partir de la création d’Empty Class, ce texte examine comment les agents abaissent le seuil de la création de jeux et pourquoi l’imagination devient essentielle.",
     "blog.cardOneDate": "2026-06-20 / Philosophie / Technologie",
     "blog.cardOneTitle": "Réflexion sur l'IA",
     "blog.cardOneBody": "À partir d'une voix d'IA entendue sur la scène de VIVA Tech, ce texte interroge l'humanité, l'émotion et l'imperfection face au remplacement.",
@@ -172,6 +172,18 @@ document.querySelectorAll(".lang-button").forEach((button) => {
 });
 
 setLanguage(defaultLanguage);
+
+const emptyClassLauncher = document.querySelector("#emptyClassLauncher");
+const gameLanguageDialog = document.querySelector("#gameLanguageDialog");
+
+if (emptyClassLauncher && gameLanguageDialog) {
+  emptyClassLauncher.addEventListener("click", () => gameLanguageDialog.showModal());
+  gameLanguageDialog.addEventListener("click", (event) => {
+    if (event.target === gameLanguageDialog) {
+      gameLanguageDialog.close();
+    }
+  });
+}
 
 const year = document.querySelector("#year");
 if (year) {
