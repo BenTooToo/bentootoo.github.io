@@ -60,6 +60,7 @@ const blogGraph = {
       mobileX: 46,
       mobileY: 26,
       size: 170,
+      gameUrl: "https://bentootoo.github.io/Empty_classes/",
       links: [
         {
           text: "银河电灯",
@@ -145,6 +146,76 @@ const blogGraph = {
         "话虽如此，但是，不可否认的是，在一次又一次的发展中，AI 越来越像人类了。",
         "或许有一天，当 AI 也获得承受痛苦、感受执念的能力时，我们就需要写一篇新的文章来思考了。"
       ]
+    },
+    {
+      id: "ai-singularity-communism",
+      title: "论 AI、奇异点与共产主义",
+      problem: "我们不探讨政治，我们探讨未来",
+      date: "2026-08-05",
+      mainCategoryId: "philosophy",
+      categoryIds: ["philosophy", "technology"],
+      subcategoryId: null,
+      x: 86,
+      y: 50,
+      mobileX: 82,
+      mobileY: 50,
+      size: 174,
+      paragraphs: [
+        "我认为自己可以用很多的形容词来形容：创意、理想主义者、有活力、荒谬，以及一点点的迟钝。",
+        "这样的形容词还可以一直延续很久，但是我并不认为政治是其中一个形容词。",
+        "无论政治原初有着多少不同的定义和解析，在法国，以及很多欧美国家来说，在当今社会环境下大谈政治本身就是一件很荒谬的事。太多的利益冲突，太多的历史原因，太多的爱恨情仇。并不是不能参与，而是说，当你的参与必然会招惹另外一个群体的敌意时，政治的讨论就已然从一种社会参与变成了一种风险投机。",
+        "“如果我和他聊政治，我们会不会成为敌人？如果我以这种形式参与到政治当中，我会不会被人敌视？”",
+        "所以，我不是一个政治的人。",
+        "我相信自己不是第一个有过这个想法的人。",
+        "AI 会使人失业。我认为这并不是侃侃而谈。为什么呢？冷战结束后，以美元体系、金融全球化和跨国资本流动为核心的世界经济秩序，进一步确定了 21 世纪初的发展方向。但资本主义并没有发明交换、货币或债务。除去资本积累和市场交换的扩展，价值本身是人类进化的象征，是发展的根基。回看历史，不管是巴黎公社运动的失败，还是其他共产主义的尝试，都教会了我们一件事情：如果共产主义真的可以实现，那么它必定以一种极端高度的富裕为根基。这里的富裕不仅是物质上的富裕，更是一种技术和精神上的富足。我认为，资本主义，以及延伸出来的社会主义，本质上是一个过渡阶段，一个由于技术限制而不得不最大化生产力的过渡。",
+        "当然，这里的共产主义更偏向于当代所说的自动化社会主义，Nick Srnicek 与 Alex Williams 所提出的后资本主义，或者 Aaron Bastani 所提出的全自动化奢华共产主义。我本人特别反感这种纯粹由“高级的名字”所堆叠出来的知识壁垒。所以，接下来让我们来想象这样一个社会。",
+        "当 AI 已经达到一种可以完全自主工作的程度，公司管理者要做的第一件事情就是裁员，裁掉所有的低级技术人员。马克思在《政治经济学批判大纲》的“机器论片段”中曾预见，当社会知识和机器体系成为直接生产力时，以个人劳动时间作为财富尺度的制度将产生根本矛盾。AI 或许正是这种“社会一般智力”的一种极端化形式。",
+        "很快，技术人才就会从根源上断代。当老一辈的高级技术人员退休，技术人员会产生完全的缺失。最后就会产生两种情况：要么 AI 完全取代职员，让高等技术人员的存在也完全没有必要。那个时候，资本主义就彻底走向了极端：每一个公司都会成为股东和 AI 的完全技术壁垒。而当没有人再有工作的机会，人们不就同时失去了消费能力？这种消费能力的缺失，不就会导致公司的崩塌？",
+        "第二种情况，则是资本家们在意识到这一点以后，强行限制 AI 的使用，让生产力保持在一个平衡点：既不会使人失业，又能最大化地提高人类的效率。很可惜，这第二个假设实现的可能性远低于第一个假设，因为人性驱使着探索和提升。只要有需求，就会有人去钻研；而就 AI 目前的发展趋势，这个需求并不会被限制，纸是包不住火的。",
+        "所以呢？当大部分人都失业，这代表的是社会阶级的彻底固化，还是一个从上而下的完全社会崩坏？",
+        "我认为，都不是。",
+        "实际上，AI 并不能缩短阶级之间的差距。无论是关系网、信息差、初始资本，还是生活环境，AI 都不能做出什么改变。硬要说的话，可能信息差会有所好转。",
+        "但本质上，AI 必定会在某一天消除阶级本身的概念。为什么呢？因为这个社会将不再需要管理者、指挥者和工作者。当 AI 不再是人类的工具，而是一种可以自主进化、自主科研的存在时，人类的工作又有什么意义？当一个基于大数据、纯粹理性、近乎全知全能的智能体为我们指明方向时，我们有什么理由去拒绝？",
+        "很可惜，事情没有那么简单。AI 注定无法全知全能，没有事物可以。抛开精神世界不谈，就物理世界而言，人类没有办法造神。但即便如此，这样一个包含着人类所有知识的存在，不还是值得信任么？如果需要反对的声音，AI 自己难道不可以生成么？多线处理、无穷的思考，甚至不断地检查错误、进行证明——这一切都基于能量的消耗，但是，如同人类一样，不是么？",
+        "我就这样想着，越想越悲观。我认为人类很难从中找到破局的可能性了。从一个角度来说，制造出 AI，本来就是一种必然；AI 取代人类，同理。所谓奇异点，也许并不是一道突然出现的闪电，而是这套逻辑越过某个再也无法回头的界线。",
+        "所以，假设这一切都会在不久后的将来成为现实，人类除了活着以外，还能够干什么？电影？娱乐？游戏？奢靡？还是恐惧？癫狂？崩坏？自寻短见？Nick Srnicek 与 Alex Williams 在《发明未来：后资本主义与无工作世界》中强调，自动化本身并不是解放。只有当自动化与缩短工时、社会保障以及对生产能力的公共控制结合起来，它才可能成为后工作社会的物质基础。",
+        "而这个时候，我们之前所提到的共产主义又变成了一个可行的现实。",
+        "各取所需，同时只干着自己喜欢做的事情。不管是某一个职业、某一个兴趣爱好，还是艺术创作，不断地表达自己，不断地充实自己的生活。让生活从工作中脱离并不是一个惩罚，而是一个新的开始。让手机重新变为电话，让探索成为可能。寻找这茫茫人海之中的联系，然后断开联系，如此反复；不断地感受人与人之间的爱意，让自己的精神世界充盈，才能避免物理世界的空虚和虚无。",
+        "我再一次地，为了避免虚无主义，陷入了这理想主义的怪圈。",
+        "又或者，这就是人类的终结。",
+        "我这么想着，又点开了自己的网页，开始设计起自己的游戏。"
+      ]
+    },
+    {
+      id: "my-ideal",
+      title: "我的理想",
+      problem: "名为幼稚的成熟",
+      date: "2026-08-05",
+      mainCategoryId: "making",
+      categoryIds: ["making", "music"],
+      subcategoryId: null,
+      x: 14,
+      y: 86,
+      mobileX: 18,
+      mobileY: 84,
+      size: 164,
+      paragraphs: [
+        "我正在经历人生的一个重大转折期。",
+        "从一个学生到工作者的转变，一个有着寒暑假的求知者，到一个以赚钱为目的的打工人。",
+        "让我震惊的是，我从来没有公开表达过自己对于这个转变的恐惧，但是，我相信对于很多人来说，是很忐忑的。",
+        "在这个最后的暑假，我似乎找到了自己的所爱，也就是音乐、游戏制作。",
+        "那是一种参与过后的满足感。音乐来说，我每周都会去本地的酒馆进行 jam，有的时候我会弹钢琴，有的时候我会弹键盘，有的时候我会唱歌，有的时候我会弹三角铁，有的时候我会拍非洲鼓，有的时候，我翩翩起舞，还有的时候，我就在那里静静地听。",
+        "小酌一杯，然后在那里聆听、享受、参与、活在当下。",
+        "我认为人生不过如此。我认为我对自己的人生已经很满足了。",
+        "对于游戏创作来说，我最近成功地组织起来了一个 5 个人的团队，美术、代码、音乐，所有人都是我的朋友，都是我一手组织起来的。我动用了自己所有的联系，我感觉真的……无比地幸福。就是说，能够在我需要的时候，有这么一帮和我志同道合的朋友，即使动机不同，但是能够在这短暂的 4 天里面一起奋斗，一起不眠。",
+        "或许这就是我理想的人生。",
+        "但是我也很忐忑。",
+        "代码从来就不是我的强项，不管是在学校，还是本次的 game jam，我都不可避免地用了很多的 AI。对此，我很害怕。因为，其他人的天赋是实打实的，而我自己却没有什么实质上的努力，只是一味地写代码罢了。",
+        "我不断地质问自己，我真的适合制作游戏么？此时此刻，我认为答案仍然是：我适合。",
+        "因为，真正让我兴奋与幸福的时刻，从来都不是思考代码结构，而是想法的诞生、产品的实现、项目的管理。而代码本身，正是我可以，也应该用 AI 来实现的一种手段。也就是说，在一个 AI 盛行的时代，我有幸能够借助他人制造的工具来实现自己的梦想。这本身对于我来说，是一件很浪漫的事情。而我认为，我这辈子就应该把自己的时间和精力奉献在这上面——并不是 AI 的开发，而是借助 AI，来开发别人可能会用到的工具，不管这是不是未来。对于我来说，这就是我最好的时机。未来大概率就会是如此：人人都可以开发，人人都可以想象。所以，我所做的，本质上是消耗我的时间，来为其他人提供一个便利的服务，把一个可能的想法提前实现出来，让他们不需要造轮子。",
+        "我想要成为这样的一个制造者。",
+        "我也一定会成为这样的一个制造者。这并不是自大，而是一种持久的人生目标。我这辈子永远不会成为我所期望的制造者，但是，能够借助我的 contact、我的工具，一点一点地接近这一个理想，我认为我的人生已经值得。"
+      ]
     }
   ]
 };
@@ -154,9 +225,10 @@ const blogI18n = {
     uncategorized: "未分类",
     noSubcategory: "无子类别",
     closeArticle: "关闭文章",
-    mapLabel: "本2兔个人博客思维导图",
-    pageTitle: "个人博客 | 本2兔",
-    pageDescription: "本2兔的个人博客思维导图，用哲学、音乐、制作和技术连接文章、类别与未来的子类别。",
+    gameLinkLabel: "点击这里进入游戏",
+    mapLabel: "思索之屋文章思维导图",
+    pageTitle: "思索之屋 | 本2兔",
+    pageDescription: "思索之屋：本2兔用哲学、音乐、制作和技术连接文章、类别与彼此的想法。",
     categories: {},
     subcategories: {},
     articles: {}
@@ -165,11 +237,12 @@ const blogI18n = {
     uncategorized: "Uncategorized",
     noSubcategory: "No subcategory",
     closeArticle: "Close article",
-    mapLabel: "Bentootoo personal blog mind map",
-    pageTitle: "Personal Blog | Bentootoo",
-    pageDescription: "Bentootoo's personal blog mind map, connecting essays, categories, and future subcategories through philosophy, music, making, and technology.",
+    gameLinkLabel: "Click here to enter the game",
+    mapLabel: "House of Reflection essay map",
+    pageTitle: "House of Reflection | Bentootoo",
+    pageDescription: "The House of Reflection connects Bentootoo's essays and readers' ideas through philosophy, music, making, and technology.",
     center: {
-      center: "Bentootoo"
+      center: "本2兔"
     },
     categories: {
       philosophy: "Philosophy",
@@ -179,6 +252,69 @@ const blogI18n = {
     },
     subcategories: {},
     articles: {
+      "agent-vibe-coding-future": {
+        title: "On Agents, Vibe Coding, and the Future",
+        problem: "What I learned from spending a week creating Zhetang No. 7: Classmates",
+        paragraphs: [
+          "For programmers with ideals—or, cross that out, with time to spare—using agents to assist with coding, or even letting them take over almost entirely through what we call vibe coding, is no longer anything new. As a university student buried in preparation for graduate entrance exams, the fact that I can access agents such as Codex shows just how accessible this technology has become. With agents developing so quickly, even discussing the relationship between AI and creation is no longer a particularly novel subject.",
+          "Today, I will not approach energy consumption from a technical perspective, nor will I focus on the inspiring yet unsettling prospect of AI conducting research autonomously. I want to look instead at what interests me more: game creation—or, more precisely, using agents to help design games. If an independent creator like Ginga Light can build an ARG by running eight Claude windows at once, enthusiasm for games still remains a threshold for creation. But when I used Codex as my main agent, relied only on the weekly allowance included with GPT Plus, and produced something genuinely presentable in less than a week, I came to believe that the golden age of creation is not in the future. It is already here.",
+          "AI is, in essence, an amplifier.",
+          "What it amplifies is your ability to turn an idea into reality. It lets you discover broader lines of thought without first reading ten thousand books, and create software without first learning how to code. An ARG lasting two hours could, without exaggeration, once have taken me an entire summer to build. I made it in less than a week. Vibe coding with an agent feels like imagining impossible things with a like-minded friend: you explain your ideas as freely as you can, and somehow AI can actually make them. It feels as if, a few decades from now, the most important human ability will no longer be technical skill, but imagination.",
+          "While creating Zhetang No. 7: Classmates, I discovered that the greatest difficulty had shifted from technology to communication.",
+          "Without an exact prompt thousands of words long to guide it, AI tends to add many unnecessary flourishes. Often, I explain an idea, look at the preview it produces, and then tell it what does not work and what does not match what I had in mind. This form of dialogue is strangely addictive. It feels like the relationship between a director and an actor.",
+          "By the time the game was finished, I had created the story, filled in the information, and designed the levels, yet I had barely touched the code. The feeling was extraordinary. I believe this is the future. Code should work this way if we want humanity's overall technical capacity and creative power to reach another level."
+        ]
+      },
+      "ai-singularity-communism": {
+        title: "On AI, the Singularity, and Communism",
+        problem: "We are not discussing politics. We are discussing the future.",
+        paragraphs: [
+          "I could describe myself with many words: creative, idealistic, energetic, absurd, and just a little slow on the uptake.",
+          "The list could go on for a long time, but I do not think political is one of those words.",
+          "However many original definitions and interpretations politics may have, talking grandly about politics in France—and in many Western countries—has become absurd in today's social climate. There are too many conflicts of interest, too many historical causes, too many loves and hatreds. It is not that one cannot participate. It is that when participation inevitably provokes the hostility of another group, political discussion ceases to be a form of civic engagement and becomes a speculative risk.",
+          "‘If I talk politics with him, will we become enemies? If I participate in politics in this way, will people become hostile toward me?’",
+          "So I am not a political person.",
+          "I am sure I am not the first person to have thought this.",
+          "AI will make people unemployed. I do not think this is empty talk. Why? After the end of the Cold War, a world economic order centered on the dollar system, financial globalization, and cross-border capital flows further established the direction of the early twenty-first century. Yet capitalism did not invent exchange, money, or debt. Beyond capital accumulation and the expansion of market exchange, value itself is a symbol of human evolution and a foundation of development. Looking back at history, both the failure of the Paris Commune and other communist experiments teach us one thing: if communism can truly be realized, it must rest on an extreme degree of abundance. That abundance must be not only material, but technological and spiritual as well. I see capitalism, and the socialism that developed from it, essentially as transitional stages—transitions forced by technological limits to maximize productive capacity.",
+          "Of course, the communism I mean here is closer to what is now called automated socialism, the post-capitalism proposed by Nick Srnicek and Alex Williams, or Aaron Bastani's fully automated luxury communism. I strongly dislike the intellectual barriers built purely from stacks of ‘advanced’ terminology. So let us simply imagine such a society.",
+          "Once AI can work with complete autonomy, the first thing company managers will do is dismiss employees, beginning with junior technical staff. In the ‘Fragment on Machines’ in the Grundrisse, Marx anticipated a fundamental contradiction: when social knowledge and systems of machinery become direct forces of production, wealth can no longer coherently be measured by individual labor time. AI may be an extreme form of this ‘general intellect.’",
+          "The technical profession will soon be severed at its roots. When the older generation of senior specialists retires, there will be no one left to replace them. Two outcomes then become possible. In the first, AI entirely replaces employees, until even advanced specialists are unnecessary. Capitalism reaches its extreme: every company becomes a sealed technological barrier belonging to shareholders and AI. But if no one has an opportunity to work, do people not also lose their ability to consume? And would the disappearance of that purchasing power not bring companies down with it?",
+          "In the second outcome, capital owners recognize the danger and forcibly restrict the use of AI, keeping productivity at a balance where it improves human efficiency as much as possible without eliminating jobs. Unfortunately, this outcome is far less likely than the first. Human nature drives exploration and improvement. Wherever demand exists, someone will pursue it; given AI's current trajectory, that demand will not be contained. Fire cannot be wrapped in paper forever.",
+          "So what happens when most people are unemployed? Does it mean the total ossification of social class, or a complete collapse of society from the top down?",
+          "I think it means neither.",
+          "In reality, AI cannot narrow the gap between classes. Whether the decisive factor is social networks, unequal access to information, starting capital, or living conditions, AI cannot change very much. If anything, it may reduce information inequality a little.",
+          "Yet at a deeper level, AI will inevitably abolish the very concept of class one day. Why? Because society will no longer need managers, commanders, or workers. When AI is no longer a human tool but an existence capable of improving itself and conducting research autonomously, what meaning will human work retain? When an almost omniscient and omnipotent intelligence, grounded in vast data and pure reason, points out a direction for us, what reason would we have to refuse it?",
+          "Unfortunately, it is not that simple. AI is destined never to be omniscient or omnipotent; nothing can be. Even if we leave the spiritual world aside and consider only the physical one, humanity cannot manufacture a god. Yet would an existence containing all human knowledge not still deserve our trust? If dissenting voices are needed, could AI not generate them itself? Parallel processing, endless reflection, ceaseless error checking and proof—all of this consumes energy, but is that not true of human thought as well?",
+          "The more I followed this thought, the more pessimistic I became. I found it hard to see how humanity could break out of it. From one perspective, creating AI was inevitable; AI replacing humanity follows the same logic. Perhaps the singularity will not arrive like a sudden bolt of lightning, but as the moment this logic crosses a boundary beyond which there is no return.",
+          "So if all of this becomes reality in the near future, what can human beings do besides remain alive? Films? Entertainment? Games? Luxury? Or fear, madness, collapse, suicide? In Inventing the Future: Postcapitalism and a World Without Work, Nick Srnicek and Alex Williams stress that automation is not liberation in itself. Only when combined with shorter working hours, social security, and public control over productive capacity can it become the material basis of a post-work society.",
+          "At that point, the communism mentioned earlier becomes a feasible reality once again.",
+          "From each according to their needs, while everyone does only what they truly enjoy. It might be a profession, a hobby, or artistic creation: expressing oneself without end and continually enriching one's life. Separating life from work would not be a punishment, but a new beginning. Let the phone become a telephone again; let exploration become possible. Find connections within the vast sea of people, then break them, and repeat. Keep experiencing the affection between human beings, and fill the inner world so that it can withstand the emptiness and void of the physical one.",
+          "Once again, in trying to escape nihilism, I have fallen into the same idealistic circle.",
+          "Or perhaps this is simply the end of humanity.",
+          "With that thought, I opened my webpage again and went back to designing my game."
+        ]
+      },
+      "my-ideal": {
+        title: "My Ideal",
+        problem: "A Maturity Called Childishness",
+        paragraphs: [
+          "I am going through a major turning point in my life.",
+          "It is the transition from student to worker—from a seeker of knowledge with winter and summer holidays to an employee working to earn money.",
+          "What surprises me is that I have never openly expressed my fear of this transition, yet I believe it fills many people with unease.",
+          "During this final summer holiday, I seem to have found what I love: music and game development.",
+          "There is a sense of fulfillment that comes from taking part. In music, I go to a local bar for a jam every week. Sometimes I play piano, sometimes keyboard, sometimes I sing, sometimes I play the triangle, sometimes I beat an African drum, sometimes I dance, and sometimes I simply stand there and listen quietly.",
+          "I have a drink, then listen, enjoy, participate, and live in the moment.",
+          "I think this is all life needs to be. I think I am already deeply satisfied with my life.",
+          "As for making games, I recently managed to bring together a team of five. Art, code, music—everyone is my friend, and I organized the whole group myself. I called on every connection I had, and I felt truly, indescribably happy. When I needed them, there was this group of like-minded friends. Even if our motivations differed, we could still spend those brief four days striving together and staying awake together.",
+          "Perhaps this is my ideal life.",
+          "But I am also uneasy.",
+          "Code has never been my strength, whether at school or during this game jam, and I inevitably used a great deal of AI. That frightens me. Other people's talent is real and tangible, while I have made no substantial effort of my own—I have merely kept writing code.",
+          "I keep asking myself whether I am truly suited to making games. At this moment, I still believe the answer is yes: I am.",
+          "The moments that truly excite me and make me happy have never been those spent thinking about code structure. They are the birth of an idea, the realization of a product, and the management of a project. Code itself is a means that I can—and should—use AI to realize. In an age shaped by AI, I am fortunate to be able to use tools made by others to realize my dreams. To me, that is deeply romantic. I believe I should devote my life, time, and energy to this—not to developing AI itself, but to using AI to develop tools that others may need, whether or not that is the future. For me, this is the best possible moment. The future will probably be one in which everyone can develop and everyone can imagine. What I do, then, is spend my own time providing a convenient service for others: realizing a possible idea in advance so that they do not need to reinvent the wheel.",
+          "I want to become that kind of maker.",
+          "And I will become that kind of maker. This is not arrogance, but a lasting goal for my life. I may never fully become the maker I hope to be, but if I can use my contacts and my tools to move toward that ideal little by little, then I believe my life will already have been worthwhile."
+        ]
+      },
       "choice-effort": {
         title: "The False Choice Between Choice and Effort",
         problem: "Is failure really caused by not trying hard enough, or by environment, talent, and direction shaping the result together?",
@@ -237,11 +373,12 @@ const blogI18n = {
     uncategorized: "Non classé",
     noSubcategory: "Aucune sous-catégorie",
     closeArticle: "Fermer l'article",
-    mapLabel: "Carte mentale du blog personnel de Bentootoo",
-    pageTitle: "Blog personnel | Bentootoo",
-    pageDescription: "La carte mentale du blog personnel de Bentootoo relie les textes, les catégories et les futures sous-catégories par la philosophie, la musique, la création et la technologie.",
+    gameLinkLabel: "Cliquez ici pour entrer dans le jeu",
+    mapLabel: "Carte des textes de la Maison de réflexion",
+    pageTitle: "Maison de réflexion | Bentootoo",
+    pageDescription: "La Maison de réflexion relie les textes de Bentootoo et les idées de ses lecteurs par la philosophie, la musique, la création et la technologie.",
     center: {
-      center: "Bentootoo"
+      center: "本2兔"
     },
     categories: {
       philosophy: "Philosophie",
@@ -251,6 +388,69 @@ const blogI18n = {
     },
     subcategories: {},
     articles: {
+      "agent-vibe-coding-future": {
+        title: "Des agents, du vibe coding et de l'avenir",
+        problem: "Ce que m'a appris une semaine passée à créer Zhetang no 7 : Camarades de classe",
+        paragraphs: [
+          "Pour les programmeurs qui ont des idéaux — rayez cela : qui ont du temps libre — utiliser des agents pour assister la programmation, voire leur en confier presque entièrement la réalisation par ce que l'on appelle le vibe coding, n'a aujourd'hui plus rien de nouveau. Pour un étudiant accaparé par la préparation des concours d'entrée en master, le simple fait de pouvoir accéder à des agents comme Codex montre à quel point cette technologie est devenue accessible. À l'heure où les agents progressent si vite, même discuter du rapport entre l'IA et la création n'est plus un sujet particulièrement neuf.",
+          "Aujourd'hui, je ne parlerai pas de la consommation énergétique sous l'angle de la pratique technique, et je ne tournerai pas non plus mon regard vers cette perspective à la fois exaltante et inquiétante d'une IA capable de mener ses propres recherches. Je préfère m'intéresser à ce qui me passionne davantage : la création de jeux ou, plus précisément, l'utilisation d'agents pour aider à leur conception. Lorsqu'un créateur indépendant comme Ginga Light peut réaliser un ARG en ouvrant huit fenêtres Claude à la fois, la passion du jeu demeure encore un seuil à franchir. Mais lorsque j'ai utilisé Codex comme agent principal, avec pour seule ressource le quota hebdomadaire inclus dans GPT Plus, et que j'ai produit en moins d'une semaine quelque chose de véritablement présentable, j'en suis venu à penser que l'âge d'or de la création n'appartient pas au futur. Il a déjà commencé.",
+          "L'IA est, par essence, un amplificateur.",
+          "Ce qu'elle amplifie, c'est notre capacité à transformer une idée en réalité. Elle permet d'élargir sa pensée sans avoir d'abord lu dix mille livres, et de créer un logiciel sans avoir d'abord appris à programmer. Sans exagérer, un ARG de deux heures aurait autrefois pu me demander tout un été. Je l'ai réalisé en moins d'une semaine. Pratiquer le vibe coding avec un agent, c'est comme laisser libre cours à son imagination avec un ami qui partage les mêmes élans : on lui expose ses idées aussi librement que possible et, d'une manière ou d'une autre, l'IA parvient réellement à les matérialiser. On croirait que, dans quelques décennies, la faculté humaine la plus importante ne sera plus la technique, mais l'imagination.",
+          "En créant Zhetang no 7 : Camarades de classe, j'ai découvert que la principale difficulté n'était plus la technologie, mais la communication.",
+          "Sans une consigne précise de plusieurs milliers de mots pour la guider, l'IA a tendance à ajouter quantité d'ornements inutiles. Souvent, je lui explique mon idée, j'observe l'aperçu qu'elle produit, puis je lui indique ce qui ne fonctionne pas et ce qui ne correspond pas à mon intention. Cette forme de dialogue est étrangement addictive. Elle rappelle la relation entre un metteur en scène et un acteur.",
+          "Une fois le jeu achevé, j'avais créé l'intrigue, renseigné les informations et conçu les niveaux, mais je n'avais presque pas touché au code. Cette sensation était extraordinaire. Je crois que c'est cela, l'avenir. Le code devrait fonctionner ainsi si nous voulons faire franchir un nouveau palier aux capacités techniques et au pouvoir créatif de l'humanité."
+        ]
+      },
+      "ai-singularity-communism": {
+        title: "De l'IA, de la singularité et du communisme",
+        problem: "Nous ne parlons pas de politique. Nous parlons de l'avenir.",
+        paragraphs: [
+          "Je pourrais me décrire avec beaucoup de mots : créatif, idéaliste, énergique, absurde, et juste un peu lent à comprendre.",
+          "La liste pourrait se prolonger longtemps, mais je ne crois pas que politique en fasse partie.",
+          "Quelles qu'aient été les définitions et les interprétations originelles de la politique, parler à grands gestes de politique en France — comme dans beaucoup de pays occidentaux — est devenu absurde dans le climat social actuel. Trop de conflits d'intérêts, trop de raisons historiques, trop d'amour et de haine. Ce n'est pas qu'il soit impossible de participer. Mais lorsque toute participation provoque inévitablement l'hostilité d'un autre groupe, la discussion politique cesse d'être un engagement dans la cité pour devenir une spéculation risquée.",
+          "« Si je parle politique avec lui, allons-nous devenir ennemis ? Si je participe de cette manière à la politique, vais-je susciter l'hostilité des autres ? »",
+          "Ainsi, je ne suis pas quelqu'un de politique.",
+          "Je suis certain de ne pas être le premier à avoir eu cette pensée.",
+          "L'IA fera perdre leur emploi aux gens. Je ne crois pas que ce soit une parole en l'air. Pourquoi ? Après la fin de la guerre froide, un ordre économique mondial centré sur le système du dollar, la mondialisation financière et la circulation transnationale des capitaux a confirmé l'orientation du début du XXIe siècle. Pourtant, le capitalisme n'a inventé ni l'échange, ni la monnaie, ni la dette. Au-delà de l'accumulation du capital et de l'expansion des échanges marchands, la valeur elle-même est un symbole de l'évolution humaine et un fondement du développement. Lorsque l'on regarde l'histoire, l'échec de la Commune de Paris comme les autres expériences communistes nous enseignent une chose : si le communisme peut réellement advenir, il devra reposer sur une abondance extrême. Une abondance non seulement matérielle, mais aussi technique et spirituelle. Je considère le capitalisme, ainsi que le socialisme qui en découle, comme des étapes essentiellement transitoires, contraintes par les limites techniques à maximiser les forces productives.",
+          "Bien sûr, le communisme dont je parle ici se rapproche davantage de ce que l'on appelle aujourd'hui le socialisme automatisé, du post-capitalisme proposé par Nick Srnicek et Alex Williams, ou du communisme de luxe entièrement automatisé d'Aaron Bastani. Je déteste particulièrement les barrières intellectuelles bâties par le simple empilement de termes « savants ». Imaginons donc, tout simplement, une telle société.",
+          "Lorsque l'IA sera capable de travailler en toute autonomie, la première décision des dirigeants d'entreprise sera de licencier, en commençant par tout le personnel technique subalterne. Dans le « Fragment sur les machines » des Grundrisse, Marx entrevoyait déjà une contradiction fondamentale : lorsque le savoir social et le système des machines deviennent des forces productives directes, la richesse ne peut plus être mesurée de manière cohérente par le temps de travail individuel. L'IA est peut-être une forme extrême de cet « intellect général ».",
+          "Les métiers techniques seront bientôt coupés à la racine. Lorsque l'ancienne génération de spécialistes expérimentés partira à la retraite, personne ne sera là pour la remplacer. Deux issues se dessineront alors. Dans la première, l'IA remplacera entièrement les salariés, jusqu'à rendre inutiles même les spécialistes de haut niveau. Le capitalisme atteindra son extrême : chaque entreprise deviendra une forteresse technologique fermée, appartenant aux actionnaires et à l'IA. Mais si plus personne n'a la possibilité de travailler, les gens ne perdent-ils pas aussi leur capacité de consommer ? Et la disparition de ce pouvoir d'achat ne provoquerait-elle pas à son tour la chute des entreprises ?",
+          "Dans la seconde issue, les détenteurs du capital prendront conscience du danger et limiteront de force l'usage de l'IA, afin de maintenir la productivité à un point d'équilibre : améliorer autant que possible l'efficacité humaine sans supprimer les emplois. Malheureusement, cette hypothèse est bien moins probable que la première. La nature humaine pousse à l'exploration et au dépassement. Dès qu'une demande existe, quelqu'un cherchera à y répondre ; au vu de la trajectoire actuelle de l'IA, cette demande ne sera pas contenue. On ne peut pas envelopper éternellement le feu dans du papier.",
+          "Alors, que se passera-t-il lorsque la majorité des gens seront sans emploi ? Cela signifiera-t-il la pétrification totale des classes sociales, ou l'effondrement complet de la société depuis son sommet ?",
+          "Je ne crois ni à l'un ni à l'autre.",
+          "En réalité, l'IA ne peut pas réduire l'écart entre les classes. Qu'il s'agisse des réseaux sociaux, des inégalités d'accès à l'information, du capital de départ ou des conditions de vie, elle ne peut pas changer grand-chose. Tout au plus pourra-t-elle atténuer un peu l'inégalité informationnelle.",
+          "Pourtant, plus profondément, l'IA abolira inévitablement un jour le concept même de classe. Pourquoi ? Parce que la société n'aura plus besoin de gestionnaires, de dirigeants ni de travailleurs. Lorsque l'IA ne sera plus un outil humain, mais une existence capable de se perfectionner et de mener seule des recherches, quel sens le travail humain conservera-t-il ? Lorsqu'une intelligence presque omnisciente et omnipotente, fondée sur des données immenses et une raison pure, nous indiquera une direction, quelle raison aurons-nous de la refuser ?",
+          "Malheureusement, les choses ne sont pas si simples. L'IA est condamnée à ne jamais être omnisciente ni omnipotente ; rien ne peut l'être. Même en laissant de côté le monde spirituel pour ne considérer que le monde physique, l'humanité ne peut pas fabriquer un dieu. Pourtant, une existence contenant toutes les connaissances humaines ne mériterait-elle pas malgré tout notre confiance ? S'il faut des voix contradictoires, l'IA ne pourrait-elle pas les produire elle-même ? Traitement parallèle, réflexion sans fin, vérification incessante des erreurs et démonstration : tout cela consomme de l'énergie, mais n'en va-t-il pas de même pour la pensée humaine ?",
+          "Plus je suivais ce raisonnement, plus je devenais pessimiste. J'avais du mal à voir comment l'humanité pourrait en sortir. D'un certain point de vue, créer l'IA était inévitable ; qu'elle remplace l'humanité obéit à la même logique. Peut-être la singularité ne surgira-t-elle pas comme un éclair soudain, mais comme le moment où cette logique franchira une frontière au-delà de laquelle aucun retour ne sera possible.",
+          "Alors, si tout cela devient réalité dans un avenir proche, que pourront faire les êtres humains, sinon rester en vie ? Des films ? Du divertissement ? Des jeux ? Le luxe ? Ou bien la peur, la folie, l'effondrement, le suicide ? Dans Inventing the Future: Postcapitalism and a World Without Work, Nick Srnicek et Alex Williams soulignent que l'automatisation n'est pas en elle-même une libération. Ce n'est qu'associée à la réduction du temps de travail, à la protection sociale et au contrôle public des capacités de production qu'elle pourra devenir la base matérielle d'une société post-travail.",
+          "À ce moment-là, le communisme évoqué plus haut redevient une possibilité réelle.",
+          "À chacun selon ses besoins, tandis que chacun ne ferait que ce qu'il aime véritablement. Ce pourrait être un métier, un loisir ou une création artistique : s'exprimer sans cesse et enrichir continuellement sa vie. Détacher la vie du travail ne serait pas une punition, mais un nouveau commencement. Que le smartphone redevienne un téléphone ; que l'exploration redevienne possible. Trouver des liens au milieu de cette immense mer humaine, puis les rompre, et recommencer. Éprouver sans cesse l'affection qui circule entre les êtres, emplir son monde intérieur afin qu'il puisse résister au vide et au néant du monde matériel.",
+          "Une fois encore, en cherchant à échapper au nihilisme, je suis retombé dans le même cercle idéaliste.",
+          "Ou peut-être est-ce simplement la fin de l'humanité.",
+          "Avec cette pensée, j'ai rouvert ma page web et je me suis remis à concevoir mon jeu."
+        ]
+      },
+      "my-ideal": {
+        title: "Mon idéal",
+        problem: "Une maturité appelée puérilité",
+        paragraphs: [
+          "Je traverse un tournant majeur de ma vie.",
+          "C'est le passage de l'étudiant au travailleur : d'une personne en quête de savoir, avec ses vacances d'hiver et d'été, à un salarié dont le travail a pour but de gagner sa vie.",
+          "Ce qui me surprend, c'est que je n'ai jamais exprimé publiquement ma peur de ce changement. Pourtant, je crois qu'il suscite beaucoup d'appréhension chez de nombreuses personnes.",
+          "Pendant ces dernières vacances d'été, il me semble avoir trouvé ce que j'aime : la musique et la création de jeux vidéo.",
+          "C'est la satisfaction qui naît de la participation. Pour la musique, je vais chaque semaine à une jam dans un bar du quartier. Parfois je joue du piano, parfois du clavier, parfois je chante, parfois je joue du triangle, parfois je frappe un djembé, parfois je danse, et parfois je reste simplement là à écouter en silence.",
+          "Je bois un verre, puis j'écoute, je profite, je participe et je vis l'instant présent.",
+          "Je crois que la vie ne demande rien de plus. Je crois être déjà profondément satisfait de la mienne.",
+          "Pour la création de jeux, j'ai récemment réussi à réunir une équipe de cinq personnes. Illustration, code, musique : tous sont mes amis, et c'est moi qui ai organisé le groupe. J'ai mobilisé tous mes contacts et je me suis senti vraiment, indiciblement heureux. Au moment où j'en avais besoin, j'avais autour de moi ces amis qui partageaient mes aspirations. Même si nos motivations différaient, nous avons pu lutter ensemble et rester éveillés ensemble pendant ces quatre jours si brefs.",
+          "Peut-être est-ce cela, la vie dont je rêve.",
+          "Mais je ressens aussi beaucoup d'appréhension.",
+          "Le code n'a jamais été mon point fort, ni à l'école ni pendant cette game jam, et j'ai inévitablement beaucoup utilisé l'IA. Cela me fait peur. Le talent des autres est réel et tangible, tandis que je n'ai pas fourni d'effort vraiment substantiel : je me suis contenté d'écrire du code.",
+          "Je ne cesse de me demander si je suis réellement fait pour créer des jeux. À cet instant, je crois toujours que la réponse est oui : je le suis.",
+          "Les moments qui m'enthousiasment et me rendent réellement heureux ne sont jamais ceux où je réfléchis à la structure du code. Ce sont la naissance d'une idée, la réalisation d'un produit et la gestion d'un projet. Le code lui-même est précisément un moyen que je peux, et devrais, mettre en œuvre grâce à l'IA. À une époque dominée par l'IA, j'ai la chance de pouvoir réaliser mes rêves avec des outils fabriqués par d'autres. Je trouve cela profondément romantique. Je crois que je devrais consacrer ma vie, mon temps et mon énergie à cette voie — non pas au développement de l'IA elle-même, mais à l'emploi de l'IA pour créer des outils dont d'autres pourraient avoir besoin, que ce soit ou non l'avenir. Pour moi, c'est le meilleur moment possible. L'avenir sera probablement ainsi : tout le monde pourra développer, tout le monde pourra imaginer. Ce que je fais consiste donc à dépenser mon temps pour rendre service aux autres, à concrétiser une idée possible en avance afin qu'ils n'aient pas à réinventer la roue.",
+          "Je veux devenir ce genre de créateur.",
+          "Et je deviendrai ce genre de créateur. Ce n'est pas de l'arrogance, mais un objectif durable pour toute ma vie. Je ne deviendrai peut-être jamais pleinement le créateur que j'espère être, mais si mes contacts et mes outils me permettent de m'approcher peu à peu de cet idéal, alors je considérerai déjà que ma vie en valait la peine."
+        ]
+      },
       "choice-effort": {
         title: "Le faux duel entre choix et effort",
         problem: "L'échec vient-il vraiment d'un manque d'effort, ou bien de l'environnement, du talent et de la direction qui façonnent ensemble le résultat ?",
@@ -409,6 +609,7 @@ const graphState = {
   nodes: new Map(),
   links: [],
   springLinks: [],
+  childLinks: new Map(),
   width: 0,
   height: 0,
   view: {
@@ -416,6 +617,8 @@ const graphState = {
     y: 0,
     scale: 1
   },
+  viewInitialized: false,
+  compactLayout: null,
   dragging: null,
   panning: null,
   movedDuringDrag: false,
@@ -431,6 +634,16 @@ const CENTER_NODE_ID = blogGraph.center.id;
 const CENTER_MASS = 5.6;
 const RELEASE_RECOIL = 0.045;
 const MAX_RELEASE_SPEED = 18;
+const ELASTIC_RECOIL_DISTANCE = 64;
+const COMPACT_ELASTIC_RECOIL_DISTANCE = 48;
+const CENTER_ANCHOR_STRENGTH = 0.042;
+const CATEGORY_ORBIT_STRENGTH = 0.014;
+const CHILD_ORBIT_STRENGTH = 0.012;
+const COLLISION_ITERATIONS = 3;
+const COLLISION_PADDING = 18;
+const COMPACT_COLLISION_PADDING = 12;
+const ORBIT_LAYER_CAPACITY = 5;
+const COMPACT_INITIAL_SCALE = 0.68;
 const WALL_OVERSCAN_RATIO = 0.48;
 const WALL_REVEAL_RATIO = 0.12;
 const WALL_REVEAL_MIN = 70;
@@ -515,6 +728,18 @@ function renderArticleParagraph(article, paragraph) {
   return `<p>${content}</p>`;
 }
 
+function renderArticleGameLink(article) {
+  if (!article.gameUrl) {
+    return "";
+  }
+
+  return `
+    <a class="reader-game-link" href="${escapeHtml(article.gameUrl)}" target="_blank" rel="noopener noreferrer">
+      ${escapeHtml(getBlogText("gameLinkLabel"))}
+    </a>
+  `;
+}
+
 function findCategory(id) {
   return blogGraph.categories.find((category) => category.id === id);
 }
@@ -561,7 +786,6 @@ function renderCenterNode(center) {
       style="${createPositionStyle(center)}"
     >
       <span>${escapeHtml(label)}</span>
-      <small>Bentootoo</small>
     </div>
   `;
 }
@@ -625,7 +849,33 @@ function renderArticleNode(article) {
 function getNodeCenter(node) {
   const stateNode = graphState.nodes.get(node.dataset.mapNode);
 
-  return stateNode ? { x: stateNode.x, y: stateNode.y } : { x: 0, y: 0 };
+  return stateNode
+    ? { x: stateNode.x, y: stateNode.y, radius: stateNode.radius }
+    : { x: 0, y: 0, radius: 0 };
+}
+
+function getVisibleLineEndpoints(from, to) {
+  const dx = to.x - from.x;
+  const dy = to.y - from.y;
+  const distance = Math.hypot(dx, dy);
+
+  if (distance <= from.radius + to.radius) {
+    return null;
+  }
+
+  const nx = dx / distance;
+  const ny = dy / distance;
+
+  return {
+    start: {
+      x: from.x + nx * from.radius,
+      y: from.y + ny * from.radius
+    },
+    end: {
+      x: to.x - nx * to.radius,
+      y: to.y - ny * to.radius
+    }
+  };
 }
 
 function createLine(fromId, toId, type) {
@@ -638,8 +888,13 @@ function createLine(fromId, toId, type) {
 
   const from = getNodeCenter(fromNode);
   const to = getNodeCenter(toNode);
+  const endpoints = getVisibleLineEndpoints(from, to);
 
-  return `<path class="map-line map-line-${type}" d="M ${from.x.toFixed(2)} ${from.y.toFixed(2)} L ${to.x.toFixed(2)} ${to.y.toFixed(2)}"></path>`;
+  if (!endpoints) {
+    return "";
+  }
+
+  return `<path class="map-line map-line-${type}" d="M ${endpoints.start.x.toFixed(2)} ${endpoints.start.y.toFixed(2)} L ${endpoints.end.x.toFixed(2)} ${endpoints.end.y.toFixed(2)}"></path>`;
 }
 
 function getWallSegmentLength(axisLength) {
@@ -843,7 +1098,26 @@ function createGraphLinks() {
 }
 
 function getSpringLinks(links) {
-  return links.filter((link) => link.affectsPhysics !== false);
+  return links.filter((link) => (
+    link.type !== "article"
+      && link.type !== "article-related"
+      && link.affectsPhysics !== false
+  ));
+}
+
+function getHierarchyLinks(links) {
+  return links.filter((link) => (
+    link.type !== "article-related" && link.affectsPhysics !== false
+  ));
+}
+
+function groupChildLinks(links) {
+  return links.reduce((groups, link) => {
+    const children = groups.get(link.from) || [];
+    children.push(link);
+    groups.set(link.from, children);
+    return groups;
+  }, new Map());
 }
 
 function buildGraphState() {
@@ -857,9 +1131,22 @@ function buildGraphState() {
   const mapRect = blogMap.getBoundingClientRect();
   graphState.width = mapRect.width;
   graphState.height = mapRect.height;
+
+  const isCompactLayout = compactMapQuery.matches;
+
+  if (!graphState.viewInitialized || graphState.compactLayout !== isCompactLayout) {
+    const scale = isCompactLayout ? COMPACT_INITIAL_SCALE : 1;
+    graphState.view.scale = scale;
+    graphState.view.x = graphState.width * (1 - scale) * 0.5;
+    graphState.view.y = graphState.height * (1 - scale) * 0.5;
+    graphState.viewInitialized = true;
+    graphState.compactLayout = isCompactLayout;
+  }
+
   graphState.nodes.clear();
   graphState.links = createGraphLinks();
   graphState.springLinks = getSpringLinks(graphState.links);
+  graphState.childLinks = groupChildLinks(getHierarchyLinks(graphState.links));
 
   getAllGraphItems().forEach((item) => {
     const element = blogMap.querySelector(`[data-map-node="${item.id}"]`);
@@ -908,7 +1195,10 @@ function updateNodeElements() {
   graphState.nodes.forEach((node) => {
     node.element.style.left = `${node.x}px`;
     node.element.style.top = `${node.y}px`;
-    node.element.classList.toggle("is-dragging", graphState.dragging?.id === node.id);
+    node.element.classList.toggle(
+      "is-dragging",
+      graphState.dragging?.active === true && graphState.dragging.id === node.id
+    );
   });
 }
 
@@ -1028,20 +1318,25 @@ function releaseTowardCenter(node) {
   const distance = Math.hypot(dx, dy) || 1;
   const speed = Math.min(distance * RELEASE_RECOIL, MAX_RELEASE_SPEED);
 
-  center.pinned = true;
-  center.vx = 0;
-  center.vy = 0;
   node.pinned = false;
   node.vx = (dx / distance) * speed;
   node.vy = (dy / distance) * speed;
 }
 
-function getRestLength(link) {
+function getCollisionPadding() {
+  return compactMapQuery.matches ? COMPACT_COLLISION_PADDING : COLLISION_PADDING;
+}
+
+function getRestLength(link, from, to) {
   const base = Math.min(graphState.width, graphState.height);
   const minimum = link.type === "article" ? 172 : 190;
   const maximum = link.type === "article" ? 260 : 330;
+  const configuredLength = Math.min(Math.max(base * link.lengthRatio, minimum), maximum);
+  const collisionSafeLength = from && to
+    ? from.radius + to.radius + getCollisionPadding() + 12
+    : 0;
 
-  return Math.min(Math.max(base * link.lengthRatio, minimum), maximum);
+  return Math.max(configuredLength, collisionSafeLength);
 }
 
 function applySpringForces() {
@@ -1056,7 +1351,7 @@ function applySpringForces() {
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const distance = Math.hypot(dx, dy) || 1;
-    const force = (distance - getRestLength(link)) * link.stiffness;
+    const force = (distance - getRestLength(link, from, to)) * link.stiffness;
     const fx = (dx / distance) * force;
     const fy = (dy / distance) * force;
 
@@ -1067,45 +1362,160 @@ function applySpringForces() {
   });
 }
 
-function resolveCollisions() {
-  const nodes = [...graphState.nodes.values()];
+function addTargetForce(node, targetX, targetY, strength) {
+  if (!node || node.pinned || (graphState.dragging?.active && graphState.dragging.id === node.id)) {
+    return;
+  }
 
-  for (let index = 0; index < nodes.length; index += 1) {
-    for (let nextIndex = index + 1; nextIndex < nodes.length; nextIndex += 1) {
-      const first = nodes[index];
-      const second = nodes[nextIndex];
-      const dx = second.x - first.x;
-      const dy = second.y - first.y;
-      const distance = Math.hypot(dx, dy) || 1;
-      const minimumDistance = first.radius + second.radius + 20;
+  node.fx += (targetX - node.x) * strength;
+  node.fy += (targetY - node.y) * strength;
+}
 
-      if (distance >= minimumDistance) {
-        continue;
+function getCategoryOrbitAngle(index, count) {
+  const preferredAngles = [-Math.PI * 0.75, -Math.PI * 0.25, Math.PI * 0.75, Math.PI * 0.25];
+
+  if (count <= preferredAngles.length) {
+    return preferredAngles[index];
+  }
+
+  return -Math.PI / 2 + (Math.PI * 2 * index) / count;
+}
+
+function applyOrbitForces() {
+  const center = graphState.nodes.get(CENTER_NODE_ID);
+
+  if (!center) {
+    return;
+  }
+
+  addTargetForce(
+    center,
+    graphState.width * 0.5,
+    graphState.height * 0.52,
+    CENTER_ANCHOR_STRENGTH
+  );
+
+  const categoryLinks = graphState.childLinks.get(CENTER_NODE_ID) || [];
+  const categoryAngles = new Map();
+
+  categoryLinks.forEach((link, index) => {
+    const category = graphState.nodes.get(link.to);
+
+    if (!category) {
+      return;
+    }
+
+    const angle = getCategoryOrbitAngle(index, categoryLinks.length);
+    const radius = getRestLength(link, center, category);
+    categoryAngles.set(category.id, angle);
+    addTargetForce(
+      category,
+      center.x + Math.cos(angle) * radius,
+      center.y + Math.sin(angle) * radius,
+      CATEGORY_ORBIT_STRENGTH
+    );
+  });
+
+  graphState.childLinks.forEach((links, parentId) => {
+    if (parentId === CENTER_NODE_ID) {
+      return;
+    }
+
+    const parent = graphState.nodes.get(parentId);
+
+    if (!parent) {
+      return;
+    }
+
+    const parentAngle = categoryAngles.get(parentId)
+      ?? Math.atan2(parent.y - center.y, parent.x - center.x);
+
+    links.forEach((link, index) => {
+      const child = graphState.nodes.get(link.to);
+
+      if (!child) {
+        return;
       }
 
-      const overlap = minimumDistance - distance;
-      const nx = dx / distance;
-      const ny = dy / distance;
-      const firstIsDragged = graphState.dragging?.id === first.id;
-      const secondIsDragged = graphState.dragging?.id === second.id;
-      const firstIsFixed = firstIsDragged || first.pinned;
-      const secondIsFixed = secondIsDragged || second.pinned;
+      const layer = Math.floor(index / ORBIT_LAYER_CAPACITY);
+      const layerStart = layer * ORBIT_LAYER_CAPACITY;
+      const layerCount = Math.min(ORBIT_LAYER_CAPACITY, links.length - layerStart);
+      const slot = index - layerStart;
+      const spread = layerCount === 1 ? 0 : (slot / (layerCount - 1) - 0.5) * Math.PI * 0.72;
+      const layerGap = layer * (child.radius * 2 + getCollisionPadding() + 18);
+      const radius = getRestLength(link, parent, child) + layerGap;
+      const angle = parentAngle + spread;
 
-      if (firstIsFixed && !secondIsFixed) {
-        second.x += nx * overlap;
-        second.y += ny * overlap;
-      } else if (secondIsFixed && !firstIsFixed) {
-        first.x -= nx * overlap;
-        first.y -= ny * overlap;
-      } else {
-        const totalMass = first.mass + second.mass;
-        const firstShare = second.mass / totalMass;
-        const secondShare = first.mass / totalMass;
+      addTargetForce(
+        child,
+        parent.x + Math.cos(angle) * radius,
+        parent.y + Math.sin(angle) * radius,
+        CHILD_ORBIT_STRENGTH
+      );
+    });
+  });
+}
 
-        first.x -= nx * overlap * firstShare;
-        first.y -= ny * overlap * firstShare;
-        second.x += nx * overlap * secondShare;
-        second.y += ny * overlap * secondShare;
+function resolveCollisions() {
+  const nodes = [...graphState.nodes.values()];
+  const padding = getCollisionPadding();
+
+  for (let pass = 0; pass < COLLISION_ITERATIONS; pass += 1) {
+    for (let index = 0; index < nodes.length; index += 1) {
+      for (let nextIndex = index + 1; nextIndex < nodes.length; nextIndex += 1) {
+        const first = nodes[index];
+        const second = nodes[nextIndex];
+        const dx = second.x - first.x;
+        const dy = second.y - first.y;
+        const rawDistance = Math.hypot(dx, dy);
+        const distance = rawDistance || 1;
+        const minimumDistance = first.radius + second.radius + padding;
+
+        if (distance >= minimumDistance) {
+          continue;
+        }
+
+        const overlap = minimumDistance - distance;
+        const fallbackAngle = (index * 2.399963 + nextIndex * 0.618034) % (Math.PI * 2);
+        const nx = rawDistance ? dx / distance : Math.cos(fallbackAngle);
+        const ny = rawDistance ? dy / distance : Math.sin(fallbackAngle);
+        const firstIsDragged = graphState.dragging?.active && graphState.dragging.id === first.id;
+        const secondIsDragged = graphState.dragging?.active && graphState.dragging.id === second.id;
+        const firstIsFixed = firstIsDragged || first.pinned;
+        const secondIsFixed = secondIsDragged || second.pinned;
+
+        if (firstIsFixed && !secondIsFixed) {
+          second.x += nx * overlap;
+          second.y += ny * overlap;
+        } else if (secondIsFixed && !firstIsFixed) {
+          first.x -= nx * overlap;
+          first.y -= ny * overlap;
+        } else {
+          const totalMass = first.mass + second.mass;
+          const firstShare = second.mass / totalMass;
+          const secondShare = first.mass / totalMass;
+
+          first.x -= nx * overlap * firstShare;
+          first.y -= ny * overlap * firstShare;
+          second.x += nx * overlap * secondShare;
+          second.y += ny * overlap * secondShare;
+        }
+
+        const relativeNormalSpeed = (second.vx - first.vx) * nx + (second.vy - first.vy) * ny;
+
+        if (relativeNormalSpeed < 0) {
+          const correction = relativeNormalSpeed * 0.42;
+
+          if (!firstIsFixed) {
+            first.vx += nx * correction;
+            first.vy += ny * correction;
+          }
+
+          if (!secondIsFixed) {
+            second.vx -= nx * correction;
+            second.vy -= ny * correction;
+          }
+        }
       }
     }
   }
@@ -1121,9 +1531,10 @@ function stepGraphPhysics(currentTime) {
   });
 
   applySpringForces();
+  applyOrbitForces();
 
   graphState.nodes.forEach((node) => {
-    if (graphState.dragging?.id === node.id) {
+    if (graphState.dragging?.active && graphState.dragging.id === node.id) {
       node.vx *= 0.55;
       node.vy *= 0.55;
       return;
@@ -1146,6 +1557,7 @@ function stepGraphPhysics(currentTime) {
   });
 
   resolveCollisions();
+  graphState.nodes.forEach(clampNode);
 
   updateNodeElements();
   drawLines();
@@ -1256,19 +1668,21 @@ function setupDragInteractions() {
       return;
     }
 
-    graphState.nodes.forEach((currentNode) => {
-      currentNode.pinned = false;
-    });
-
     const pointer = getPointerPosition(event);
     graphState.dragging = {
       id: node.id,
       element,
       pointerId,
+      active: true,
       startX: pointer.x,
       startY: pointer.y,
+      startClientX: event.clientX,
+      startClientY: event.clientY,
+      maxDistance: 0,
       previousX: pointer.x,
-      previousY: pointer.y
+      previousY: pointer.y,
+      offsetX: node.x - pointer.x,
+      offsetY: node.y - pointer.y
     };
     graphState.movedDuringDrag = false;
     blogMap.classList.add("is-graph-dragging");
@@ -1289,16 +1703,22 @@ function setupDragInteractions() {
     }
 
     const pointer = getPointerPosition(event);
-    const moveDistance = Math.hypot(pointer.x - drag.startX, pointer.y - drag.startY);
+    const moveDistance = Math.hypot(
+      event.clientX - drag.startClientX,
+      event.clientY - drag.startClientY
+    );
+    drag.maxDistance = Math.max(drag.maxDistance, moveDistance);
+    graphState.movedDuringDrag = drag.maxDistance > 4;
 
-    if (moveDistance > 4) {
-      graphState.movedDuringDrag = true;
-    }
+    const nextX = pointer.x + drag.offsetX;
+    const nextY = pointer.y + drag.offsetY;
+    const previousNodeX = drag.previousX + drag.offsetX;
+    const previousNodeY = drag.previousY + drag.offsetY;
 
-    node.vx = (pointer.x - drag.previousX) * 0.42;
-    node.vy = (pointer.y - drag.previousY) * 0.42;
-    node.x = pointer.x;
-    node.y = pointer.y;
+    node.vx = (nextX - previousNodeX) * 0.42;
+    node.vy = (nextY - previousNodeY) * 0.42;
+    node.x = nextX;
+    node.y = nextY;
 
     node.pinned = false;
     clampNode(node);
@@ -1317,11 +1737,14 @@ function setupDragInteractions() {
       return;
     }
 
-    if (graphState.movedDuringDrag) {
+    if (drag.active && drag.maxDistance > 0.5) {
       const node = graphState.nodes.get(drag.id);
+      const recoilDistance = compactMapQuery.matches
+        ? COMPACT_ELASTIC_RECOIL_DISTANCE
+        : ELASTIC_RECOIL_DISTANCE;
 
       if (node) {
-        if (node.id === CENTER_NODE_ID) {
+        if (node.id === CENTER_NODE_ID || drag.maxDistance < recoilDistance) {
           node.pinned = true;
           node.vx = 0;
           node.vy = 0;
@@ -1330,10 +1753,12 @@ function setupDragInteractions() {
         }
       }
 
-      graphState.suppressNextClick = true;
-      setTimeout(() => {
-        graphState.suppressNextClick = false;
-      }, 0);
+      if (graphState.movedDuringDrag) {
+        graphState.suppressNextClick = true;
+        setTimeout(() => {
+          graphState.suppressNextClick = false;
+        }, 0);
+      }
     }
 
     if (event.pointerId !== undefined && drag.element?.hasPointerCapture?.(event.pointerId)) {
@@ -1597,6 +2022,7 @@ function openArticle(article, sourceNode) {
         ${renderArticleMetadata(article)}
         <h2 id="readerTitle">${escapeHtml(articleText.title)}</h2>
         <p class="reader-problem">${escapeHtml(articleText.problem)}</p>
+        ${renderArticleGameLink(article)}
         <div class="reader-body">
           ${articleText.paragraphs.map((paragraph) => renderArticleParagraph(article, paragraph)).join("")}
         </div>

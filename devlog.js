@@ -5,6 +5,16 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-08-05",
+        version: "v0.8",
+        done: [
+          "将个人博客更名为“思索之屋”。",
+          "为思索之屋增加思想交换功能。",
+          "调整思索之屋的弹力绳交互逻辑。",
+          "在项目中增加 Tower Off。"
+        ]
+      },
+      {
         date: "2026-07-12",
         version: "v0.7",
         done: [
@@ -75,6 +85,23 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-08-05",
+        version: "v0.8",
+        done: [
+          "Renamed the personal blog to House of Reflection.",
+          "Added a thought-exchange feature to the House of Reflection.",
+          "Updated the House of Reflection's spring-rope interaction logic.",
+          "Added Tower Off to the projects section."
+        ]
+      },
+      {
+        date: "2026-07-12",
+        version: "v0.7",
+        done: [
+          "Added Zhetang No. 7: Classmates to the homepage."
+        ]
+      },
+      {
         date: "2026-07-09",
         version: "v0.6",
         done: [
@@ -137,6 +164,23 @@ const devlogContent = {
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
     entries: [
+      {
+        date: "2026-08-05",
+        version: "v0.8",
+        done: [
+          "Le blog personnel a été renommé Maison de réflexion.",
+          "Ajout d'une fonction d'échange d'idées dans la Maison de réflexion.",
+          "Modification de la logique de corde élastique de la Maison de réflexion.",
+          "Ajout de Tower Off à la section des projets."
+        ]
+      },
+      {
+        date: "2026-07-12",
+        version: "v0.7",
+        done: [
+          "Ajout de Zhetang no 7 : Camarades de classe à la page d'accueil."
+        ]
+      },
       {
         date: "2026-07-09",
         version: "v0.6",

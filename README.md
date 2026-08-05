@@ -24,6 +24,20 @@ For a user or organization site, the repository should usually be named:
 your-github-username.github.io
 ```
 
+## Private thought inbox
+
+The discussion panel on `blog.html` posts JSON to the URL in this tag:
+
+```html
+<meta name="feedback-endpoint" content="">
+```
+
+Because GitHub Pages is static, connect the form to a private form endpoint (for
+example, a Formspree form whose notification recipient is configured in the
+Formspree dashboard). Paste only the generated endpoint URL into `content`.
+The recipient email must remain in the form service dashboard and must not be
+added to the HTML or JavaScript.
+
 ## Search engine indexing
 
 This site includes the basic files and tags search engines expect:

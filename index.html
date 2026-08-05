@@ -47,7 +47,6 @@
             "alternateName": "本2兔",
             "url": "https://bentootoo.github.io/",
             "image": "https://bentootoo.github.io/assets/horny_dog.jpg",
-            "email": "beisong.lyu@gmail.com",
             "sameAs": [
               "https://github.com/BenTooToo",
               "https://space.bilibili.com/224155770",
@@ -90,8 +89,8 @@
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#top" data-i18n="nav.home">首页</a>
         <a href="#projects" data-i18n="nav.projects">项目</a>
-        <a href="blog.html" data-i18n="nav.blog">个人博客</a>
-        <a href="#contact" data-i18n="nav.contact">联系我们</a>
+        <a href="blog.html" data-i18n="nav.blog">思索之屋</a>
+        <a href="#contact" data-i18n="nav.contact">联系我</a>
       </nav>
 
       <div class="language-switch" aria-label="Language selector">
@@ -127,10 +126,10 @@
                   <span class="business-name" data-i18n="card.identity">学生 / 视频创作者 / 游戏制作人 / 独立音乐人</span>
 
                   <div class="business-links">
-                    <div class="business-entry business-email">
-                      <span data-i18n="card.email">邮箱</span>
-                      <strong>beisong.lyu@gmail.com</strong>
-                    </div>
+                    <a class="business-entry business-email" href="blog.html#thoughts">
+                      <span>Thoughts</span>
+                      <strong data-i18n="contact.email">通过思索之屋留言</strong>
+                    </a>
                     <div class="business-entry">
                       <span>GitHub</span>
                       <strong>github.com/BenTooToo</strong>
@@ -180,6 +179,24 @@
                 <span class="project-cta" data-i18n="projects.emptyCta">点击图片开始游戏 <span aria-hidden="true">↗</span></span>
               </div>
             </button>
+
+            <a
+              class="project-card feature-card tower-card"
+              href="https://bentootoo.itch.io/tower-off"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="在 itch.io 上游玩 Tower Off"
+              data-i18n-aria="projects.towerLinkLabel"
+              data-reveal
+            >
+              <div class="card-number">02</div>
+              <div>
+                <p class="card-label" data-i18n="projects.towerLabel">GMTK2026作品，主题为 Countdown</p>
+                <h3 data-i18n="projects.towerTitle">Tower Off</h3>
+                <p data-i18n="projects.towerBody">第一个团队作品，动作游戏，2D，像素风格</p>
+                <span class="project-cta" data-i18n="projects.towerCta">点击前往 itch.io 开始游戏 ↗</span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -190,7 +207,7 @@
           <h2 id="gameLanguageDialogTitle">Empty Class</h2>
           <div class="game-language-dialog__actions">
             <a href="https://bentootoo.github.io/Empty_classes/">中文</a>
-            <a href="https://bentootoo.github.io/Empty_classes_FR/">Français</a>
+            <a href="https://bentootoo.github.io/Empty_classes/?lang=fr">Français</a>
           </div>
         </form>
       </dialog>
@@ -198,30 +215,23 @@
       <section class="content-section section-panel blog-section" id="blog">
         <div class="section-shell split-shell">
           <div class="section-heading sticky-heading" data-reveal>
-            <h2 data-i18n="blog.title">个人博客</h2>
-            <p data-i18n="blog.lede">本2兔喜欢在这里发布自己的想法，或许他想要保存每一分钟的自我。</p>
+            <h2 data-i18n="blog.title">思索之屋</h2>
+            <p data-i18n="blog.lede">思索之屋：本2兔用哲学、音乐、制作和技术连接文章、类别与彼此的想法。</p>
           </div>
 
           <div class="blog-stack">
-            <a class="blog-card" href="blog.html#agent-vibe-coding-future" data-reveal>
-              <span class="blog-date" data-i18n="blog.cardAgentDate">2026-07-12 / 制作 / 技术</span>
-              <h3 data-i18n="blog.cardAgentTitle">论 Agent、Vibe Coding 与未来</h3>
-              <p data-i18n="blog.cardAgentBody">从《折棠7中同窗录》的创作出发，谈 Agent 如何降低游戏制作门槛，以及想象力为何正在成为更重要的能力。</p>
+            <a class="blog-card" href="blog.html#my-ideal" data-reveal>
+              <span class="blog-date" data-i18n="blog.cardLatestOneDate">2026-08-05 / 制作 / 音乐</span>
+              <h3 data-i18n="blog.cardLatestOneTitle">我的理想</h3>
+              <p data-i18n="blog.cardLatestOneBody">名为幼稚的成熟</p>
             </a>
-            <a class="blog-card" href="blog.html#ai-reflection" data-reveal>
-              <span class="blog-date" data-i18n="blog.cardOneDate">2026-06-20 / 哲学 / 技术</span>
-              <h3 data-i18n="blog.cardOneTitle">AI 的反思</h3>
-              <p data-i18n="blog.cardOneBody">从 VIVA Tech 舞台上的 AI 歌声出发，追问人性、情感和不完美是否仍然不可取代。</p>
-            </a>
-            <a class="blog-card" href="blog.html#choice-effort" data-reveal>
-              <span class="blog-date" data-i18n="blog.cardTwoDate">2026-06-09 / 哲学</span>
-              <h3 data-i18n="blog.cardTwoTitle">选择与努力的伪命题</h3>
-              <p data-i18n="blog.cardTwoBody">第一篇文章已经接入博客思维导图，并通过细线连接到“哲学”节点。</p>
+            <a class="blog-card" href="blog.html#ai-singularity-communism" data-reveal>
+              <span class="blog-date" data-i18n="blog.cardLatestTwoDate">2026-08-05 / 哲学 / 技术</span>
+              <h3 data-i18n="blog.cardLatestTwoTitle">论 AI、奇异点与共产主义</h3>
+              <p data-i18n="blog.cardLatestTwoBody">我们不探讨政治，我们探讨未来</p>
             </a>
             <a class="blog-card" href="blog.html" data-reveal>
-              <span class="blog-date" data-i18n="blog.cardThreeDate">图谱</span>
-              <h3 data-i18n="blog.cardThreeTitle">进入个人博客</h3>
-              <p data-i18n="blog.cardThreeBody">哲学、音乐、制作和技术会成为文章系统的类别连接点，未来的子类别也会从这里自然展开。</p>
+              <h3 data-i18n="blog.cardHouseTitle">踏入思索之屋</h3>
             </a>
           </div>
         </div>
@@ -235,10 +245,10 @@
           </div>
 
           <div class="contact-stack" data-reveal>
-            <div class="email-contact">
-              <span>Email</span>
-              <strong data-i18n="contact.email">beisong.lyu@gmail.com</strong>
-            </div>
+            <a class="email-contact" href="blog.html#thoughts">
+              <span>Thoughts</span>
+              <strong data-i18n="contact.email">通过思索之屋留言</strong>
+            </a>
 
             <div class="social-links" aria-label="Social links">
               <a href="https://github.com/BenTooToo" target="_blank" rel="me noreferrer" aria-label="GitHub" title="GitHub">
@@ -274,7 +284,7 @@
       <span data-i18n="footer.note">Built for GitHub Pages.</span>
     </footer>
 
-    <script src="app.js?v=cosmos6" defer></script>
-    <script src="devlog.js" defer></script>
+    <script src="app.js?v=cosmos7" defer></script>
+    <script src="devlog.js?v=devlog2" defer></script>
   </body>
 </html>

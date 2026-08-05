@@ -820,6 +820,26 @@ button.project-card {
   background: #071a3d;
 }
 
+.tower-card {
+  background:
+    linear-gradient(90deg, rgba(7, 12, 18, 0.9), rgba(7, 12, 18, 0.52) 48%, rgba(7, 12, 18, 0.08)),
+    linear-gradient(0deg, rgba(7, 12, 18, 0.82), rgba(7, 12, 18, 0.04) 66%),
+    url("assets/cover_toweroff.png") center / cover no-repeat;
+}
+
+.tower-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tower-card .card-label {
+  text-transform: none;
+}
+
+.tower-card::after {
+  background: var(--lime);
+}
+
 .card-number {
   color: var(--lime);
   font-size: 0.8rem;
@@ -1059,6 +1079,342 @@ a.project-card:focus-visible .project-cta {
   font-size: 0.86rem;
 }
 
+.thought-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  background: rgba(1, 2, 4, 0.64);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+  backdrop-filter: blur(8px);
+}
+
+.thought-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.thought-dock {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 140;
+  display: grid;
+  justify-items: center;
+  padding: 0 18px 18px;
+  pointer-events: none;
+}
+
+.thought-invitation {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  width: min(640px, 100%);
+  padding: 17px 20px;
+  border: 1px solid rgba(246, 247, 242, 0.26);
+  border-radius: 18px;
+  color: rgba(246, 247, 242, 0.5);
+  background: rgba(8, 11, 17, 0.76);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  cursor: text;
+  pointer-events: auto;
+  font: inherit;
+  text-align: left;
+  transition: color 180ms ease, border-color 180ms ease, transform 280ms ease, opacity 180ms ease;
+  backdrop-filter: blur(18px);
+}
+
+.thought-invitation:hover,
+.thought-invitation:focus-visible {
+  color: var(--paper);
+  border-color: var(--paper-strong);
+  outline: none;
+  transform: translateY(-3px);
+}
+
+.thought-panel {
+  position: absolute;
+  bottom: 18px;
+  width: min(720px, calc(100% - 36px));
+  max-height: min(calc(100svh - 36px), 820px);
+  padding: clamp(22px, 3vw, 30px);
+  border: 1px solid rgba(246, 247, 242, 0.2);
+  border-radius: 28px;
+  color: var(--paper);
+  background: rgba(8, 11, 17, 0.97);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.58);
+  opacity: 0;
+  overflow-y: auto;
+  pointer-events: none;
+  transform: translateY(calc(100% + 36px));
+  transition: transform 420ms cubic-bezier(0.2, 0.84, 0.2, 1), opacity 220ms ease;
+}
+
+.thought-panel {
+  scrollbar-color: rgba(246, 247, 242, 0.28) transparent;
+  scrollbar-width: thin;
+}
+
+.thought-panel::-webkit-scrollbar {
+  width: 7px;
+}
+
+.thought-panel::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(246, 247, 242, 0.28);
+}
+
+.thought-dock.is-open .thought-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.thought-dock.is-open .thought-invitation {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(28px);
+}
+
+.thought-panel-head {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.thought-close {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(246, 247, 242, 0.16);
+  border-radius: 50%;
+  color: var(--paper);
+  background: rgba(246, 247, 242, 0.06);
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.thought-close:hover,
+.thought-close:focus-visible {
+  color: var(--ink);
+  border-color: var(--paper-strong);
+  background: var(--paper-strong);
+  outline: none;
+}
+
+.thought-form,
+.thought-field {
+  display: grid;
+  gap: 12px;
+}
+
+.thought-form {
+  gap: 16px;
+}
+
+.thought-field > span,
+.thought-form legend {
+  color: rgba(246, 247, 242, 0.72);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.thought-field textarea,
+.thought-nickname input {
+  width: 100%;
+  border: 1px solid rgba(246, 247, 242, 0.16);
+  border-radius: 16px;
+  color: var(--paper);
+  background: rgba(246, 247, 242, 0.06);
+  font: inherit;
+}
+
+.thought-field textarea {
+  min-height: 118px;
+  padding: 17px;
+  resize: vertical;
+  line-height: 1.65;
+}
+
+.thought-field textarea::placeholder,
+.thought-nickname input::placeholder {
+  color: rgba(246, 247, 242, 0.32);
+}
+
+.thought-field textarea:focus,
+.thought-nickname input:focus {
+  border-color: var(--paper-strong);
+  outline: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.thought-articles,
+.thought-identity {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.thought-article-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.thought-article-list label,
+.thought-identity-options label {
+  position: relative;
+  cursor: pointer;
+}
+
+.thought-article-list input,
+.thought-identity-options input {
+  position: absolute;
+  opacity: 0;
+}
+
+.thought-article-list span,
+.thought-identity-options span {
+  display: block;
+  padding: 9px 12px;
+  border: 1px solid rgba(246, 247, 242, 0.14);
+  border-radius: 999px;
+  color: rgba(246, 247, 242, 0.62);
+  background: rgba(246, 247, 242, 0.04);
+  font-size: 0.78rem;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.thought-article-list input:checked + span,
+.thought-identity-options input:checked + span {
+  color: var(--ink);
+  border-color: var(--paper-strong);
+  background: var(--paper-strong);
+}
+
+.thought-article-list input:focus-visible + span,
+.thought-identity-options input:focus-visible + span {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.thought-identity-options {
+  display: flex;
+  gap: 9px;
+  margin: 12px 0;
+}
+
+.thought-nickname {
+  display: block;
+  max-height: 70px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 220ms ease, opacity 180ms ease;
+}
+
+.thought-nickname.is-hidden {
+  max-height: 0;
+  opacity: 0;
+}
+
+.thought-nickname input {
+  padding: 13px 15px;
+}
+
+.thought-privacy,
+.thought-status {
+  margin: -8px 0 0;
+  color: rgba(246, 247, 242, 0.46);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.thought-status:empty {
+  display: none;
+}
+
+.thought-status[data-state="success"] {
+  color: var(--cyan);
+}
+
+.thought-status[data-state="error"] {
+  color: var(--coral);
+}
+
+.thought-submit {
+  width: 100%;
+  padding: 17px 24px;
+  border: 1px solid rgba(246, 247, 242, 0.28);
+  border-radius: 16px;
+  color: var(--paper);
+  background: rgba(246, 247, 242, 0.06);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 900;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.thought-submit:hover,
+.thought-submit:focus-visible {
+  border-color: rgba(246, 247, 242, 0.58);
+  background: rgba(246, 247, 242, 0.12);
+  outline: none;
+}
+
+.thought-submit:disabled {
+  cursor: wait;
+  filter: grayscale(0.5);
+}
+
+.thought-honeypot {
+  position: absolute;
+  left: -10000px;
+}
+
+@media (max-width: 620px) {
+  .thought-dock {
+    padding: 0 10px 10px;
+  }
+
+  .thought-invitation {
+    padding: 15px 17px;
+    border-radius: 15px;
+  }
+
+  .thought-panel {
+    bottom: 10px;
+    width: calc(100% - 20px);
+    max-height: calc(100svh - 20px);
+    padding: 22px 17px;
+    border-radius: 22px;
+  }
+
+  .thought-form {
+    gap: 16px;
+  }
+
+  .thought-field textarea {
+    min-height: 112px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thought-panel,
+  .thought-backdrop,
+  .thought-invitation {
+    transition: none;
+  }
+}
+
 .site-nav a[aria-current="page"] {
   color: var(--dark);
   background: rgba(255, 255, 255, 0.74);
@@ -1182,27 +1538,27 @@ a.project-card:focus-visible .project-cta {
 
 .map-line {
   fill: none;
-  stroke: rgba(220, 229, 255, 0.4);
+  stroke: rgba(255, 255, 255, 0.58);
   stroke-linecap: round;
   stroke-width: 1.35;
   vector-effect: non-scaling-stroke;
 }
 
 .map-line-category {
-  stroke: rgba(220, 229, 255, 0.36);
+  stroke: rgba(255, 255, 255, 0.52);
 }
 
 .map-line-subcategory {
-  stroke: rgba(124, 103, 255, 0.52);
+  stroke: rgba(255, 255, 255, 0.6);
 }
 
 .map-line-article {
-  stroke: rgba(25, 211, 197, 0.84);
+  stroke: rgba(255, 255, 255, 0.82);
   stroke-width: 1.55;
 }
 
 .map-line-article-related {
-  stroke: rgba(25, 211, 197, 0.5);
+  stroke: rgba(255, 255, 255, 0.46);
   stroke-dasharray: 1.5 7;
   stroke-width: 1.35;
 }
@@ -1268,17 +1624,9 @@ a.project-card:focus-visible .project-cta {
   white-space: nowrap;
 }
 
-.map-center small {
-  margin-top: -54px;
-  color: rgba(246, 247, 242, 0.58);
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
 .category-node {
-  --node-soft: rgba(255, 255, 255, 0.88);
-  --node-line: rgba(21, 21, 20, 0.14);
+  --node-soft: transparent;
+  --node-line: rgba(255, 255, 255, 0.58);
   z-index: 2;
   overflow: hidden;
   border-color: var(--node-line);
@@ -1288,7 +1636,7 @@ a.project-card:focus-visible .project-cta {
 .category-node::after {
   position: absolute;
   inset: 11px;
-  border: 1px solid rgba(21, 21, 20, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   content: "";
 }
@@ -1298,31 +1646,19 @@ a.project-card:focus-visible .project-cta {
   z-index: 1;
   display: block;
   width: 74%;
-  color: rgba(21, 21, 20, 0.84);
+  color: #ffffff;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 800;
   line-height: 1.04;
   white-space: nowrap;
 }
 
-.tone-cyan {
-  --node-soft: #a7eee7;
-  --node-line: rgba(20, 159, 150, 0.45);
-}
-
-.tone-coral {
-  --node-soft: #ffc8bd;
-  --node-line: rgba(210, 89, 75, 0.42);
-}
-
-.tone-lime {
-  --node-soft: #dcff92;
-  --node-line: rgba(122, 159, 33, 0.42);
-}
-
+.tone-cyan,
+.tone-coral,
+.tone-lime,
 .tone-violet {
-  --node-soft: #cdc4ff;
-  --node-line: rgba(98, 79, 196, 0.42);
+  --node-soft: transparent;
+  --node-line: rgba(255, 255, 255, 0.58);
 }
 
 .subcategory-node {
@@ -1546,11 +1882,38 @@ html[lang="fr"] .article-node small {
 
 .reader-problem {
   max-width: 620px;
-  margin-bottom: 36px;
+  margin-bottom: 0;
   color: rgba(246, 247, 242, 0.68);
   font-size: clamp(1rem, 1.3vw, 1.16rem);
   font-weight: 700;
   line-height: 1.7;
+}
+
+.reader-game-link {
+  display: inline-flex;
+  align-items: center;
+  margin: 18px 0 36px;
+  padding: 13px 18px;
+  border: 1px solid rgba(246, 247, 242, 0.48);
+  border-radius: 4px;
+  color: var(--paper);
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.reader-game-link:hover,
+.reader-game-link:focus-visible {
+  border-color: var(--paper);
+  color: var(--paper);
+  background: transparent;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.reader-problem + .reader-body {
+  margin-top: 36px;
 }
 
 .reader-body {
