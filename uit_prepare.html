@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="以 3D 地球探索本2兔的田野调查与地方项目。">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#030711">
+    <title>uit_prepare · 田野调查地球</title>
+    <link rel="icon" type="image/png" href="assets/cow.png">
+    <link rel="stylesheet" href="uit-globe.css?v=demo4">
+  </head>
+  <body>
+    <main class="field-globe-page">
+      <div class="globe-stage" id="globeStage" aria-label="田野调查地点 3D 地球" data-i18n-aria="globeLabel">
+        <div class="globe-canvas" id="globeViz"></div>
+        <div class="globe-loading" id="globeLoading" role="status">
+          <span></span>
+          <p data-i18n="loading">正在生成地球……</p>
+        </div>
+      </div>
+
+      <header class="globe-header">
+        <a class="globe-back" href="index.html#projects" aria-label="返回项目列表" data-i18n-aria="backLabel">←</a>
+        <div>
+          <p>UIT · FIELD ARCHIVE</p>
+          <h1 data-i18n="pageHeading">田野调查地球</h1>
+        </div>
+      </header>
+
+      <aside class="globe-intro" aria-label="操作说明" data-i18n-aria="controlsLabel">
+        <p data-i18n="controls">拖拽旋转 · 滚轮缩放</p>
+        <strong data-i18n="seek">寻找发光的调查地点</strong>
+      </aside>
+
+      <div class="globe-coordinates" aria-live="polite">
+        <span id="coordinateReadout">48.0000° N · 64.0000° E</span>
+        <small id="regionReadout">亚洲大陆</small>
+      </div>
+
+      <div class="globe-tools">
+        <div class="globe-language-switch" aria-label="语言选择" data-i18n-aria="languageLabel">
+          <button class="globe-lang-button is-active" type="button" data-lang="zh" aria-pressed="true">中</button>
+          <button class="globe-lang-button" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="globe-lang-button" type="button" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
+        <button class="intro-mode-button" id="introModeButton" type="button" aria-expanded="false" aria-controls="introModePanel">
+          <span data-i18n="introButton">点击进入简介模式</span>
+        </button>
+      </div>
+
+      <aside class="intro-mode-panel" id="introModePanel" aria-hidden="true" inert>
+        <button class="intro-mode-close" id="introModeClose" type="button" aria-label="关闭简介" data-i18n-aria="introCloseLabel">×</button>
+        <p>UIT · FIELD ARCHIVE</p>
+        <h2 data-i18n="introTitle">简介模式</h2>
+        <p data-i18n="introBody">通过地球上的地点探索田野调查与地方项目。悬停查看标题，点击地点阅读项目简介与完整报告。</p>
+      </aside>
+    </main>
+
+    <dialog class="field-dialog" id="fieldDialog" aria-labelledby="fieldDialogTitle">
+      <div class="field-dialog-shell">
+        <button class="field-dialog-close" id="fieldDialogClose" type="button" aria-label="关闭项目介绍" data-i18n-aria="closeReportLabel">×</button>
+        <a class="field-preview" id="fieldPreview" href="reports/changsha-campus-memory.html">
+          <div class="field-cover-wrap">
+            <img id="fieldCover" src="assets/project-classroom-credit.png" alt="">
+          </div>
+          <div class="field-preview-copy">
+            <div class="field-meta">
+              <span id="fieldLocation">中国 · 湖南 · 长沙</span>
+            </div>
+            <p class="field-type" id="fieldType">测试分类</p>
+            <h2 id="fieldDialogTitle">测试标题</h2>
+            <p class="field-summary" id="fieldSummary">测试简介</p>
+            <span class="field-enter"><span data-i18n="readReport">点击阅读完成报告</span> <b aria-hidden="true">→</b></span>
+          </div>
+        </a>
+      </div>
+    </dialog>
+
+    <noscript>这个 Demo 需要启用 JavaScript 才能显示 3D 地球。</noscript>
+    <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.1/dist/globe.gl.min.js"></script>
+    <script src="uit-globe.js?v=demo4"></script>
+  </body>
+</html>

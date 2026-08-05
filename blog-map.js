@@ -199,6 +199,8 @@ const blogGraph = {
       mobileX: 18,
       mobileY: 84,
       size: 164,
+      image: "assets/dairy_image.jpg",
+      imageAlt: "傍晚窗边的电脑与饮料",
       paragraphs: [
         "我正在经历人生的一个重大转折期。",
         "从一个学生到工作者的转变，一个有着寒暑假的求知者，到一个以赚钱为目的的打工人。",
@@ -297,6 +299,7 @@ const blogI18n = {
       "my-ideal": {
         title: "My Ideal",
         problem: "A Maturity Called Childishness",
+        imageAlt: "A laptop and a drink by the window at dusk",
         paragraphs: [
           "I am going through a major turning point in my life.",
           "It is the transition from student to worker—from a seeker of knowledge with winter and summer holidays to an employee working to earn money.",
@@ -433,6 +436,7 @@ const blogI18n = {
       "my-ideal": {
         title: "Mon idéal",
         problem: "Une maturité appelée puérilité",
+        imageAlt: "Un ordinateur et une boisson près de la fenêtre au crépuscule",
         paragraphs: [
           "Je traverse un tournant majeur de ma vie.",
           "C'est le passage de l'étudiant au travailleur : d'une personne en quête de savoir, avec ses vacances d'hiver et d'été, à un salarié dont le travail a pour but de gagner sa vie.",
@@ -699,7 +703,8 @@ function getArticleText(article) {
   return {
     title: translation.title || article.title,
     problem: translation.problem || article.problem,
-    paragraphs: translation.paragraphs || article.paragraphs
+    paragraphs: translation.paragraphs || article.paragraphs,
+    imageAlt: translation.imageAlt || article.imageAlt || ""
   };
 }
 
@@ -738,6 +743,14 @@ function renderArticleGameLink(article) {
       ${escapeHtml(getBlogText("gameLinkLabel"))}
     </a>
   `;
+}
+
+function renderArticleImage(article, articleText) {
+  if (!article.image) {
+    return "";
+  }
+
+  return `<img class="reader-article-image" src="${escapeHtml(article.image)}" alt="${escapeHtml(articleText.imageAlt)}" loading="lazy">`;
 }
 
 function findCategory(id) {
@@ -2025,6 +2038,7 @@ function openArticle(article, sourceNode) {
         ${renderArticleGameLink(article)}
         <div class="reader-body">
           ${articleText.paragraphs.map((paragraph) => renderArticleParagraph(article, paragraph)).join("")}
+          ${renderArticleImage(article, articleText)}
         </div>
       </article>
     </div>

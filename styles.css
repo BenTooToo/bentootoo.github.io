@@ -840,6 +840,14 @@ button.project-card {
   background: var(--lime);
 }
 
+.uit-prepare-card {
+  background: rgba(8, 11, 17, 0.92);
+}
+
+.uit-prepare-card::after {
+  background: var(--paper-strong);
+}
+
 .card-number {
   color: var(--lime);
   font-size: 0.8rem;
@@ -1887,6 +1895,17 @@ html[lang="fr"] .article-node small {
   font-size: clamp(1rem, 1.3vw, 1.16rem);
   font-weight: 700;
   line-height: 1.7;
+}
+
+.reader-article-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-top: clamp(34px, 5vw, 58px);
+  border: 1px solid rgba(246, 247, 242, 0.16);
+  border-radius: var(--radius);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.34);
 }
 
 .reader-game-link {
