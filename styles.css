@@ -841,11 +841,22 @@ button.project-card {
 }
 
 .uit-prepare-card {
-  background: rgba(8, 11, 17, 0.92);
+  background:
+    linear-gradient(90deg, rgba(3, 7, 14, 0.88), rgba(3, 7, 14, 0.36) 46%, rgba(3, 7, 14, 0.08)),
+    linear-gradient(0deg, rgba(3, 7, 14, 0.84), rgba(3, 7, 14, 0.02) 68%),
+    url("assets/travel-globe-preview.png") center / cover no-repeat;
 }
 
 .uit-prepare-card::after {
   background: var(--paper-strong);
+}
+
+.uit-prepare-card h3 {
+  max-width: none;
+  margin-bottom: 0;
+  font-size: clamp(2rem, 4.4vw, 4.4rem);
+  letter-spacing: -0.05em;
+  white-space: nowrap;
 }
 
 .card-number {
@@ -2209,6 +2220,10 @@ html[lang="fr"] .article-node small {
   .feature-card {
     grid-template-columns: 1fr;
     min-height: 420px;
+  }
+
+  .uit-prepare-card h3 {
+    font-size: clamp(1.25rem, 7vw, 1.7rem);
   }
 
   .site-footer {
