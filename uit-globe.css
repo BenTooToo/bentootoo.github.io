@@ -537,6 +537,18 @@ a {
   pointer-events: auto !important;
 }
 
+.globe-hit-target.is-cluster {
+  width: 54px;
+  height: 54px;
+}
+
+.globe-hit-target.is-cluster .globe-hit-label {
+  border-color: rgba(255, 213, 138, 0.55);
+  color: #fff4d8;
+  opacity: 1;
+  transform: translate(var(--label-shift-x, -50%), 0);
+}
+
 .globe-hit-target:focus-visible {
   outline: 2px solid #fff;
   outline-offset: -5px;

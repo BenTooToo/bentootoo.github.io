@@ -114,40 +114,84 @@ const globeI18n = {
 
 const fieldReports = [
   {
-    id: "changsha-campus-memory",
-    lat: 28.2282,
-    lng: 112.9388,
-    location: {
-      zh: "中国 · 湖南 · 长沙",
-      en: "Changsha · Hunan · China",
-      fr: "Changsha · Hunan · Chine"
-    },
-    cover: "assets/project-classroom-credit.png",
-    coverAlt: {
-      zh: "夕阳下的校园周边街区",
-      en: "A neighborhood near a campus at sunset",
-      fr: "Un quartier proche d'un campus au coucher du soleil"
-    },
-    href: "reports/changsha-campus-memory.html"
+    id: "tampa",
+    lat: 27.9506,
+    lng: -82.4572,
+    location: { zh: "美国 · 坦帕", en: "Tampa · United States", fr: "Tampa · États-Unis" }
   },
   {
-    id: "tromso-winter-notes",
-    lat: 69.6492,
-    lng: 18.9553,
-    location: {
-      zh: "挪威 · 特罗姆瑟",
-      en: "Tromsø · Norway",
-      fr: "Tromsø · Norvège"
-    },
-    cover: "assets/cool_dude.jpeg",
-    coverAlt: {
-      zh: "特罗姆瑟海湾与雪山前的合影",
-      en: "A portrait beside the bay and snowy mountains in Tromsø",
-      fr: "Un portrait devant la baie et les montagnes enneigées de Tromsø"
-    },
-    href: "reports/tromso-winter-notes.html"
-  }
+    id: "portland-oregon",
+    lat: 45.5152,
+    lng: -122.6784,
+    location: { zh: "美国 · 俄勒冈州 · 波特兰", en: "Portland · Oregon · United States", fr: "Portland · Oregon · États-Unis" }
+  },
+  { id: "beijing", lat: 39.9042, lng: 116.4074, location: { zh: "中国 · 北京", en: "Beijing · China", fr: "Pékin · Chine" } },
+  { id: "shanghai", lat: 31.2304, lng: 121.4737, location: { zh: "中国 · 上海", en: "Shanghai · China", fr: "Shanghai · Chine" } },
+  { id: "guangzhou", lat: 23.1291, lng: 113.2644, location: { zh: "中国 · 广州", en: "Guangzhou · China", fr: "Canton · Chine" } },
+  { id: "chengdu", lat: 30.5728, lng: 104.0668, location: { zh: "中国 · 成都", en: "Chengdu · China", fr: "Chengdu · Chine" } },
+  { id: "hangzhou", lat: 30.2741, lng: 120.1551, location: { zh: "中国 · 杭州", en: "Hangzhou · China", fr: "Hangzhou · Chine" } },
+  { id: "guizhou-shiqiao", lat: 25.5884, lng: 104.4847, location: { zh: "中国 · 贵州 · 石桥", en: "Shiqiao · Guizhou · China", fr: "Shiqiao · Guizhou · Chine" } },
+  { id: "genhe", lat: 50.7805, lng: 121.5204, location: { zh: "中国 · 内蒙古 · 根河", en: "Genhe · Inner Mongolia · China", fr: "Genhe · Mongolie-Intérieure · Chine" } },
+  { id: "harbin", lat: 45.8038, lng: 126.535, location: { zh: "中国 · 黑龙江 · 哈尔滨", en: "Harbin · Heilongjiang · China", fr: "Harbin · Heilongjiang · Chine" } },
+  { id: "inner-mongolia-hohhot", lat: 40.842, lng: 111.749, location: { zh: "中国 · 内蒙古（呼和浩特）", en: "Inner Mongolia (Hohhot) · China", fr: "Mongolie-Intérieure (Hohhot) · Chine" } },
+  { id: "qingdao", lat: 36.0671, lng: 120.3826, location: { zh: "中国 · 青岛", en: "Qingdao · China", fr: "Qingdao · Chine" } },
+  { id: "suzhou", lat: 31.2989, lng: 120.5853, location: { zh: "中国 · 苏州", en: "Suzhou · China", fr: "Suzhou · Chine" } },
+  { id: "shangri-la", lat: 27.8297, lng: 99.7008, location: { zh: "中国 · 云南 · 香格里拉", en: "Shangri-La · Yunnan · China", fr: "Shangri-La · Yunnan · Chine" } },
+  { id: "lijiang", lat: 26.8721, lng: 100.2299, location: { zh: "中国 · 云南 · 丽江", en: "Lijiang · Yunnan · China", fr: "Lijiang · Yunnan · Chine" } },
+  { id: "seoul", lat: 37.5665, lng: 126.978, location: { zh: "韩国 · 首尔", en: "Seoul · South Korea", fr: "Séoul · Corée du Sud" } },
+  { id: "thailand-bangkok", lat: 13.7563, lng: 100.5018, location: { zh: "泰国（曼谷）", en: "Thailand (Bangkok)", fr: "Thaïlande (Bangkok)" } },
+  { id: "singapore", lat: 1.3521, lng: 103.8198, location: { zh: "新加坡", en: "Singapore", fr: "Singapour" } },
+  { id: "malaysia-kuala-lumpur", lat: 3.139, lng: 101.6869, location: { zh: "马来西亚（吉隆坡）", en: "Malaysia (Kuala Lumpur)", fr: "Malaisie (Kuala Lumpur)" } },
+  { id: "rovaniemi", lat: 66.5039, lng: 25.7294, location: { zh: "芬兰 · 罗瓦涅米", en: "Rovaniemi · Finland", fr: "Rovaniemi · Finlande" } },
+  { id: "tromso", lat: 69.6492, lng: 18.9553, location: { zh: "挪威 · 特罗姆瑟", en: "Tromsø · Norway", fr: "Tromsø · Norvège" } },
+  { id: "oslo", lat: 59.9139, lng: 10.7522, location: { zh: "挪威 · 奥斯陆", en: "Oslo · Norway", fr: "Oslo · Norvège" } },
+  { id: "amboise", lat: 47.4125, lng: 0.9827, location: { zh: "法国 · 昂布瓦斯", en: "Amboise · France", fr: "Amboise · France" } },
+  { id: "argeles-sur-mer", lat: 42.5478, lng: 3.0225, location: { zh: "法国 · 滨海阿热莱斯", en: "Argelès-sur-Mer · France", fr: "Argelès-sur-Mer · France" } },
+  { id: "blois", lat: 47.5861, lng: 1.3359, location: { zh: "法国 · 布卢瓦", en: "Blois · France", fr: "Blois · France" } },
+  { id: "bordeaux", lat: 44.8378, lng: -0.5792, location: { zh: "法国 · 波尔多", en: "Bordeaux · France", fr: "Bordeaux · France" } },
+  { id: "cannes", lat: 43.5528, lng: 7.0174, location: { zh: "法国 · 戛纳", en: "Cannes · France", fr: "Cannes · France" } },
+  { id: "grenoble", lat: 45.1885, lng: 5.7245, location: { zh: "法国 · 格勒诺布尔", en: "Grenoble · France", fr: "Grenoble · France" } },
+  { id: "marseille", lat: 43.2965, lng: 5.3698, location: { zh: "法国 · 马赛", en: "Marseille · France", fr: "Marseille · France" } },
+  { id: "montpellier", lat: 43.6108, lng: 3.8767, location: { zh: "法国 · 蒙彼利埃", en: "Montpellier · France", fr: "Montpellier · France" } },
+  { id: "orleans", lat: 47.903, lng: 1.9093, location: { zh: "法国 · 奥尔良", en: "Orléans · France", fr: "Orléans · France" } },
+  { id: "paris", lat: 48.8566, lng: 2.3522, location: { zh: "法国 · 巴黎", en: "Paris · France", fr: "Paris · France" } },
+  { id: "perpignan", lat: 42.6887, lng: 2.8948, location: { zh: "法国 · 佩皮尼昂", en: "Perpignan · France", fr: "Perpignan · France" } },
+  { id: "sete", lat: 43.4079, lng: 3.7008, location: { zh: "法国 · 塞特", en: "Sète · France", fr: "Sète · France" } },
+  { id: "toulouse", lat: 43.6047, lng: 1.4442, location: { zh: "法国 · 图卢兹", en: "Toulouse · France", fr: "Toulouse · France" } },
+  { id: "lille", lat: 50.6292, lng: 3.0573, location: { zh: "法国 · 里尔", en: "Lille · France", fr: "Lille · France" } },
+  { id: "amsterdam", lat: 52.3676, lng: 4.9041, location: { zh: "荷兰 · 阿姆斯特丹", en: "Amsterdam · Netherlands", fr: "Amsterdam · Pays-Bas" } },
+  { id: "venice", lat: 45.4408, lng: 12.3155, location: { zh: "意大利 · 威尼斯", en: "Venice · Italy", fr: "Venise · Italie" } }
 ];
+
+const francePlaceIds = new Set([
+  "amboise",
+  "argeles-sur-mer",
+  "blois",
+  "bordeaux",
+  "cannes",
+  "grenoble",
+  "marseille",
+  "montpellier",
+  "orleans",
+  "paris",
+  "perpignan",
+  "sete",
+  "toulouse",
+  "lille"
+]);
+const francePlaces = fieldReports.filter((report) => francePlaceIds.has(report.id));
+const franceCluster = {
+  id: "france-cluster",
+  kind: "cluster",
+  clusterId: "france",
+  lat: 46.6034,
+  lng: 1.8883,
+  location: {
+    zh: `法国 · ${francePlaces.length} 个地点`,
+    en: `France · ${francePlaces.length} places`,
+    fr: `France · ${francePlaces.length} lieux`
+  }
+};
 
 const globeHost = document.querySelector("#globeViz");
 const loading = document.querySelector("#globeLoading");
@@ -177,6 +221,24 @@ let coordinateAnimationFrame = 0;
 let hoverLabelAnimationFrame = 0;
 let lastCoordinateUpdate = 0;
 let lastPointerPosition = null;
+let activeClusterId = null;
+let clusterExpansionReadyAt = 0;
+
+function getVisibleGlobeData() {
+  if (activeClusterId === "france") return fieldReports;
+  return fieldReports.filter((report) => !francePlaceIds.has(report.id)).concat(franceCluster);
+}
+
+function applyVisibleGlobeData() {
+  if (!globe) return;
+  const visibleData = getVisibleGlobeData();
+  globe
+    .pointsData(visibleData)
+    .ringsData(visibleData)
+    .htmlElementsData(visibleData);
+  refreshPointStyles();
+  window.requestAnimationFrame(updateMarkerLabels);
+}
 
 function text(key) {
   return globeI18n[currentLanguage]?.[key] || globeI18n.zh[key] || "";
@@ -184,11 +246,11 @@ function text(key) {
 
 function reportText(report) {
   return {
-    title: text("testTitle"),
-    summary: text("testSummary"),
-    type: text("testCategory"),
+    title: "",
+    summary: "",
+    type: "",
     location: report.location[currentLanguage] || report.location.zh,
-    coverAlt: report.coverAlt[currentLanguage] || report.coverAlt.zh
+    coverAlt: report.coverAlt?.[currentLanguage] || report.coverAlt?.zh || ""
   };
 }
 
@@ -202,24 +264,48 @@ function setLoadingError() {
 function updateDialog(report) {
   if (!report || !dialog) return;
   const localized = reportText(report);
+  const coverWrap = cover?.closest(".field-cover-wrap");
+  const enterLink = preview?.querySelector(".field-enter");
+  const hasReport = Boolean(report.href);
   currentReport = report;
-  preview.href = report.href;
-  cover.src = report.cover;
+
+  if (hasReport) {
+    preview.href = report.href;
+    preview.removeAttribute("aria-disabled");
+  } else {
+    preview.removeAttribute("href");
+    preview.setAttribute("aria-disabled", "true");
+  }
+
+  if (report.cover) cover.src = report.cover;
+  else cover.removeAttribute("src");
   cover.alt = localized.coverAlt;
+  if (coverWrap) coverWrap.hidden = !report.cover;
+  if (enterLink) enterLink.hidden = !hasReport;
   locationLabel.textContent = localized.location;
   typeLabel.textContent = localized.type;
+  typeLabel.hidden = !localized.type;
   title.textContent = localized.title;
+  title.hidden = !localized.title;
+  if (localized.title) {
+    dialog.setAttribute("aria-labelledby", "fieldDialogTitle");
+    dialog.removeAttribute("aria-label");
+  } else {
+    dialog.removeAttribute("aria-labelledby");
+    dialog.setAttribute("aria-label", localized.location);
+  }
   summary.textContent = localized.summary;
+  summary.hidden = !localized.summary;
 }
 
 function updateMarkerLabels() {
-  fieldReports.forEach((report) => {
+  getVisibleGlobeData().forEach((report) => {
     const marker = document.querySelector(`[data-report-id="${report.id}"]`);
     if (!marker) return;
     const localized = reportText(report);
-    marker.setAttribute("aria-label", `${text("markerLabel")} ${localized.location}：${localized.title}`);
+    marker.setAttribute("aria-label", localized.location);
     const markerLabel = marker.querySelector(".globe-hit-label");
-    if (markerLabel) markerLabel.textContent = `${localized.location} · ${localized.title}`;
+    if (markerLabel) markerLabel.textContent = localized.location;
   });
 }
 
@@ -286,7 +372,8 @@ function openReport(report, event) {
   updateDialog(report);
   const moveDuration = reducedMotion ? 0 : 820;
 
-  globe?.pointOfView({ lat: report.lat, lng: report.lng, altitude: 1.55 }, moveDuration);
+  const targetAltitude = activeClusterId === "france" && francePlaceIds.has(report.id) ? 0.68 : 1.55;
+  globe?.pointOfView({ lat: report.lat, lng: report.lng, altitude: targetAltitude }, moveDuration);
   pendingReportTimer = window.setTimeout(() => {
     const pointer = getReportPointerPosition(report, event);
     if (!dialog.open) dialog.show();
@@ -325,9 +412,48 @@ function closeIntroMode() {
 function refreshPointStyles() {
   if (!globe) return;
   globe
-    .pointRadius((report) => report.id === hoveredReportId ? 1.08 : 0.74)
-    .pointAltitude((report) => report.id === hoveredReportId ? 0.17 : 0.11)
-    .pointColor((report) => report.id === hoveredReportId ? "#ffffff" : "#b9ddff");
+    .pointRadius((report) => {
+      if (report.kind === "cluster") return report.id === hoveredReportId ? 1.55 : 1.25;
+      return report.id === hoveredReportId ? 1.08 : 0.74;
+    })
+    .pointAltitude((report) => {
+      if (report.kind === "cluster") return report.id === hoveredReportId ? 0.21 : 0.16;
+      return report.id === hoveredReportId ? 0.17 : 0.11;
+    })
+    .pointColor((report) => {
+      if (report.id === hoveredReportId) return "#ffffff";
+      return report.kind === "cluster" ? "#ffd58a" : "#b9ddff";
+    });
+}
+
+function expandCluster(cluster) {
+  if (!globe || cluster.clusterId !== "france") return;
+  const moveDuration = reducedMotion ? 0 : 900;
+  closeReport();
+  closeIntroMode();
+  setHoveredReport(null);
+  activeClusterId = "france";
+  clusterExpansionReadyAt = performance.now() + moveDuration + 100;
+  applyVisibleGlobeData();
+  globe.pointOfView({ lat: cluster.lat, lng: cluster.lng, altitude: 0.72 }, moveDuration);
+}
+
+function handleGlobeItemClick(report, event) {
+  if (report.kind === "cluster") {
+    expandCluster(report);
+    return;
+  }
+  openReport(report, event);
+}
+
+function collapseExpandedCluster() {
+  if (!globe || !activeClusterId) return;
+  if (performance.now() < clusterExpansionReadyAt) return;
+  if (globe.pointOfView().altitude <= 1.25) return;
+  activeClusterId = null;
+  clusterExpansionReadyAt = 0;
+  setHoveredReport(null);
+  applyVisibleGlobeData();
 }
 
 function clamp(value, minimum, maximum) {
@@ -398,10 +524,11 @@ function createHitTarget(report) {
   const localized = reportText(report);
   button.type = "button";
   button.className = "globe-hit-target";
+  button.classList.toggle("is-cluster", report.kind === "cluster");
   button.dataset.reportId = report.id;
-  button.setAttribute("aria-label", `${text("markerLabel")} ${localized.location}：${localized.title}`);
+  button.setAttribute("aria-label", localized.location);
   label.className = "globe-hit-label";
-  label.textContent = `${localized.location} · ${localized.title}`;
+  label.textContent = localized.location;
   button.append(label);
   button.addEventListener("pointerenter", (event) => {
     lastPointerPosition = { clientX: event.clientX, clientY: event.clientY };
@@ -419,7 +546,7 @@ function createHitTarget(report) {
   button.addEventListener("blur", () => setHoveredReport(null));
   button.addEventListener("click", (event) => {
     event.stopPropagation();
-    openReport(report, event);
+    handleGlobeItemClick(report, event);
   });
   return button;
 }
@@ -456,6 +583,7 @@ function updateCoordinateText() {
 function coordinateLoop(time) {
   if (time - lastCoordinateUpdate > 100) {
     updateCoordinateText();
+    collapseExpandedCluster();
     lastCoordinateUpdate = time;
   }
   coordinateAnimationFrame = window.requestAnimationFrame(coordinateLoop);
@@ -478,24 +606,24 @@ function initializeGlobe() {
     .showAtmosphere(true)
     .atmosphereColor("#8dbdff")
     .atmosphereAltitude(0.18)
-    .pointsData(fieldReports)
+    .pointsData(getVisibleGlobeData())
     .pointLat("lat")
     .pointLng("lng")
     .pointResolution(24)
-    .ringsData(fieldReports)
+    .ringsData(getVisibleGlobeData())
     .ringLat("lat")
     .ringLng("lng")
-    .ringColor(() => "rgba(255,255,255,0.74)")
-    .ringMaxRadius(3.2)
+    .ringColor((report) => report.kind === "cluster" ? "rgba(255,213,138,0.9)" : "rgba(255,255,255,0.74)")
+    .ringMaxRadius((report) => report.kind === "cluster" ? 5.2 : 3.2)
     .ringPropagationSpeed(1.25)
     .ringRepeatPeriod(1450)
-    .htmlElementsData(fieldReports)
+    .htmlElementsData(getVisibleGlobeData())
     .htmlLat("lat")
     .htmlLng("lng")
-    .htmlAltitude(0.13)
+    .htmlAltitude((report) => report.kind === "cluster" ? 0.18 : 0.13)
     .htmlElement(createHitTarget)
     .onPointHover(setHoveredReport)
-    .onPointClick((report, event) => openReport(report, event))
+    .onPointClick(handleGlobeItemClick)
     .onGlobeClick(() => setHoveredReport(null))
     .onGlobeReady(() => loading?.classList.add("is-ready"));
 
@@ -514,6 +642,7 @@ function initializeGlobe() {
   controls.minDistance = 115;
   controls.maxDistance = 520;
   controls.addEventListener("start", closeReport);
+  controls.addEventListener("end", collapseExpandedCluster);
 
   const globeMaterial = globe.globeMaterial();
   globeMaterial.bumpScale = 4;
