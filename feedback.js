@@ -186,7 +186,10 @@ async function submitThought(event) {
     anonymous,
     articles: articles.length ? articles.join(" · ") : copy.noArticle,
     source: window.location.href,
-    _subject: "思索之屋收到了一条新想法"
+    _subject: "思索之屋收到了一条新想法",
+    _template: "table",
+    _url: window.location.href,
+    _honey: ""
   };
 
   submitButton.disabled = true;
@@ -200,7 +203,10 @@ async function submitThought(event) {
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(payload)
     });
-    if (!response.ok) throw new Error(`Feedback request failed: ${response.status}`);
+    const result = await response.json().catch(() => null);
+    if (!response.ok || result?.success === false) {
+      throw new Error(result?.message || `Feedback request failed: ${response.status}`);
+    }
 
     thoughtForm.reset();
     updateThoughtIdentity();

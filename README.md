@@ -26,17 +26,18 @@ your-github-username.github.io
 
 ## Private thought inbox
 
-The discussion panel on `blog.html` posts JSON to the URL in this tag:
+The discussion panel on `blog.html` posts JSON to the FormSubmit AJAX endpoint
+in this tag:
 
 ```html
-<meta name="feedback-endpoint" content="">
+<meta name="feedback-endpoint" content="https://formsubmit.co/ajax/beisong.lyu@gmail.com">
 ```
 
-Because GitHub Pages is static, connect the form to a private form endpoint (for
-example, a Formspree form whose notification recipient is configured in the
-Formspree dashboard). Paste only the generated endpoint URL into `content`.
-The recipient email must remain in the form service dashboard and must not be
-added to the HTML or JavaScript.
+Because GitHub Pages is static, FormSubmit forwards each submission to the
+configured mailbox. The first submission sends an activation message to that
+mailbox; confirm it once before public visitors use the form. After activation,
+FormSubmit provides an invisible endpoint token that can replace the visible
+email address in the meta tag.
 
 ## Search engine indexing
 
