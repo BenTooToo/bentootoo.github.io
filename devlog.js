@@ -5,6 +5,53 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-10-14",
+        version: "v0.9",
+        done: [
+          "计划开始 ARG 解密续作 deathGPT，利用伪 AI，通过提问发现恐怖的真相。"
+        ]
+      },
+      {
+        date: "2026-10-07",
+        version: "v0.9",
+        done: [
+          "增加项目保存库。",
+          "为项目保存库增加分类筛选、游戏类型筛选和我的最爱功能。",
+          "放大项目收藏爱心，并调整为饱满的卡通简约样式。",
+          "为每个项目增加详情、更新日志和评论功能。",
+          "在主页中增加查看所有项目的入口。",
+          "将正在制作、即将可以导出的 2D 合作剧情游戏加入项目保存库，目标就是把你的脑洞打开！"
+        ]
+      },
+      {
+        date: "2026-10-06",
+        version: "v0.9",
+        done: [
+          "开始制作 bentoto（便当当），一个 3D 放置游戏，一起来做便当吧。"
+        ]
+      },
+      {
+        date: "2026-10-04",
+        version: "v0.9",
+        done: [
+          "开始制作 archinature，一个手机平台的华容道风格解密游戏。"
+        ]
+      },
+      {
+        date: "2026-10-03",
+        version: "v0.9",
+        done: [
+          "开始制作工具 token消耗大师。"
+        ]
+      },
+      {
+        date: "2026-09-30",
+        version: "v0.9",
+        done: [
+          "开始清华建筑比赛的游戏设计项目。"
+        ]
+      },
+      {
         date: "2026-08-05",
         version: "v0.8",
         done: [
@@ -85,6 +132,53 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-10-14",
+        version: "v0.9",
+        done: [
+          "Planned the start of deathGPT, an ARG puzzle sequel where questions to a simulated AI uncover a terrifying truth."
+        ]
+      },
+      {
+        date: "2026-10-07",
+        version: "v0.9",
+        done: [
+          "Added the project archive.",
+          "Added category filters, game-genre filters, and My Favorites to the project archive.",
+          "Enlarged project favorite hearts and refined them into a fuller, simple cartoon style.",
+          "Added details, update logs, and comments for every project.",
+          "Added a View All Projects entry to the homepage.",
+          "Added the collaborative 2D story game, nearing an exportable build, to the project archive. The goal is to spark your imagination!"
+        ]
+      },
+      {
+        date: "2026-10-06",
+        version: "v0.9",
+        done: [
+          "Started bentoto, a 3D idle game. Let’s make bento together!"
+        ]
+      },
+      {
+        date: "2026-10-04",
+        version: "v0.9",
+        done: [
+          "Started archinature, a mobile sliding-block puzzle game inspired by Huarong Dao."
+        ]
+      },
+      {
+        date: "2026-10-03",
+        version: "v0.9",
+        done: [
+          "Started the Token Consumption Master tool."
+        ]
+      },
+      {
+        date: "2026-09-30",
+        version: "v0.9",
+        done: [
+          "Started the game design project for the Tsinghua architecture competition."
+        ]
+      },
+      {
         date: "2026-08-05",
         version: "v0.8",
         done: [
@@ -164,6 +258,53 @@ const devlogContent = {
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
     entries: [
+      {
+        date: "2026-10-14",
+        version: "v0.9",
+        done: [
+          "Début prévu de deathGPT, une suite d’énigmes ARG où les questions posées à une fausse IA révèlent une vérité terrifiante."
+        ]
+      },
+      {
+        date: "2026-10-07",
+        version: "v0.9",
+        done: [
+          "Ajout de la réserve de projets.",
+          "Ajout des filtres par catégorie, des filtres de genres de jeux et de Mes favoris à la réserve de projets.",
+          "Agrandissement des cœurs de favoris et adoption d’un style cartoon simple et plus généreux.",
+          "Ajout des détails, des journaux de mise à jour et des commentaires pour chaque projet.",
+          "Ajout d’un accès Voir tous les projets à la page d’accueil.",
+          "Ajout à la réserve de projets du jeu narratif collaboratif en 2D, bientôt exportable. L’objectif est d’ouvrir votre imagination !"
+        ]
+      },
+      {
+        date: "2026-10-06",
+        version: "v0.9",
+        done: [
+          "Début de bentoto, un jeu idle en 3D. Préparons des bentos ensemble !"
+        ]
+      },
+      {
+        date: "2026-10-04",
+        version: "v0.9",
+        done: [
+          "Début d’archinature, un jeu mobile de blocs coulissants inspiré du Huarong Dao."
+        ]
+      },
+      {
+        date: "2026-10-03",
+        version: "v0.9",
+        done: [
+          "Début de l’outil Maître de la consommation de tokens."
+        ]
+      },
+      {
+        date: "2026-09-30",
+        version: "v0.9",
+        done: [
+          "Début du projet de conception de jeu pour le concours d’architecture de Tsinghua."
+        ]
+      },
       {
         date: "2026-08-05",
         version: "v0.8",

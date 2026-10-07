@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="本2兔的项目保存库：工具、游戏和其他个人或团队项目。">
+    <meta name="author" content="Bentootoo">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bentootoo.github.io/projects.html">
+    <link rel="icon" type="image/png" href="assets/cow.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bentootoo">
+    <meta property="og:title" content="项目保存库 | 本2兔">
+    <meta property="og:description" content="查看本2兔迄今为止的所有个人或团队项目。">
+    <meta property="og:url" content="https://bentootoo.github.io/projects.html">
+    <meta property="og:image" content="https://bentootoo.github.io/assets/project-classroom-credit.png">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="项目保存库 | 本2兔">
+    <meta name="twitter:description" content="查看本2兔迄今为止的所有个人或团队项目。">
+    <meta name="twitter:image" content="https://bentootoo.github.io/assets/project-classroom-credit.png">
+    <meta name="theme-color" content="#050817">
+    <meta name="feedback-endpoint" content="https://formsubmit.co/ajax/beisong.lyu@gmail.com">
+    <title>项目保存库 | 本2兔</title>
+    <link rel="preload" as="image" href="assets/cosmic-background.png">
+    <link rel="stylesheet" href="styles.css?v=cosmos14">
+    <link rel="stylesheet" href="projects.css?v=archive6">
+    <link rel="stylesheet" href="devlog.css">
+  </head>
+  <body class="project-library-body">
+    <div class="page-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="more-menu">
+        <button class="more-toggle" type="button" aria-expanded="false" aria-controls="moreDropdown" aria-label="更多" data-i18n-aria="more.menuLabel">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="more-dropdown" id="moreDropdown">
+          <div class="donate-menu">
+            <button class="donate-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="donateSubmenu" data-i18n="more.donate">捐助我</button>
+            <div class="donate-submenu" id="donateSubmenu" role="menu" aria-label="Support links">
+              <a href="https://onlyfans.com/bentootoo" target="_blank" rel="me noreferrer" role="menuitem"><span>OnlyFans</span><small data-i18n="donate.onlyfansRegion">（全球）</small></a>
+              <a href="https://afdian.com/a/bentootoo" target="_blank" rel="me noreferrer" role="menuitem"><span>爱发电</span><small data-i18n="donate.afdianRegion">（中国）</small></a>
+            </div>
+          </div>
+          <a href="#devlog" data-i18n="more.devlog">开发日志</a>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html#top" data-i18n="nav.home">首页</a>
+        <a href="projects.html" aria-current="page" data-i18n="nav.projects">项目</a>
+        <a href="blog.html" data-i18n="nav.blog">思索之屋</a>
+        <a href="index.html#contact" data-i18n="nav.contact">联系我</a>
+      </nav>
+
+      <div class="language-switch" aria-label="Language selector">
+        <button class="lang-button is-active" type="button" data-lang="zh">中</button>
+        <button class="lang-button" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="fr">FR</button>
+      </div>
+    </header>
+
+    <main id="top" class="project-library-main">
+      <section class="project-library-section" aria-label="项目保存库" data-project-aria="libraryLabel">
+        <div class="project-library-shell">
+          <div class="archive-toolbar">
+            <p class="archive-count" id="archiveCount" aria-live="polite"></p>
+            <div class="archive-filters" role="group" aria-label="项目分类" data-project-aria="filtersLabel">
+              <button class="archive-filter" type="button" data-filter="favorite" data-project-text="filterFavorites">我的最爱</button>
+              <button class="archive-filter is-active" type="button" data-filter="all" data-project-text="filterAll">全部</button>
+              <button class="archive-filter" type="button" data-filter="tool" data-project-text="filterTools">工具</button>
+              <div class="archive-filter-menu">
+                <button class="archive-filter" type="button" data-filter="game" aria-expanded="false" aria-controls="gameFilters" data-project-text="filterGames">游戏</button>
+                <div class="archive-game-filters" id="gameFilters" hidden>
+                  <div class="game-genre-options" role="group" aria-label="筛选游戏类型" data-project-aria="gameGenresLabel">
+                    <button class="game-genre-filter is-active" type="button" data-genre="action" aria-pressed="true" data-project-text="genreAction">动作</button>
+                    <button class="game-genre-filter is-active" type="button" data-genre="puzzle" aria-pressed="true" data-project-text="genrePuzzle">解密</button>
+                    <button class="game-genre-filter is-active" type="button" data-genre="text" aria-pressed="true" data-project-text="genreText">文字</button>
+                    <button class="game-genre-filter is-active" type="button" data-genre="adventure" aria-pressed="true" data-project-text="genreAdventure">冒险</button>
+                    <button class="game-genre-filter is-active" type="button" data-genre="horror" aria-pressed="true" data-project-text="genreHorror">恐怖</button>
+                  </div>
+                  <div class="game-filter-actions">
+                    <button type="button" id="selectAllGenres" data-project-text="selectAll">全选</button>
+                    <button type="button" id="clearGenres" data-project-text="clearAll">清除</button>
+                  </div>
+                </div>
+              </div>
+              <button class="archive-filter" type="button" data-filter="other" data-project-text="filterOther">其他</button>
+            </div>
+          </div>
+
+          <div class="archive-grid" id="archiveGrid"></div>
+          <p class="archive-empty" id="archiveEmpty" hidden data-project-text="empty">这个分类里暂时还没有项目。</p>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="project-detail-dialog" id="projectDialog" aria-labelledby="projectDialogTitle">
+      <div class="project-detail">
+        <button class="project-dialog-close" id="projectDialogClose" type="button" aria-label="关闭项目详情" data-project-aria="close">×</button>
+        <div class="project-detail-cover" id="projectDialogCover"></div>
+        <div class="project-detail-content">
+          <p class="project-detail-kind" id="projectDialogKind"></p>
+          <h2 id="projectDialogTitle"></h2>
+          <div class="project-detail-meta">
+            <div><span data-project-text="created">创立日期</span><strong id="projectDialogCreated"></strong></div>
+            <div><span data-project-text="updated">最近更新</span><strong id="projectDialogUpdated"></strong></div>
+          </div>
+          <section class="project-detail-section">
+            <h3 data-project-text="about">简介</h3>
+            <p id="projectDialogDescription"></p>
+          </section>
+          <section class="project-detail-section">
+            <h3 data-project-text="latestLog">最近更新日志</h3>
+            <ul class="project-update-list" id="projectDialogLog"></ul>
+          </section>
+          <a class="project-visit-link" id="projectDialogLink" href="#" target="_blank" rel="noopener noreferrer"><span data-project-text="visit">前往项目</span><span aria-hidden="true">↗</span></a>
+
+          <section class="project-comments" aria-labelledby="commentsHeading">
+            <div class="project-comments-head">
+              <div><p class="project-comments-kicker" data-project-text="commentsKicker">COMMENTS / 评论区</p><h3 id="commentsHeading" data-project-text="comments">留下你想说的话</h3></div>
+              <p data-project-text="commentsNote">留言会先寄到本2兔的邮箱，确认后再手动加入这里。</p>
+            </div>
+            <div class="published-comments" id="publishedComments"></div>
+            <form class="project-comment-form" id="projectCommentForm">
+              <label>
+                <span data-project-text="messageLabel">评论</span>
+                <textarea name="message" rows="4" maxlength="2000" required placeholder="写下你对这个项目的想法……" data-project-placeholder="messagePlaceholder"></textarea>
+              </label>
+              <div class="project-comment-row">
+                <label>
+                  <span data-project-text="nicknameLabel">昵称</span>
+                  <input name="nickname" type="text" maxlength="60" placeholder="可以留空" data-project-placeholder="nicknamePlaceholder">
+                </label>
+                <button type="submit" data-project-text="submit">寄给本2兔</button>
+              </div>
+              <input class="thought-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p class="project-comment-status" id="projectCommentStatus" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+        </div>
+      </div>
+    </dialog>
+
+    <a class="back-to-top" href="#top" aria-label="回到顶部" data-i18n-aria="contact.backTop">↑</a>
+    <footer class="site-footer">
+      <span>© <span id="year">2026</span> <span data-i18n="name.display">本2兔</span></span>
+      <span data-i18n="footer.note">Built for GitHub Pages.</span>
+    </footer>
+
+    <script src="app.js?v=cosmos9" defer></script>
+    <script src="devlog.js?v=devlog6" defer></script>
+    <script src="projects.js?v=archive5" defer></script>
+  </body>
+</html>

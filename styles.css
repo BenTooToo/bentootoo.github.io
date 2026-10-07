@@ -859,6 +859,72 @@ button.project-card {
   white-space: nowrap;
 }
 
+.project-library-card {
+  grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1fr);
+  align-items: center;
+  min-height: clamp(420px, 48vw, 560px);
+  background:
+    radial-gradient(circle at 18% 15%, rgba(124, 103, 255, 0.24), transparent 34%),
+    linear-gradient(135deg, rgba(6, 10, 30, 0.98), rgba(12, 19, 48, 0.9));
+}
+
+.project-library-card::after {
+  background: var(--lime);
+}
+
+.library-card-preview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(5, 8, 23, 0.72);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.36);
+  transform: rotate(-3deg);
+}
+
+.library-card-preview::before {
+  grid-column: 1 / -1;
+  height: 22px;
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 10px 50%, var(--coral) 0 3px, transparent 4px),
+    radial-gradient(circle at 21px 50%, var(--lime) 0 3px, transparent 4px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+  content: "";
+}
+
+.library-card-preview span {
+  min-height: 76px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  background:
+    linear-gradient(0deg, rgba(6, 10, 30, 0.88), transparent 72%),
+    linear-gradient(135deg, rgba(25, 211, 197, 0.42), rgba(124, 103, 255, 0.16));
+}
+
+.library-card-preview span:nth-child(3n) {
+  background:
+    linear-gradient(0deg, rgba(6, 10, 30, 0.9), transparent 72%),
+    linear-gradient(135deg, rgba(255, 106, 87, 0.48), rgba(124, 103, 255, 0.13));
+}
+
+.library-card-preview span:nth-child(2n) {
+  background:
+    linear-gradient(0deg, rgba(6, 10, 30, 0.9), transparent 72%),
+    linear-gradient(135deg, rgba(200, 255, 89, 0.38), rgba(25, 211, 197, 0.12));
+}
+
+.library-card-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.project-library-card .library-card-copy h3 {
+  font-size: clamp(2.5rem, 5vw, 5.2rem);
+}
+
 .card-number {
   color: var(--lime);
   font-size: 0.8rem;

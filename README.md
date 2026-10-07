@@ -5,6 +5,7 @@ Static personal homepage for Bentootoo / 本2兔.
 ## Files
 
 - `index.html` - page structure
+- `projects.html` / `projects.css` / `projects.js` - filterable project archive, project details, and moderated comment submissions
 - `styles.css` - visual system, layout, responsive design, transitions
 - `app.js` - Chinese / English / French language switch, scroll reveal, canvas motion
 
