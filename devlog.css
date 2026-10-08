@@ -86,29 +86,85 @@
 }
 
 .devlog-entry {
+  position: relative;
   padding: 20px;
+  overflow: hidden;
   border: 1px solid rgba(246, 247, 242, 0.14);
   border-radius: var(--radius);
   background: rgba(246, 247, 242, 0.06);
+}
+
+.devlog-entry > * {
+  position: relative;
+  z-index: 1;
+}
+
+.devlog-entry--cosmic {
+  background:
+    linear-gradient(rgba(4, 6, 20, 0.64), rgba(4, 6, 20, 0.82)),
+    url("assets/cosmic-background.png") center / cover no-repeat;
+}
+
+.devlog-entry--classroom {
+  background:
+    linear-gradient(rgba(5, 8, 22, 0.56), rgba(5, 8, 22, 0.84)),
+    url("assets/project-classroom-credit.png") center / cover no-repeat;
+}
+
+.devlog-entry--tower {
+  background:
+    linear-gradient(rgba(5, 8, 22, 0.54), rgba(5, 8, 22, 0.84)),
+    url("assets/cover_toweroff.png") center / cover no-repeat;
+}
+
+.devlog-entry--cosmic,
+.devlog-entry--classroom,
+.devlog-entry--tower {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.72);
+}
+
+.devlog-entry--table-link {
+  color: #111;
+  background-color: #d9ddd2;
+  background-image:
+    linear-gradient(rgba(17, 17, 17, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.1) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.devlog-entry--table-link .devlog-version,
+.devlog-entry--table-link .devlog-date,
+.devlog-entry--table-link ul,
+.devlog-entry--table-link a {
+  color: #111;
+}
+
+.devlog-entry--table-link a:hover,
+.devlog-entry--table-link a:focus-visible {
+  color: #111;
 }
 
 .devlog-entry-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
   margin-bottom: 16px;
 }
 
 .devlog-date {
-  color: var(--cyan);
-  font-weight: 800;
+  margin-left: auto;
+  color: rgba(246, 247, 242, 0.58);
+  font-size: 0.86rem;
+  font-weight: 700;
 }
 
 .devlog-version {
-  color: rgba(246, 247, 242, 0.58);
-  font-size: 0.86rem;
-  font-weight: 800;
+  color: var(--paper);
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .devlog-entry ul {
@@ -116,6 +172,192 @@
   padding-left: 20px;
   color: rgba(246, 247, 242, 0.78);
   line-height: 1.72;
+}
+
+.devlog-entry a {
+  color: var(--lime);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.devlog-entry a:hover,
+.devlog-entry a:focus-visible {
+  color: var(--paper);
+}
+
+.devlog-favorite-demo {
+  display: inline-grid;
+  place-items: center;
+  width: 1.45em;
+  height: 1.45em;
+  margin-left: 0.38em;
+  padding: 0;
+  border: 0;
+  color: rgba(246, 247, 242, 0.5);
+  background: transparent;
+  vertical-align: -0.3em;
+  cursor: pointer;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.devlog-favorite-demo svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.devlog-favorite-demo:hover,
+.devlog-favorite-demo:focus-visible {
+  color: var(--paper);
+  outline: none;
+  transform: scale(1.08);
+}
+
+.devlog-favorite-demo.is-favorite {
+  color: #ff304c;
+}
+
+.devlog-cow-icon {
+  width: 1.65em;
+  height: 1.65em;
+  margin-left: 0.38em;
+  object-fit: contain;
+  vertical-align: -0.45em;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.32));
+}
+
+.devlog-language-switch {
+  margin-left: 0.55em;
+  vertical-align: middle;
+}
+
+.deathgpt-prototype {
+  margin: 16px 0 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: #151515;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+}
+
+.deathgpt-prototype-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.82rem;
+}
+
+.deathgpt-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.58);
+}
+
+.deathgpt-messages {
+  min-height: 150px;
+  max-height: 280px;
+  padding: 18px 16px;
+  overflow-y: auto;
+}
+
+.deathgpt-message {
+  width: fit-content;
+  max-width: 86%;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.deathgpt-message-user {
+  margin-left: auto;
+  padding: 9px 13px;
+  border-radius: 12px 12px 3px 12px;
+  background: #2f2f2f;
+}
+
+.deathgpt-message-assistant {
+  min-height: 1.6em;
+}
+
+.deathgpt-message-assistant[data-state="loading"] {
+  color: rgba(255, 255, 255, 0.48);
+  letter-spacing: 0.28em;
+  animation: deathgpt-loading 900ms ease-in-out infinite alternate;
+}
+
+@keyframes deathgpt-loading {
+  from { opacity: 0.28; transform: translateY(1px); }
+  to { opacity: 1; transform: translateY(-1px); }
+}
+
+.deathgpt-message-assistant[data-state="error"] {
+  color: #ff3131;
+  font-family: SimSun, "宋体", serif;
+  font-size: 1.08rem;
+  font-weight: 900;
+}
+
+.deathgpt-message-assistant[data-state="fixed"] {
+  color: #72ef8d;
+  font-weight: 800;
+}
+
+.deathgpt-composer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 9px;
+  margin: 0 12px 12px;
+  padding: 7px 7px 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: #242424;
+}
+
+.deathgpt-input-wrap {
+  display: block;
+  margin: 0;
+}
+
+.deathgpt-composer input {
+  width: 100%;
+  height: 34px;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  outline: none;
+}
+
+.deathgpt-composer input::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.deathgpt-composer button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  color: #151515;
+  background: #fff;
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.deathgpt-composer button:disabled,
+.deathgpt-composer input:disabled {
+  opacity: 0.5;
+  cursor: wait;
 }
 
 body.devlog-open {

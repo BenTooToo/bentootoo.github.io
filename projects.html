@@ -24,8 +24,8 @@
     <title>项目保存库 | 本2兔</title>
     <link rel="preload" as="image" href="assets/cosmic-background.png">
     <link rel="stylesheet" href="styles.css?v=cosmos14">
-    <link rel="stylesheet" href="projects.css?v=archive6">
-    <link rel="stylesheet" href="devlog.css">
+    <link rel="stylesheet" href="projects.css?v=archive17">
+    <link rel="stylesheet" href="devlog.css?v=devlog8">
   </head>
   <body class="project-library-body">
     <div class="page-progress" aria-hidden="true"></div>
@@ -74,19 +74,42 @@
                 <button class="archive-filter" type="button" data-filter="game" aria-expanded="false" aria-controls="gameFilters" data-project-text="filterGames">游戏</button>
                 <div class="archive-game-filters" id="gameFilters" hidden>
                   <div class="game-genre-options" role="group" aria-label="筛选游戏类型" data-project-aria="gameGenresLabel">
-                    <button class="game-genre-filter is-active" type="button" data-genre="action" aria-pressed="true" data-project-text="genreAction">动作</button>
-                    <button class="game-genre-filter is-active" type="button" data-genre="puzzle" aria-pressed="true" data-project-text="genrePuzzle">解密</button>
-                    <button class="game-genre-filter is-active" type="button" data-genre="text" aria-pressed="true" data-project-text="genreText">文字</button>
-                    <button class="game-genre-filter is-active" type="button" data-genre="adventure" aria-pressed="true" data-project-text="genreAdventure">冒险</button>
-                    <button class="game-genre-filter is-active" type="button" data-genre="horror" aria-pressed="true" data-project-text="genreHorror">恐怖</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="action" aria-pressed="true" data-project-text="genreAction">动作</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="puzzle" aria-pressed="true" data-project-text="genrePuzzle">解密</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="text" aria-pressed="true" data-project-text="genreText">文字</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="adventure" aria-pressed="true" data-project-text="genreAdventure">冒险</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="horror" aria-pressed="true" data-project-text="genreHorror">恐怖</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="idle" aria-pressed="true" data-project-text="genreIdle">放置</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="story" aria-pressed="true" data-project-text="genreStory">剧情</button>
                   </div>
                   <div class="game-filter-actions">
-                    <button type="button" id="selectAllGenres" data-project-text="selectAll">全选</button>
-                    <button type="button" id="clearGenres" data-project-text="clearAll">清除</button>
+                    <button type="button" data-select-all="genre" data-project-text="selectAll">全选</button>
+                    <button type="button" data-clear-all="genre" data-project-text="clearAll">清除</button>
+                  </div>
+                  <h3 class="game-filter-heading" data-project-text="artStylesLabel">美术风格</h3>
+                  <div class="game-genre-options" role="group" data-project-aria="artStylesLabel" aria-label="美术风格">
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="artStyle" data-filter-value="2d" aria-pressed="true" data-project-text="art2d">2D</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="artStyle" data-filter-value="pixel" aria-pressed="true" data-project-text="artPixel">像素</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="artStyle" data-filter-value="3d" aria-pressed="true" data-project-text="art3d">3D</button>
+                  </div>
+                  <div class="game-filter-actions">
+                    <button type="button" data-select-all="artStyle" data-project-text="selectAll">全选</button>
+                    <button type="button" data-clear-all="artStyle" data-project-text="clearAll">清除</button>
+                  </div>
+                  <h3 class="game-filter-heading" data-project-text="progressLabel">进度</h3>
+                  <div class="game-genre-options" role="group" data-project-aria="progressLabel" aria-label="进度">
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="progress" data-filter-value="release" aria-pressed="true" data-project-text="progressRelease">正式版</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="progress" data-filter-value="beta" aria-pressed="true" data-project-text="progressBeta">测试版</button>
+                    <button class="game-genre-filter is-active" type="button" data-filter-group="progress" data-filter-value="development" aria-pressed="true" data-project-text="progressDevelopment">正在开发</button>
+                  </div>
+                  <div class="game-filter-actions">
+                    <button type="button" data-select-all="progress" data-project-text="selectAll">全选</button>
+                    <button type="button" data-clear-all="progress" data-project-text="clearAll">清除</button>
                   </div>
                 </div>
               </div>
               <button class="archive-filter" type="button" data-filter="other" data-project-text="filterOther">其他</button>
+              <button class="archive-filter" type="button" data-filter="work" data-project-text="filterWork">工作项目</button>
             </div>
           </div>
 
@@ -96,53 +119,6 @@
       </section>
     </main>
 
-    <dialog class="project-detail-dialog" id="projectDialog" aria-labelledby="projectDialogTitle">
-      <div class="project-detail">
-        <button class="project-dialog-close" id="projectDialogClose" type="button" aria-label="关闭项目详情" data-project-aria="close">×</button>
-        <div class="project-detail-cover" id="projectDialogCover"></div>
-        <div class="project-detail-content">
-          <p class="project-detail-kind" id="projectDialogKind"></p>
-          <h2 id="projectDialogTitle"></h2>
-          <div class="project-detail-meta">
-            <div><span data-project-text="created">创立日期</span><strong id="projectDialogCreated"></strong></div>
-            <div><span data-project-text="updated">最近更新</span><strong id="projectDialogUpdated"></strong></div>
-          </div>
-          <section class="project-detail-section">
-            <h3 data-project-text="about">简介</h3>
-            <p id="projectDialogDescription"></p>
-          </section>
-          <section class="project-detail-section">
-            <h3 data-project-text="latestLog">最近更新日志</h3>
-            <ul class="project-update-list" id="projectDialogLog"></ul>
-          </section>
-          <a class="project-visit-link" id="projectDialogLink" href="#" target="_blank" rel="noopener noreferrer"><span data-project-text="visit">前往项目</span><span aria-hidden="true">↗</span></a>
-
-          <section class="project-comments" aria-labelledby="commentsHeading">
-            <div class="project-comments-head">
-              <div><p class="project-comments-kicker" data-project-text="commentsKicker">COMMENTS / 评论区</p><h3 id="commentsHeading" data-project-text="comments">留下你想说的话</h3></div>
-              <p data-project-text="commentsNote">留言会先寄到本2兔的邮箱，确认后再手动加入这里。</p>
-            </div>
-            <div class="published-comments" id="publishedComments"></div>
-            <form class="project-comment-form" id="projectCommentForm">
-              <label>
-                <span data-project-text="messageLabel">评论</span>
-                <textarea name="message" rows="4" maxlength="2000" required placeholder="写下你对这个项目的想法……" data-project-placeholder="messagePlaceholder"></textarea>
-              </label>
-              <div class="project-comment-row">
-                <label>
-                  <span data-project-text="nicknameLabel">昵称</span>
-                  <input name="nickname" type="text" maxlength="60" placeholder="可以留空" data-project-placeholder="nicknamePlaceholder">
-                </label>
-                <button type="submit" data-project-text="submit">寄给本2兔</button>
-              </div>
-              <input class="thought-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <p class="project-comment-status" id="projectCommentStatus" role="status" aria-live="polite"></p>
-            </form>
-          </section>
-        </div>
-      </div>
-    </dialog>
-
     <a class="back-to-top" href="#top" aria-label="回到顶部" data-i18n-aria="contact.backTop">↑</a>
     <footer class="site-footer">
       <span>© <span id="year">2026</span> <span data-i18n="name.display">本2兔</span></span>
@@ -150,7 +126,7 @@
     </footer>
 
     <script src="app.js?v=cosmos9" defer></script>
-    <script src="devlog.js?v=devlog6" defer></script>
-    <script src="projects.js?v=archive5" defer></script>
+    <script src="devlog.js?v=devlog22" defer></script>
+    <script src="projects.js?v=archive17" defer></script>
   </body>
 </html>

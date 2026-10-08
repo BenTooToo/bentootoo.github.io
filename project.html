@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="本2兔项目保存库中的项目详情。">
+    <meta name="author" content="Bentootoo">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/cow.png">
+    <meta name="theme-color" content="#050817">
+    <meta name="feedback-endpoint" content="https://formsubmit.co/ajax/beisong.lyu@gmail.com">
+    <title>项目详情 | 本2兔</title>
+    <link rel="preload" as="image" href="assets/cosmic-background.png">
+    <link rel="stylesheet" href="styles.css?v=cosmos15">
+    <link rel="stylesheet" href="projects.css?v=archive17">
+    <link rel="stylesheet" href="devlog.css?v=devlog8">
+  </head>
+  <body class="project-library-body project-page-body">
+    <div class="page-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="more-menu">
+        <button class="more-toggle" type="button" aria-expanded="false" aria-controls="moreDropdown" aria-label="More" data-i18n-aria="more.menuLabel">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="more-dropdown" id="moreDropdown">
+          <div class="donate-menu">
+            <button class="donate-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="donateSubmenu" data-i18n="more.donate">捐助我</button>
+            <div class="donate-submenu" id="donateSubmenu" role="menu" aria-label="Support links">
+              <a href="https://onlyfans.com/bentootoo" target="_blank" rel="me noreferrer" role="menuitem">
+                <span>OnlyFans</span>
+                <small data-i18n="donate.onlyfansRegion">（全球）</small>
+              </a>
+              <a href="https://afdian.com/a/bentootoo" target="_blank" rel="me noreferrer" role="menuitem">
+                <span>爱发电</span>
+                <small data-i18n="donate.afdianRegion">（中国）</small>
+              </a>
+            </div>
+          </div>
+          <a href="#devlog" data-i18n="more.devlog">开发日志</a>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html#top" data-i18n="nav.home">首页</a>
+        <a href="projects.html" aria-current="page" data-i18n="nav.projects">项目</a>
+        <a href="blog.html" data-i18n="nav.blog">思索之屋</a>
+        <a href="index.html#contact" data-i18n="nav.contact">联系我</a>
+      </nav>
+
+      <div class="language-switch" aria-label="Language selector">
+        <button class="lang-button is-active" type="button" data-lang="zh">中</button>
+        <button class="lang-button" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="fr">FR</button>
+      </div>
+    </header>
+
+    <main id="top" class="project-page" data-project-detail-page>
+      <div class="project-page-cover" id="projectDialogCover"></div>
+      <article class="project-detail project-page-shell">
+        <div class="project-detail-content">
+          <h1 id="projectDialogTitle"></h1>
+          <div class="project-detail-meta">
+            <div><span data-project-text="created">创立日期</span><strong id="projectDialogCreated"></strong></div>
+            <div><span data-project-text="updated">最近更新</span><strong id="projectDialogUpdated"></strong></div>
+          </div>
+
+          <section class="project-detail-section">
+            <h2 data-project-text="about">简介</h2>
+            <p id="projectDialogDescription"></p>
+          </section>
+          <section class="project-detail-section" id="projectUpdates">
+            <h2 data-project-text="latestLog">最近更新</h2>
+            <ul class="project-update-list" id="projectDialogLog"></ul>
+          </section>
+          <section class="project-detail-section project-team-section">
+            <h2 data-project-text="team">团队成员</h2>
+            <ul class="project-team-list" id="projectTeamList"></ul>
+          </section>
+
+          <div class="project-primary-actions">
+            <a class="project-action project-action--visit" id="projectDialogLink" href="#" target="_blank" rel="noopener noreferrer"><span data-project-text="play">开始游戏</span></a>
+            <span class="project-action-divider" aria-hidden="true"></span>
+            <button class="project-action project-action--updates" id="projectUpdatesToggle" type="button" aria-expanded="false" aria-controls="projectHistory"><span data-project-text="updateLog">更新日志</span></button>
+          </div>
+
+          <section class="project-update-history" id="projectHistory" hidden>
+            <h2 data-project-text="updateLog">更新日志</h2>
+            <div class="project-history-list" id="projectHistoryList"></div>
+          </section>
+
+          <section class="project-comments" aria-labelledby="commentsHeading">
+            <div class="project-comments-head">
+              <h2 id="commentsHeading" data-project-text="comments">评论区</h2>
+            </div>
+            <div class="published-comments" id="publishedComments"></div>
+            <form class="project-comment-form" id="projectCommentForm">
+              <label>
+                <span data-project-text="messageLabel">评论</span>
+                <textarea name="message" rows="4" maxlength="2000" required placeholder="写下你对这个项目的想法……" data-project-placeholder="messagePlaceholder"></textarea>
+              </label>
+              <div class="project-comment-row">
+                <label>
+                  <span data-project-text="nicknameLabel">昵称</span>
+                  <input name="nickname" type="text" maxlength="60" placeholder="可以留空" data-project-placeholder="nicknamePlaceholder">
+                </label>
+                <button type="submit" data-project-text="submit">寄给本2兔</button>
+              </div>
+              <input class="thought-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p class="project-comment-status" id="projectCommentStatus" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+        </div>
+      </article>
+      <section class="project-not-found" id="projectNotFound" hidden>
+        <h1 data-project-text="notFound">没有找到这个项目</h1>
+        <a href="projects.html" data-project-text="backToLibrary">返回项目库</a>
+      </section>
+    </main>
+
+    <a class="back-to-top" href="#top" aria-label="回到顶部" data-i18n-aria="contact.backTop">↑</a>
+    <footer class="site-footer">
+      <span>© <span id="year">2026</span> <span data-i18n="name.display">本2兔</span></span>
+      <span data-i18n="footer.note">Built for GitHub Pages.</span>
+    </footer>
+
+    <script src="app.js?v=cosmos9" defer></script>
+    <script src="devlog.js?v=devlog22" defer></script>
+    <script src="projects.js?v=archive17" defer></script>
+  </body>
+</html>

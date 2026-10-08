@@ -74,6 +74,19 @@ const thoughtStatus = document.querySelector("#thoughtStatus");
 const thoughtArticleList = document.querySelector("#thoughtArticleList");
 const thoughtNicknameField = document.querySelector("#thoughtNicknameField");
 const thoughtEndpoint = document.querySelector('meta[name="feedback-endpoint"]')?.content.trim() || "";
+const visitorNicknameStorageKey = "bentootoo-visitor-nickname";
+
+function saveVisitorNickname(value) {
+  const nickname = String(value || "").trim().slice(0, 60);
+  const anonymousNames = new Set(["匿名", "匿名访客", "anonymous", "anonymous visitor", "anonyme", "visiteur anonyme"]);
+  if (nickname && !anonymousNames.has(nickname.toLocaleLowerCase())) localStorage.setItem(visitorNicknameStorageKey, nickname);
+}
+
+function restoreVisitorNickname() {
+  const input = thoughtNicknameField?.querySelector("input");
+  const nickname = (localStorage.getItem(visitorNicknameStorageKey) || "").trim();
+  if (input && nickname && !input.value) input.value = nickname;
+}
 
 function getThoughtLanguage() {
   const saved = localStorage.getItem("bentootoo-language");
@@ -224,11 +237,15 @@ async function submitThought(event) {
 
 if (thoughtDock && thoughtForm) {
   renderThoughtLanguage();
+  restoreVisitorNickname();
   thoughtInvitation?.addEventListener("click", openThoughtPanel);
   thoughtClose?.addEventListener("click", closeThoughtPanel);
   thoughtBackdrop?.addEventListener("click", closeThoughtPanel);
   thoughtForm.addEventListener("change", (event) => {
     if (event.target.name === "identity_mode") updateThoughtIdentity();
+  });
+  thoughtNicknameField?.querySelector("input")?.addEventListener("input", (event) => {
+    if (thoughtForm.elements.identity_mode.value !== "anonymous") saveVisitorNickname(event.target.value);
   });
   thoughtForm.addEventListener("submit", submitThought);
   document.addEventListener("keydown", (event) => {
