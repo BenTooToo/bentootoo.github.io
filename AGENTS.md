@@ -7,6 +7,10 @@
 
 - 只有修改个人主页本身的功能、结构或重要视觉设计时，才在同一次修改中更新公开的 `devlog.js`，无需再次询问用户确认。
 - 项目简介、项目资料、项目内部内容、项目版本与普通文案修订不写入公开开发日志；统一记录到仓库内部的 `PROJECT_CHANGELOG.md`。
+- 新增或更新个人博客文章不写入公开开发日志，不递增网站版本号；用户决定与实际修改统一记录到 `PROJECT_CHANGELOG.md`，文章默认同步中文、英文和法文。
+- 个人博客文章只保留最初的创作日期，不另设或显示修改日期；后续补充、纠错及标题、简介或正文修订均不改变原创作日期。
+- Personal blog posts keep only their original creation date, with no separate modification date; later additions, corrections, or revisions to titles, summaries, or body text do not change it.
+- Les articles personnels conservent uniquement leur date de création initiale, sans date de modification distincte ; les ajouts, corrections et révisions du titre, du résumé ou du texte ne la changent pas.
 - `PROJECT_CHANGELOG.md` 同时记录用户提出的决定和 AI 实际执行的修改，不在网站页面中提供入口。
 - 严格沿用现有日志格式和用户的个人文本风格，不擅自改变措辞气质、条目结构、日期格式或版本号格式。
 - 每条日志必须同步维护中文（`zh`）、英文（`en`）和法文（`fr`）三个版本；三种语言的日期、版本号和信息内容必须对应一致。

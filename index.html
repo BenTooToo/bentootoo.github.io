@@ -23,8 +23,8 @@
     <meta name="theme-color" content="#101418">
     <title>Bentootoo | 本2兔</title>
     <link rel="preload" as="image" href="assets/cosmic-background.png">
-    <link rel="stylesheet" href="styles.css?v=cosmos18">
-    <link rel="stylesheet" href="devlog.css?v=devlog9">
+    <link rel="stylesheet" href="styles.css?v=cosmos20">
+    <link rel="stylesheet" href="devlog.css?v=devlog10">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -57,8 +57,10 @@
         ]
       }
     </script>
+    <link rel="stylesheet" href="home-themes.css?v=themes4">
+    <script src="site-themes.js?v=1" defer></script>
   </head>
-  <body class="home-page">
+  <body class="home-page" data-home-theme="refined">
     <div class="page-progress" aria-hidden="true"></div>
 
     <header class="site-header">
@@ -93,10 +95,24 @@
         <a href="#contact" data-i18n="nav.contact">联系我</a>
       </nav>
 
-      <div class="language-switch" aria-label="Language selector">
-        <button class="lang-button is-active" type="button" data-lang="zh">中</button>
-        <button class="lang-button" type="button" data-lang="en">EN</button>
-        <button class="lang-button" type="button" data-lang="fr">FR</button>
+      <div class="header-controls">
+        <div class="language-switch" aria-label="Language selector">
+          <button class="lang-button is-active" type="button" data-lang="zh">中</button>
+          <button class="lang-button" type="button" data-lang="en">EN</button>
+          <button class="lang-button" type="button" data-lang="fr">FR</button>
+        </div>
+
+        <div class="home-theme-switch" role="group" aria-label="主页主题" data-i18n-aria="theme.label">
+          <button class="home-theme-swatch is-active" type="button" data-home-theme-value="refined" aria-pressed="true" aria-label="新版默认" data-i18n-aria="theme.refined" title="新版默认">
+            <span class="home-theme-color home-theme-color--refined" aria-hidden="true"></span>
+          </button>
+          <button class="home-theme-swatch" type="button" data-home-theme-value="yearbook" aria-pressed="false" aria-label="同窗录主页" data-i18n-aria="theme.yearbook" title="同窗录主页">
+            <span class="home-theme-color home-theme-color--yearbook" aria-hidden="true"></span>
+          </button>
+          <button class="home-theme-swatch" type="button" data-home-theme-value="pancake" aria-pressed="false" aria-label="煎饼控制" data-i18n-aria="theme.pancake" title="煎饼控制">
+            <span class="home-theme-color home-theme-color--pancake" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -167,7 +183,7 @@
                 <span data-i18n="hero.projectsCount">个项目</span>
               </div>
               <div class="hero-stat">
-                <strong>5</strong>
+                <strong>6</strong>
                 <span data-i18n="hero.blogCount">篇个人博客</span>
               </div>
             </div>
@@ -260,15 +276,15 @@
           </div>
 
           <div class="blog-stack">
-            <a class="blog-card" href="blog.html#my-ideal" data-reveal>
-              <span class="blog-date" data-i18n="blog.cardLatestOneDate">2026-08-05 / 制作 / 音乐</span>
-              <h3 data-i18n="blog.cardLatestOneTitle">我的理想</h3>
-              <p data-i18n="blog.cardLatestOneBody">名为幼稚的成熟</p>
+            <a class="blog-card" href="blog.html#claude-code-power-automate" data-reveal>
+              <span class="blog-date" data-i18n="blog.cardLatestOneDate">2026-10-12 / 技术</span>
+              <h3 data-i18n="blog.cardLatestOneTitle">Claude Code 终端到Power Automate云端的一体化工作流</h3>
+              <p data-i18n="blog.cardLatestOneBody">自动化的自动化</p>
             </a>
-            <a class="blog-card" href="blog.html#ai-singularity-communism" data-reveal>
-              <span class="blog-date" data-i18n="blog.cardLatestTwoDate">2026-08-05 / 哲学 / 技术</span>
-              <h3 data-i18n="blog.cardLatestTwoTitle">论 AI、奇异点与共产主义</h3>
-              <p data-i18n="blog.cardLatestTwoBody">我们不探讨政治，我们探讨未来</p>
+            <a class="blog-card" href="blog.html#my-ideal" data-reveal>
+              <span class="blog-date" data-i18n="blog.cardLatestTwoDate">2026-08-05 / 制作 / 音乐</span>
+              <h3 data-i18n="blog.cardLatestTwoTitle">我的理想</h3>
+              <p data-i18n="blog.cardLatestTwoBody">名为幼稚的成熟</p>
             </a>
             <a class="blog-card" href="blog.html" data-reveal>
               <h3 data-i18n="blog.cardHouseTitle">踏入思索之屋</h3>
@@ -327,7 +343,7 @@
       <span data-i18n="footer.note">Built for GitHub Pages.</span>
     </footer>
 
-    <script src="app.js?v=cosmos12" defer></script>
-    <script src="devlog.js?v=devlog24" defer></script>
+    <script src="app.js?v=cosmos18" defer></script>
+    <script src="devlog.js?v=devlog27" defer></script>
   </body>
 </html>

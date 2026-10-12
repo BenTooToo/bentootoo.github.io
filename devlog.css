@@ -385,3 +385,9 @@ body.devlog-open {
     padding: 16px;
   }
 }
+.devlog-entry--pancake {
+  background-color: #f5df8e;
+  background-image: linear-gradient(rgba(4, 6, 20, .58), rgba(4, 6, 20, .76)), url("assets/theme-pancake-background.webp");
+  background-size: auto, 210px auto;
+  background-repeat: repeat;
+}

@@ -7,10 +7,12 @@ const devlogContent = {
       {
         date: "2026-10-12",
         version: "v0.5.0",
+        visual: "pancake",
         done: [
           "重做主页的颜色逻辑，以白色替换绿色，并精简项目展示、思索之屋与联系区域。",
           "将主页首屏改为分段滚动叙事：欢迎文字与电子名片淡出后，由灵感主标题和项目、个人博客数量接替。",
-          "以黄金分割重新安排首屏构图，并增加缓慢闪烁的下滑提示。"
+          "以黄金分割重新安排首屏构图，并增加缓慢闪烁的下滑提示。",
+          "在语言选项旁增加全站共用的主题切换，提供新版默认、同窗录主页和煎饼控制三种设计。"
         ]
       },
       {
@@ -157,10 +159,12 @@ const devlogContent = {
       {
         date: "2026-10-12",
         version: "v0.5.0",
+        visual: "pancake",
         done: [
           "Reworked the homepage color system by replacing green with white, and simplified the project showcase, House of Reflection, and contact sections.",
           "Turned the homepage hero into a scroll-driven sequence: the welcome text and digital card fade away before the inspiration headline and project and blog counts take their place.",
-          "Recomposed the opening screen around the golden ratio and added a slowly pulsing scroll prompt."
+          "Recomposed the opening screen around the golden ratio and added a slowly pulsing scroll prompt.",
+          "Added a shared site-wide theme switch beside the language selector, with New Default, Classmates Homepage, and Pancake Control designs."
         ]
       },
       {
@@ -307,10 +311,12 @@ const devlogContent = {
       {
         date: "2026-10-12",
         version: "v0.5.0",
+        visual: "pancake",
         done: [
           "Refonte de la palette de la page d’accueil en remplaçant le vert par le blanc, et simplification des sections projets, Maison de réflexion et contact.",
           "Transformation de l’ouverture de la page d’accueil en séquence guidée par le défilement : le texte de bienvenue et la carte numérique s’effacent avant de laisser place au titre sur l’inspiration et aux nombres de projets et d’articles.",
-          "Recomposition de l’écran d’ouverture selon le nombre d’or et ajout d’une invitation au défilement à pulsation lente."
+          "Recomposition de l’écran d’ouverture selon le nombre d’or et ajout d’une invitation au défilement à pulsation lente.",
+          "Ajout d’un sélecteur de thème commun à toutes les pages à côté du choix de langue, avec les thèmes Nouveau par défaut, Accueil des camarades et Contrôle des pancakes."
         ]
       },
       {
@@ -612,7 +618,7 @@ function createList(items) {
 
 function createEntry(entry, previousEntry) {
   const versionChanged = !previousEntry || entry.version !== previousEntry.version;
-  const visualClass = ["table-link", "cosmic", "classroom", "tower"].includes(entry.visual)
+  const visualClass = ["table-link", "cosmic", "classroom", "tower", "pancake"].includes(entry.visual)
     ? ` devlog-entry--${entry.visual}`
     : "";
   return `

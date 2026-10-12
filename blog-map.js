@@ -48,9 +48,41 @@ const blogGraph = {
   subcategories: [],
   articles: [
     {
+      id: "claude-code-power-automate",
+      title: "Claude Code 终端到Power Automate云端的一体化工作流",
+      problem: "自动化的自动化",
+      date: "2026-10-12",
+      categoryId: "technology",
+      subcategoryId: null,
+      x: 86,
+      y: 86,
+      mobileX: 82,
+      mobileY: 84,
+      size: 174,
+      paragraphs: [
+        "一、痛点",
+        "做公司采购类型的 Power Automate 自动化流程时，我感受到了一个问题。",
+        "由于 Power Automate 本身是一个封闭的 GUI 系统，也就是说，即使里面的模板化设计本质上是代码（JSON），我却不能直接通过大模型进行修改。也就是说，一个很荒谬的事情发生了：在游戏制作的时候，我可以权限全开，在不写一行代码的情况下完成一个游戏的制作，而在实现一个复杂程度更低的云端自动化流程时，AI 却只能像以前的网页搜索教程那样，只能告诉我步骤，而真正实现的部分还是需要我一点点地手搓：创建一个新的 flow，创建一个节点，复制 AI 代码，粘贴代码……这种“半指示、半手工”的方式，在我见识到目前大模型 API 接口的能耐以后，已经无法被接受了。",
+        "这还不是最根本的问题。",
+        "最大的问题在于，现在 AI 最厉害的地方，不仅在于生成，更是对一个现有系统的解读。在一个中小型的项目里，特别是像一个模板化设计的自动化流程来说，AI 的总结无疑是最高效的运作模式。可惜的是，在现有的 GUI 系统里面，Microsoft 根本不给我们这个访问的权限，所有的操作都被强行限制在手搓。这是很荒谬的事情。",
+        "我想要的是：用自然语言描述改动，AI 从 API 接口直接读取完整的现有流程、生成修改、展示差异，然后直接写回云端。",
+        "二、不重复造轮子",
+        "我最初的方案是自研一个 Python CLI，通过 Dataverse Web API 读写流程，后来发现微软已经提供了官方插件 power-automate（在 microsoft/power-platform-skills 仓库里），其中带有一个本地 MCP 服务 FlowAgent。于是我放弃自研，直接使用它。",
+        "三、架构原理",
+        "自然语言需求 → Claude Code（终端）→ MCP（stdio）→ FlowAgent（本地 Node.js 进程，62 个工具）→ Azure CLI 登录得到的 token → Power Automate / Power Platform 云端 API → 云端的 cloud flow",
+        "几个关键点：",
+        "1. FlowAgent 是本地进程，通过 stdio 与 Claude Code 通信，不需要另外部署服务器。",
+        "2. 认证复用 Azure CLI：az login 之后，FlowAgent 取得 token 访问 Microsoft 云端 API。Microsoft 的 token 与 Claude 的账号认证是相互独立的。",
+        "3. 工具覆盖了流程的全生命周期：列出环境和流程、读取完整定义、创建、预览修改、更新、发布、运行、查看运行历史、诊断失败等。",
+        "4. Flow 定义本质是 JSON。Claude 读取 definition（触发器、动作、runAfter、表达式），修改指定部分，再写回。",
+        "于是乎，API 到云端到 API 的云端自动化的自动化完成了。我不敢想象这是多么的有效率，这本身对于效率的提升是巨大的。如果说，以前自动化代表的是把重复性高的内容视为繁琐，并通过代码和模块来提升效率，那么现在，自动化甚至可以把自动化本身的编辑视为繁琐。而这个时候，自动化的自动化，则可以变得惊人的简单：把要自动化的东西用清晰的文字形式表达出来，做成一个列表，剩下的，只需要把列表放到 agent 里面，让 agent 整理，发送给终端的 Claude，让终端 Claude 整理，再给云端……",
+        "我们在自动化的道路上越走越远。"
+      ]
+    },
+    {
       id: "agent-vibe-coding-future",
       title: "论 Agent、Vibe Coding 与未来",
-      problem: "花了一个周创作折棠7中同窗录给我的启发",
+      problem: "花了一个周\n做了折棠7中同窗录",
       date: "2026-07-12",
       mainCategoryId: "making",
       categoryIds: ["making", "technology"],
@@ -79,8 +111,8 @@ const blogGraph = {
     },
     {
       id: "choice-effort",
-      title: "选择与努力的伪命题",
-      problem: "失败真的是不够努力，还是环境、天分与方向共同塑造了结果？",
+      title: "论选择和努力",
+      problem: "这是一个伪命题",
       date: "2026-06-09",
       categoryId: "philosophy",
       subcategoryId: null,
@@ -109,7 +141,7 @@ const blogGraph = {
     {
       id: "ai-reflection",
       title: "AI 的反思",
-      problem: "当 AI 复制脸、声音甚至情感时，人类的不完美还意味着什么？",
+      problem: "AI的情感",
       date: "2026-06-20",
       mainCategoryId: "philosophy",
       categoryIds: ["philosophy", "technology"],
@@ -150,7 +182,7 @@ const blogGraph = {
     {
       id: "ai-singularity-communism",
       title: "论 AI、奇异点与共产主义",
-      problem: "我们不探讨政治，我们探讨未来",
+      problem: "我们不探讨政治",
       date: "2026-08-05",
       mainCategoryId: "philosophy",
       categoryIds: ["philosophy", "technology"],
@@ -225,6 +257,7 @@ const blogGraph = {
 const blogI18n = {
   zh: {
     uncategorized: "未分类",
+    readingTime: "预计阅读 {minutes} 分钟",
     noSubcategory: "无子类别",
     closeArticle: "关闭文章",
     gameLinkLabel: "点击这里进入游戏",
@@ -237,6 +270,7 @@ const blogI18n = {
   },
   en: {
     uncategorized: "Uncategorized",
+    readingTime: "Estimated reading time: {minutes} min",
     noSubcategory: "No subcategory",
     closeArticle: "Close article",
     gameLinkLabel: "Click here to enter the game",
@@ -254,9 +288,32 @@ const blogI18n = {
     },
     subcategories: {},
     articles: {
+      "claude-code-power-automate": {
+        title: "An Integrated Workflow from the Claude Code Terminal to the Power Automate Cloud",
+        problem: "Automating Automation",
+        paragraphs: [
+          "1. The frustration",
+          "While building Power Automate workflows for purchasing at work, I ran into a problem.",
+          "Power Automate is a closed GUI system. Even though its template-based designs are essentially code (JSON), I cannot edit them directly through a language model. Something absurd happens: when making a game, I can give AI full access and finish without writing a single line of code. Yet for a less complex cloud workflow, AI can only tell me the steps, like an old web tutorial. I still have to do the actual work by hand: create a new flow, create a node, copy the AI's code, paste it… After seeing what today's language-model APIs can do, I can no longer accept this mixture of instructions and manual work.",
+          "And that is not even the fundamental problem.",
+          "The biggest issue is that AI's greatest strength today is not just generation, but understanding an existing system. For a small or medium-sized project, especially a template-based automation workflow, AI's ability to summarize it is undoubtedly one of the most efficient ways to work. Unfortunately, within the existing GUI, Microsoft gives us no such access and forces everything back into manual work. It is absurd.",
+          "What I want is this: describe a change in natural language, have AI use an API to read the complete existing flow, generate the changes, show the differences, and write them directly back to the cloud.",
+          "2. No need to reinvent the wheel",
+          "My initial plan was to build a Python CLI that would read and write flows through the Dataverse Web API. Then I discovered Microsoft's official power-automate plugin in the microsoft/power-platform-skills repository, which includes a local MCP service called FlowAgent. So I abandoned my own implementation and used it instead.",
+          "3. How the architecture works",
+          "Natural-language request → Claude Code (terminal) → MCP (stdio) → FlowAgent (local Node.js process, 62 tools) → token obtained through Azure CLI login → Power Automate / Power Platform cloud APIs → cloud flow",
+          "A few key points:",
+          "1. FlowAgent runs locally and communicates with Claude Code through stdio. No separate server deployment is needed.",
+          "2. Authentication reuses Azure CLI: after az login, FlowAgent obtains a token to access Microsoft's cloud APIs. Microsoft's token and Claude's account authentication are independent.",
+          "3. The tools cover the entire flow lifecycle: listing environments and flows, reading complete definitions, creating flows, previewing changes, updating, publishing, running, viewing run history, and diagnosing failures.",
+          "4. A flow definition is essentially JSON. Claude reads definition (triggers, actions, runAfter, expressions), changes the specified parts, and writes it back.",
+          "And there we have it: the automation of cloud automation, from API to cloud and back to API. I can hardly imagine how efficient this is; the improvement is enormous. Previously, automation meant treating repetitive tasks as tedious and using code and modules to make them more efficient. Now, automation can even treat the editing of automation itself as tedious. Automating automation becomes astonishingly simple: describe clearly what you want to automate, turn it into a list, and put that list into an agent. Let the agent organize it, send it to Claude in the terminal, let terminal Claude organize it, and pass it on to the cloud…",
+          "We keep going further down the road of automation."
+        ]
+      },
       "agent-vibe-coding-future": {
         title: "On Agents, Vibe Coding, and the Future",
-        problem: "What I learned from spending a week creating Zhetang No. 7: Classmates",
+        problem: "Spent a week\nmaking Zhetang No. 7: Classmates",
         paragraphs: [
           "For programmers with ideals—or, cross that out, with time to spare—using agents to assist with coding, or even letting them take over almost entirely through what we call vibe coding, is no longer anything new. As a university student buried in preparation for graduate entrance exams, the fact that I can access agents such as Codex shows just how accessible this technology has become. With agents developing so quickly, even discussing the relationship between AI and creation is no longer a particularly novel subject.",
           "Today, I will not approach energy consumption from a technical perspective, nor will I focus on the inspiring yet unsettling prospect of AI conducting research autonomously. I want to look instead at what interests me more: game creation—or, more precisely, using agents to help design games. If an independent creator like Ginga Light can build an ARG by running eight Claude windows at once, enthusiasm for games still remains a threshold for creation. But when I used Codex as my main agent, relied only on the weekly allowance included with GPT Plus, and produced something genuinely presentable in less than a week, I came to believe that the golden age of creation is not in the future. It is already here.",
@@ -269,7 +326,7 @@ const blogI18n = {
       },
       "ai-singularity-communism": {
         title: "On AI, the Singularity, and Communism",
-        problem: "We are not discussing politics. We are discussing the future.",
+        problem: "We are not discussing politics.",
         paragraphs: [
           "I could describe myself with many words: creative, idealistic, energetic, absurd, and just a little slow on the uptake.",
           "The list could go on for a long time, but I do not think political is one of those words.",
@@ -319,8 +376,8 @@ const blogI18n = {
         ]
       },
       "choice-effort": {
-        title: "The False Choice Between Choice and Effort",
-        problem: "Is failure really caused by not trying hard enough, or by environment, talent, and direction shaping the result together?",
+        title: "On Choice and Effort",
+        problem: "This Is a False Question",
         paragraphs: [
           "I think asking whether choice or effort matters more is itself a false question.",
           "What is choice, and what is effort?",
@@ -341,7 +398,7 @@ const blogI18n = {
       },
       "ai-reflection": {
         title: "AI's Reflection",
-        problem: "When AI can copy faces, voices, and even emotion, what does human imperfection still mean?",
+        problem: "AI's Emotions",
         paragraphs: [
           "After walking through VIVA Tech, my strongest feeling was that school teaches far too little.",
           "Whether it is the inspiration and questions brought by artificial intelligence, or the business world's pursuit of efficiency and practical experience, none of this is something school can truly provide.",
@@ -374,6 +431,7 @@ const blogI18n = {
   },
   fr: {
     uncategorized: "Non classé",
+    readingTime: "Temps de lecture estimé : {minutes} min",
     noSubcategory: "Aucune sous-catégorie",
     closeArticle: "Fermer l'article",
     gameLinkLabel: "Cliquez ici pour entrer dans le jeu",
@@ -391,9 +449,32 @@ const blogI18n = {
     },
     subcategories: {},
     articles: {
+      "claude-code-power-automate": {
+        title: "Un flux de travail intégré du terminal Claude Code au cloud Power Automate",
+        problem: "Automatiser l'automatisation",
+        paragraphs: [
+          "1. Le problème",
+          "En créant des flux Power Automate pour les achats en entreprise, j'ai rencontré un problème.",
+          "Power Automate est un système fermé à interface graphique. Même si ses modèles sont essentiellement du code (JSON), je ne peux pas les modifier directement avec un grand modèle de langage. Il se passe donc quelque chose d'absurde : pour créer un jeu, je peux donner tous les accès à l'IA et terminer sans écrire une seule ligne de code. Mais pour réaliser un flux cloud moins complexe, l'IA ne peut que m'expliquer les étapes, comme un ancien tutoriel trouvé sur le Web. La réalisation reste à faire à la main : créer un nouveau flow, créer un nœud, copier le code de l'IA, le coller… Après avoir découvert ce que permettent les API des modèles actuels, je ne peux plus accepter cette façon de travailler, à moitié guidée, à moitié manuelle.",
+          "Et ce n'est même pas le problème fondamental.",
+          "Le plus grand problème, c'est que la force de l'IA aujourd'hui ne réside pas seulement dans la génération, mais aussi dans la compréhension d'un système existant. Pour un projet de petite ou moyenne taille, surtout un flux d'automatisation fondé sur des modèles, la capacité de synthèse de l'IA est sans doute l'une des façons les plus efficaces de travailler. Malheureusement, dans l'interface graphique actuelle, Microsoft ne nous donne pas cet accès et impose de tout faire à la main. C'est absurde.",
+          "Ce que je veux : décrire une modification en langage naturel, laisser l'IA lire le flux existant complet par une API, produire les changements, afficher les différences, puis les réécrire directement dans le cloud.",
+          "2. Ne pas réinventer la roue",
+          "Mon idée initiale était de développer un CLI Python pour lire et écrire les flux via la Dataverse Web API. Puis j'ai découvert que Microsoft proposait déjà le plugin officiel power-automate, dans le dépôt microsoft/power-platform-skills, avec un service MCP local nommé FlowAgent. J'ai donc abandonné mon propre développement pour l'utiliser directement.",
+          "3. Le principe de l'architecture",
+          "Demande en langage naturel → Claude Code (terminal) → MCP (stdio) → FlowAgent (processus Node.js local, 62 outils) → token obtenu par la connexion Azure CLI → API cloud Power Automate / Power Platform → cloud flow",
+          "Quelques points clés :",
+          "1. FlowAgent est un processus local qui communique avec Claude Code par stdio. Il n'est pas nécessaire de déployer un serveur supplémentaire.",
+          "2. L'authentification réutilise Azure CLI : après az login, FlowAgent obtient un token pour accéder aux API cloud de Microsoft. Ce token et l'authentification du compte Claude sont indépendants.",
+          "3. Les outils couvrent tout le cycle de vie des flux : lister les environnements et les flux, lire les définitions complètes, créer, prévisualiser les modifications, mettre à jour, publier, exécuter, consulter l'historique et diagnostiquer les échecs.",
+          "4. La définition d'un flow est essentiellement du JSON. Claude lit definition (déclencheurs, actions, runAfter, expressions), modifie les parties demandées, puis la réécrit.",
+          "Et voilà : l'automatisation de l'automatisation cloud est réalisée, de l'API au cloud, puis du cloud à l'API. J'ai du mal à imaginer à quel point c'est efficace ; le gain est immense. Auparavant, automatiser signifiait considérer les tâches répétitives comme fastidieuses et améliorer leur exécution avec du code et des modules. Maintenant, l'automatisation peut même considérer sa propre modification comme fastidieuse. Automatiser l'automatisation devient alors étonnamment simple : exprimer clairement par écrit ce que l'on veut automatiser, en faire une liste, puis déposer cette liste dans un agent. Laisser l'agent l'organiser, l'envoyer à Claude dans le terminal, laisser ce Claude l'organiser à son tour, puis transmettre le tout au cloud…",
+          "Nous allons toujours plus loin sur le chemin de l'automatisation."
+        ]
+      },
       "agent-vibe-coding-future": {
         title: "Des agents, du vibe coding et de l'avenir",
-        problem: "Ce que m'a appris une semaine passée à créer Zhetang no 7 : Camarades de classe",
+        problem: "Une semaine\npour créer Zhetang no 7 : Camarades de classe",
         paragraphs: [
           "Pour les programmeurs qui ont des idéaux — rayez cela : qui ont du temps libre — utiliser des agents pour assister la programmation, voire leur en confier presque entièrement la réalisation par ce que l'on appelle le vibe coding, n'a aujourd'hui plus rien de nouveau. Pour un étudiant accaparé par la préparation des concours d'entrée en master, le simple fait de pouvoir accéder à des agents comme Codex montre à quel point cette technologie est devenue accessible. À l'heure où les agents progressent si vite, même discuter du rapport entre l'IA et la création n'est plus un sujet particulièrement neuf.",
           "Aujourd'hui, je ne parlerai pas de la consommation énergétique sous l'angle de la pratique technique, et je ne tournerai pas non plus mon regard vers cette perspective à la fois exaltante et inquiétante d'une IA capable de mener ses propres recherches. Je préfère m'intéresser à ce qui me passionne davantage : la création de jeux ou, plus précisément, l'utilisation d'agents pour aider à leur conception. Lorsqu'un créateur indépendant comme Ginga Light peut réaliser un ARG en ouvrant huit fenêtres Claude à la fois, la passion du jeu demeure encore un seuil à franchir. Mais lorsque j'ai utilisé Codex comme agent principal, avec pour seule ressource le quota hebdomadaire inclus dans GPT Plus, et que j'ai produit en moins d'une semaine quelque chose de véritablement présentable, j'en suis venu à penser que l'âge d'or de la création n'appartient pas au futur. Il a déjà commencé.",
@@ -406,7 +487,7 @@ const blogI18n = {
       },
       "ai-singularity-communism": {
         title: "De l'IA, de la singularité et du communisme",
-        problem: "Nous ne parlons pas de politique. Nous parlons de l'avenir.",
+        problem: "Nous ne parlons pas de politique.",
         paragraphs: [
           "Je pourrais me décrire avec beaucoup de mots : créatif, idéaliste, énergique, absurde, et juste un peu lent à comprendre.",
           "La liste pourrait se prolonger longtemps, mais je ne crois pas que politique en fasse partie.",
@@ -456,8 +537,8 @@ const blogI18n = {
         ]
       },
       "choice-effort": {
-        title: "Le faux duel entre choix et effort",
-        problem: "L'échec vient-il vraiment d'un manque d'effort, ou bien de l'environnement, du talent et de la direction qui façonnent ensemble le résultat ?",
+        title: "Du choix et de l'effort",
+        problem: "C'est une fausse question",
         paragraphs: [
           "Je pense que demander si le choix ou l'effort est le plus important est déjà une fausse question.",
           "Qu'est-ce que le choix, et qu'est-ce que l'effort ?",
@@ -478,7 +559,7 @@ const blogI18n = {
       },
       "ai-reflection": {
         title: "Réflexion sur l'IA",
-        problem: "Quand l'IA peut copier des visages, des voix et même l'émotion, que signifie encore l'imperfection humaine ?",
+        problem: "Les émotions de l'IA",
         paragraphs: [
           "Après avoir parcouru VIVA Tech, mon impression la plus forte a été que l'école enseigne beaucoup trop peu.",
           "Qu'il s'agisse de l'inspiration et des questions apportées par l'intelligence artificielle, ou de la recherche d'efficacité et d'expérience concrète dans le monde des affaires, rien de tout cela n'est vraiment offert par l'école.",
@@ -745,6 +826,97 @@ function renderArticleGameLink(article) {
   `;
 }
 
+function getArticleTutorial(article) {
+  if (typeof blogTutorials === "undefined") {
+    return null;
+  }
+
+  return blogTutorials[article.id]?.[currentBlogLanguage] || blogTutorials[article.id]?.zh || null;
+}
+
+function renderTutorialInline(text) {
+  return escapeHtml(text).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (_, label, url) =>
+    `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`
+  );
+}
+
+function renderTutorialMarkdown(markdown) {
+  const lines = markdown.replaceAll("\r\n", "\n").split("\n");
+  const blocks = [];
+  let index = 0;
+  const isFence = (line) => /^([\x60~])\1\1/.test(line);
+  const isHeading = (line) => /^##\s+/.test(line);
+  const isTable = (line) => line.trim().startsWith("|");
+
+  while (index < lines.length) {
+    const line = lines[index];
+
+    if (!line.trim()) {
+      index += 1;
+      continue;
+    }
+
+    if (isFence(line)) {
+      const marker = line.slice(0, 3);
+      const language = line.slice(3).trim();
+      const code = [];
+      index += 1;
+      while (index < lines.length && !lines[index].startsWith(marker)) {
+        code.push(lines[index++]);
+      }
+      index += 1;
+      blocks.push(`<pre data-code-language="${escapeHtml(language)}"><code>${escapeHtml(code.join("\n"))}</code></pre>`);
+      continue;
+    }
+
+    if (isHeading(line)) {
+      blocks.push(`<h4>${renderTutorialInline(line.replace(/^##\s+/, ""))}</h4>`);
+      index += 1;
+      continue;
+    }
+
+    if (isTable(line)) {
+      const rows = [];
+      while (index < lines.length && isTable(lines[index])) {
+        const cells = lines[index++].trim().replace(/^\||\|$/g, "").split("|").map((cell) => cell.trim());
+        if (!cells.every((cell) => /^:?-+:?$/.test(cell))) {
+          rows.push(cells);
+        }
+      }
+      const header = rows.shift() || [];
+      const head = header.map((cell) => `<th scope="col">${renderTutorialInline(cell)}</th>`).join("");
+      const body = rows.map((row) => `<tr>${row.map((cell) => `<td>${renderTutorialInline(cell)}</td>`).join("")}</tr>`).join("");
+      blocks.push(`<div class="reader-tutorial-table"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`);
+      continue;
+    }
+
+    const paragraph = [];
+    while (index < lines.length && lines[index].trim() && !isFence(lines[index]) && !isHeading(lines[index]) && !isTable(lines[index])) {
+      paragraph.push(lines[index++]);
+    }
+    blocks.push(`<p>${renderTutorialInline(paragraph.join(" "))}</p>`);
+  }
+
+  return blocks.join("");
+}
+
+function renderArticleTutorial(tutorial) {
+  if (!tutorial) {
+    return "";
+  }
+
+  return `
+    <section class="reader-tutorial" aria-labelledby="readerTutorial">
+      <h3 id="readerTutorial" tabindex="-1">${escapeHtml(tutorial.title)}</h3>
+      ${renderTutorialMarkdown(tutorial.markdown)}
+    </section>
+    <section class="reader-closing" aria-labelledby="readerClosing">
+      <h3 id="readerClosing">${escapeHtml(tutorial.closingTitle)}</h3>
+      ${tutorial.closing.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+    </section>
+  `;
+}
+
 function renderArticleImage(article, articleText) {
   if (!article.image) {
     return "";
@@ -853,7 +1025,7 @@ function renderArticleNode(article) {
       aria-label="${escapeHtml(`${articleText.title}. ${articleText.problem}`)}"
     >
       <span class="article-title">${escapeHtml(articleText.title)}</span>
-      <span class="article-problem">${escapeHtml(articleText.problem)}</span>
+      <span class="article-problem">${escapeHtml(articleText.problem).split(String.fromCharCode(10)).join("<br>")}</span>
       <small>${metadata}</small>
     </button>
   `;
@@ -1986,6 +2158,26 @@ function renderMap() {
   });
 }
 
+function estimateArticleReadingMinutes(article) {
+  const articleText = getArticleText(article);
+  const tutorial = getArticleTutorial(article);
+  const text = [
+    articleText.title,
+    articleText.problem,
+    ...articleText.paragraphs,
+    tutorial?.title || "",
+    tutorial?.markdown || "",
+    tutorial?.closingTitle || "",
+    ...(tutorial?.closing || [])
+  ].join("\n").replace(/\[([^\]]+)\]\(https?:\/\/[^\s)]+\)/g, "$1");
+
+  const chineseCharacters = (text.match(/\p{Script=Han}/gu) || []).length;
+  const words = (text.replace(/\p{Script=Han}/gu, " ").match(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)*/gu) || []).length;
+  // Reading estimates include code examples, but exclude time spent carrying out the tutorial.
+  const wordsPerMinute = currentBlogLanguage === "fr" ? 200 : 220;
+  return Math.max(1, Math.ceil(chineseCharacters / 400 + words / wordsPerMinute));
+}
+
 function renderArticleMetadata(article) {
   const categories = getArticleCategories(article);
   const subcategory = article.subcategoryId ? findSubcategory(article.subcategoryId) : null;
@@ -1996,6 +2188,7 @@ function renderArticleMetadata(article) {
   return `
     <div class="reader-meta">
       <span>${escapeHtml(article.date)}</span>
+      <span class="reader-reading-time">${escapeHtml(getBlogText("readingTime").replace("{minutes}", estimateArticleReadingMinutes(article)))}</span>
       <span>${escapeHtml(categoryLabel)}</span>
       ${subcategory ? `<span>${escapeHtml(getNodeLabel("subcategories", subcategory))}</span>` : ""}
     </div>
@@ -2024,6 +2217,7 @@ function openArticle(article, sourceNode) {
   }
 
   const articleText = getArticleText(article);
+  const tutorial = getArticleTutorial(article);
   const origin = getArticleOrigin(sourceNode);
   reader.style.setProperty("--reader-origin-x", `${origin.x}px`);
   reader.style.setProperty("--reader-origin-y", `${origin.y}px`);
@@ -2034,11 +2228,13 @@ function openArticle(article, sourceNode) {
       <article class="reader-article">
         ${renderArticleMetadata(article)}
         <h2 id="readerTitle">${escapeHtml(articleText.title)}</h2>
-        <p class="reader-problem">${escapeHtml(articleText.problem)}</p>
+        <p class="reader-problem">${escapeHtml(articleText.problem).split(String.fromCharCode(10)).join("<br>")}</p>
+        ${tutorial ? `<button class="reader-tutorial-jump" type="button" aria-controls="readerTutorial">${escapeHtml(tutorial.jumpLabel)} ↓</button>` : ""}
         ${renderArticleGameLink(article)}
         <div class="reader-body">
           ${articleText.paragraphs.map((paragraph) => renderArticleParagraph(article, paragraph)).join("")}
           ${renderArticleImage(article, articleText)}
+          ${renderArticleTutorial(tutorial)}
         </div>
       </article>
     </div>
@@ -2050,6 +2246,15 @@ function openArticle(article, sourceNode) {
   history.replaceState(null, "", `#${article.id}`);
 
   const closeButton = reader.querySelector(".reader-close");
+
+  const tutorialButton = reader.querySelector(".reader-tutorial-jump");
+  tutorialButton?.addEventListener("click", () => {
+    const target = reader.querySelector("#readerTutorial");
+    if (target) {
+      target.scrollIntoView({ behavior: "instant", block: "start" });
+      target.focus({ preventScroll: true });
+    }
+  });
 
   if (closeButton) {
     closeButton.addEventListener("click", closeArticle);

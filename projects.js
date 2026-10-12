@@ -529,12 +529,12 @@ function renderProjectCards() {
     const isFavorite = favoriteProjects.has(project.id);
     card.innerHTML = `
       <a class="archive-card-link" href="${getProjectPageUrl(project.id)}" aria-label="${copy.open}: ${text.title}">
-        <span class="archive-card-cover" style="background-image:${project.cover ? `url('${project.cover}')` : "linear-gradient(135deg, #bcc6ad, #e0d9bb)"}"></span>
+        <span class="archive-card-cover" style="background-image:${project.cover ? `url('${project.cover}')` : "linear-gradient(135deg, #bfc3cc, #dedee2)"}"></span>
         <span class="archive-card-body">
           <span class="archive-card-kind">${copy.kinds[project.category]}</span>
           <h2>${text.title}</h2>
           <span class="archive-card-summary">${text.summary}</span>
-          <span class="archive-card-created"><span>${project.planned ? copy.plannedDate : copy.created}</span><time${typeof project.created === "string" ? ` datetime="${project.created}"` : ""}>${getProjectDate(project.created)}</time></span>
+          <span class="archive-card-created"><time${typeof project.created === "string" ? ` datetime="${project.created}"` : ""}>${getProjectDate(project.created)}</time></span>
         </span>
       </a>
       <button class="archive-favorite${isFavorite ? " is-favorite" : ""}" type="button" aria-pressed="${isFavorite}">

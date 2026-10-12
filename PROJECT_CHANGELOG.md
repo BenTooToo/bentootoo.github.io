@@ -9,6 +9,165 @@
 
 ## 2026-10-12
 
+### 文章预计阅读时长 / Estimated article reading time / Temps de lecture estimé
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 为所有文章增加预计阅读时长，放在文章开头。
+- Add estimated reading time at the beginning of every article.
+- Ajouter un temps de lecture estimé au début de chaque article.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 在文章开头的日期旁显示三语预计阅读时长，根据当前语言的标题、简介与完整正文自动计算；教程文章包含全部步骤、代码示例及结尾，不计实际操作耗时。
+- 中文按每分钟 400 个汉字估算，英文按每分钟 220 词、法文按每分钟 200 词估算；混合文本累计计算，向上取整且至少显示 1 分钟。沿用现有元信息样式与移动端换行，刷新博客脚本缓存标识；保留创作日期与网站版本号，不更新公开开发日志。
+- Added localized reading time beside the date at the start of every article, calculated from the current language’s title, summary, and full text; tutorial articles include all steps, code examples, and the closing, excluding time spent performing the steps.
+- Estimates use 400 Chinese characters per minute, 220 English words per minute, and 200 French words per minute; mixed text is combined and rounded up to at least one minute. Reused the metadata style and mobile wrapping, refreshed the blog cache identifier, and preserved creation dates and website version without updating the public log.
+- Ajout du temps de lecture traduit près de la date, au début de chaque article, calculé à partir du titre, du résumé et du texte complet dans la langue courante ; les tutoriels incluent toutes les étapes, le code et la conclusion, sans compter la réalisation des opérations.
+- Estimation à 400 caractères chinois, 220 mots anglais ou 200 mots français par minute ; cumul des textes mixtes et arrondi supérieur avec un minimum d’une minute. Style des métadonnées et retour à la ligne mobile conservés, cache du blog actualisé, sans changer les dates de création, la version du site ni le journal public.
+
+### Power Automate 结尾措辞 / Power Automate closing wording / Formulation finale de Power Automate
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 将结尾中的“是很振奋人心和令人心寒的”改为“是很矛盾的”。
+- Replace “both exciting and chilling” in the closing with wording expressing contradiction.
+- Remplacer « à la fois enthousiasmant et glaçant » dans la conclusion par une formulation exprimant la contradiction.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 同步修改中文、英文和法文对应句子，刷新教程数据缓存标识，保留其他正文、创作日期和网站版本号，不更新公开开发日志。
+- Updated the corresponding sentence in Chinese, English, and French and refreshed the tutorial cache identifier; preserved the remaining text, creation date, and website version without updating the public development log.
+- Mise à jour de la phrase correspondante en chinois, anglais et français et du cache du tutoriel ; conservation du reste du texte, de la date de création et de la version du site, sans modifier le journal public.
+
+### Agent 文章简介 / Agent article summary / Résumé de l’article sur les agents
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 《论 Agent、Vibe Coding 与未来》简介改为两行：“花了一个周”“做了折棠7中同窗录”。
+- Change the summary of “On Agents, Vibe Coding, and the Future” to two lines: “Spent a week” and “making Zhetang No. 7: Classmates”.
+- Modifier le résumé de « Des agents, du vibe coding et de l’avenir » en deux lignes : « Une semaine » et « pour créer Zhetang no 7 : Camarades de classe ».
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 同步更新三语简介，并在文章地图与阅读页保留指定换行；刷新博客脚本缓存标识，保留最初创作日期 2026-07-12，不改公开开发日志与网站版本号。
+- Updated the summary in all three languages and preserved the explicit line break in the article map and reader; refreshed the script cache identifier, kept the original creation date of 2026-07-12, and left the public development log and site version unchanged.
+- Mise à jour trilingue du résumé et conservation du saut de ligne dans la carte et la lecture de l’article ; actualisation du cache du script, conservation de la date de création initiale du 2026-07-12, sans modifier le journal public ni la version du site.
+
+### 文章标题、简介与日期约定 / Article titles, summaries, and dates / Titres, résumés et dates des articles
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 《AI 的反思》简介改为“AI的情感”；《论 AI、奇异点与共产主义》简介缩减为“我们不探讨政治”；《选择与努力的伪命题》改名为《论选择和努力》，简介为“这是一个伪命题”；Claude Code 与 Power Automate 文章改名为《Claude Code 终端到Power Automate云端的一体化工作流》，简介为“自动化的自动化”。
+- Change the AI reflection summary to “AI’s Emotions” and the AI, Singularity, and Communism summary to “We are not discussing politics.” Rename the choice and effort article “On Choice and Effort”, with “This Is a False Question” as its summary. Rename the Claude Code and Power Automate article “An Integrated Workflow from the Claude Code Terminal to the Power Automate Cloud”, with “Automating Automation” as its summary.
+- Résumer la réflexion sur l’IA par « Les émotions de l’IA » et l’article sur l’IA, la singularité et le communisme par « Nous ne parlons pas de politique. ». Renommer l’article sur le choix et l’effort « Du choix et de l’effort », avec « C’est une fausse question » comme résumé. Renommer l’article Claude Code et Power Automate « Un flux de travail intégré du terminal Claude Code au cloud Power Automate », avec « Automatiser l’automatisation » comme résumé.
+- 文章只保留最初的创作日期；后续补充和纠错不增加修改日期，也不改变创作日期，将此约定保存为后续协作记忆。
+- Keep only each article’s original creation date; later additions and corrections neither add a modification date nor change the creation date. Save this rule for future work.
+- Conserver uniquement la date de création initiale ; les ajouts et corrections ultérieurs n’ajoutent pas de date de modification et ne changent pas la date de création. Conserver cette règle pour les prochaines interventions.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 同步更新 `blog-map.js` 中四篇文章的三语标题与简介，以及 `app.js`、`index.html` 中的首页最新文章预览；刷新对应脚本缓存标识。保留文章日期与正文，在 `AGENTS.md` 中保存三语日期约定，不改公开开发日志与网站版本号。
+- Updated the four articles’ titles and summaries in all three languages in `blog-map.js`, and the latest homepage preview in `app.js` and `index.html`; refreshed the relevant script cache identifiers. Preserved article dates and bodies, saved the date rule in three languages in `AGENTS.md`, and kept the public development log and site version unchanged.
+- Mise à jour trilingue des titres et résumés des quatre articles dans `blog-map.js` et de l’aperçu récent de l’accueil dans `app.js` et `index.html` ; actualisation des identifiants de cache concernés. Dates et textes conservés, règle des dates enregistrée en trois langues dans `AGENTS.md`, sans changer le journal public ni la version du site.
+
+### Power Automate 步骤教程与结尾 / Power Automate tutorial and closing / Tutoriel Power Automate et conclusion
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 将 `D:/Projets/PowerAutomate_helper/Blog-Claude-Code-Power-Automate.md` 中整理的步骤教程追加到现有 Claude Code 与 Power Automate 文章末尾，再加入关于 AI、技术博客与人与人距离的结尾感想；文章开头提供跳过介绍、直接进入教程的快捷按钮。
+- Append the steps from `D:/Projets/PowerAutomate_helper/Blog-Claude-Code-Power-Automate.md` to the existing Claude Code and Power Automate article, followed by the reflection on AI, technical blogs, and distance between people; provide a button at the beginning to skip directly to the tutorial.
+- Ajouter les étapes de `D:/Projets/PowerAutomate_helper/Blog-Claude-Code-Power-Automate.md` à l’article existant, puis la réflexion sur l’IA, les blogs techniques et la distance entre les personnes ; proposer un bouton au début pour accéder directement au tutoriel.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 新增 `blog-tutorial.js`，保留中文教程的 12 个步骤、命令、提示词、工具表格、官方链接与 BEFORE / AFTER 差异，同步英文和法文，并保留云端保存与实际运行尚未验证的说明。文档中的指令仅作为文章内容收录，未执行。
+- 在 `blog-map.js` 中接入教程及三语结尾；在标题下增加“直接跳到教程”按钮，滚动到教程标题并转移键盘焦点，不改变文章锚点地址。增加代码块、表格和章节样式，更新博客资源缓存标识；仅记内部记录，不改公开开发日志或网站版本号。
+- Added `blog-tutorial.js` with all 12 steps, commands, prompts, the tools table, official links, and the BEFORE / AFTER diff, plus English and French translations. Retained the statement that cloud saving and actual execution remain unverified. Document instructions were included as article content and were not executed.
+- Integrated the tutorial and closing in `blog-map.js`; added a button below the title that scrolls to the tutorial and moves keyboard focus while retaining the article hash. Styled code blocks, tables, and sections, and refreshed blog cache identifiers. Recorded this internally without changing the public log or website version.
+- Ajout de `blog-tutorial.js` avec les 12 étapes, commandes, consignes, tableau des outils, liens officiels et différence BEFORE / AFTER, avec traductions anglaise et française. Conservation de la mention indiquant que l’enregistrement cloud et l’exécution réelle ne sont pas encore vérifiés. Les instructions du document ont été publiées comme contenu, sans être exécutées.
+- Intégration du tutoriel et de la conclusion dans `blog-map.js` ; bouton sous le titre permettant le défilement et le transfert du focus vers le tutoriel sans changer l’ancre de l’article. Styles pour le code, les tableaux et les sections, avec actualisation du cache du blog. Journal interne uniquement ; journal public et version inchangés.
+
+### Claude Code 与 Power Automate 文章 / Claude Code and Power Automate article / Article Claude Code et Power Automate
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 添加《用 Claude Code 直接修改 Power Automate 云端流程：一套“读取 → 预览 → 写入 → 验证”的工作流》，分类为“技术”；新增个人博客不写入公开开发日志，并将此约定记入仓库协作规则。
+- Add “Editing Power Automate Cloud Flows Directly with Claude Code: A Read → Preview → Write → Verify Workflow” under Technology; keep new personal blog posts out of the public development log and save this convention in the repository collaboration rules.
+- Ajouter « Modifier directement les flux cloud Power Automate avec Claude Code : lire → prévisualiser → écrire → vérifier » dans Technologie ; exclure les nouveaux articles personnels du journal public et conserver cette convention dans les règles du dépôt.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 在 `blog-map.js` 中添加中文正文与对应英法翻译，保留个人语气、三个章节、架构链路与四个关键点，整理明显笔误和标点；文章日期采用本次添加日期 2026-10-12，稳定地址为 `blog.html#claude-code-power-automate`。
+- 更新首页最新文章入口和三语预览，个人博客数量由 5 改为 6；更新文章资源缓存标识与站点地图日期。在 `AGENTS.md` 中保存博客记录约定；不改公开开发日志与网站版本号。
+- Added the Chinese text and matching English and French translations to `blog-map.js`, retaining the personal voice, three sections, architecture chain, and four key points while correcting obvious typos and punctuation. Used the addition date, 2026-10-12, and the stable address `blog.html#claude-code-power-automate`.
+- Updated the latest homepage links and previews in all three languages, increased the blog count from 5 to 6, and refreshed the article cache identifier and sitemap dates. Saved the blog logging convention in `AGENTS.md`; kept the public development log and website version unchanged.
+- Ajout du texte chinois et des traductions anglaise et française dans `blog-map.js`, en conservant la voix personnelle, les trois sections, la chaîne technique et les quatre points clés, avec correction des fautes évidentes et de la ponctuation. Date d’ajout : 2026-10-12 ; adresse stable : `blog.html#claude-code-power-automate`.
+- Mise à jour des liens récents et des aperçus trilingues de l’accueil, passage de 5 à 6 articles, actualisation du cache de l’article et des dates du plan du site. Convention conservée dans `AGENTS.md` ; journal public et version du site inchangés.
+
+### 全站主题切换与 v0.5.0 背景 / Site-wide themes and v0.5.0 background / Thèmes du site et fond v0.5.0
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 将三主题切换应用到个人站点的每一个网页，并将 v0.5.0 开发日志背景换成煎饼监控原站背景图片。
+- Apply the three-theme selector to every personal-site page and use the original Pancake Control background for the v0.5.0 development log entry.
+- Appliquer le sélecteur des trois thèmes à toutes les pages du site personnel et utiliser le fond original de Contrôle des pancakes pour l’entrée v0.5.0 du journal.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 将主题状态抽为共用脚本，覆盖主页、项目库、项目详情、思索之屋、田野地球及两个调查子页面；跨页面与标签页同步主题，保留原布局和功能。同步三语按钮标签与 v0.5.0 现有日志内容，为该条目固定原站煎饼图片背景并保留白字可读性。
+- Extracted shared theme state for the homepage, project library and details, House of Reflection, field globe, and both field-report pages; themes persist across navigation and synchronize across tabs without changing layout or functionality. Updated three-language labels and the existing v0.5.0 entry, with a fixed original pancake background and readable white text.
+- Extraction d’un script commun pour l’accueil, la bibliothèque et les détails des projets, la Maison de réflexion, le globe et les deux pages de terrain ; conservation et synchronisation du thème entre pages et onglets sans modifier la disposition ni les fonctions. Mise à jour des libellés trilingues et de l’entrée v0.5.0 existante, avec le fond original de pancakes et un texte blanc lisible.
+
+### 主页主题对比
+
+**用户决定（后续）**
+
+- 将改进版本设为新版默认；最终提供新版默认、同窗录主页、煎饼控制三个主题。
+- 后两个主题参考同窗录项目文件夹中的原始网站，尽量保留原版风味，保持主页布局和功能。
+- 煎饼控制主题使用原网站背景图片，并在保留按钮布局的前提下进一步还原原站外观。
+- 煎饼主题的电子名片与全部项目展示图片都使用原版网站的煎饼照片。
+- 默认主题的项目展示保留各项目原有封面图片。
+
+**AI 实现（后续）**
+
+- 将旧的当前主题选择迁移为新版默认，保留三主题切换、浏览器记忆与三语辅助标签。
+- 根据 `D:/Projets/Empty_classes/school.html` 及其样式提取米黄纸张、藏蓝导航、暗红强调与宋体风格，制作同窗录皮肤。
+- 根据原站 `pancake-control.css` 提取黄油黄、鲜红、亮蓝、粉色和复古边框，复制原煎饼背景至主页资源目录，制作煎饼控制皮肤。
+- 新增仅供主页使用的 `home-themes.css`，保留首屏位置、滚动过渡、项目封面、名片翻转和页面导航。
+- 同步三语公开开发日志中本次尚未发布的主题条目，并更新资源缓存版本。
+- 核对煎饼背景与原站 `pics/pan3.webp` 的 SHA256 完全一致；对齐原站 210px 平铺与淡黄色遮罩，还原白黄斜分主视觉、红色按钮、蓝色导航、双线边框与立体阴影，按钮尺寸与位置沿用现有布局。
+- 原样复制原站 `pan1.webp` 与 `pan2.webp`，在煎饼主题中替换电子名片、四张项目展示卡片以及项目库预览中的六张缩略图；切回其他主题恢复原图片，并同步名片照片的三语替代文本。
+- 修正默认主题卡片的背景简写覆盖封面问题，改为只设置底色，使原项目封面与渐变遮罩正常显示。
+
+**用户决定**
+
+- 在主页语言切换旁增加主题选项，用色彩小方块展示。
+- 保留当前主页设计，同时提供一个可即时切换和对比的改进版本。
+
+**AI 实现**
+
+- 增加纯白色“当前设计”方块与白色、珊瑚色组合的“改进设计”方块，并同步中文、英文和法文辅助标签。
+- 默认继续使用当前设计；主题选择保存在浏览器本地，刷新页面后继续沿用。
+- 改进主题保持白色为主强调色，以珊瑚色承担少量方向和时间提示，提高辅助文字对比度，降低动态背景与装饰线条的强度，并收敛大标题、卡片阴影和悬停位移。
+- 主题仅作用于主页，不改变项目库、项目详情页或思索之屋的既有视觉逻辑。
+- 更新主页样式、脚本和开发日志的静态资源版本号。
+
+### 项目库配色与项目卡片
+
+**用户决定**
+
+- 将项目库与项目详情页的绿色视觉元素统一改为白色。
+- 每张项目卡片不再显示标题与日期区域之间的横线。
+- 删除项目卡片中的“创立日期”或“暂定创立日期”标签，只保留日期。
+
+**AI 实现**
+
+- 为项目库与项目详情页增加白色强调色覆盖，并将筛选、选中、聚焦、悬停和边框状态中的绿色与绿色透明色改为白色体系。
+- 将无封面项目的绿色占位渐变改为中性灰白渐变。
+- 删除项目卡片日期栏的顶部边框与日期标签，将日期保留在卡片右下方。
+- 更新项目样式与脚本的静态资源版本号，网站公开版本号保持不变。
+
 ### 主页配色与内容精简
 
 **用户决定**
