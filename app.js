@@ -12,6 +12,9 @@ const translations = {
     "donate.afdianRegion": "（中国）",
     "hero.titleLineOne": "欢迎，我是",
     "hero.lede": "这里是本2兔灵感堆积之所",
+    "hero.scrollMore": "下滑查看更多",
+    "hero.projectsCount": "个项目",
+    "hero.blogCount": "篇个人博客",
     "card.identity": "学生 / 视频创作者 / 游戏制作人 / 独立音乐人",
     "card.email": "邮箱",
     "projects.title": "项目展示",
@@ -62,6 +65,9 @@ const translations = {
     "donate.afdianRegion": "(China)",
     "hero.titleLineOne": "Welcome, I am",
     "hero.lede": "This is where Bentootoo lets inspiration pile up.",
+    "hero.scrollMore": "Scroll to see more",
+    "hero.projectsCount": "Projects",
+    "hero.blogCount": "Blog posts",
     "card.identity": "Student / Video creator / Game maker / Independent musician",
     "card.email": "Email",
     "projects.title": "Projects",
@@ -112,6 +118,9 @@ const translations = {
     "donate.afdianRegion": "(Chine)",
     "hero.titleLineOne": "Bienvenue, je suis",
     "hero.lede": "C'est ici que Bentootoo laisse les inspirations s'accumuler.",
+    "hero.scrollMore": "Faites défiler pour découvrir",
+    "hero.projectsCount": "Projets",
+    "hero.blogCount": "Articles personnels",
     "card.identity": "Étudiant / Créateur vidéo / Créateur de jeux / Musicien indépendant",
     "card.email": "Email",
     "projects.title": "Projets",
@@ -348,18 +357,48 @@ function updateBackToTopVisibility() {
   backToTop.classList.toggle("is-visible", distanceFromBottom < 180);
 }
 
+const heroSection = document.querySelector(".hero-section");
+const heroIntro = document.querySelector(".hero-intro");
+const heroSummary = document.querySelector(".hero-summary");
+
+function updateHeroStory() {
+  if (!heroSection || !heroIntro || !heroSummary) {
+    return;
+  }
+
+  const heroStart = heroSection.offsetTop;
+  const heroDistance = Math.max(heroSection.offsetHeight - window.innerHeight, 1);
+  const progress = Math.min(Math.max((window.scrollY - heroStart) / heroDistance, 0), 1);
+  const introProgress = Math.min(Math.max((progress - 0.08) / 0.38, 0), 1);
+  const summaryProgress = Math.min(Math.max((progress - 0.4) / 0.34, 0), 1);
+
+  heroSection.style.setProperty("--hero-intro-progress", introProgress.toFixed(4));
+  heroSection.style.setProperty("--hero-summary-progress", summaryProgress.toFixed(4));
+  heroSection.style.setProperty("--hero-intro-shift", `${(-introProgress * 110).toFixed(2)}px`);
+  heroSection.style.setProperty("--hero-summary-shift", `${((1 - summaryProgress) * 84).toFixed(2)}px`);
+
+  const introHidden = introProgress > 0.92;
+  const summaryHidden = summaryProgress < 0.08;
+  heroIntro.setAttribute("aria-hidden", String(introHidden));
+  heroIntro.inert = introHidden;
+  heroSummary.setAttribute("aria-hidden", String(summaryHidden));
+}
+
 window.addEventListener("scroll", () => {
   updateProgress();
   updateHeaderVisibility();
   updateBackToTopVisibility();
+  updateHeroStory();
 }, { passive: true });
 window.addEventListener("resize", () => {
   updateProgress();
   updateBackToTopVisibility();
+  updateHeroStory();
 });
 updateProgress();
 updateHeaderVisibility();
 updateBackToTopVisibility();
+updateHeroStory();
 
 const canvas = document.querySelector("#heroCanvas");
 const context = canvas ? canvas.getContext("2d") : null;
@@ -411,8 +450,8 @@ if (canvas && context && !prefersReducedMotion) {
     context.fillRect(0, 0, width, height);
 
     context.globalCompositeOperation = "lighter";
-    drawRibbon(0, "rgba(25, 211, 197, 0.48)", 92, 0.72);
-    drawRibbon(1.8, "rgba(200, 255, 89, 0.36)", 72, 0.58);
+    drawRibbon(0, "rgba(255, 255, 255, 0.48)", 92, 0.72);
+    drawRibbon(1.8, "rgba(255, 255, 255, 0.36)", 72, 0.58);
     drawRibbon(3.4, "rgba(255, 106, 87, 0.3)", 112, 0.46);
 
     context.globalCompositeOperation = "source-over";

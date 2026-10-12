@@ -27,7 +27,7 @@
   border-radius: var(--radius);
   color: var(--paper);
   background:
-    linear-gradient(135deg, rgba(25, 211, 197, 0.14), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 34%),
     linear-gradient(315deg, rgba(255, 106, 87, 0.14), transparent 38%),
     rgba(16, 17, 15, 0.96);
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
