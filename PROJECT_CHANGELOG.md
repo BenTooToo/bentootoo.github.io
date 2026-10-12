@@ -7,6 +7,28 @@
 - 个人主页本身的功能、结构或重要视觉更新仍记录在 `devlog.js`。
 - 本文件不在网站导航或页面中提供入口。
 
+## 2026-10-13
+
+### 首页标题与个人名片位置 / Homepage title and personal card position / Position du titre et de la carte personnelle sur l’accueil
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 首页最初的标题和个人名片略微下调。
+- Move the initial homepage title and personal card slightly downward.
+- Déplacer légèrement vers le bas le titre initial et la carte personnelle de l’accueil.
+- 在首次下调后，再往下一点。
+- Move them a little further down after the first adjustment.
+- Les déplacer encore un peu plus bas après le premier ajustement.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 将首屏标题与名片共用容器的垂直位置从 38.2% 调整为 42%，平板与手机端分别从 44% 和 45% 调整为 47% 和 48%；刷新首页样式缓存标识，保留网站版本号，不更新公开开发日志。
+- Adjusted the shared title and card container’s vertical position from 38.2% to 42%, with tablet and phone positions moving from 44% and 45% to 47% and 48%; refreshed the homepage stylesheet cache identifier, retained the website version, and left the public development log unchanged.
+- Ajustement de la position verticale du conteneur commun au titre et à la carte de 38,2 % à 42 %, et de 44 % et 45 % à 47 % et 48 % sur tablette et téléphone ; actualisation du cache de la feuille de style de l’accueil, sans changer la version du site ni le journal public.
+- 再将桌面、平板与手机端的容器位置分别调整为 45%、50% 和 51%，刷新首页样式缓存标识。
+- Further adjusted the container position to 45%, 50%, and 51% on desktop, tablet, and phone respectively, and refreshed the homepage stylesheet cache identifier.
+- Nouvel ajustement de la position du conteneur à 45 %, 50 % et 51 % sur ordinateur, tablette et téléphone respectivement, avec actualisation du cache de la feuille de style de l’accueil.
+
 ## 2026-10-12
 
 ### 文章预计阅读时长 / Estimated article reading time / Temps de lecture estimé

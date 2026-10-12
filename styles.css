@@ -521,7 +521,7 @@ body.home-page[data-home-theme="refined"] {
 
 .hero-intro {
   position: absolute;
-  top: 38.2%;
+  top: 45%;
   left: 50%;
   width: min(1120px, calc(100% - 48px));
   margin: 0;
@@ -2496,7 +2496,7 @@ html[lang="fr"] .article-node small {
   }
 
   .hero-intro {
-    top: 44%;
+    top: 50%;
   }
 
   .hero-shell,
@@ -2613,7 +2613,7 @@ html[lang="fr"] .article-node small {
   }
 
   .hero-intro {
-    top: 45%;
+    top: 51%;
     gap: 18px;
   }
 
