@@ -50,7 +50,9 @@ const blogGraph = {
     {
       id: "claude-code-power-automate",
       title: "Claude Code 终端到Power Automate云端的一体化工作流",
-      problem: "自动化的自动化",
+      problem: "MCP的成功尝试",
+      image: "assets/blog-power-automate-flow.png",
+      imageAlt: "Power Automate 当前采购流程：手动触发、生成 RFQ、读取需求、写入需求表、读取供应商、按类型填写模板并建立发送计划",
       date: "2026-10-12",
       categoryId: "technology",
       subcategoryId: null,
@@ -290,7 +292,8 @@ const blogI18n = {
     articles: {
       "claude-code-power-automate": {
         title: "An Integrated Workflow from the Claude Code Terminal to the Power Automate Cloud",
-        problem: "Automating Automation",
+        problem: "A Successful Experiment with MCP",
+        imageAlt: "Current Power Automate purchasing workflow: manual trigger, RFQ setup, reading and loading needs, listing suppliers, filling templates by type, and building the send plan",
         paragraphs: [
           "1. The frustration",
           "While building Power Automate workflows for purchasing at work, I ran into a problem.",
@@ -451,7 +454,8 @@ const blogI18n = {
     articles: {
       "claude-code-power-automate": {
         title: "Un flux de travail intégré du terminal Claude Code au cloud Power Automate",
-        problem: "Automatiser l'automatisation",
+        problem: "Un essai réussi avec MCP",
+        imageAlt: "Flux d’achat Power Automate actuel : déclenchement manuel, préparation du RFQ, lecture et chargement des besoins, liste des fournisseurs, remplissage des modèles par type et préparation du plan d’envoi",
         paragraphs: [
           "1. Le problème",
           "En créant des flux Power Automate pour les achats en entreprise, j'ai rencontré un problème.",

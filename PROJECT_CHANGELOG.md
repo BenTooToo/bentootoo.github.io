@@ -9,6 +9,20 @@
 
 ## 2026-10-13
 
+### Power Automate 博客图片与简介 / Power Automate blog image and summary / Image et résumé du blog Power Automate
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 将提供的当前流程截图加入 Power Automate 博客，简介改为“MCP的成功尝试”。
+- Add the supplied current-workflow screenshot to the Power Automate article and change its summary to “A Successful Experiment with MCP”.
+- Ajouter la capture fournie du flux actuel à l’article Power Automate et remplacer son résumé par « Un essai réussi avec MCP ».
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 将原图复制至 `assets/blog-power-automate-flow.png`，放在介绍正文之后、步骤教程之前；同步三语图片替代文本、文章简介及首页预览，刷新对应脚本缓存标识。保留文章创作日期与网站版本号，不更新公开开发日志。
+- Copied the original image to `assets/blog-power-automate-flow.png` and placed it after the introductory text, before the tutorial; updated image alternative text, article summaries, and homepage previews in all three languages and refreshed script cache identifiers. Preserved the creation date and site version without updating the public development log.
+- Copie de l’image originale dans `assets/blog-power-automate-flow.png`, placée après l’introduction et avant le tutoriel ; mise à jour trilingue du texte alternatif, du résumé et de l’aperçu d’accueil, avec actualisation du cache des scripts. Date de création et version du site conservées, sans modifier le journal public.
+
 ### 首页标题与个人名片位置 / Homepage title and personal card position / Position du titre et de la carte personnelle sur l’accueil
 
 **用户决定 / User decisions / Décisions utilisateur**
