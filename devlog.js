@@ -5,6 +5,13 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-10-14",
+        version: "v0.5.1",
+        done: [
+          "将首页导航改为横跨页面的黑色长条，把更多菜单、首页、项目、思索之屋、联系我、语言切换和主题切换统一放入其中，默认使用黑底白字，并随主题切换为同窗录的藏蓝与纸色边线、煎饼控制的蓝黄配色与红色立体按钮。"
+        ]
+      },
+      {
         date: "2026-10-12",
         version: "v0.5.0",
         visual: "pancake",
@@ -157,6 +164,13 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-10-14",
+        version: "v0.5.1",
+        done: [
+          "Changed the homepage navigation to a full-width black bar containing the more menu, Home, Projects, House of Thoughts, Contact, language selector and theme switch, using black and white by default, navy with paper-colored edges for Yearbook, and blue and yellow with red beveled buttons for Pancake Control."
+        ]
+      },
+      {
         date: "2026-10-12",
         version: "v0.5.0",
         visual: "pancake",
@@ -308,6 +322,13 @@ const devlogContent = {
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
     entries: [
+      {
+        date: "2026-10-14",
+        version: "v0.5.1",
+        done: [
+          "Transformation de la navigation d’accueil en une barre noire sur toute la largeur, regroupant le menu Plus, Accueil, Projets, Maison des pensées, Contact, le choix de langue et de thème, avec un style noir et blanc par défaut, bleu marine et bordures couleur papier pour l’Annuaire, bleu et jaune avec boutons rouges en relief pour Pancake Control."
+        ]
+      },
       {
         date: "2026-10-12",
         version: "v0.5.0",

@@ -1,0 +1,103 @@
+/* Full-width homepage navigation with theme-specific artwork. */
+body.home-page[data-home-theme] .site-header {
+  --nav-background: #000;
+  --nav-text: #fff;
+  --nav-line: #333;
+  --nav-active: #262626;
+  --nav-active-text: #fff;
+  --nav-menu: #000;
+  top: 0; left: 0; width: 100%; min-height: 78px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 24px; padding: 12px clamp(16px, 3vw, 48px);
+  border: 0; border-radius: 0; background: var(--nav-background); color: var(--nav-text); transform: none;
+}
+body.home-page[data-home-theme] .site-header.is-hidden { transform: translateY(-100%); }
+body.home-page[data-home-theme] .site-header :is(.more-toggle, .site-nav, .language-switch, .home-theme-switch) {
+  border: 0; border-radius: 0; background: transparent; box-shadow: none; backdrop-filter: none;
+}
+body.home-page[data-home-theme] .site-header .more-menu {
+  position: relative; top: auto; left: auto; grid-column: 1; grid-row: 1;
+}
+body.home-page[data-home-theme] .site-header .site-nav {
+  position: static; display: flex; grid-column: 2; grid-row: 1;
+  justify-content: center; width: auto; min-width: 0;
+  gap: clamp(8px, 2vw, 32px); padding: 0; transform: none;
+}
+body.home-page[data-home-theme] .site-header .site-nav a {
+  flex: 0 1 auto; padding: 14px 10px; font-size: .86rem; white-space: nowrap;
+}
+body.home-page[data-home-theme] .site-header .site-nav a + a::before { display: none; }
+body.home-page[data-home-theme] .site-header .header-controls {
+  position: static; grid-column: 3; grid-row: 1; gap: 14px;
+}
+body.home-page[data-home-theme] .site-header .language-switch { max-width: none; padding: 4px 0; }
+body.home-page[data-home-theme] .site-header .home-theme-switch {
+  padding: 4px 0 4px 14px; border-left: 1px solid var(--nav-line);
+}
+body.home-page[data-home-theme] .site-header :is(.site-nav a, .lang-button, .donate-trigger, .more-dropdown a, .donate-submenu small) { color: var(--nav-text); }
+body.home-page[data-home-theme] .site-header .more-toggle span { background: var(--nav-text); }
+body.home-page[data-home-theme] .site-header :is(.more-dropdown, .donate-submenu) {
+  background: var(--nav-menu); color: var(--nav-text); border: 1px solid var(--nav-line); box-shadow: 0 14px 30px rgba(0, 0, 0, .25);
+}
+body.home-page[data-home-theme] .site-header :is(.lang-button.is-active, .home-theme-swatch.is-active, a:hover, button:hover, a:focus-visible, button:focus-visible) {
+  background: var(--nav-active); color: var(--nav-active-text); box-shadow: none;
+}
+body.home-page[data-home-theme] .site-header .home-theme-swatch.is-active { border-color: var(--nav-text); }
+body.home-page[data-home-theme] .site-header :is(a, button):focus-visible { outline: 2px solid var(--nav-text); outline-offset: 2px; }
+@media (max-width: 900px) {
+  body.home-page[data-home-theme] { --header-height: 118px; }
+  body.home-page[data-home-theme] .site-header {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 12px;
+    padding: 8px 16px; min-height: 110px;
+  }
+  body.home-page[data-home-theme] .site-header .header-controls { grid-column: 2; justify-self: end; gap: 10px; }
+  body.home-page[data-home-theme] .site-header .site-nav {
+    grid-column: 1 / -1; grid-row: 2; justify-content: space-between; gap: 4px;
+  }
+  body.home-page[data-home-theme] .site-header .site-nav a {
+    flex: 1 1 auto; text-align: center; padding: 12px 4px; font-size: clamp(.7rem, 2.2vw, .86rem);
+  }
+  body.home-page[data-home-theme] .site-header .home-theme-swatch { width: 30px; height: 32px; }
+  body.home-page[data-home-theme] .site-header .home-theme-switch { padding-left: 10px; }
+}
+
+/* Yearbook: navy ink, warm paper edges and burgundy selected tabs. */
+body.home-page[data-home-theme="yearbook"] .site-header {
+  --nav-background: #24486f;
+  --nav-text: #fff8df;
+  --nav-line: #9a8e6d;
+  --nav-active: #7c1f1f;
+  --nav-active-text: #fff8df;
+  --nav-menu: #24486f;
+  box-shadow: inset 0 1px 0 #6f8bad, inset 0 -3px 0 #c6b992, 0 3px 0 #9a8e6d;
+}
+body.home-page[data-home-theme="yearbook"] .site-header :is(.site-nav a, .lang-button, .home-theme-swatch, .more-toggle) { border-radius: 0; }
+body.home-page[data-home-theme="yearbook"] .site-header :is(.more-dropdown, .donate-submenu) {
+  border-radius: 0;
+  box-shadow: inset 0 1px 0 #6f8bad, 3px 3px 0 rgba(46, 42, 34, .25);
+}
+
+/* Pancake: bright blue and yellow, with red beveled controls. */
+body.home-page[data-home-theme="pancake"] .site-header {
+  --nav-background: linear-gradient(#1873c6, #064887);
+  --nav-text: #fff;
+  --nav-line: #ffec00;
+  --nav-active: #c40000;
+  --nav-active-text: #ffff00;
+  --nav-menu: #075da8;
+  box-shadow: inset 0 3px 0 #ffec00, inset 0 -3px 0 #ffec00, 0 4px 0 #003a70;
+}
+body.home-page[data-home-theme="pancake"] .site-header :is(.site-nav a, .lang-button, .home-theme-swatch, .more-toggle) { border-radius: 0; }
+body.home-page[data-home-theme="pancake"] .site-header .site-nav a {
+  box-shadow: inset 1px 0 0 #89bdea, inset -1px 0 0 #003a70;
+}
+body.home-page[data-home-theme="pancake"] .site-header :is(.lang-button.is-active, .home-theme-swatch.is-active, a:hover, button:hover, a:focus-visible, button:focus-visible) {
+  box-shadow: inset 2px 2px 0 #ffca83, inset -2px -2px 0 #8e160b;
+}
+body.home-page[data-home-theme="pancake"] .site-header :is(a, button):active {
+  box-shadow: inset 2px 2px 0 #8e160b, inset -2px -2px 0 #ffca83;
+}
+body.home-page[data-home-theme="pancake"] .site-header :is(.more-dropdown, .donate-submenu) {
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 #89bdea, inset -1px -1px 0 #003a70, 3px 3px 0 rgba(0, 0, 0, .25);
+}

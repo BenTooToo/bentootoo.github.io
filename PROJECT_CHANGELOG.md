@@ -7,6 +7,36 @@
 - 个人主页本身的功能、结构或重要视觉更新仍记录在 `devlog.js`。
 - 本文件不在网站导航或页面中提供入口。
 
+## 2026-10-14
+
+### 首页导航主题适配 / Homepage navigation theme adaptation / Adaptation thématique de la navigation d’accueil
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 满意新版全宽目录栏，希望切换主题时同步变为适合该主题的美术风格。
+- Keep the approved full-width navigation and adapt its artwork when switching themes.
+- Conserver la navigation pleine largeur approuvée et adapter son style graphique au thème sélectionné.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 默认主题保留黑底白字；同窗录改为藏蓝底、暖纸色文字与边线、暗红选中按钮；煎饼控制改为蓝色渐变、黄色边线与红色立体按钮。同步适配三横线、语言与主题选项、展开菜单、悬停和键盘焦点，保持桌面及窄屏布局；刷新资源缓存，并同步完善 v0.5.1 三语公开日志。
+- Retained black and white for the default theme; applied navy, warm paper-colored text and edges, and burgundy selected buttons to Yearbook; applied a blue gradient, yellow edges, and red beveled buttons to Pancake Control. Adapted the hamburger, language and theme controls, dropdowns, hover and keyboard focus while keeping desktop and narrow-screen layouts; refreshed asset caches and completed the trilingual v0.5.1 public log.
+- Conservation du noir et blanc par défaut ; bleu marine, texte et bordures couleur papier, boutons sélectionnés bordeaux pour l’Annuaire ; dégradé bleu, bordures jaunes et boutons rouges en relief pour Pancake Control. Adaptation du menu, des langues, des thèmes, des menus déroulants, du survol et du focus clavier, avec conservation des dispositions sur ordinateur et petit écran ; actualisation du cache et du journal public trilingue v0.5.1.
+
+### 首页黑色导航条 / Black homepage navigation bar / Barre de navigation noire sur l’accueil
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 尝试将首页目录栏改为与网页一样宽的大黑色长方形，将更多、首页、项目、思索之屋、联系我、语言切换与主题切换全部放入其中，文字改为白色。
+- Try a page-wide black rectangle for the homepage navigation, containing the more menu, Home, Projects, House of Thoughts, Contact, language selector and theme switch, with white text.
+- Essayer un grand rectangle noir sur toute la largeur de l’accueil, regroupant le menu Plus, Accueil, Projets, Maison des pensées, Contact, le choix de langue et de thème, avec du texte blanc.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 新增首页专用的 `home-nav.css`，将原有悬浮导航合并为贴齐页面两侧的黑色导航条，统一白色文字与菜单图标、深色展开菜单和键盘焦点样式；窄屏分两行排列，三种主题均保留黑色导航。更新首页资源引用，并在三语公开开发日志中记录 v0.5.1。
+- Added homepage-specific `home-nav.css`, combining the floating controls into a black bar reaching both page edges, with white text and menu icon, dark dropdowns and visible keyboard focus; narrow screens use two rows and all three themes retain the black navigation. Updated homepage asset references and recorded v0.5.1 in the public log in all three languages.
+- Ajout de `home-nav.css` pour l’accueil : regroupement des commandes flottantes dans une barre noire bord à bord, avec texte et icône blancs, menus déroulants sombres et focus clavier visible ; disposition sur deux lignes sur petit écran et barre noire conservée dans les trois thèmes. Actualisation des ressources de l’accueil et inscription de v0.5.1 dans le journal public trilingue.
+
 ## 2026-10-13
 
 ### Power Automate 博客图片与简介 / Power Automate blog image and summary / Image et résumé du blog Power Automate
