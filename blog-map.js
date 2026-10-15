@@ -1028,9 +1028,11 @@ function renderArticleNode(article) {
       style="${createPositionStyle(article)}"
       aria-label="${escapeHtml(`${articleText.title}. ${articleText.problem}`)}"
     >
+      <span class="article-copy">
       <span class="article-title">${escapeHtml(articleText.title)}</span>
       <span class="article-problem">${escapeHtml(articleText.problem).split(String.fromCharCode(10)).join("<br>")}</span>
       <small>${metadata}</small>
+      </span>
     </button>
   `;
 }
@@ -1309,6 +1311,34 @@ function groupChildLinks(links) {
   }, new Map());
 }
 
+function prepareCompactNode(node, kind) {
+  if (!compactMapQuery.matches) return;
+  const diameter = kind === 'article' ? 224 : kind === 'center' ? 184 : 164;
+  node.style.setProperty('--node-size', diameter + 'px');
+  if (kind !== 'article') return;
+  const copy = node.querySelector('.article-copy');
+  const labels = [...copy.children];
+  labels.forEach(label => { label.style.fontSize = ''; });
+  let size = diameter;
+  // Fit the full copy inside a square inscribed in the circular card.
+  while (copy.scrollHeight > node.clientWidth * 0.70 && size < 320) {
+    size += 8;
+    node.style.setProperty('--node-size', size + 'px');
+  }
+  const minimums = [13, 11, 9];
+  while (copy.scrollHeight > node.clientWidth * 0.70) {
+    let changed = false;
+    labels.forEach((label, index) => {
+      const size = parseFloat(getComputedStyle(label).fontSize);
+      if (size > minimums[index]) {
+        label.style.fontSize = Math.max(minimums[index], size - 0.5) + 'px';
+        changed = true;
+      }
+    });
+    if (!changed) break;
+  }
+}
+
 function buildGraphState() {
   if (!blogMap) {
     return;
@@ -1346,6 +1376,9 @@ function buildGraphState() {
 
     element.style.setProperty("--node-size", `${item.size}px`);
 
+    const kind = getNodeKind(item);
+    prepareCompactNode(element, kind);
+
     const previousNode = previousNodes.get(item.id);
     const initialPosition = getInitialPosition(item);
     const position = previousNode
@@ -1355,7 +1388,6 @@ function buildGraphState() {
         }
       : initialPosition;
     const diameter = element.offsetWidth || item.size;
-    const kind = getNodeKind(item);
     const isCenter = kind === "center";
 
     graphState.nodes.set(item.id, {
@@ -1824,6 +1856,7 @@ function fitMapNodeText() {
   });
 
   nodeLayer.querySelectorAll(".article-node").forEach((node) => {
+    if (compactMapQuery.matches) return;
     shrinkTextToFit(node.querySelector(".article-title"), { minSize: 8.5 });
     shrinkTextToFit(node.querySelector(".article-problem"), { minSize: 8 });
     shrinkTextToFit(node.querySelector("small"), {
@@ -1982,12 +2015,79 @@ function setupDragInteractions() {
   document.addEventListener("mouseup", finishDrag);
 }
 
+function zoomViewportAt(scale, fromClientX, fromClientY, toClientX = fromClientX, toClientY = fromClientY) {
+  const rect = blogMap.getBoundingClientRect();
+  const fromX = fromClientX - rect.left;
+  const fromY = fromClientY - rect.top;
+  const graphX = (fromX - graphState.view.x) / graphState.view.scale;
+  const graphY = (fromY - graphState.view.y) / graphState.view.scale;
+  const nextScale = Math.min(Math.max(scale, 0.48), 2.4);
+  graphState.view.scale = nextScale;
+  graphState.view.x = toClientX - rect.left - graphX * nextScale;
+  graphState.view.y = toClientY - rect.top - graphY * nextScale;
+  applyViewportTransform();
+}
+
 function setupViewportInteractions() {
   if (graphState.viewportListenersReady) {
     return;
   }
 
   graphState.viewportListenersReady = true;
+
+  const touches = new Map();
+  let pinch = null;
+  let pinching = false;
+  let suppressClickTimer = 0;
+  const pinchGeometry = () => {
+    const [first, second] = [...touches.values()];
+    return { x: (first.x + second.x) / 2, y: (first.y + second.y) / 2,
+      distance: Math.max(1, Math.hypot(second.x - first.x, second.y - first.y)) };
+  };
+  // Capture touch gestures before single-pointer node dragging and canvas panning.
+  blogMap.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'touch' || reader?.classList.contains('is-open')) return;
+    touches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (touches.size < 2) return;
+    const draggedNode = graphState.nodes.get(graphState.dragging?.id);
+    if (draggedNode) { draggedNode.vx = 0; draggedNode.vy = 0; }
+    graphState.dragging = null;
+    graphState.panning = null;
+    graphState.movedDuringDrag = false;
+    clearTimeout(suppressClickTimer);
+    graphState.suppressNextClick = true;
+    blogMap.classList.remove('is-graph-dragging', 'is-view-panning');
+    touches.forEach((_, id) => blogMap.setPointerCapture(id));
+    pinch = pinchGeometry();
+    pinching = true;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, { capture: true, passive: false });
+  blogMap.addEventListener('pointermove', event => {
+    if (event.pointerType !== 'touch' || !touches.has(event.pointerId)) return;
+    touches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (!pinching) return;
+    if (touches.size >= 2) {
+      const next = pinchGeometry();
+      if (pinch) zoomViewportAt(graphState.view.scale * next.distance / pinch.distance, pinch.x, pinch.y, next.x, next.y);
+      pinch = next;
+    }
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, { capture: true, passive: false });
+  const finishTouch = event => {
+    if (!touches.delete(event.pointerId) || !pinching) return;
+    if (blogMap.hasPointerCapture(event.pointerId)) blogMap.releasePointerCapture(event.pointerId);
+    pinch = touches.size >= 2 ? pinchGeometry() : null;
+    if (!touches.size) {
+      pinching = false;
+      suppressClickTimer = setTimeout(() => { graphState.suppressNextClick = false; }, 300);
+    }
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  };
+  blogMap.addEventListener('pointerup', finishTouch, { capture: true, passive: false });
+  blogMap.addEventListener('pointercancel', finishTouch, { capture: true, passive: false });
 
   blogMap.addEventListener("wheel", (event) => {
     if (reader?.classList.contains("is-open")) {
@@ -1996,17 +2096,10 @@ function setupViewportInteractions() {
 
     event.preventDefault();
 
-    const mapRect = blogMap.getBoundingClientRect();
-    const pointerX = event.clientX - mapRect.left;
-    const pointerY = event.clientY - mapRect.top;
-    const graphX = (pointerX - graphState.view.x) / graphState.view.scale;
-    const graphY = (pointerY - graphState.view.y) / graphState.view.scale;
-    const nextScale = Math.min(Math.max(graphState.view.scale * Math.exp(-event.deltaY * 0.0014), 0.48), 2.4);
-
-    graphState.view.scale = nextScale;
-    graphState.view.x = pointerX - graphX * nextScale;
-    graphState.view.y = pointerY - graphY * nextScale;
-    applyViewportTransform();
+    zoomViewportAt(
+      graphState.view.scale * Math.exp(-event.deltaY * 0.0014),
+      event.clientX, event.clientY
+    );
   }, { passive: false });
 
   const startPan = (event, pointerId) => {

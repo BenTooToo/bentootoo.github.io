@@ -7,7 +7,130 @@
 - 个人主页本身的功能、结构或重要视觉更新仍记录在 `devlog.js`。
 - 本文件不在网站导航或页面中提供入口。
 
+## 2026-10-15
+
+### DeathGPT 仅复制 UI 风格 / Copy only the DeathGPT UI style / Reprendre uniquement le style de DeathGPT
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 不嵌入完整 DeathGPT 功能，只参照真实开发版的 UI 风格；回复保留原来的固定错误流程，无论输入什么都显示错误回复、修复提示并锁定输入。本次仍不新增公开开发日志。
+- Do not embed the full DeathGPT app; copy only its UI style and retain the original fixed error response, repair notice and input lock for any submitted message. Still add no public log entry.
+- Ne pas intégrer l’application complète ; reprendre seulement son style et conserver la réponse d’erreur fixe, l’avis de réparation et le verrouillage pour tout message. Toujours sans nouvelle entrée publique.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 移除完整构建的 iframe、缩放观察器和本次复制的构建文件。以原版深灰背景、品牌星形标识、细边框顶栏、圆角输入框和圆形发送按钮重做小型演示；仅保留输入与发送交互。恢复原来等待、红色“不要”逐字重复、回删、“问题已经被修复”、锁定及关闭后重置的完整流程，保留昵称提示；同步三语无障碍标签，刷新资源缓存，版本号与公开日志内容保持不变。
+- Removed the full-app iframe, scaling observer and copied build files. Restyled the small demo with the original charcoal surface, brand mark, thin header border, rounded composer and circular send button, keeping only message entry and submission. Restored the original wait, repeated red refusal, deletion, repair message, lock and reset-on-close sequence, including nickname prompts; retained localized accessibility labels and refreshed caches without changing the version or public entries.
+- Suppression de l’iframe complet, de l’observateur de redimensionnement et des fichiers copiés. Refonte de la petite démo avec fond anthracite, emblème, barre à bord fin, saisie arrondie et bouton d’envoi circulaire, limitée à la saisie et à l’envoi. Rétablissement de l’attente, du refus rouge répété, de l’effacement, de l’avis de réparation, du verrouillage et de la réinitialisation à la fermeture, avec le surnom ; libellés accessibles traduits et cache actualisé, sans changer version ni journal public.
+
+### 开发日志 DeathGPT 预览 / DeathGPT preview in the development log / Aperçu DeathGPT dans le journal
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 开发日志中的 DeathGPT 与真实开发版本不一致，按 D:\Projets\DeathGPT\dist 的真实版本放入一个小型预览；本次修改不写入公开开发日志。
+- Replace the mismatched DeathGPT log demo with a small preview based on the actual build at D:\Projets\DeathGPT\dist; do not add a public log entry for this change.
+- Remplacer la démo DeathGPT du journal par un petit aperçu fondé sur la véritable version dans D:\Projets\DeathGPT\dist ; ne pas ajouter d’entrée publique pour ce changement.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 将真实 Beta 0.0.7 构建的 index.html、styles.css、game.js 原样复制到 assets/deathgpt-preview，以独立小型 iframe 嵌入原有日志位置，窄屏按原版最小布局等比缩放；使用原版的响应式界面、对话与调查交互，替换旧模拟聊天框及其固定回复动画。预览标题与无障碍说明同步三语，构建本身保留原版内容；刷新日志脚本与样式缓存，保留网站版本号及公开日志条目。
+- Copied the actual Beta 0.0.7 index.html, styles.css and game.js unchanged to assets/deathgpt-preview and embedded them in a small standalone iframe at the existing log location, scaling proportionally on narrow cards to preserve the original minimum layout. Replaced the old mock chat and scripted replies with the original responsive interface, conversations and investigation interactions. Localized the preview title and accessibility text in three languages while retaining the original build content; refreshed log asset caches without changing the site version or public entries.
+- Copie intacte des fichiers index.html, styles.css et game.js de Beta 0.0.7 vers assets/deathgpt-preview, intégrés dans un petit iframe à l’emplacement existant du journal, avec réduction proportionnelle sur les petites cartes pour conserver la mise en page minimale d’origine. Remplacement de l’ancien faux chat et de ses réponses prédéfinies par l’interface réactive, les dialogues et l’enquête d’origine. Titre et libellés d’accessibilité trilingues, contenu du build conservé ; caches actualisés, version du site et entrées publiques inchangées.
+
+### 思索之屋手机排版与缩放 / Mobile House of Reflection layout and zoom / Mise en page et zoom mobiles de la Maison de réflexion
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 模拟手机端检查中、英、法三语遮挡，重点修复思索之屋圆球文字的尺寸与排版；支持与鼠标滚轮一致的双指缩放，保留现有桌面效果。
+- Simulate phones and check Chinese, English and French for clipping, especially circle text in the House of Reflection; support two-finger zoom matching the mouse wheel and preserve the desktop appearance.
+- Simuler des téléphones et vérifier les textes chinois, anglais et français, notamment dans les cercles de la Maison de réflexion ; ajouter le zoom à deux doigts identique à la molette et conserver le rendu sur ordinateur.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 为手机端取消圆球 29vw 的宽度压缩，按节点类型与三语实际内容调整大小；标题、摘要与分类在圆内安全区域纵向排列，完整换行显示。手机图谱避开顶部导航和底部留言条，桌面文字结构通过 display: contents 保持原布局。
+- 双指与滚轮共用缩放函数，缩放范围保持 0.48–2.4，以手势中心为锚点并支持双指平移；双指开始时取消单指拖动，防止松手后残留拖动及误开文章。更新三语公开日志至当天 v0.5.2，刷新样式、图谱与日志脚本缓存。
+- Cancelled the mobile 29vw circle cap and sized nodes by type and localized content; stacked full titles, summaries and categories inside a safe circular area. Reserved mobile map space for navigation and the message bar while retaining desktop layout through display: contents.
+- Unified pinch and wheel zoom at a 0.48–2.4 range with the gesture center as anchor and two-finger translation; cancelled single-pointer dragging when pinching starts and prevented residual dragging or accidental article activation. Updated the daily trilingual v0.5.2 log and refreshed style, map and log caches.
+- Suppression de la limite mobile de 29vw ; dimensions adaptées au type de nœud et au contenu traduit, titres, résumés et catégories disposés intégralement dans une zone sûre du cercle. Espace réservé aux commandes fixes ; disposition sur ordinateur conservée avec display: contents.
+- Zoom à deux doigts et molette réunis dans une fonction, avec limites 0,48–2,4, ancrage au centre du geste et déplacement à deux doigts ; annulation du glissement à un doigt et prévention des activations involontaires. Journal trilingue v0.5.2 du jour et caches actualisés.
+
+**验证 / Validation / Vérification**
+
+- 在 320、360、390、430、620px 五种宽度下检查三语与三主题，逐行验证每个圆球文字均在圆内；三语桌面节点尺寸、文字框、字号与行高与修改前基准一致。使用浏览器真实模拟双指触控，验证与滚轮相同的缩放结果、手势取消与后续点击；检查全站八页手机三语主要文字及三语文章阅读。
+- Checked every text line against its circle at five widths (320, 360, 390, 430, 620px), three languages and three themes; desktop node dimensions, text boxes, font sizes and line heights matched the pre-change baseline. Tested real simulated two-finger input against wheel zoom, cancellation and subsequent taps; checked primary mobile text on all eight pages and article reading in all three languages.
+- Vérification de chaque ligne dans son cercle sur cinq largeurs (320, 360, 390, 430, 620px), trois langues et trois thèmes ; dimensions, zones de texte, corps et interlignages sur ordinateur identiques à la référence. Simulation réelle de gestes à deux doigts, comparaison à la molette, annulation et clic suivant ; contrôle des huit pages sur mobile et de la lecture dans les trois langues.
+
 ## 2026-10-14
+
+### 联系区域居中与页脚 / Centered contact content and footer / Contact centré et pied de page
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 独立联系页的联系方式与内容居中；删除右下角 GitHub Pages 文案，左下角增加 All rights reserved.；首页滚动到联系区域底部即结束，减少过长留白。
+- Center the standalone Contact page; remove the GitHub Pages footer text and add All rights reserved. at the lower left; end the homepage shortly after the contact section.
+- Centrer la page Contact, supprimer la mention GitHub Pages et ajouter All rights reserved. en bas à gauche ; terminer l’accueil juste après la section Contact.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 将独立联系页的标题、简介、留言按钮与社交图标整体居中，复用现有主题样式；统一共享页脚为左侧版权与 All rights reserved.，移除旧三语 GitHub Pages 文案。取消首页末段强制一屏高度与联系方式容器的最小高度，将区域底部留白缩短为 32px；保留联系区域与页脚，同步三语公开日志到当天 v0.5.1 并刷新资源缓存。
+- Centered the standalone contact title, introduction, message button and social icons using the existing themes; changed the shared footer to left-aligned copyright and All rights reserved., removing the old GitHub Pages translations. Removed the homepage’s final-section viewport minimum and contact-stack minimum height, reduced bottom padding to 32px, retained the contact section and footer, and updated the trilingual daily v0.5.1 log and asset caches.
+- Centrage du titre, de l’introduction, du bouton de message et des icônes sociales avec les thèmes existants ; pied de page commun aligné à gauche avec copyright et All rights reserved., sans les anciennes traductions GitHub Pages. Suppression des hauteurs minimales du dernier bloc d’accueil et du groupe de contacts, marge basse réduite à 32px, conservation du Contact et du pied de page, mise à jour du journal trilingue v0.5.1 du jour et du cache.
+
+### 同日共用版本号 / One version per release day / Une version par jour de publication
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 将同一天发布的项目更新共用一个版本号的规则保存到全局记忆；今天的 v0.5.1、v0.5.2、v0.5.3 统一按 v0.5.1 计算。
+- Save the preference globally that updates released on the same day share one version; treat today’s v0.5.1, v0.5.2 and v0.5.3 as v0.5.1.
+- Mémoriser globalement la règle d’une version commune pour les mises à jour publiées le même jour ; regrouper les v0.5.1, v0.5.2 et v0.5.3 d’aujourd’hui sous v0.5.1.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 将规则写入全局和仓库 AGENTS.md。把三语公开日志中 2026-10-14 的全部更新合并为一条 v0.5.1，保留各项实际更新内容，并同步内部记录的版本归属及脚本缓存标识；不为本次日志整理新增版本。
+- Added the rule to global and repository AGENTS.md. Consolidated all public updates dated 2026-10-14 into one v0.5.1 entry in each language, preserving every update; aligned the internal records and script cache identifiers without creating a new version for this log cleanup.
+- Ajout de la règle aux AGENTS.md global et du dépôt. Regroupement de toutes les mises à jour publiques du 2026-10-14 dans une entrée v0.5.1 par langue, avec conservation du contenu ; harmonisation des versions internes et du cache des scripts, sans créer de nouvelle version pour ce rangement.
+
+### 独立联系页面 / Standalone contact page / Page Contact indépendante
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 联系我单独创建一页，沿用首页最底部联系区域的格式；保留底部原有联系区域，导航点击联系我进入新页面。
+- Create a separate Contact page matching the homepage’s bottom contact section; keep the original section and open the new page from Contact navigation.
+- Créer une page Contact reprenant la section au bas de l’accueil ; conserver cette section et ouvrir la nouvelle page depuis la navigation.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 新增 contact.html，复用现有联系区域的简介、思索之屋留言入口与六个社交链接，使用全站目录栏与三种主题；保留首页底部区域及其 #contact 稳定锚点。将全部页面的联系我导航改为新页面，新增当前页面状态、三语页面标题和元信息，补充站点地图；同步三语公开日志至 v0.5.1。
+- Added contact.html with the existing contact introduction, House of Reflection message link and six social links, shared navigation and three themes; retained the homepage section and its stable #contact anchor. Pointed every Contact navigation link to the new page, added current-page state and localized titles and metadata, updated the sitemap, and recorded v0.5.1 in the trilingual public log.
+- Ajout de contact.html avec l’introduction existante, le lien de message vers la Maison de réflexion et six liens sociaux, la navigation commune et trois thèmes ; section d’accueil et ancre #contact conservées. Redirection de tous les liens Contact, ajout de l’état actif, des titres et métadonnées trilingues, mise à jour du plan du site et du journal public en v0.5.1.
+
+### 全站新版导航 / New navigation across the site / Nouvelle navigation sur tout le site
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 让首页新版目录栏在全局生效，每个页面都使用这一格式。
+- Apply the homepage navigation format globally to every page.
+- Appliquer le format de navigation de l’accueil à toutes les pages du site.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 将首页专用导航样式升级为共享的 site-nav.css，统一首页、项目库、项目详情、思索之屋、地球及两篇旅行记录页面的全宽导航、三语文字与三种主题美术。为独立页面接入更多菜单、语言、主题及开发日志交互，保留返回地球和简介模式入口，调整内容顶部留白及当前页面状态；刷新资源缓存，三语公开日志更新至 v0.5.1。
+- Promoted the homepage navigation styles to shared site-nav.css across the homepage, project library, project details, House of Reflection, globe and both travel reports, with full-width layout, three languages and three visual themes. Connected menus, language, themes and the development log on standalone pages, retained the globe return and introduction controls, adjusted top spacing and current-page states, and refreshed asset caches; updated the trilingual public log to v0.5.1.
+- Généralisation des styles dans site-nav.css pour l’accueil, la bibliothèque et les détails des projets, la Maison de réflexion, le globe et les deux récits de voyage, avec disposition pleine largeur, trois langues et trois thèmes. Activation des menus, langues, thèmes et du journal sur les pages autonomes ; conservation du retour au globe et du mode introduction, ajustement des marges supérieures et des états de page active, actualisation du cache ; journal public trilingue mis à jour en v0.5.1.
+
+### 电子名片点击区域 / Electronic card click area / Zone cliquable de la carte personnelle
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 整张电子名片都应可以点击，移除名片内的“Thoughts”字样。
+- Make the whole electronic card clickable and remove the “Thoughts” label inside it.
+- Rendre toute la carte personnelle cliquable et retirer la mention « Thoughts ».
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 修正装饰圆环遮挡名片点击的问题：让圆环与装饰线不接收指针事件，并提高名片的叠层。移除英文“Thoughts”标签，保留三语留言入口；键盘翻转只响应名片本身的 Enter 与空格，避免拦截留言链接。刷新首页样式和脚本缓存，保留现有版本号，不为本次修正新增公开开发日志。
+- Fixed decorative rings intercepting card clicks by disabling pointer events on the rings and decorative lines and raising the card layer. Removed the English “Thoughts” label while retaining the localized message link; keyboard flipping responds to Enter and Space on the card itself, without intercepting the message link. Refreshed homepage style and script caches, kept the existing version, and added no public log entry for this correction.
+- Correction des anneaux décoratifs qui interceptaient les clics : désactivation des événements de pointeur sur les anneaux et lignes, et élévation de la carte. Suppression de « Thoughts » en conservant le lien de message traduit ; retournement au clavier avec Entrée et Espace uniquement sur la carte, sans intercepter le lien. Actualisation du cache des styles et scripts de l’accueil, version conservée, sans nouvelle entrée publique pour cette correction.
 
 ### 首页导航主题适配 / Homepage navigation theme adaptation / Adaptation thématique de la navigation d’accueil
 

@@ -90,7 +90,7 @@ body.site-themed[data-home-theme="pancake"] {
   background: transparent;
 }
 
-.site-themed:is([data-home-theme="yearbook"], [data-home-theme="pancake"]) :is(.hero-name, .hero-summary h2, .section-heading h2, .contact-section .section-heading h2) {
+.site-themed:is([data-home-theme="yearbook"], [data-home-theme="pancake"]) :is(.hero-name, .hero-summary h2, .section-heading :is(h1, h2), .contact-section .section-heading :is(h1, h2)) {
   color: var(--paper-strong);
   background: none;
   text-shadow: none;

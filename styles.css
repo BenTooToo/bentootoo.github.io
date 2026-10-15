@@ -427,7 +427,7 @@ body.home-page[data-home-theme="refined"] {
   color: currentColor;
 }
 
-.home-page[data-home-theme="refined"] .section-heading h2 {
+.home-page[data-home-theme="refined"] .section-heading :is(h1, h2) {
   font-size: clamp(2.5rem, 6vw, 5.4rem);
   letter-spacing: -0.035em;
 }
@@ -722,8 +722,14 @@ h1 span + span {
   animation: driftPanel 9s ease-in-out infinite alternate;
 }
 
+.identity-lines,
+.identity-rings {
+  pointer-events: none;
+}
+
 .avatar-card {
   position: relative;
+  z-index: 1;
   width: min(78vw, 330px);
   aspect-ratio: 1;
   border-radius: 50%;
@@ -921,7 +927,7 @@ html[lang="zh-CN"] .business-name {
   margin-bottom: 44px;
 }
 
-.section-heading h2 {
+.section-heading :is(h1, h2) {
   margin-bottom: 18px;
   color: var(--ink);
   font-size: clamp(2.6rem, 7vw, 6.4rem);
@@ -930,7 +936,7 @@ html[lang="zh-CN"] .business-name {
   letter-spacing: 0;
 }
 
-.content-section:not(.contact-section) .section-heading h2 {
+.content-section:not(.contact-section) .section-heading :is(h1, h2) {
   color: var(--paper);
   text-shadow: 0 10px 36px rgba(0, 0, 0, 0.28);
 }
@@ -1296,7 +1302,7 @@ a.project-card:focus-visible .project-cta {
   background: transparent;
 }
 
-.contact-section .section-heading h2,
+.contact-section .section-heading :is(h1, h2),
 .contact-section .section-heading p,
 .contact-section .eyebrow {
   color: var(--paper);
@@ -2738,4 +2744,72 @@ html[lang="fr"] .article-node small {
     transform: translate(-50%, -50%);
   }
 
+}
+
+/* Center the standalone contact content beneath the shared navigation. */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+.contact-page main {
+  display: grid;
+  flex: 1;
+}
+.contact-page .contact-section {
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: calc(var(--header-height) + 48px) 24px 48px;
+}
+.contact-page .contact-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contact-page .contact-stack {
+  align-items: center;
+  min-height: 0;
+  max-width: 100%;
+}
+.contact-page .email-contact { max-width: 100%; }
+.contact-page .social-links { justify-content: center; }
+
+/* End the homepage shortly after its final contact links. */
+.home-page:not(.contact-page) .contact-section {
+  min-height: 0;
+  padding-bottom: 32px;
+}
+.home-page:not(.contact-page) .contact-stack { min-height: 0; }
+
+/* Preserve desktop cards; mobile copy uses an inscribed, unclipped text block. */
+.article-copy { display: contents; }
+@media (max-width: 620px) {
+  .blog-map-body .blog-map-board { top: var(--header-height); bottom: 96px; height: auto; }
+  .blog-map-body .map-node { width: var(--node-size); }
+  .blog-map-body .article-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 70%;
+  }
+  .blog-map-body .article-node :is(.article-title, .article-problem, small) {
+    position: static;
+    inset: auto;
+    display: block;
+    flex-shrink: 0;
+    width: 100%;
+    margin: 0;
+    opacity: 1;
+    transform: none;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    text-wrap: balance;
+  }
+  .blog-map-body .article-node .article-title { font-size: 16px; line-height: 1.18; }
+  .blog-map-body .article-node .article-problem { font-size: 12px; line-height: 1.3; }
+  .blog-map-body .article-node small { font-size: 10px; line-height: 1.2; }
 }

@@ -2,6 +2,11 @@
 
 ## 开发日志
 
+- 同一项目在同一天发布的更新共用当天首次发布的版本号；日期按用户本地日期计算，当天后续更新不递增版本号，并汇总到当天同一版本的日志中。
+- Updates released for the same project on the same local calendar day share that day’s first version number; later releases that day do not increment it and are consolidated into the same daily version entry.
+- Les mises à jour d’un même projet publiées le même jour local partagent le premier numéro de version de la journée ; les suivantes ne l’incrémentent pas et sont regroupées dans la même entrée quotidienne.
+
+
 - 所有网站内容修改默认同步中文、英文和法文，包括项目标题、简介和开发日志。
 - 仅新增或更新项目资料时保持现有版本号，不因内容录入递增网站版本。
 

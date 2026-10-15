@@ -1,3 +1,4 @@
+const devlogAssetBase = new URL(".", document.currentScript.src);
 const devlogContent = {
   zh: {
     title: "开发日志",
@@ -5,10 +6,22 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-10-15",
+        version: "v0.5.2",
+        done: [
+          "为思索之屋手机端增加双指缩放，与鼠标滚轮共用缩放中心和范围。",
+          "调整手机端圆球大小与标题、摘要、分类的排版，完整显示文字，并为顶部导航与底部留言条预留空间。"
+        ]
+      },
+      {
         date: "2026-10-14",
         version: "v0.5.1",
         done: [
-          "将首页导航改为横跨页面的黑色长条，把更多菜单、首页、项目、思索之屋、联系我、语言切换和主题切换统一放入其中，默认使用黑底白字，并随主题切换为同窗录的藏蓝与纸色边线、煎饼控制的蓝黄配色与红色立体按钮。"
+          "将独立联系页面的简介、留言入口与社交链接居中，删除页脚的 GitHub Pages 文案，增加 All rights reserved.，并收紧首页联系区域底部的留白。",
+          "将先进的[DeathGPT](projects.html#deathgpt)引入到我们的网站：ARG 解密续作{{deathgpt-prototype}}",
+          "将首页导航改为横跨页面的黑色长条，把更多菜单、首页、项目、思索之屋、联系我、语言切换和主题切换统一放入其中，默认使用黑底白字，并随主题切换为同窗录的藏蓝与纸色边线、煎饼控制的蓝黄配色与红色立体按钮。",
+          "将新版全宽导航应用到首页、项目库、项目详情、思索之屋、地球与旅行记录页面，统一更多菜单、语言与主题切换，并保留各页面的导航入口。",
+          "增加独立的联系我页面，沿用首页底部联系区域的格式，并将全站导航中的联系我入口统一指向新页面，保留首页原有联系区域。"
         ]
       },
       {
@@ -20,13 +33,6 @@ const devlogContent = {
           "将主页首屏改为分段滚动叙事：欢迎文字与电子名片淡出后，由灵感主标题和项目、个人博客数量接替。",
           "以黄金分割重新安排首屏构图，并增加缓慢闪烁的下滑提示。",
           "在语言选项旁增加全站共用的主题切换，提供新版默认、同窗录主页和煎饼控制三种设计。"
-        ]
-      },
-      {
-        date: "2026-10-14",
-        version: "v0.4.2",
-        done: [
-          "将先进的[DeathGPT](projects.html#deathgpt)引入到我们的网站：ARG 解密续作{{deathgpt-prototype}}"
         ]
       },
       {
@@ -164,10 +170,22 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-10-15",
+        version: "v0.5.2",
+        done: [
+          "Added two-finger zoom to the mobile House of Reflection, sharing its zoom anchor and range with the mouse wheel.",
+          "Adjusted mobile circle sizes and the layout of titles, summaries and categories to display the full text, with space reserved for the top navigation and bottom message bar."
+        ]
+      },
+      {
         date: "2026-10-14",
         version: "v0.5.1",
         done: [
-          "Changed the homepage navigation to a full-width black bar containing the more menu, Home, Projects, House of Thoughts, Contact, language selector and theme switch, using black and white by default, navy with paper-colored edges for Yearbook, and blue and yellow with red beveled buttons for Pancake Control."
+          "Centered the introduction, message link and social links on the Contact page, removed the GitHub Pages footer text, added All rights reserved., and reduced the space beneath the homepage contact section.",
+          "Introduced the advanced [DeathGPT](projects.html#deathgpt) to our website: an ARG puzzle sequel.{{deathgpt-prototype}}",
+          "Changed the homepage navigation to a full-width black bar containing the more menu, Home, Projects, House of Thoughts, Contact, language selector and theme switch, using black and white by default, navy with paper-colored edges for Yearbook, and blue and yellow with red beveled buttons for Pancake Control.",
+          "Applied the new full-width navigation to the homepage, project library, project details, House of Reflection, globe and travel reports, with consistent more menus, language and theme controls, while retaining each page’s navigation links.",
+          "Added a standalone Contact page using the homepage’s bottom contact layout, directed all Contact navigation links to the new page, and retained the homepage contact section."
         ]
       },
       {
@@ -179,13 +197,6 @@ const devlogContent = {
           "Turned the homepage hero into a scroll-driven sequence: the welcome text and digital card fade away before the inspiration headline and project and blog counts take their place.",
           "Recomposed the opening screen around the golden ratio and added a slowly pulsing scroll prompt.",
           "Added a shared site-wide theme switch beside the language selector, with New Default, Classmates Homepage, and Pancake Control designs."
-        ]
-      },
-      {
-        date: "2026-10-14",
-        version: "v0.4.2",
-        done: [
-          "Introduced the advanced [DeathGPT](projects.html#deathgpt) to our website: an ARG puzzle sequel.{{deathgpt-prototype}}"
         ]
       },
       {
@@ -323,10 +334,22 @@ const devlogContent = {
     closeLabel: "Fermer le journal de développement",
     entries: [
       {
+        date: "2026-10-15",
+        version: "v0.5.2",
+        done: [
+          "Ajout du zoom à deux doigts dans la Maison de réflexion sur mobile, avec le même point d’ancrage et les mêmes limites que la molette.",
+          "Adaptation de la taille des cercles et de la disposition des titres, résumés et catégories sur mobile pour afficher le texte intégral, avec un espace réservé à la navigation et à la barre de message."
+        ]
+      },
+      {
         date: "2026-10-14",
         version: "v0.5.1",
         done: [
-          "Transformation de la navigation d’accueil en une barre noire sur toute la largeur, regroupant le menu Plus, Accueil, Projets, Maison des pensées, Contact, le choix de langue et de thème, avec un style noir et blanc par défaut, bleu marine et bordures couleur papier pour l’Annuaire, bleu et jaune avec boutons rouges en relief pour Pancake Control."
+          "Centrage de l’introduction, du lien de message et des liens sociaux sur la page Contact, suppression de la mention GitHub Pages du pied de page, ajout de All rights reserved. et réduction de l’espace sous la section Contact de l’accueil.",
+          "Introduction de l’avancé [DeathGPT](projects.html#deathgpt) sur notre site : une suite d’énigmes ARG.{{deathgpt-prototype}}",
+          "Transformation de la navigation d’accueil en une barre noire sur toute la largeur, regroupant le menu Plus, Accueil, Projets, Maison des pensées, Contact, le choix de langue et de thème, avec un style noir et blanc par défaut, bleu marine et bordures couleur papier pour l’Annuaire, bleu et jaune avec boutons rouges en relief pour Pancake Control.",
+          "Application de la nouvelle navigation pleine largeur à l’accueil, à la bibliothèque et aux détails des projets, à la Maison de réflexion, au globe et aux récits de voyage, avec menus, langues et thèmes harmonisés et liens propres à chaque page conservés.",
+          "Ajout d’une page Contact reprenant la présentation de la section au bas de l’accueil ; tous les liens Contact de navigation mènent à la nouvelle page, et la section d’origine est conservée."
         ]
       },
       {
@@ -338,13 +361,6 @@ const devlogContent = {
           "Transformation de l’ouverture de la page d’accueil en séquence guidée par le défilement : le texte de bienvenue et la carte numérique s’effacent avant de laisser place au titre sur l’inspiration et aux nombres de projets et d’articles.",
           "Recomposition de l’écran d’ouverture selon le nombre d’or et ajout d’une invitation au défilement à pulsation lente.",
           "Ajout d’un sélecteur de thème commun à toutes les pages à côté du choix de langue, avec les thèmes Nouveau par défaut, Accueil des camarades et Contrôle des pancakes."
-        ]
-      },
-      {
-        date: "2026-10-14",
-        version: "v0.4.2",
-        done: [
-          "Introduction de l’avancé [DeathGPT](projects.html#deathgpt) sur notre site : une suite d’énigmes ARG.{{deathgpt-prototype}}"
         ]
       },
       {
@@ -550,12 +566,24 @@ function createListItem(item) {
     ? "抱歉，DeathGPT目前不可用"
     : (knownNickname ? `你好，${knownNickname}，请开始你和DeathGPT的对话` : "请开始你和DeathGPT的对话");
   const disabledAttribute = deathgptUnavailable ? " disabled" : "";
-  const deathgptPrototype = `<section class="deathgpt-prototype" aria-label="${prototypeLabel.region}"><header class="deathgpt-prototype-header"><span class="deathgpt-status-dot" aria-hidden="true"></span><strong>DeathGPT</strong></header><div class="deathgpt-messages" role="log" aria-live="polite"></div><form class="deathgpt-composer"><label class="deathgpt-input-wrap"><span class="sr-only">${prototypeLabel.input}</span><input name="message" type="text" autocomplete="off" required placeholder="${escapeDevlogHtml(deathgptPrompt)}"${disabledAttribute}></label><button type="submit" aria-label="${prototypeLabel.send}"${disabledAttribute}>↑</button></form></section>`;
+  const deathgptPrototype = createDeathgptPrototype(prototypeLabel, deathgptPrompt, deathgptUnavailable);
   return rendered
     .replaceAll("{{favorite-heart}}", favoriteButton)
     .replaceAll("{{cow-icon}}", cowIcon)
     .replaceAll("{{language-switch}}", languageSwitch)
     .replaceAll("{{deathgpt-prototype}}", deathgptPrototype);
+}
+
+function createDeathgptPrototype(label, prompt, disabled) {
+  const mark = '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3v26M4.74 9.5l22.52 13M4.74 22.5l22.52-13" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="16" cy="16" r="4" fill="#212121"/></svg>';
+  const unavailable = disabled ? " disabled" : "";
+  return [
+    '<section class="deathgpt-prototype" aria-label="' + escapeDevlogHtml(label.region) + '">',
+    '<header class="deathgpt-prototype-header"><div class="deathgpt-brand">' + mark + '<strong>DeathGPT</strong><svg class="deathgpt-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div><span class="deathgpt-build">0.0.7</span><span class="deathgpt-beta">Beta</span></header>',
+    '<div class="deathgpt-messages" role="log" aria-live="polite">' + (disabled ? '' : '<div class="deathgpt-empty" aria-hidden="true">' + mark + '</div>') + '</div>',
+    '<form class="deathgpt-composer"><label class="deathgpt-input-wrap"><span class="sr-only">' + escapeDevlogHtml(label.input) + '</span><textarea name="message" rows="2" maxlength="2000" autocomplete="off" required placeholder="' + escapeDevlogHtml(prompt) + '"' + unavailable + '></textarea></label>',
+    '<div class="deathgpt-composer-tools"><span class="deathgpt-plus" aria-hidden="true">＋</span><button type="submit" aria-label="' + escapeDevlogHtml(label.send) + '"' + unavailable + '><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></form></section>'
+  ].join('');
 }
 
 function waitForDeathgptDemo(delay) {
@@ -565,11 +593,12 @@ function waitForDeathgptDemo(delay) {
 async function submitDeathgptDemo(event) {
   event.preventDefault();
   const form = event.currentTarget;
-  const input = form.querySelector('input[name="message"]');
+  const input = form.querySelector('[name="message"]');
   const submitButton = form.querySelector('button[type="submit"]');
   const messages = form.closest(".deathgpt-prototype").querySelector(".deathgpt-messages");
   const message = input.value.trim();
-  if (!message) return;
+  if (!message || input.disabled) return;
+  messages.querySelector('.deathgpt-empty')?.remove();
 
   const runId = ++deathgptDemoRunId;
   const userMessage = document.createElement("div");
@@ -684,6 +713,27 @@ function renderDevlog() {
   const closeButton = modal.querySelector(".devlog-close");
   closeButton.addEventListener("click", closeDevlog);
   modal.querySelectorAll('a[href^="project.html?project="]').forEach((link) => link.addEventListener("click", closeDevlog));
+
+  modal.querySelectorAll("[src], [href]").forEach((element) => {
+    for (const attribute of ["src", "href"]) {
+      const value = element.getAttribute(attribute);
+      if (value && /^(assets\/|project\.html)/.test(value)) {
+        element.setAttribute(attribute, new URL(value, devlogAssetBase).href);
+      }
+    }
+  });
+
+
+  modal.querySelectorAll(".deathgpt-composer").forEach((form) => {
+    form.addEventListener("submit", submitDeathgptDemo);
+    form.querySelector("textarea").addEventListener("keydown", (event) => {
+      if (event.key === "Enter" && !event.shiftKey && !event.isComposing && event.keyCode !== 229) {
+        event.preventDefault();
+        form.requestSubmit();
+      }
+    });
+  });
+
   modal.querySelectorAll(".devlog-favorite-demo").forEach((button) => {
     button.addEventListener("click", () => {
       const isFavorite = !button.classList.contains("is-favorite");
@@ -705,7 +755,6 @@ function renderDevlog() {
       }
     });
   });
-  modal.querySelectorAll(".deathgpt-composer").forEach((form) => form.addEventListener("submit", submitDeathgptDemo));
 }
 
 function openDevlog() {

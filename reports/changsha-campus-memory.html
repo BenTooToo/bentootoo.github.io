@@ -6,11 +6,66 @@
     <meta name="robots" content="noindex, nofollow">
     <title>测试标题 · UIT Field Archive</title>
     <link rel="stylesheet" href="field-report.css?v=demo1">
-    <link rel="stylesheet" href="../home-themes.css?v=themes4">
+    <link rel="stylesheet" href="../home-themes.css?v=themes5">
+    <link rel="stylesheet" href="../site-nav.css?v=1">
+    <link rel="stylesheet" href="../devlog.css?v=devlog12">
+    <script src="../site-navigation.js?v=1" defer></script>
     <script src="../site-themes.js?v=1" defer></script>
   </head>
   <body>
-    <nav class="report-nav"><a href="../uit_prepare.html">← 返回地球</a><a href="../index.html">本2兔</a></nav>
+    <header class="site-header">
+      <div class="more-menu">
+        <button class="more-toggle" type="button" aria-expanded="false" aria-controls="moreDropdown" aria-label="More" data-site-nav-aria="more.menuLabel">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="more-dropdown" id="moreDropdown">
+          <div class="donate-menu">
+            <button class="donate-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="donateSubmenu" data-site-nav-text="more.donate">捐助我</button>
+            <div class="donate-submenu" id="donateSubmenu" role="menu" aria-label="Support links">
+              <a href="https://onlyfans.com/bentootoo" target="_blank" rel="me noreferrer" role="menuitem">
+                <span>OnlyFans</span>
+                <small data-site-nav-text="donate.onlyfansRegion">（全球）</small>
+              </a>
+              <a href="https://afdian.com/a/bentootoo" target="_blank" rel="me noreferrer" role="menuitem">
+                <span>爱发电</span>
+                <small data-site-nav-text="donate.afdianRegion">（中国）</small>
+              </a>
+            </div>
+          </div>
+          <a href="../index.html#blog" data-site-nav-text="more.devlog" data-i18n="more.devlog">开发日志</a>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../index.html#top" data-site-nav-text="nav.home">首页</a>
+        <a href="../projects.html" data-site-nav-text="nav.projects">项目</a>
+        <a href="../blog.html" data-site-nav-text="nav.blog">思索之屋</a>
+        <a href="../contact.html" data-site-nav-text="nav.contact">联系我</a>
+      </nav>
+
+      <div class="header-controls">
+        <div class="language-switch" aria-label="Language selector">
+          <button class="lang-button is-active" type="button" data-lang="zh">中</button>
+          <button class="lang-button" type="button" data-lang="en">EN</button>
+          <button class="lang-button" type="button" data-lang="fr">FR</button>
+        </div>
+
+        <div class="home-theme-switch" role="group" aria-label="主页主题" data-site-nav-aria="theme.label">
+          <button class="home-theme-swatch is-active" type="button" data-home-theme-value="refined" aria-pressed="true" aria-label="新版默认" data-site-nav-aria="theme.refined" title="新版默认">
+            <span class="home-theme-color home-theme-color--refined" aria-hidden="true"></span>
+          </button>
+          <button class="home-theme-swatch" type="button" data-home-theme-value="yearbook" aria-pressed="false" aria-label="同窗录主页" data-site-nav-aria="theme.yearbook" title="同窗录主页">
+            <span class="home-theme-color home-theme-color--yearbook" aria-hidden="true"></span>
+          </button>
+          <button class="home-theme-swatch" type="button" data-home-theme-value="pancake" aria-pressed="false" aria-label="煎饼控制" data-site-nav-aria="theme.pancake" title="煎饼控制">
+            <span class="home-theme-color home-theme-color--pancake" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <a class="report-back" href="../uit_prepare.html" data-report-back>← 返回地球</a>
     <header class="report-hero">
       <img src="../assets/project-classroom-credit.png" alt="夕阳下的校园周边街区">
       <div class="report-hero-copy">
@@ -30,5 +85,6 @@
       </article>
     </main>
     <footer class="report-footer"><span>UIT FIELD ARCHIVE · DEMO</span><a href="../uit_prepare.html">继续探索其他地点 →</a></footer>
+  <script src="../devlog.js?v=devlog36" defer></script>
   </body>
 </html>

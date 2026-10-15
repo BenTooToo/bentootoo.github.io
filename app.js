@@ -55,7 +55,6 @@ const translations = {
     "contact.email": "通过思索之屋留言",
     "contact.github": "github.com/BenTooToo",
     "contact.backTop": "回到顶部",
-    "footer.note": "为 GitHub Pages 构建。"
   },
   en: {
     "name.display": "Bentootoo",
@@ -113,7 +112,6 @@ const translations = {
     "contact.email": "Leave a note in the House of Reflection",
     "contact.github": "github.com/BenTooToo",
     "contact.backTop": "Back to top",
-    "footer.note": "Built for GitHub Pages."
   },
   fr: {
     "name.display": "Bentootoo",
@@ -171,7 +169,6 @@ const translations = {
     "contact.email": "Écrire depuis la Maison de réflexion",
     "contact.github": "github.com/BenTooToo",
     "contact.backTop": "Retour en haut",
-    "footer.note": "Construit pour GitHub Pages."
   }
 };
 
@@ -210,6 +207,15 @@ function setLanguage(language) {
     button.setAttribute("aria-pressed", String(isActive));
   });
 
+  if (document.body.classList.contains("contact-page")) {
+    const title = dictionary["contact.title"] + " | " + dictionary["name.display"];
+    document.title = title;
+    document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"]').forEach(meta => { meta.content = title; });
+    document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]').forEach(meta => { meta.content = dictionary["contact.lede"]; });
+    const locale = document.querySelector('meta[property="og:locale"]');
+    if (locale) locale.content = { zh: "zh_CN", en: "en_US", fr: "fr_FR" }[language] || "zh_CN";
+  }
+
   localStorage.setItem("bentootoo-language", language);
 }
 
@@ -245,7 +251,7 @@ if (avatarCard) {
 
   avatarCard.addEventListener("click", toggleAvatarCard);
   avatarCard.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
+    if (event.target === avatarCard && (event.key === "Enter" || event.key === " ")) {
       event.preventDefault();
       toggleAvatarCard();
     }
