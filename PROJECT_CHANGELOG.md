@@ -9,6 +9,32 @@
 
 ## 2026-10-15
 
+### Be Present 项目与主题 / Be Present project and theme / Projet et thème Be Present
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- Be Present 主题下，首页项目板块也保留项目展示图片，以黑色渐变衔接项目图片。
+- Keep project images in the homepage showcase in the Be Present theme, fading from black into each image.
+- Conserver les images des projets sur l’accueil du thème Be Present, avec un dégradé du noir vers chaque image.
+- 将 Be Present 添加到项目库，链接至 https://bentootoo.com/BePresent/，项目封面和今天的开发日志图片使用提供的截图；参照本地 `D:/Projets/clock` 的完整风格新增主题，并在该主题下用本地个人时钟替换头像。
+- Add Be Present to the project library, linking to https://bentootoo.com/BePresent/, and use the supplied screenshot for the project cover and today’s development log. Add a theme following the local `D:/Projets/clock` design and replace its portrait with a personal local clock.
+- Ajouter Be Present à la bibliothèque avec le lien https://bentootoo.com/BePresent/ et utiliser la capture fournie pour sa couverture et le journal du jour. Ajouter un thème reprenant le projet local `D:/Projets/clock` et remplacer son portrait par une horloge personnelle locale.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 恢复 Be Present 首页同窗录、Tower Off 和旅行地球卡片的原始项目图片，从左侧黑色渐变过渡到右侧图片，底部加黑色渐变保证文字可读；沿用现有卡片布局，更新主题缓存与当天三语日志。
+- Restored the original classroom, Tower Off and travel-globe images in the Be Present homepage cards, fading from black on the left into the image on the right, with a black gradient at the bottom for legible text. Preserved card layouts and refreshed the theme cache and daily trilingual log.
+- Rétablissement des images originales des camarades, de Tower Off et du globe sur l’accueil Be Present, avec transition du noir à gauche vers l’image à droite et dégradé noir inférieur pour la lisibilité. Disposition des cartes conservée, cache du thème et journal trilingue du jour actualisés.
+- 添加中、英、法三语项目资料、独立详情链接和站点地图入口；使用原始截图作为封面及当天日志背景。新增可记忆并跨页面共用的第四个主题，复制原项目的 Instrument Serif 字体及许可，沿用纯黑底色、灰白文字、衬线标题和外圈数字细线表盘。首页时钟按访问者设备的本地时间走时，显示指针、数字、日期及三语标签，保留点击翻转名片；切回原主题恢复原有头像。同步项目数量及全站资源缓存，公开日志合并到当天 v0.5.2。
+- Added trilingual project details, a stable detail link and sitemap entry, using the original screenshot for the cover and daily log background. Added a persistent fourth theme shared across pages, copied the original Instrument Serif font and license, and followed its black canvas, gray-white text, serif headings and fine dial with outside numerals. The homepage clock uses each visitor’s device-local time with hands, digits, date and localized labels, preserving contact-card flipping and restoring portraits in other themes. Updated the project count and asset caches; consolidated the public log under the daily v0.5.2.
+- Ajout des fiches trilingues, d’un lien de détail stable et d’une entrée au plan du site, avec la capture originale pour la couverture et le journal du jour. Quatrième thème mémorisé et partagé entre les pages, avec copie de la police Instrument Serif et de sa licence, fond noir, textes gris et blancs, titres à empattements et cadran fin à chiffres extérieurs. L’horloge utilise l’heure locale de l’appareil avec aiguilles, chiffres, date et libellés traduits ; retournement de la carte et portraits des autres thèmes conservés. Nombre de projets et caches actualisés ; journal public regroupé sous la v0.5.2 du jour.
+
+**验证 / Validation / Vérification**
+
+- Edge 无头浏览器验证时钟走时、名片翻转、主题切换和刷新记忆；检查 320、390、768、1050、1100、1440px 下三语导航无重叠或越界，七个内页加载第四主题及三语项目详情正常；JavaScript 语法与差异空白检查通过。
+- Headless Edge verified clock ticking, card flipping, theme changes and reload persistence; navigation had no overlap or overflow at six widths (320–1440px) in three languages. Seven inner pages loaded the fourth theme and trilingual project details correctly; JavaScript syntax and diff whitespace checks passed.
+- Edge sans interface a vérifié l’horloge, le retournement, les changements de thème et leur mémorisation ; navigation sans chevauchement ni débordement sur six largeurs (320–1440px) et trois langues. Chargement du quatrième thème sur sept pages internes et fiches trilingues vérifiés ; syntaxe JavaScript et espaces du diff validés.
+
 ### 目录栏与按钮放大 / Larger navigation and controls / Navigation et commandes agrandies
 
 **用户决定 / User decisions / Décisions utilisateur**

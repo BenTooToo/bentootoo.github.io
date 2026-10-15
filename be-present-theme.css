@@ -1,0 +1,60 @@
+/* The original clock project's black canvas, serif titles and quiet grays. */
+.home-theme-color--be-present { position: relative; border: 1px solid #777 !important; border-radius: 50% !important; background: #000; }
+.home-theme-color--be-present::after { position: absolute; top: 3px; left: 50%; width: 5px; height: 7px; border-left: 1px solid #eee; border-bottom: 1px solid #eee; content: ""; }
+body.site-themed[data-home-theme="be-present"] {
+  --paper: #f4f4f4; --paper-strong: #f4f4f4; --ink: #f4f4f4;
+  --dark: #000; --dark-2: #080808; --muted: #929292;
+  --cyan: #ddd; --lime: #eee; --coral: #aaa; --violet: #aaa;
+  --line: #292929; --panel: #080808; --shadow: none;
+  color: #f4f4f4; color-scheme: dark; background: #000;
+  font-family: Inter, "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
+}
+.site-themed[data-home-theme="be-present"] :is(h1, h2, h3, .hero-name, .hero-summary h2) {
+  color: #f4f4f4; font-family: "Be Present Serif", Georgia, "Songti SC", SimSun, serif;
+  font-weight: 400; letter-spacing: -.02em; background: none; text-shadow: none; -webkit-text-fill-color: currentColor;
+}
+.site-themed[data-home-theme="be-present"] :is(#heroCanvas, #blogStarCanvas, .identity-lines, .identity-rings, .page-progress) { display: none; }
+.site-themed[data-home-theme="be-present"] .hero-sticky::after,
+.site-themed[data-home-theme="be-present"] .avatar-front::after,
+.site-themed[data-home-theme="be-present"] .project-card::after,
+.site-themed[data-home-theme="be-present"].field-globe-page::after { display: none; }
+.site-themed[data-home-theme="be-present"] :is(.section-panel, .contact-section, .project-library-section, .project-page, .report-nav, .site-footer) { color: #f4f4f4; background: #000; }
+.site-themed[data-home-theme="be-present"] :is(.section-heading p:last-child, .hero-stat span, .blog-card p, .card-label, .feature-card h3 + p, .business-name, .business-links span, .identity-kicker, .archive-count, .archive-card-summary, .archive-card-created, .project-detail-meta span, .project-detail-section p, .project-history-date, .project-history-version li, .report-copy p, .field-summary) { color: #929292; }
+.site-themed[data-home-theme="be-present"] :is(.project-card, .blog-card, .archive-card, .archive-toolbar, .archive-game-filters, .project-page-shell, .project-detail-dialog, .reader-panel, .thought-panel, .intro-mode-panel, .project-history-version, .avatar-back, .globe-loading, .field-preview, .media-placeholder, .map-center, .category-node, .subcategory-node, .article-node) { color: #f4f4f4; background: #000; border-color: #292929; box-shadow: none; }
+.home-page.site-themed[data-home-theme="be-present"] .feature-card:not(.project-library-card) {
+  background:
+    linear-gradient(90deg, #000 0%, rgba(0, 0, 0, .88) 32%, rgba(0, 0, 0, .12) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, .85), transparent 72%),
+    var(--present-cover, url("assets/project-classroom-credit.png")) center / cover no-repeat #000;
+}
+.home-page.site-themed[data-home-theme="be-present"] .tower-card { --present-cover: url("assets/cover_toweroff.png"); }
+.home-page.site-themed[data-home-theme="be-present"] .uit-prepare-card { --present-cover: url("assets/travel-globe-preview.png"); }
+.site-themed[data-home-theme="be-present"] :is(.project-cta, .email-contact, .back-to-top, .archive-filter, .game-genre-filter, .project-team-list li, .project-detail-meta div, input, textarea, .reader-close, .thought-submit, .project-visit-link, .project-comment-row button, .intro-mode-button, .globe-back, .report-back, .globe-language-switch) { color: #aaa; background: #000; border: 1px solid #292929; border-radius: 7px; box-shadow: none; }
+.site-themed[data-home-theme="be-present"] :is(.archive-filter.is-active, .game-genre-filter.is-active, .intro-mode-button.is-active, .project-visit-link:hover, .project-cta:hover, .thought-submit:hover) { color: #fff; border-color: #777; background: #151515; }
+.site-themed[data-home-theme="be-present"] :is(.category-node span, .subcategory-node span, .article-title, .article-problem, .project-history-version-number) { color: #ddd; }
+.site-themed[data-home-theme="be-present"] .map-line { stroke: #777; }
+.site-themed[data-home-theme="be-present"] .hero-scroll-cue { color: #888; }
+.site-themed[data-home-theme="be-present"] .hero-scroll-cue span::after { color: #888; background: none; }
+.site-themed[data-home-theme="be-present"] .devlog-panel { background: #080808; box-shadow: none; }
+.site-themed[data-home-theme="be-present"] .devlog-close:is(:hover, :focus-visible) { color: #000; background: #eee; }
+.site-themed[data-home-theme="be-present"] .avatar-front { overflow: visible; border: 0; border-radius: 0; box-shadow: none; background: #000; }
+.site-themed[data-home-theme="be-present"] .avatar-front > :is(img, .identity-kicker) { display: none; }
+.present-clock[hidden] { display: none; }
+.present-clock { width: 100%; text-align: center; color: #eee; font-family: Inter, "Helvetica Neue", Arial, sans-serif; }
+.present-clock svg { display: block; width: 100%; overflow: visible; }
+.present-numerals { fill: #aaa; font-size: 16px; font-weight: 400; text-anchor: middle; dominant-baseline: central; }
+.present-hour, .present-minute { stroke: #efefef; stroke-linecap: round; }
+.present-hour { stroke-width: 3; }
+.present-minute { stroke-width: 2; }
+.present-second { stroke: #777; stroke-width: 1; stroke-linecap: round; }
+.present-clock-label { display: block; margin: 14px 0 12px; color: #888; font-size: 11px; letter-spacing: .1em; }
+.present-digital { display: block; font-size: clamp(28px, 3vw, 43px); font-weight: 300; font-variant-numeric: tabular-nums; letter-spacing: .025em; }
+.present-digital span { color: #666; }
+.present-date { display: block; margin-top: 14px; color: #858585; font-size: 11px; letter-spacing: .06em; }
+.site-themed[data-home-theme="be-present"] .avatar-card { width: min(66vw, 330px); aspect-ratio: 330 / 465; }
+.site-themed[data-home-theme="be-present"] .avatar-back { border-radius: 7px; }
+@media (max-width: 370px) {
+  body.site-themed[data-home-theme] .site-header .header-controls { gap: 4px; }
+  body.site-themed[data-home-theme] .site-header .home-theme-switch { padding-left: 4px; gap: 0; }
+  body.site-themed[data-home-theme] .site-header .home-theme-swatch { width: 28px; }
+}

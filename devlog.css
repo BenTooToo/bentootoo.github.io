@@ -312,3 +312,6 @@ body.devlog-open {
   background-size: auto, 210px auto;
   background-repeat: repeat;
 }
+.devlog-entry--be-present {
+  background: linear-gradient(rgba(0, 0, 0, .56), rgba(0, 0, 0, .84)), url("assets/project-be-present.png") center / cover no-repeat #000;
+}

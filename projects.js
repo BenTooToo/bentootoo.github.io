@@ -195,6 +195,18 @@ const projectLibraryCopy = {
 // 未确认的分类可留空；对应筛选全选时仍显示，选具体子分类时不匹配。
 const projectLibraryData = [
   {
+    id: "be-present", category: "tool",
+    cover: "assets/project-be-present.png",
+    href: "https://bentootoo.com/BePresent/",
+    created: "2026-10-15", updated: "2026-10-15",
+    text: {
+      zh: { title: "Be Present · 本初时间", summary: "用安静的表盘，看见此刻与远方。", description: "一个纯黑底色的世界时钟。用指针与数字并排查看不同城市的时间，添加城市、调整显示内容，也可以拖动表盘或输入时间，看看远方的那一刻。", log: ["提供多城市时钟、时间探索、自定义显示与截图功能。"] },
+      en: { title: "Be Present", summary: "Quiet clock faces for this moment and places far away.", description: "A world clock on a pure black canvas. View analog and digital time across cities, add places and customize the display, or drag a clock face and enter a time to explore that moment elsewhere.", log: ["Includes clocks for multiple cities, time exploration, display customization and screenshots."] },
+      fr: { title: "Be Present", summary: "Des cadrans discrets pour cet instant et les lieux lointains.", description: "Une horloge mondiale sur fond noir. Consultez les heures analogiques et numériques de plusieurs villes, ajoutez des lieux et personnalisez l’affichage, ou faites glisser un cadran et saisissez une heure pour explorer cet instant ailleurs.", log: ["Horloges de plusieurs villes, exploration du temps, affichage personnalisable et captures d’écran."] }
+    },
+    comments: []
+  },
+  {
     id: "empty-class",
     category: "game",
     genres: ["puzzle", "text", "horror"],

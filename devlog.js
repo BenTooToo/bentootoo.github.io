@@ -8,7 +8,9 @@ const devlogContent = {
       {
         date: "2026-10-15",
         version: "v0.5.2",
+        visual: "be-present",
         done: [
+          "增加 [Be Present](project.html?project=be-present) 全站主题，沿用纯黑底色、衬线标题和细线表盘，将该主题的首页头像换成本地实时时钟，并为首页项目图片添加黑色渐变过渡。",
           "加大顶部目录栏及导航、菜单、语言和主题按钮，同步调整手机端布局与页面顶部间距。",
           "为思索之屋手机端增加双指缩放，与鼠标滚轮共用缩放中心和范围。",
           "调整手机端圆球大小与标题、摘要、分类的排版，完整显示文字，并为顶部导航与底部留言条预留空间。"
@@ -173,7 +175,9 @@ const devlogContent = {
       {
         date: "2026-10-15",
         version: "v0.5.2",
+        visual: "be-present",
         done: [
+          "Added the [Be Present](project.html?project=be-present) site theme with a pure black background, serif headings and fine clock hands, replacing the homepage portrait with a live local clock in this theme and fading homepage project images in from black.",
           "Enlarged the top navigation bar and its navigation, menu, language and theme controls, with matching mobile layout and page offsets.",
           "Added two-finger zoom to the mobile House of Reflection, sharing its zoom anchor and range with the mouse wheel.",
           "Adjusted mobile circle sizes and the layout of titles, summaries and categories to display the full text, with space reserved for the top navigation and bottom message bar."
@@ -338,7 +342,9 @@ const devlogContent = {
       {
         date: "2026-10-15",
         version: "v0.5.2",
+        visual: "be-present",
         done: [
+          "Ajout du thème [Be Present](project.html?project=be-present) sur tout le site, avec fond noir, titres à empattements et cadran fin ; le portrait de l’accueil devient une horloge locale en temps réel dans ce thème et les images des projets apparaissent dans un dégradé depuis le noir.",
           "Agrandissement de la barre de navigation et des commandes de menu, de langue et de thème, avec adaptation mobile et des espacements en haut des pages.",
           "Ajout du zoom à deux doigts dans la Maison de réflexion sur mobile, avec le même point d’ancrage et les mêmes limites que la molette.",
           "Adaptation de la taille des cercles et de la disposition des titres, résumés et catégories sur mobile pour afficher le texte intégral, avec un espace réservé à la navigation et à la barre de message."
@@ -671,7 +677,7 @@ function createList(items) {
 
 function createEntry(entry, previousEntry) {
   const versionChanged = !previousEntry || entry.version !== previousEntry.version;
-  const visualClass = ["table-link", "cosmic", "classroom", "tower", "pancake"].includes(entry.visual)
+  const visualClass = ["table-link", "cosmic", "classroom", "tower", "pancake", "be-present"].includes(entry.visual)
     ? ` devlog-entry--${entry.visual}`
     : "";
   return `
