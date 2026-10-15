@@ -9,6 +9,27 @@
 
 ## 2026-10-15
 
+### 目录栏与按钮放大 / Larger navigation and controls / Navigation et commandes agrandies
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 目录框更大一点，按钮同步变大。
+- Enlarge the navigation bar and its buttons together.
+- Agrandir la barre de navigation et ses boutons ensemble.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 桌面目录栏高度从 78px 增至 96px，放大导航文字、菜单、语言与主题按钮及下拉菜单；手机端目录栏增至 132px，保留双行布局并同步扩大点击区域。调整页面顶部预留空间与双行断点，三种主题、三种语言共用样式；刷新全站资源缓存，公开日志合并到当天 v0.5.2。
+- Increased the desktop bar from 78px to 96px and enlarged navigation text, menu, language and theme controls and dropdowns. Increased the mobile bar to 132px with two rows and larger click targets. Updated page offsets and the two-row breakpoint across three themes and languages; refreshed site asset caches and consolidated the public log under the daily v0.5.2.
+- Hauteur de la barre sur ordinateur portée de 78px à 96px, avec agrandissement des textes, commandes de menu, de langue et de thème et menus déroulants. Barre mobile portée à 132px sur deux lignes avec zones tactiles élargies. Espacements et seuil de passage sur deux lignes adaptés aux trois thèmes et langues ; caches actualisés et journal public regroupé sous la v0.5.2 du jour.
+
+
+**验证 / Validation / Vérification**
+
+- 使用 Edge 无头浏览器检查八个页面、六种宽度（320–1440px）、三语和三主题，共 432 种组合；按钮无重叠或越界，页头高度与页面预留空间一致。JavaScript 语法与差异空白检查通过。
+- Checked eight pages at six widths (320–1440px), three languages and three themes in headless Edge: 432 combinations with no overlapping or out-of-bounds controls and matching header offsets. JavaScript syntax and diff whitespace checks passed.
+- Vérification de huit pages sur six largeurs (320–1440px), trois langues et trois thèmes dans Edge sans interface : 432 combinaisons sans chevauchement ni débordement, avec espacements adaptés à la hauteur de la barre. Syntaxe JavaScript et espaces du diff vérifiés.
+
 ### DeathGPT 仅复制 UI 风格 / Copy only the DeathGPT UI style / Reprendre uniquement le style de DeathGPT
 
 **用户决定 / User decisions / Décisions utilisateur**

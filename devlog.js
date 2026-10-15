@@ -9,6 +9,7 @@ const devlogContent = {
         date: "2026-10-15",
         version: "v0.5.2",
         done: [
+          "加大顶部目录栏及导航、菜单、语言和主题按钮，同步调整手机端布局与页面顶部间距。",
           "为思索之屋手机端增加双指缩放，与鼠标滚轮共用缩放中心和范围。",
           "调整手机端圆球大小与标题、摘要、分类的排版，完整显示文字，并为顶部导航与底部留言条预留空间。"
         ]
@@ -173,6 +174,7 @@ const devlogContent = {
         date: "2026-10-15",
         version: "v0.5.2",
         done: [
+          "Enlarged the top navigation bar and its navigation, menu, language and theme controls, with matching mobile layout and page offsets.",
           "Added two-finger zoom to the mobile House of Reflection, sharing its zoom anchor and range with the mouse wheel.",
           "Adjusted mobile circle sizes and the layout of titles, summaries and categories to display the full text, with space reserved for the top navigation and bottom message bar."
         ]
@@ -337,6 +339,7 @@ const devlogContent = {
         date: "2026-10-15",
         version: "v0.5.2",
         done: [
+          "Agrandissement de la barre de navigation et des commandes de menu, de langue et de thème, avec adaptation mobile et des espacements en haut des pages.",
           "Ajout du zoom à deux doigts dans la Maison de réflexion sur mobile, avec le même point d’ancrage et les mêmes limites que la molette.",
           "Adaptation de la taille des cercles et de la disposition des titres, résumés et catégories sur mobile pour afficher le texte intégral, avec un espace réservé à la navigation et à la barre de message."
         ]
