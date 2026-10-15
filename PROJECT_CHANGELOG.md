@@ -9,6 +9,20 @@
 
 ## 2026-10-15
 
+### 删除名片留言入口 / Remove the card message link / Retrait du lien de message de la carte
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 删除个人名片里的“通过思索之屋留言”；此前要求删除 Thoughts 时，意图就是移除这一整项。
+- Remove the message link from the personal card; the earlier request to remove Thoughts meant removing this entire entry.
+- Supprimer le lien de message de la carte personnelle ; la demande précédente de retirer Thoughts visait cette entrée entière.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 从首页名片背面删除留言链接及其三语共用节点，保留 GitHub、Instagram 和 X。此项修正仅记录于内部日志，保持现有版本号。
+- Removed the message link and its shared trilingual element from the back of the homepage card, retaining GitHub, Instagram and X. Recorded this correction internally and kept the existing version.
+- Suppression du lien de message et de son élément trilingue au dos de la carte d’accueil, en conservant GitHub, Instagram et X. Correction consignée dans le journal interne, version conservée.
+
 ### Be Present 项目与主题 / Be Present project and theme / Projet et thème Be Present
 
 **用户决定 / User decisions / Décisions utilisateur**
