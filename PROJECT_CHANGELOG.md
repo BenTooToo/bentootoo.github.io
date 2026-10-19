@@ -7,6 +7,116 @@
 - 个人主页本身的功能、结构或重要视觉更新仍记录在 `devlog.js`。
 - 本文件不在网站导航或页面中提供入口。
 
+## 2026-10-20
+
+### 游戏筛选侧面板 / Game filter side panel / Panneau latéral des filtres de jeux
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 移除独立筛选按钮；点击游戏分类后面板自动从右侧滑入，取消选择时滑出。
+- Remove the separate filter button; automatically slide the panel in when Games is selected and out when deselected.
+- Supprimer le bouton de filtres distinct ; faire entrer le panneau à la sélection des jeux et le faire sortir à la désélection.
+- 横向分类筛选栏应跟随窗口下滚，保持可见。
+- Keep the horizontal category filter bar visible while scrolling down.
+- Garder la barre horizontale des catégories visible pendant le défilement.
+- 游戏筛选过大，遮挡项目展示，改为从右侧边框展开的长方形面板。
+- The game filters are too large and obscure projects; replace them with a rectangular panel opening from the right edge.
+- Les filtres de jeux sont trop grands et masquent les projets ; les remplacer par un panneau rectangulaire depuis le bord droit.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 删除边缘筛选按钮及其逻辑，将面板状态绑定游戏分类；再次点击游戏、切换分类、关闭或按 Esc 均取消游戏选择并播放滑出动画。关闭期间面板立即停止接收焦点与点击，支持快速切换和减少动态效果；同步三语公开日志，仍归入当天 v0.5.3。
+- Removed the edge filter button and bound panel visibility to Games. Clicking Games again, changing categories, closing or pressing Escape deselects Games and animates the panel out. Closed panels immediately stop accepting focus and clicks; rapid switching and reduced motion are supported. Updated the trilingual public log under the same daily v0.5.3.
+- Bouton latéral supprimé, panneau lié à la catégorie jeux. Un second clic, un changement de catégorie, la fermeture ou Échap désélectionnent les jeux et animent la sortie. Le panneau fermé cesse immédiatement de recevoir le focus et les clics ; changements rapides et réduction des animations pris en charge. Journal public trilingue actualisé sous la même v0.5.3 du jour.
+- 将横向分类栏设为吸顶，按导航栏实际高度定位，桌面和手机端均保持在导航下方；保留背景和独立层级，避免卡片文字穿透。同步当天三语公开日志，沿用 v0.5.3 并刷新资源缓存。
+- Made the horizontal category bar sticky below navigation using its responsive height on desktop and mobile, retaining a background and separate stacking layer for legibility. Updated the daily trilingual public log under v0.5.3 and refreshed asset caches.
+- Barre horizontale des catégories fixée sous la navigation selon sa hauteur adaptative sur ordinateur et mobile, avec fond et niveau de superposition distincts pour la lisibilité. Journal public trilingue du jour complété sous v0.5.3 et caches actualisés.
+- 将游戏类型、美术风格和进度筛选移到固定右侧面板，默认收起，选择游戏分类后通过右侧按钮展开；保留全选、清除与即时筛选。面板可独立滚动，支持关闭按钮、Esc 和点击面板外部收起；桌面展开时为项目卡片留出空间，手机端限制面板宽高。同步三语标签、键盘焦点与减少动态效果设置，刷新资源缓存，公开日志新增当天 v0.5.3。
+- Moved genre, art style and progress filters into a fixed right panel, collapsed by default and opened with an edge button in the games category. Kept select-all, clear and live filtering. The panel scrolls independently and closes via its button, Escape or an outside click; desktop cards make room for it and mobile dimensions stay within the viewport. Added trilingual labels, keyboard focus handling and reduced-motion support, refreshed asset caches and recorded the daily v0.5.3 in the public log.
+- Filtres de genre, style et avancement déplacés dans un panneau fixe à droite, replié par défaut et ouvert par un bouton latéral dans la catégorie jeux. Sélection globale, effacement et filtrage immédiat conservés. Défilement indépendant, fermeture par bouton, Échap ou clic extérieur ; espace réservé aux cartes sur ordinateur et dimensions limitées sur mobile. Libellés trilingues, gestion du focus et réduction des animations, caches actualisés et entrée publique du jour v0.5.3.
+
+**验证 / Validation / Vérification**
+
+- 自动展开逻辑通过 24 种尺寸、语言与主题组合检查：滑入滑出、再次点击取消游戏选择、切换分类、关闭与 Esc、即时筛选、快速切换和减少动画均正常；手机端分类栏可点击，无横向溢出或页面错误。
+- Automatic panel behavior passed 24 viewport, language and theme combinations: slide-in/out, repeated-click deselection, category switching, close and Escape, live filters, rapid switching and reduced motion. Mobile category controls remain accessible, with no horizontal overflow or page errors.
+- Ouverture automatique vérifiée dans 24 combinaisons de dimensions, langues et thèmes : entrée et sortie, désélection au second clic, changement de catégorie, fermeture et Échap, filtres immédiats, changements rapides et réduction des animations. Catégories accessibles sur mobile, sans débordement horizontal ni erreur de page.
+- 追加滚动验证：24 种尺寸、语言与主题组合在下滚 500px 和 850px 时分类栏均保持吸顶，侧面板仍可正常展开与关闭，无横向溢出或页面错误。
+- Additional scroll checks: the category bar stayed sticky at 500px and 850px in 24 viewport, language and theme combinations; the side panel still opened and closed, with no horizontal overflow or page errors.
+- Vérifications supplémentaires : barre fixe à 500px et 850px de défilement dans 24 combinaisons de dimensions, langues et thèmes ; ouverture et fermeture du panneau fonctionnelles, sans débordement horizontal ni erreur de page.
+- Edge 无头浏览器检查 390px 和 1440px、中英法三语及四种主题，共 24 种组合；验证三组筛选、全选与清除、展开与关闭、Esc、点击外部、焦点返回及切换分类。无页面错误或横向溢出，桌面卡片不被面板遮挡；检查桌面和手机截图，JavaScript 语法与差异空白检查通过。
+- Headless Edge verified 24 combinations of 390px and 1440px, three languages and four themes, including all three filter groups, select-all and clear, opening and closing, Escape, outside clicks, focus restoration and category changes. No page errors or horizontal overflow; desktop cards remained unobstructed. Reviewed desktop and mobile screenshots; JavaScript syntax and diff whitespace checks passed.
+- Edge sans interface a vérifié 24 combinaisons de deux largeurs (390 et 1440px), trois langues et quatre thèmes : trois groupes de filtres, sélection globale, effacement, ouverture et fermeture, Échap, clic extérieur, retour du focus et changement de catégorie. Aucune erreur de page ni débordement horizontal, cartes non masquées sur ordinateur. Captures ordinateur et mobile examinées, syntaxe JavaScript et espaces du diff validés.
+
+### 位巍主页项目 / Weiwei homepage project / Projet de site personnel de Weiwei
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 位巍 weiwei 主页的网址为 https://bentootoo.com/WeiWei/。
+- The Weiwei homepage URL is https://bentootoo.com/WeiWei/.
+- L’adresse du site personnel de Weiwei est https://bentootoo.com/WeiWei/.
+- 将位巍 weiwei 主页添加到工作项目分类。
+- Add the Weiwei (位巍) homepage to the work projects category.
+- Ajouter le site personnel de Weiwei (位巍) aux projets professionnels.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 为位巍主页详情页接入用户提供的网址，启用“打开项目”入口并移除资料草稿标记；刷新项目脚本缓存，保持网站版本号与公开日志不变。
+- Connected the supplied URL to the Weiwei detail page, enabled its Open project action and removed the draft marker; refreshed the project script cache without changing the website version or public log.
+- Ajout de l’adresse fournie à la fiche de Weiwei, activation du bouton Ouvrir le projet et retrait du statut de fiche provisoire ; cache du script actualisé, version du site et journal public inchangés.
+- 添加三语项目标题与简介、稳定的独立详情链接和站点地图入口，首页项目数更新为 13；网址、封面与创建日期尚待补充，暂不添加外部访问链接。刷新项目脚本缓存，保持网站版本号和公开开发日志不变。
+- Added trilingual titles and summaries, a stable detail link and a sitemap entry; updated the homepage project count to 13. The URL, cover and creation date remain to be added, with no external link set yet. Refreshed the project script cache and kept the website version and public development log unchanged.
+- Ajout des titres et résumés trilingues, d’une fiche stable et d’une entrée au plan du site ; nombre de projets porté à 13. Adresse, couverture et date de création à compléter, sans lien externe pour le moment. Cache du script actualisé, version du site et journal public conservés.
+
+### Rewind Rush 项目资料 / Rewind Rush project details / Fiche du projet Rewind Rush
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 确认 Rewind Rush 的游戏类型为动作、冒险，美术风格为像素、2D，进度为正式版。
+- Confirm Rewind Rush as action and adventure, with pixel art and 2D visuals, and full release status.
+- Confirmer les genres action et aventure, les styles pixel art et 2D, et le statut de version finale pour Rewind Rush.
+- Rewind Rush 的创建日期为三天前，按用户当地 2026-10-20 计算为 2026-10-17。
+- Rewind Rush was created three days earlier: 2026-10-17, based on the user’s local date of 2026-10-20.
+- Rewind Rush a été créé trois jours auparavant, soit le 2026-10-17 selon la date locale de l’utilisateur, le 2026-10-20.
+- 小木的职责改为“策划”，不使用“导演”，游戏中没有导演这一职位。
+- Change Mumu’s role from direction to game planning; the game has no director role.
+- Remplacer le rôle de réalisation de Mumu par la conception du jeu ; le jeu ne comporte pas de poste de réalisateur.
+- 团队成员介绍中，本2兔的职责补充“文案”。
+- Add writing to Bentootoo’s responsibilities in the team credits.
+- Ajouter la rédaction aux responsabilités de Bentootoo dans les crédits de l’équipe.
+- 缩小 Rewind Rush 封面的显示，避免图片被裁切或遮挡。
+- Reduce the displayed Rewind Rush cover size to avoid cropping or obstruction.
+- Réduire l’affichage de la couverture de Rewind Rush pour éviter tout recadrage ou masquage.
+- 封面改用用户提供的图片，删除此前的网站横幅封面。
+- Replace the previous website banner cover with the image supplied by the user and remove the old cover.
+- Remplacer la précédente bannière de couverture par l’image fournie par l’utilisateur et supprimer l’ancienne couverture.
+- 将 Rewind Rush 添加到项目库，使用 https://safari-mu.itch.io/rewind-rush 的链接与网站封面，完整列出团队职责；中文名分别为小木、奥斯卡、梧桐和本2兔。
+- Add Rewind Rush to the project library using https://safari-mu.itch.io/rewind-rush and its cover, with full team credits; the Chinese names are 小木, 奥斯卡, 梧桐 and 本2兔 respectively.
+- Ajouter Rewind Rush à la bibliothèque avec le lien https://safari-mu.itch.io/rewind-rush et sa couverture, en détaillant les rôles de l’équipe ; les noms chinois sont respectivement 小木, 奥斯卡, 梧桐 et 本2兔.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 核对 Rewind Rush 的现有分类与用户确认一致，保留对应三语筛选配置，仅补充内部确认记录。
+- Verified that Rewind Rush already matches the confirmed categories and retained its shared trilingual filter configuration; added the confirmation to the internal log only.
+- Vérification des catégories existantes de Rewind Rush, conformes à la confirmation ; configuration de filtrage trilingue conservée et confirmation ajoutée uniquement au journal interne.
+- 将 Rewind Rush 的创建日期从待补充改为 2026-10-17，三语项目卡片与详情页共用该日期；刷新脚本缓存，保持网站版本号和公开日志不变。
+- Replaced the pending Rewind Rush creation date with 2026-10-17, shared by cards and detail pages in all three languages; refreshed the script cache without changing the website version or public log.
+- Date de création de Rewind Rush renseignée au 2026-10-17 pour les cartes et fiches dans les trois langues ; cache du script actualisé, version du site et journal public inchangés.
+- 将 Rewind Rush 中小木的署名改为“策划、编程、灯光、视觉特效”，同步英文 game planning 和法文 conception du jeu；刷新项目脚本缓存，保留网站版本号与公开日志。
+- Updated Mumu’s Rewind Rush credit to game planning, programming, lighting and VFX, synchronized across Chinese, English and French; refreshed the project script cache and kept the website version and public log unchanged.
+- Crédit de Mumu dans Rewind Rush actualisé en conception du jeu, programmation, éclairage et effets visuels dans les trois langues ; cache du script actualisé, version du site et journal public conservés.
+- 将 Rewind Rush 团队署名更新为“本2兔 — 音乐、文案”，同步英文 music, writing 和法文 musique, rédaction；刷新项目脚本缓存，网站版本号与公开日志保持不变。
+- Updated the Rewind Rush credit to “本2兔 — 音乐、文案”, with “Bentootoo — music, writing” in English and “Bentootoo — musique, rédaction” in French; refreshed the project script cache without changing the website version or public log.
+- Crédit de Rewind Rush actualisé en « 本2兔 — 音乐、文案 », « Bentootoo — music, writing » en anglais et « Bentootoo — musique, rédaction » en français ; cache du script actualisé, version du site et journal public inchangés.
+- 项目卡片封面缩至容器高度的 90%，详情页按比例缩小并在底部预留空间，移除这张封面上的渐变遮罩；完整展示图片并刷新样式与脚本缓存。
+- Reduced the card cover to 90% of its container height and scaled down the detail cover with space below it; removed its gradient overlays, showing the full image and refreshing style and script caches.
+- Couverture des cartes réduite à 90 % de la hauteur du conteneur et couverture de la fiche réduite proportionnellement avec un espace inférieur ; dégradés retirés pour afficher l’image entière, caches des styles et du script actualisés.
+- 使用用户提供的 640 × 512 图片覆盖 `assets/project-rewind-rush.png`，移除旧横幅图片内容；同步项目卡片与详情页封面，刷新图片和脚本缓存。
+- Overwrote `assets/project-rewind-rush.png` with the supplied 640 × 512 image, removing the old banner content; updated the shared card and detail cover and refreshed image and script caches.
+- Remplacement de `assets/project-rewind-rush.png` par l’image fournie de 640 × 512, supprimant l’ancienne bannière ; couverture commune aux cartes et à la fiche actualisée, caches de l’image et du script renouvelés.
+- 添加中、英、法三语简介和团队署名，使用网站原始封面，接入 itch.io 游戏链接、独立详情页和站点地图；分类为正式版 2D 像素动作冒险游戏。根据原页面记录 2026-10-19 的发布与更新信息，未确认的创立日期保留待补充。首页项目数更新为 12，刷新项目资料脚本缓存；保持网站版本号和公开开发日志不变。
+- Added Chinese, English and French descriptions and full credits, the original website cover, the itch.io game link, a stable detail page and a sitemap entry; classified the game as a released 2D pixel-art action adventure. Recorded the source page’s 2026-10-19 release and update information, leaving the unconfirmed creation date to be added. Updated the homepage project count to 12 and refreshed the project script cache; kept the website version and public development log unchanged.
+- Ajout des descriptions et crédits complets en chinois, anglais et français, de la couverture originale, du lien itch.io, d’une fiche stable et d’une entrée au plan du site ; classement comme jeu d’action et d’aventure 2D en pixel art publié. Date de publication et de mise à jour du 2026-10-19 reprise de la page source, date de création non confirmée laissée à compléter. Nombre de projets porté à 12 et cache du script actualisé ; version du site et journal public conservés.
+
 ## 2026-10-15
 
 ### 删除名片留言入口 / Remove the card message link / Retrait du lien de message de la carte

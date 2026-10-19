@@ -24,7 +24,7 @@
     <title>项目保存库 | 本2兔</title>
     <link rel="preload" as="image" href="assets/cosmic-background.png">
     <link rel="stylesheet" href="styles.css?v=cosmos26">
-    <link rel="stylesheet" href="projects.css?v=archive18">
+    <link rel="stylesheet" href="projects.css?v=auto-filters-20261020">
     <link rel="stylesheet" href="devlog.css?v=present-20261015">
     <link rel="stylesheet" href="home-themes.css?v=present-20261015">
     <link rel="stylesheet" href="site-nav.css?v=2">
@@ -74,48 +74,52 @@
               <button class="archive-filter" type="button" data-filter="favorite" data-project-text="filterFavorites">我的最爱</button>
               <button class="archive-filter is-active" type="button" data-filter="all" data-project-text="filterAll">全部</button>
               <button class="archive-filter" type="button" data-filter="tool" data-project-text="filterTools">工具</button>
-              <div class="archive-filter-menu">
-                <button class="archive-filter" type="button" data-filter="game" aria-expanded="false" aria-controls="gameFilters" data-project-text="filterGames">游戏</button>
-                <div class="archive-game-filters" id="gameFilters" hidden>
-                  <div class="game-genre-options" role="group" aria-label="筛选游戏类型" data-project-aria="gameGenresLabel">
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="action" aria-pressed="true" data-project-text="genreAction">动作</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="puzzle" aria-pressed="true" data-project-text="genrePuzzle">解密</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="text" aria-pressed="true" data-project-text="genreText">文字</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="adventure" aria-pressed="true" data-project-text="genreAdventure">冒险</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="horror" aria-pressed="true" data-project-text="genreHorror">恐怖</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="idle" aria-pressed="true" data-project-text="genreIdle">放置</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="story" aria-pressed="true" data-project-text="genreStory">剧情</button>
-                  </div>
-                  <div class="game-filter-actions">
-                    <button type="button" data-select-all="genre" data-project-text="selectAll">全选</button>
-                    <button type="button" data-clear-all="genre" data-project-text="clearAll">清除</button>
-                  </div>
-                  <h3 class="game-filter-heading" data-project-text="artStylesLabel">美术风格</h3>
-                  <div class="game-genre-options" role="group" data-project-aria="artStylesLabel" aria-label="美术风格">
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="artStyle" data-filter-value="2d" aria-pressed="true" data-project-text="art2d">2D</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="artStyle" data-filter-value="pixel" aria-pressed="true" data-project-text="artPixel">像素</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="artStyle" data-filter-value="3d" aria-pressed="true" data-project-text="art3d">3D</button>
-                  </div>
-                  <div class="game-filter-actions">
-                    <button type="button" data-select-all="artStyle" data-project-text="selectAll">全选</button>
-                    <button type="button" data-clear-all="artStyle" data-project-text="clearAll">清除</button>
-                  </div>
-                  <h3 class="game-filter-heading" data-project-text="progressLabel">进度</h3>
-                  <div class="game-genre-options" role="group" data-project-aria="progressLabel" aria-label="进度">
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="progress" data-filter-value="release" aria-pressed="true" data-project-text="progressRelease">正式版</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="progress" data-filter-value="beta" aria-pressed="true" data-project-text="progressBeta">测试版</button>
-                    <button class="game-genre-filter is-active" type="button" data-filter-group="progress" data-filter-value="development" aria-pressed="true" data-project-text="progressDevelopment">正在开发</button>
-                  </div>
-                  <div class="game-filter-actions">
-                    <button type="button" data-select-all="progress" data-project-text="selectAll">全选</button>
-                    <button type="button" data-clear-all="progress" data-project-text="clearAll">清除</button>
-                  </div>
-                </div>
-              </div>
+              <button class="archive-filter" type="button" data-filter="game" aria-expanded="false" aria-controls="gameFilters" data-project-text="filterGames">游戏</button>
               <button class="archive-filter" type="button" data-filter="other" data-project-text="filterOther">其他</button>
               <button class="archive-filter" type="button" data-filter="work" data-project-text="filterWork">工作项目</button>
             </div>
           </div>
+
+          <aside class="archive-game-filters" id="gameFilters" aria-labelledby="gameFiltersTitle" aria-hidden="true" inert>
+            <div class="game-filter-header">
+              <h2 id="gameFiltersTitle" data-project-text="gameFiltersTitle">游戏筛选</h2>
+              <button class="game-filter-close" type="button" data-project-aria="closeFilters" aria-label="关闭筛选">×</button>
+            </div>
+            <h3 class="game-filter-heading" data-project-text="gameGenresLabel">筛选游戏类型</h3>
+            <div class="game-genre-options" role="group" aria-label="筛选游戏类型" data-project-aria="gameGenresLabel">
+              <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="action" aria-pressed="true" data-project-text="genreAction">动作</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="puzzle" aria-pressed="true" data-project-text="genrePuzzle">解密</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="text" aria-pressed="true" data-project-text="genreText">文字</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="adventure" aria-pressed="true" data-project-text="genreAdventure">冒险</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="horror" aria-pressed="true" data-project-text="genreHorror">恐怖</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="idle" aria-pressed="true" data-project-text="genreIdle">放置</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="genre" data-filter-value="story" aria-pressed="true" data-project-text="genreStory">剧情</button>
+            </div>
+            <div class="game-filter-actions">
+              <button type="button" data-select-all="genre" data-project-text="selectAll">全选</button>
+              <button type="button" data-clear-all="genre" data-project-text="clearAll">清除</button>
+            </div>
+            <h3 class="game-filter-heading" data-project-text="artStylesLabel">美术风格</h3>
+            <div class="game-genre-options" role="group" data-project-aria="artStylesLabel" aria-label="美术风格">
+              <button class="game-genre-filter is-active" type="button" data-filter-group="artStyle" data-filter-value="2d" aria-pressed="true" data-project-text="art2d">2D</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="artStyle" data-filter-value="pixel" aria-pressed="true" data-project-text="artPixel">像素</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="artStyle" data-filter-value="3d" aria-pressed="true" data-project-text="art3d">3D</button>
+            </div>
+            <div class="game-filter-actions">
+              <button type="button" data-select-all="artStyle" data-project-text="selectAll">全选</button>
+              <button type="button" data-clear-all="artStyle" data-project-text="clearAll">清除</button>
+            </div>
+            <h3 class="game-filter-heading" data-project-text="progressLabel">进度</h3>
+            <div class="game-genre-options" role="group" data-project-aria="progressLabel" aria-label="进度">
+              <button class="game-genre-filter is-active" type="button" data-filter-group="progress" data-filter-value="release" aria-pressed="true" data-project-text="progressRelease">正式版</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="progress" data-filter-value="beta" aria-pressed="true" data-project-text="progressBeta">测试版</button>
+              <button class="game-genre-filter is-active" type="button" data-filter-group="progress" data-filter-value="development" aria-pressed="true" data-project-text="progressDevelopment">正在开发</button>
+            </div>
+            <div class="game-filter-actions">
+              <button type="button" data-select-all="progress" data-project-text="selectAll">全选</button>
+              <button type="button" data-clear-all="progress" data-project-text="clearAll">清除</button>
+            </div>
+          </aside>
 
           <div class="archive-grid" id="archiveGrid"></div>
           <p class="archive-empty" id="archiveEmpty" hidden data-project-text="empty">这个分类里暂时还没有项目。</p>
@@ -129,7 +133,7 @@
     </footer>
 
     <script src="app.js?v=cosmos22" defer></script>
-    <script src="devlog.js?v=present-20261015-2" defer></script>
-    <script src="projects.js?v=present-20261015" defer></script>
+    <script src="devlog.js?v=auto-filters-20261020" defer></script>
+    <script src="projects.js?v=auto-filters-20261020" defer></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 const projectLibraryCopy = {
   zh: {
+    closeFilters: "关闭筛选", gameFiltersTitle: "游戏筛选",
     libraryLabel: "项目保存库",
     filterAll: "全部",
     filterFavorites: "我的最爱",
@@ -62,6 +63,7 @@ const projectLibraryCopy = {
     kinds: { tool: "工具", game: "游戏", other: "其他", work: "工作项目" }
   },
   en: {
+    closeFilters: "Close filters", gameFiltersTitle: "Game filters",
     libraryLabel: "Project archive",
     filterAll: "All",
     filterFavorites: "My favorites",
@@ -124,6 +126,7 @@ const projectLibraryCopy = {
     kinds: { tool: "Tool", game: "Game", other: "Other", work: "Work project" }
   },
   fr: {
+    closeFilters: "Fermer les filtres", gameFiltersTitle: "Filtres des jeux",
     libraryLabel: "Réserve de projets",
     filterAll: "Tous",
     filterFavorites: "Mes favoris",
@@ -194,6 +197,36 @@ const projectLibraryCopy = {
 // 进度 progress：release 正式版 / beta 测试版 / development 正在开发。
 // 未确认的分类可留空；对应筛选全选时仍显示，选具体子分类时不匹配。
 const projectLibraryData = [
+  {
+    id: "rewind-rush", category: "game",
+    genres: ["action", "adventure"], artStyles: ["2d", "pixel"], progress: "release",
+    cover: "assets/project-rewind-rush.png?v=cover-20261020",
+    coverFit: "contain",
+    href: "https://safari-mu.itch.io/rewind-rush",
+    created: "2026-10-17",
+    updated: "2026-10-19",
+    text: {
+      zh: {
+        title: "Rewind Rush", summary: "四个人，一盏灯，带着最后一卷家的录像带穿过废弃机器的世界。",
+        description: "一款为 Ludum Dare 60 制作的 2D 像素动作冒险游戏，在 72 小时内围绕 Old Tech 主题完成。旧机器被丢弃在废品星球上，而废墟深处还有一台能播放家中录像带的老电视。提着灯笼，穿过蒸汽、信号与静电三个时代，别让灯熄灭。\n\n灯笼既是生命，也是唯一的光源。放下它可以轻装战斗，但它也会受到攻击。七种武器、关卡之间的变异升级、三个关卡与三位首领，支持单人或同一台电脑上最多四人游玩。可使用键盘或手柄，提供三种难度，游戏支持中文和英文。",
+        log: ["2026-10-19 在 itch.io 发布，可直接在浏览器中游玩。"],
+        team: ["小木 — 策划、编程、灯光、视觉特效", "奥斯卡 — 游戏设计、动画、环境设计、美术指导", "梧桐 — 肖像绘制", "本2兔 — 音乐、文案"]
+      },
+      en: {
+        title: "Rewind Rush", summary: "Four of us. One lantern. Carry the last tape of home through a world of discarded machines.",
+        description: "A 2D pixel-art action adventure made in 72 hours for Ludum Dare 60, on the theme Old Tech. Old machines are dumped on a scrap planet, where one TV deep in the heap can still play the tape of home. Carry the lantern through three ages — Steam, Signal and Static — and keep it lit.\n\nThe lantern is both your health and your only light. Put it down to fight lighter, but it can be hit. Seven weapons, mutations between levels, three levels and three bosses. Play solo or with up to four players on one computer, using keyboards or gamepads. Three difficulty settings; available in English and Chinese.",
+        log: ["Released on itch.io on 2026-10-19, playable directly in the browser."],
+        team: ["Mumu — game planning, programming, lighting, VFX", "Oscar — game design, animation, environment design, art direction", "Wutong — portraits", "Bentootoo — music, writing"]
+      },
+      fr: {
+        title: "Rewind Rush", summary: "Quatre compagnons, une lanterne et la dernière cassette du foyer à porter parmi les machines abandonnées.",
+        description: "Un jeu d’action et d’aventure en 2D et pixel art, réalisé en 72 heures pour la Ludum Dare 60 sur le thème Old Tech. Les vieilles machines finissent sur une planète de ferraille, où un téléviseur enfoui peut encore lire la cassette du foyer. Portez la lanterne à travers trois âges — vapeur, signal et parasites — sans la laisser s’éteindre.\n\nLa lanterne est à la fois votre vie et votre seule lumière. La poser permet de combattre plus librement, mais elle peut être attaquée. Sept armes, des mutations entre les niveaux, trois niveaux et trois boss. Jouez seul ou jusqu’à quatre sur le même ordinateur, au clavier ou à la manette. Trois difficultés ; jeu disponible en chinois et en anglais.",
+        log: ["Publié sur itch.io le 2026-10-19, jouable directement dans le navigateur."],
+        team: ["Mumu — conception du jeu, programmation, éclairage, effets visuels", "Oscar — conception du jeu, animation, conception des environnements, direction artistique", "Wutong — portraits", "Bentootoo — musique, rédaction"]
+      }
+    },
+    comments: []
+  },
   {
     id: "be-present", category: "tool",
     cover: "assets/project-be-present.png",
@@ -428,6 +461,16 @@ projectLibraryData.push(
       en: { title: "UIT Archiology Website Design", summary: "A website design project for UIT Archiology." },
       fr: { title: "Conception du site UIT Archiology", summary: "Un projet de conception de site web pour UIT Archiology." }
     }
+  },
+  {
+    id: "weiwei-homepage", category: "work",
+    href: "https://bentootoo.com/WeiWei/",
+    created: { zh: "待补充", en: "To be added", fr: "À compléter" },
+    text: {
+      zh: { title: "位巍 weiwei 主页", summary: "位巍 weiwei 的个人主页项目。" },
+      en: { title: "Weiwei Homepage", summary: "A personal homepage project for Weiwei (位巍)." },
+      fr: { title: "Site personnel de Weiwei", summary: "Un projet de site personnel pour Weiwei (位巍)." }
+    }
   }
 );
 
@@ -596,8 +639,9 @@ function renderProjectDetail(projectId) {
   const project = projectLibraryData.find((item) => item.id === projectId);
   if (!project) return;
   const text = getProjectText(project);
+  document.querySelector("#projectDialogCover").dataset.coverFit = project.coverFit || "cover";
   document.querySelector("#projectDialogCover").style.backgroundImage = project.cover
-    ? `linear-gradient(180deg, transparent 48%, #0a0e22 100%), url('${project.cover}')`
+    ? project.coverFit === "contain" ? `url('${project.cover}')` : `linear-gradient(180deg, transparent 48%, #0a0e22 100%), url('${project.cover}')`
     : "linear-gradient(135deg, #27324f, #0a0e22)";
   document.querySelector("#projectDialogTitle").textContent = text.title;
   document.querySelector("#projectDialogCreated").textContent = getProjectDate(project.created);
@@ -751,16 +795,45 @@ async function submitProjectComment(event) {
   }
 }
 
+const gameFiltersPanel = document.querySelector("#gameFilters");
+const gameCategoryButton = document.querySelector('[data-filter="game"]');
+const archiveToolbar = document.querySelector(".archive-toolbar");
+if (archiveToolbar) {
+  new ResizeObserver(() => {
+    document.body.style.setProperty("--game-filter-toolbar-height", `${archiveToolbar.offsetHeight}px`);
+  }).observe(archiveToolbar);
+}
+
+function setProjectFilter(filter) {
+  activeFilter = filter;
+  document.querySelectorAll(".archive-filter").forEach((button) => {
+    const selected = button.dataset.filter === filter;
+    button.classList.toggle("is-active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+  const open = filter === "game";
+  if (gameFiltersPanel) {
+    const focusInPanel = gameFiltersPanel.contains(document.activeElement);
+    gameFiltersPanel.classList.toggle("is-open", open);
+    gameFiltersPanel.inert = !open;
+    gameFiltersPanel.setAttribute("aria-hidden", String(!open));
+    gameCategoryButton.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("game-filters-open", open);
+    if (!open && focusInPanel) document.querySelector(`[data-filter="${filter}"]`).focus();
+  }
+  renderProjectCards();
+}
+
 document.querySelectorAll(".archive-filter").forEach((button) => {
   button.addEventListener("click", () => {
-    activeFilter = button.dataset.filter;
-    document.querySelectorAll(".archive-filter").forEach((item) => item.classList.toggle("is-active", item === button));
-    const gameFilters = document.querySelector("#gameFilters");
-    const gameButton = document.querySelector('[data-filter="game"]');
-    gameFilters.hidden = activeFilter !== "game";
-    gameButton.setAttribute("aria-expanded", String(activeFilter === "game"));
-    renderProjectCards();
+    const filter = button.dataset.filter;
+    setProjectFilter(filter === "game" && activeFilter === "game" ? "all" : filter);
   });
+});
+
+document.querySelector(".game-filter-close")?.addEventListener("click", () => setProjectFilter("all"));
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && gameFiltersPanel && activeFilter === "game") setProjectFilter("all");
 });
 
 function renderGenreFilters() {

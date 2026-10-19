@@ -6,6 +6,13 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-10-20",
+        version: "v0.5.3",
+        done: [
+          "将项目库的游戏筛选改为右侧长方形面板，选中游戏分类时自动滑入，取消选择或切换分类时滑出；保留类型、美术风格与进度筛选，桌面展开时为项目展示让出空间，横向分类栏随滚动保持在导航栏下方。"
+        ]
+      },
+      {
         date: "2026-10-15",
         version: "v0.5.2",
         visual: "be-present",
@@ -173,6 +180,13 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-10-20",
+        version: "v0.5.3",
+        done: [
+          "Moved the project library’s game filters into a rectangular right panel that automatically slides in when Games is selected and slides out when deselected or another category is chosen. Kept genre, art style and progress filters, made room for projects on desktop, and kept the horizontal category bar below navigation while scrolling."
+        ]
+      },
+      {
         date: "2026-10-15",
         version: "v0.5.2",
         visual: "be-present",
@@ -339,6 +353,13 @@ const devlogContent = {
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
     entries: [
+      {
+        date: "2026-10-20",
+        version: "v0.5.3",
+        done: [
+          "Transformation des filtres de jeux en panneau rectangulaire à droite, qui entre automatiquement à la sélection des jeux et ressort à la désélection ou au changement de catégorie. Genres, styles et avancement conservés, espace réservé aux projets sur ordinateur et barre horizontale des catégories maintenue sous la navigation pendant le défilement."
+        ]
+      },
       {
         date: "2026-10-15",
         version: "v0.5.2",
