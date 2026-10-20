@@ -427,6 +427,15 @@ const context = canvas ? canvas.getContext("2d") : null;
 const pointer = { x: 0.5, y: 0.5 };
 
 if (canvas && context && !prefersReducedMotion) {
+  let musicDrive = null;
+  let audioDrive = 0;
+  // Loading or discovering the optional extension must never block the canvas.
+  import(new URL("assets/audio/music-drive.js?v=20261020", document.currentScript.src).href)
+    .then(({ createMusicDrive }) => {
+      musicDrive = createMusicDrive();
+      musicDrive.start();
+    })
+    .catch(() => { /* Keep the original animation if the optional module is unavailable. */ });
   let width = 0;
   let height = 0;
   let dpr = 1;
@@ -450,7 +459,9 @@ if (canvas && context && !prefersReducedMotion) {
       const normalized = x / Math.max(width, 1);
       const waveOne = Math.sin(normalized * 8 + time * speed + offset) * amplitude;
       const waveTwo = Math.cos(normalized * 15 - time * speed * 0.7 + offset) * (amplitude * 0.34);
-      const y = height * 0.5 + waveOne + waveTwo + influenceY + Math.sin(time * 0.6 + offset) * 34;
+      const originalY = height * 0.5 + waveOne + waveTwo + influenceY + Math.sin(time * 0.6 + offset) * 34;
+      const extraY = Math.max(-48, Math.min(48, (waveOne + waveTwo) * 0.6 * audioDrive));
+      const y = originalY + extraY;
       const finalX = x + influenceX * Math.sin(normalized * Math.PI);
 
       if (x === -40) {
@@ -501,6 +512,7 @@ if (canvas && context && !prefersReducedMotion) {
 
   function tick() {
     time += 0.016;
+    audioDrive = musicDrive ? musicDrive.sample(performance.now()) : 0;
     drawMesh();
     requestAnimationFrame(tick);
   }

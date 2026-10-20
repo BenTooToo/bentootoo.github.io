@@ -9,6 +9,29 @@
 
 ## 2026-10-20
 
+### 首页声音律动 / Homepage audio response / Réaction sonore de l’accueil
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 将提供的声音桥接系统接入网站，让线条随电脑播放的音乐变化；音乐停止后恢复目前状态，保留现有效果。
+- Connect the supplied audio bridge so the lines respond to music playing on the computer and return to the current appearance when it stops, preserving the existing effect.
+- Relier le pont audio fourni pour que les lignes réagissent à la musique de l’ordinateur et retrouvent leur apparence actuelle à l’arrêt, en conservant l’effet existant.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 原样复制 `music_api/web/` 中的接收客户端与弹簧模块，新增 `assets/audio/music-drive.js`，仅使用扩展通道；页面自动订阅已经授权的扩展，不新增按钮或修改页面布局，不请求系统共享或麦克风权限。
+- Copied the receiver and spring modules unchanged from `music_api/web/` and added `assets/audio/music-drive.js` using only the extension transport. The page automatically subscribes to an already authorized extension, without adding controls, changing layout or requesting screen-sharing or microphone permissions.
+- Modules de réception et de ressort copiés sans modification depuis `music_api/web/`, avec ajout de `assets/audio/music-drive.js` utilisant uniquement l’extension. Abonnement automatique à l’extension déjà autorisée, sans nouveau contrôle, changement de mise en page ni demande de partage d’écran ou de microphone.
+- 在原有 Canvas 循环中加入最多 48px 的声音纵向位移，保留原有时间推进、颜色、横坐标、网格与鼠标交互；静音、暂停、超时及断线后平滑收回并精确归零。模块加载失败时继续原动画；保留减少动态效果与页面缓存恢复行为。同步三语公开日志并沿用当天 v0.5.3，刷新日志资源缓存；未发布网站或安装扩展。
+- Added at most 48px of vertical sound displacement in the existing Canvas loop, preserving timing, colors, horizontal positions, mesh and pointer interaction. Silence, pause, timeout and disconnection smoothly settle to exactly zero. Module loading failure leaves the original animation running; reduced motion and page-cache restoration remain supported. Updated the trilingual public log under the same daily v0.5.3 and refreshed log caches; did not deploy the site or install the extension.
+- Ajout d’un déplacement sonore vertical limité à 48px dans la boucle Canvas existante, en conservant temps, couleurs, abscisses, grille et interaction du pointeur. Silence, pause, expiration et déconnexion ramènent progressivement le déplacement exactement à zéro. L’animation d’origine continue si le module ne charge pas ; réduction des animations et restauration du cache de page prises en charge. Journal public trilingue complété sous la même v0.5.3 du jour, caches actualisés ; site non publié et extension non installée.
+
+**验证 / Validation / Vérification**
+
+- `tests/audio-response.mjs` 使用真实 Chromium 和模拟扩展消息，逐点比较接入前后的三条线：无声音时坐标完全一致，播放时只改变纵向坐标且新增位移不超过 48px，静音、暂停、来源不可用及超时后完全恢复；另验证页面缓存恢复、无扩展、模块加载失败和减少动态效果，无页面错误。接收与弹簧文件的哈希与来源一致，JavaScript 语法与差异空白检查通过。真实系统声音共享及正式域名上的实际扩展链路尚待人工验收。
+- `tests/audio-response.mjs` uses real Chromium with simulated extension messages to compare all three ribbons point by point: silence exactly matches the original coordinates, audio changes only vertical coordinates within 48px, and silence, pause, source loss and timeout restore them completely. Also verified page-cache restoration, no extension, failed module loading and reduced motion, with no page errors. Receiver and spring hashes match the source; JavaScript syntax and diff whitespace checks passed. Actual system-audio sharing and the real extension chain on the production origin still require manual validation.
+- `tests/audio-response.mjs` utilise Chromium réel avec des messages d’extension simulés pour comparer les trois lignes point par point : coordonnées identiques à l’origine sans son, seules les ordonnées changent avec le son dans une limite de 48px, puis retour complet après silence, pause, perte de source ou expiration. Restauration du cache, absence d’extension, échec du chargement et réduction des animations également vérifiés, sans erreur de page. Empreintes des modules identiques aux sources, syntaxe JavaScript et espaces du diff validés. Le partage sonore réel et la chaîne d’extension sur le domaine de production restent à vérifier manuellement.
+
 ### Rewind Rush 项目链接 / Rewind Rush project link / Lien du projet Rewind Rush
 
 **用户决定 / User decisions / Décisions utilisateur**
