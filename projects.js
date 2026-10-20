@@ -202,7 +202,7 @@ const projectLibraryData = [
     genres: ["action", "adventure"], artStyles: ["2d", "pixel"], progress: "release",
     cover: "assets/project-rewind-rush.png?v=cover-20261020",
     coverFit: "contain",
-    href: "https://safari-mu.itch.io/rewind-rush",
+    href: "https://bentootoo.com/rewind-rush/",
     created: "2026-10-17",
     updated: "2026-10-19",
     text: {

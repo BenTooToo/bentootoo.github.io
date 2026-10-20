@@ -9,6 +9,20 @@
 
 ## 2026-10-20
 
+### Rewind Rush 项目链接 / Rewind Rush project link / Lien du projet Rewind Rush
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 将项目库中 Rewind Rush 的链接改为 https://bentootoo.com/rewind-rush/。
+- Change the Rewind Rush project link to https://bentootoo.com/rewind-rush/.
+- Remplacer le lien du projet Rewind Rush par https://bentootoo.com/rewind-rush/.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 更新 `projects.js` 中三语共用的项目链接，并刷新项目脚本缓存；保持现有版本号，不新增公开开发日志。
+- Updated the shared project link for all three languages in `projects.js` and refreshed its script cache; kept the existing version without adding a public log entry.
+- Lien commun aux trois langues actualisé dans `projects.js` et cache du script renouvelé ; version conservée, sans nouvelle entrée publique.
+
 ### 游戏筛选侧面板 / Game filter side panel / Panneau latéral des filtres de jeux
 
 **用户决定 / User decisions / Décisions utilisateur**
