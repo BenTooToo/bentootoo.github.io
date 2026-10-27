@@ -6,6 +6,15 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-10-27",
+        version: "v0.5.4",
+        done: [
+          "将首页欢迎文字与名片整体下移，为顶部目录栏留出更多空间。",
+          "为旋转名片增加点击提示与定时翻转演示，翻到背面后自动转回，手动点击后停止重复。",
+          "项目详情页改为先展示标题、日期和简介，将预览图移至简介下方；项目库默认隐藏暂无预览的项目，可手动显示。"
+        ]
+      },
+      {
         date: "2026-10-20",
         version: "v0.5.3",
         done: [
@@ -181,6 +190,15 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-10-27",
+        version: "v0.5.4",
+        done: [
+          "Moved the homepage welcome and contact card down to leave more space below navigation.",
+          "Added a click hint and a repeating flip demonstration to the contact card; it turns back automatically and stops repeating after manual interaction.",
+          "Reordered project details to show the title, dates and introduction before the preview; projects without previews are hidden by default in the library and can be shown manually."
+        ]
+      },
+      {
         date: "2026-10-20",
         version: "v0.5.3",
         done: [
@@ -355,6 +373,15 @@ const devlogContent = {
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
     entries: [
+      {
+        date: "2026-10-27",
+        version: "v0.5.4",
+        done: [
+          "Déplacement du texte d’accueil et de la carte vers le bas pour laisser plus d’espace sous le menu.",
+          "Ajout d’une indication de clic et d’une démonstration régulière de retournement de la carte ; elle revient automatiquement et cesse les répétitions après une interaction manuelle.",
+          "Réorganisation des détails pour présenter le titre, les dates et la description avant l’aperçu ; les projets sans aperçu sont masqués par défaut dans la bibliothèque et peuvent être affichés manuellement."
+        ]
+      },
       {
         date: "2026-10-20",
         version: "v0.5.3",

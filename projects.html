@@ -10,21 +10,21 @@
     <link rel="icon" type="image/png" href="assets/cow.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bentootoo">
-    <meta property="og:title" content="项目保存库 | 本2兔">
-    <meta property="og:description" content="查看本2兔迄今为止的所有个人或团队项目。">
+    <meta property="og:title" content="Projects | Bentootoo">
+    <meta property="og:description" content="Explore every personal and team project Bentootoo has made so far.">
     <meta property="og:url" content="https://bentootoo.github.io/projects.html">
     <meta property="og:image" content="https://bentootoo.github.io/assets/project-classroom-credit.png">
-    <meta property="og:locale" content="zh_CN">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="项目保存库 | 本2兔">
-    <meta name="twitter:description" content="查看本2兔迄今为止的所有个人或团队项目。">
+    <meta name="twitter:title" content="Projects | Bentootoo">
+    <meta name="twitter:description" content="Explore every personal and team project Bentootoo has made so far.">
     <meta name="twitter:image" content="https://bentootoo.github.io/assets/project-classroom-credit.png">
     <meta name="theme-color" content="#050817">
     <meta name="feedback-endpoint" content="https://formsubmit.co/ajax/beisong.lyu@gmail.com">
     <title>项目保存库 | 本2兔</title>
     <link rel="preload" as="image" href="assets/cosmic-background.png">
     <link rel="stylesheet" href="styles.css?v=cosmos26">
-    <link rel="stylesheet" href="projects.css?v=auto-filters-20261020">
+    <link rel="stylesheet" href="projects.css?v=project-layout-20261027">
     <link rel="stylesheet" href="devlog.css?v=present-20261015">
     <link rel="stylesheet" href="home-themes.css?v=present-20261015">
     <link rel="stylesheet" href="site-nav.css?v=2">
@@ -69,7 +69,10 @@
       <section class="project-library-section" aria-label="项目保存库" data-project-aria="libraryLabel">
         <div class="project-library-shell">
           <div class="archive-toolbar">
-            <p class="archive-count" id="archiveCount" aria-live="polite"></p>
+            <div class="archive-display-options">
+              <p class="archive-count" id="archiveCount" aria-live="polite"></p>
+              <label class="archive-preview-toggle"><input id="showUnpreviewedProjects" type="checkbox"><span data-project-text="showUnpreviewed">显示暂无预览的项目</span></label>
+            </div>
             <div class="archive-filters" role="group" aria-label="项目分类" data-project-aria="filtersLabel">
               <button class="archive-filter" type="button" data-filter="favorite" data-project-text="filterFavorites">我的最爱</button>
               <button class="archive-filter is-active" type="button" data-filter="all" data-project-text="filterAll">全部</button>
@@ -133,7 +136,7 @@
     </footer>
 
     <script src="app.js?v=cosmos22" defer></script>
-    <script src="devlog.js?v=audio-20261020" defer></script>
-    <script src="projects.js?v=rewind-link-20261020" defer></script>
+    <script src="devlog.js?v=project-layout-20261027" defer></script>
+    <script src="projects.js?v=project-layout-20261027" defer></script>
   </body>
 </html>

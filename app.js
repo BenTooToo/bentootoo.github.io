@@ -20,6 +20,8 @@ const translations = {
     "theme.yearbook": "同窗录主页",
     "theme.pancake": "煎饼控制",
     "theme.pancakePhoto": "黄油与糖浆煎饼",
+    "card.flipHint": "点击翻转名片",
+    "card.flipLabel": "翻转名片",
     "card.identity": "学生 / 视频创作者 / 游戏制作人 / 独立音乐人",
     "card.email": "邮箱",
     "projects.title": "项目展示",
@@ -77,6 +79,8 @@ const translations = {
     "theme.yearbook": "Classmates homepage",
     "theme.pancake": "Pancake Control",
     "theme.pancakePhoto": "Pancakes with butter and syrup",
+    "card.flipHint": "Click to flip the card",
+    "card.flipLabel": "Flip contact card",
     "card.identity": "Student / Video creator / Game maker / Independent musician",
     "card.email": "Email",
     "projects.title": "Projects",
@@ -134,6 +138,8 @@ const translations = {
     "theme.yearbook": "Accueil des camarades",
     "theme.pancake": "Contrôle des pancakes",
     "theme.pancakePhoto": "Pancakes au beurre et au sirop",
+    "card.flipHint": "Cliquez pour retourner la carte",
+    "card.flipLabel": "Retourner la carte de visite",
     "card.identity": "Étudiant / Créateur vidéo / Créateur de jeux / Musicien indépendant",
     "card.email": "Email",
     "projects.title": "Projets",
@@ -244,10 +250,58 @@ if (year) {
 
 const avatarCard = document.querySelector(".avatar-card");
 if (avatarCard) {
-  const toggleAvatarCard = () => {
-    const isFlipped = avatarCard.classList.toggle("is-flipped");
+  const interactionKey = "bentootoo-card-interacted";
+  const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let hasInteracted = false;
+  try { hasInteracted = localStorage.getItem(interactionKey) === "true"; } catch {}
+  avatarCard.classList.toggle("has-interacted", hasInteracted);
+  let demoTimer;
+  let demoVisible = false;
+  let demoFlipped = false;
+  const setCardFlipped = (isFlipped) => {
+    avatarCard.classList.toggle("is-flipped", isFlipped);
     avatarCard.setAttribute("aria-pressed", String(isFlipped));
   };
+  const stopDemo = () => {
+    clearTimeout(demoTimer);
+    if (demoFlipped) setCardFlipped(false);
+    demoFlipped = false;
+  };
+  const scheduleDemo = (delay = 10000) => {
+    if (hasInteracted || motionPreference.matches || !demoVisible || document.hidden) return;
+    demoTimer = setTimeout(() => {
+      demoFlipped = true;
+      setCardFlipped(true);
+      demoTimer = setTimeout(() => {
+        setCardFlipped(false);
+        demoFlipped = false;
+        scheduleDemo();
+      }, 2400);
+    }, delay);
+  };
+  const refreshDemo = () => {
+    stopDemo();
+    scheduleDemo(3000);
+  };
+  const toggleAvatarCard = () => {
+    // Cancel pending callbacks without resetting the face the visitor clicked.
+    clearTimeout(demoTimer);
+    demoFlipped = false;
+    hasInteracted = true;
+    avatarCard.classList.add("has-interacted");
+    try { localStorage.setItem(interactionKey, "true"); } catch {}
+    setCardFlipped(!avatarCard.classList.contains("is-flipped"));
+  };
+
+  const cardObserver = new IntersectionObserver(([entry]) => {
+    demoVisible = entry.isIntersecting && entry.intersectionRatio >= 0.65;
+    refreshDemo();
+  }, { threshold: [0, 0.65] });
+  cardObserver.observe(avatarCard);
+  document.addEventListener("visibilitychange", refreshDemo);
+  motionPreference.addEventListener("change", refreshDemo);
+  window.addEventListener("pagehide", stopDemo);
+  window.addEventListener("pageshow", refreshDemo);
 
   avatarCard.addEventListener("click", toggleAvatarCard);
   avatarCard.addEventListener("keydown", (event) => {

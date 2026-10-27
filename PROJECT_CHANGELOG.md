@@ -9,6 +9,78 @@
 
 ## 2026-10-27
 
+### 图片像素化工具方案 / Image pixelation tool specification / Spécification de l’outil de pixellisation
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 制作独立的图片像素化网页工具，后续加入个人网站；先将算法与可调参数整理为 Markdown 文件，用于专门的项目文件夹。
+- Build a standalone image pixelation web tool for later integration into the personal website; first collect the algorithms and adjustable parameters in a Markdown file for its dedicated project folder.
+- Créer un outil web indépendant de pixellisation d’images, à intégrer ensuite au site personnel ; commencer par un fichier Markdown présentant les algorithmes et paramètres pour son dossier de projet dédié.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 新增中文项目方案 `PIXEL_IMAGE_TOOL_SPEC.md`，整理缩放、颜色量化、抖动、导出、参数、浏览器实现与验收要点，并附技术来源；文件可独立移入项目文件夹。当前仅整理文档，尚未实现工具，保持网站版本号，不新增公开开发日志。
+- Added the Chinese project specification `PIXEL_IMAGE_TOOL_SPEC.md`, covering resampling, color quantization, dithering, export, parameters, browser implementation and acceptance checks, with technical references. The file can be moved independently into the project folder. Documentation only; the tool is not implemented, and the website version and public log remain unchanged.
+- Ajout de la spécification en chinois `PIXEL_IMAGE_TOOL_SPEC.md` : rééchantillonnage, quantification des couleurs, tramage, export, paramètres, réalisation dans le navigateur et critères de validation, avec références techniques. Le fichier peut être déplacé seul dans le dossier du projet. Documentation uniquement ; outil non réalisé, version du site et journal public inchangés.
+
+### 项目详情与默认展示 / Project details and default visibility / Détails des projets et affichage par défaut
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 调整项目详情页布局，不再以预览大图开头；正在开发且暂无预览图片的游戏、工具和网站默认不展示。
+- Revise project details so they no longer start with a large preview; hide unfinished games, tools and websites without preview images by default.
+- Revoir les détails des projets pour ne plus commencer par un grand aperçu ; masquer par défaut les jeux, outils et sites en développement sans image d’aperçu.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 项目详情页依次展示标题、日期和简介，再展示已有预览图片；移除顶部横幅与负边距叠放，无图片时不生成占位图。项目库按暂无预览图片统一默认隐藏，增加三语显示开关，与分类、收藏和游戏筛选共同生效，保留直接打开详情页的稳定链接。公开日志合并至当天 v0.5.4。
+- Project details now start with title, dates and introduction, followed by an existing preview. Removed the top banner and overlapping negative margins; no placeholder appears without an image. The library hides projects without previews by default, with a trilingual toggle compatible with category, favorites and game filters. Direct detail links remain available. Consolidated the public log under the same daily v0.5.4.
+- Les détails commencent par le titre, les dates et la description, puis l’aperçu existant. Suppression de la bannière et des marges négatives ; aucune image fictive sans aperçu. La bibliothèque masque par défaut les projets sans aperçu, avec une option trilingue compatible avec catégories, favoris et filtres de jeux. Liens directs conservés. Journal public regroupé sous la même v0.5.4 du jour.
+
+
+**验证 / Validation / Vérification**
+
+- `tests/project-layout.mjs` 验证默认隐藏、显示开关、分类与进度筛选、旧链接跳转、未展示项目的直接访问、无效项目提示，以及电脑和手机上四个主题、三种语言共 24 种详情布局；无页面脚本错误。JavaScript 语法与差异空白检查通过。
+- `tests/project-layout.mjs` verified default visibility, the display toggle, category and progress filters, legacy redirects, direct access to hidden projects, missing-project feedback and 24 desktop/mobile detail layouts across four themes and three languages, with no page script errors. JavaScript syntax and diff whitespace checks passed.
+- `tests/project-layout.mjs` valide l’affichage par défaut, l’option d’affichage, les filtres de catégorie et d’avancement, les anciens liens, l’accès direct aux projets masqués, les projets introuvables et 24 mises en page sur ordinateur et mobile, quatre thèmes et trois langues, sans erreur de script. Syntaxe JavaScript et espaces du diff validés.
+
+
+### 首页留白与名片指引 / Homepage spacing and card guide / Espacement de l’accueil et indication sur la carte
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 目录栏增加后，将首页内容整体下移；名片上方增加点击指引，定时翻到背面再转回，手动点击后不再重复。
+- Move the homepage content down after adding navigation; add a click hint above the card and periodically flip it over and back until manual interaction.
+- Descendre le contenu de l’accueil après l’ajout du menu ; ajouter une indication au-dessus de la carte et la retourner régulièrement dans les deux sens jusqu’à une interaction manuelle.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 按导航高度下移首页欢迎文字和名片，增加手机端留白；同步三语点击提示，首次等待 3 秒后翻转，背面停留 2.4 秒后转回，再等待 10 秒重复。手动点击或键盘操作后隐藏提示并记住已操作状态，刷新后不再演示；离开可见区域或切换到后台时暂停，减少动态效果时不自动翻转。同步三语公开日志，版本为 v0.5.4。
+- Shifted the homepage welcome and card down using navigation height and increased mobile spacing. Added the hint in three languages: first flip after 3 seconds, return after 2.4 seconds, then wait 10 seconds before repeating. Clicking or keyboard activation hides the hint and remembers the interaction across reloads. Demonstrations pause offscreen or in background tabs and are disabled for reduced motion. Updated the trilingual public log to v0.5.4.
+- Texte d’accueil et carte descendus selon la hauteur du menu, avec davantage d’espace sur mobile. Indication trilingue : premier retournement après 3 secondes, retour après 2,4 secondes, puis attente de 10 secondes avant répétition. Le clic ou le clavier masque l’indication et mémorise l’interaction après rechargement. Démonstration suspendue hors écran ou en arrière-plan et désactivée en mode de réduction des animations. Journal public trilingue actualisé à la v0.5.4.
+
+
+**验证 / Validation / Vérification**
+
+- `tests/card-guide.mjs` 通过自动演示、转回、重复、演示期间点击、刷新记忆、键盘与减少动态效果检查；四种窗口尺寸、四个主题和三种语言共 48 种布局检查通过，并检查电脑与手机截图。JavaScript 语法与差异空白检查通过。
+- `tests/card-guide.mjs` passed demonstration, return, repetition, clicks during demonstration, reload persistence, keyboard and reduced-motion checks. All 48 layouts across four viewport sizes, four themes and three languages passed; desktop and mobile screenshots were inspected. JavaScript syntax and diff whitespace checks passed.
+- `tests/card-guide.mjs` valide la démonstration, le retour, la répétition, le clic pendant la démonstration, la mémorisation après rechargement, le clavier et la réduction des animations. Les 48 mises en page sur quatre tailles de fenêtre, quatre thèmes et trois langues sont validées ; captures sur ordinateur et mobile inspectées. Syntaxe JavaScript et espaces du diff validés.
+
+
+### 分享预览语言 / Share preview language / Langue des aperçus de partage
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 检查线上链接预览图片是否更新，希望别人看到英文的预览描述。
+- Check whether the live link preview image has updated and show an English preview description to others.
+- Vérifier la mise à jour de l’image d’aperçu en ligne et afficher une description en anglais pour les autres personnes.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 确认线上新图片返回 HTTP 200，SHA-256 与用户提供的图片一致；将首页、博客、联系页和项目库静态 Open Graph 与 Twitter 标题和描述设为英文，预览语言设为 `en_US`。保留页面中英法切换，保持现有版本号，不新增公开开发日志。
+- Confirmed that the new live image returns HTTP 200 and its SHA-256 matches the supplied image. Set the static Open Graph and Twitter titles and descriptions to English on the homepage, blog, contact page and project library, with preview locale `en_US`. Preserved the Chinese, English and French page language switch and kept the current version without adding a public log entry.
+- Nouvelle image en ligne vérifiée : HTTP 200 et SHA-256 identique à l’image fournie. Titres et descriptions Open Graph et Twitter statiques définis en anglais sur l’accueil, le blog, la page de contact et la bibliothèque de projets, avec la langue d’aperçu `en_US`. Sélecteur chinois, anglais et français conservé, version inchangée, sans nouvelle entrée publique.
+
 ### 链接预览图片 / Link preview image / Image d’aperçu des liens
 
 **用户决定 / User decisions / Décisions utilisateur**

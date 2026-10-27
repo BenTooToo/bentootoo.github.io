@@ -2,6 +2,7 @@ const projectLibraryCopy = {
   zh: {
     closeFilters: "关闭筛选", gameFiltersTitle: "游戏筛选",
     libraryLabel: "项目保存库",
+    showUnpreviewed: "显示暂无预览的项目",
     filterAll: "全部",
     filterFavorites: "我的最爱",
     filterTools: "工具",
@@ -65,6 +66,7 @@ const projectLibraryCopy = {
   en: {
     closeFilters: "Close filters", gameFiltersTitle: "Game filters",
     libraryLabel: "Project archive",
+    showUnpreviewed: "Show projects without previews",
     filterAll: "All",
     filterFavorites: "My favorites",
     filterTools: "Tools",
@@ -128,6 +130,7 @@ const projectLibraryCopy = {
   fr: {
     closeFilters: "Fermer les filtres", gameFiltersTitle: "Filtres des jeux",
     libraryLabel: "Réserve de projets",
+    showUnpreviewed: "Afficher les projets sans aperçu",
     filterAll: "Tous",
     filterFavorites: "Mes favoris",
     filterTools: "Outils",
@@ -477,6 +480,10 @@ projectLibraryData.push(
 const archiveGrid = document.querySelector("#archiveGrid");
 const archiveCount = document.querySelector("#archiveCount");
 const archiveEmpty = document.querySelector("#archiveEmpty");
+const showUnpreviewedProjects = document.querySelector("#showUnpreviewedProjects");
+showUnpreviewedProjects?.addEventListener("change", () => {
+  renderProjectCards();
+});
 const projectDetailPage = document.querySelector("[data-project-detail-page]");
 const projectCommentForm = document.querySelector("#projectCommentForm");
 const projectCommentStatus = document.querySelector("#projectCommentStatus");
@@ -569,6 +576,7 @@ function renderProjectCards() {
   if (!archiveGrid) return;
   const copy = getProjectCopy();
   const visible = projectLibraryData.filter((project) => {
+    if (!project.cover && !showUnpreviewedProjects?.checked) return false;
     if (activeFilter === "favorite") return favoriteProjects.has(project.id);
     if (activeFilter !== "all" && project.category !== activeFilter) return false;
     if (activeFilter !== "game") return true;
@@ -639,10 +647,10 @@ function renderProjectDetail(projectId) {
   const project = projectLibraryData.find((item) => item.id === projectId);
   if (!project) return;
   const text = getProjectText(project);
-  document.querySelector("#projectDialogCover").dataset.coverFit = project.coverFit || "cover";
-  document.querySelector("#projectDialogCover").style.backgroundImage = project.cover
-    ? project.coverFit === "contain" ? `url('${project.cover}')` : `linear-gradient(180deg, transparent 48%, #0a0e22 100%), url('${project.cover}')`
-    : "linear-gradient(135deg, #27324f, #0a0e22)";
+  const cover = document.querySelector("#projectDialogCover");
+  cover.hidden = !project.cover;
+  cover.dataset.coverFit = project.coverFit || "cover";
+  cover.style.backgroundImage = project.cover ? `url('${project.cover}')` : "none";
   document.querySelector("#projectDialogTitle").textContent = text.title;
   document.querySelector("#projectDialogCreated").textContent = getProjectDate(project.created);
   document.querySelector("#projectDialogUpdated").textContent = project.updated ? getProjectDate(project.updated) : "—";
