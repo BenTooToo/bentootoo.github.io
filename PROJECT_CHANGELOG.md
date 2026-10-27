@@ -7,6 +7,22 @@
 - 个人主页本身的功能、结构或重要视觉更新仍记录在 `devlog.js`。
 - 本文件不在网站导航或页面中提供入口。
 
+## 2026-10-27
+
+### 链接预览图片 / Link preview image / Image d’aperçu des liens
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 使用提供的故障效果人像替换网站原有的链接预览图片。
+- Replace the existing website link preview image with the supplied glitch portrait.
+- Remplacer l’image d’aperçu des liens du site par le portrait à effet glitch fourni.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 原样保存图片为 `assets/bentootoo-social-preview-20261027.png`，更新首页、博客和联系页的 Open Graph 与 Twitter 预览图片，并同步首页结构化资料中的人像引用；使用新文件名，保留项目库独立封面，保持现有版本号，不新增公开开发日志。
+- Saved the supplied image unchanged as `assets/bentootoo-social-preview-20261027.png`, updated the Open Graph and Twitter images on the homepage, blog and contact page, and updated the portrait reference in the homepage structured data. Used a new filename, preserved the project library cover and kept the current version without adding a public log entry.
+- Image fournie enregistrée sans modification sous `assets/bentootoo-social-preview-20261027.png` ; images Open Graph et Twitter actualisées sur l’accueil, le blog et la page de contact, ainsi que le portrait des données structurées de l’accueil. Nouveau nom de fichier, couverture de la bibliothèque de projets conservée et version inchangée, sans nouvelle entrée publique.
+
 ## 2026-10-20
 
 ### 首页声音律动 / Homepage audio response / Réaction sonore de l’accueil
