@@ -41,6 +41,28 @@
   font-size: 0.82rem;
 }
 
+.archive-display-options {
+  display: grid;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.archive-preview-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--paper);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.archive-preview-toggle input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--paper);
+}
+
 .archive-filters {
   display: flex;
   flex-wrap: wrap;
@@ -619,15 +641,29 @@ body.project-dialog-open {
 }
 
 .project-page-cover {
-  min-height: clamp(360px, 54vw, 720px);
+  aspect-ratio: 16 / 9;
+  margin: 36px 0 52px;
+  border-radius: 6px;
   background-position: center;
   background-size: cover;
-  box-shadow: inset 0 -170px 130px -70px #0a0e22;
+  background-repeat: no-repeat;
+}
+
+.project-page-cover[hidden] {
+  display: none;
+}
+
+.project-page-body.site-themed[data-home-theme] .project-page-cover {
+  box-shadow: none;
+}
+
+.project-page-body.site-themed[data-home-theme] .project-page-cover::after {
+  display: none;
 }
 
 .project-page-shell {
   width: min(1180px, calc(100% - 64px));
-  margin: -82px auto 0;
+  margin: clamp(28px, 5vw, 64px) auto 0;
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 10px 10px 0 0;
   background: #0a0e22;
@@ -635,12 +671,7 @@ body.project-dialog-open {
 }
 
 .project-page-cover[data-cover-fit="contain"] {
-  min-height: 0;
-  height: clamp(300px, 45vw, 560px);
-  background-size: auto calc(100% - 96px);
-  background-position: center top;
-  background-repeat: no-repeat;
-  box-shadow: none;
+  background-size: contain;
 }
 
 .project-page .project-detail-content {
@@ -651,8 +682,9 @@ body.project-dialog-open {
   max-width: 980px;
   margin: 0 0 42px;
   font-size: clamp(3rem, 8vw, 7.8rem);
-  line-height: 0.9;
-  letter-spacing: -0.07em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
 }
 
 .project-page .project-detail-meta {
@@ -854,8 +886,7 @@ body.project-dialog-open {
   .project-detail-meta, .project-comment-row { grid-template-columns: 1fr; }
   .project-comment-row button { width: 100%; }
   .project-page { padding-top: 64px; }
-  .project-page-cover { min-height: 300px; }
-  .project-page-shell { width: 100%; margin-top: -40px; border-inline: 0; border-radius: 0; }
+  .project-page-shell { width: 100%; margin-top: 24px; border-inline: 0; border-radius: 0; }
   .project-page .project-detail-content { padding: 34px 22px 56px; }
   .project-detail-content > h1 { font-size: clamp(2.8rem, 15vw, 5rem); }
   .project-action { min-height: 72px; }

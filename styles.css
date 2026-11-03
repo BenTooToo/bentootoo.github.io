@@ -521,7 +521,7 @@ body.home-page[data-home-theme="refined"] {
 
 .hero-intro {
   position: absolute;
-  top: 45%;
+  top: calc(50% + var(--header-height) / 2 + 12px);
   left: 50%;
   width: min(1120px, calc(100% - 48px));
   margin: 0;
@@ -743,6 +743,30 @@ h1 span + span {
   inset: 0;
   transform-style: preserve-3d;
   transition: transform 760ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.avatar-card-hint {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  color: var(--paper);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  opacity: 0.7;
+  transform: translateX(-50%);
+}
+
+.avatar-card.has-interacted .avatar-card-hint {
+  visibility: hidden;
+}
+
+.avatar-card:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 8px;
 }
 
 .avatar-card.is-flipped .avatar-card-inner {
@@ -2502,7 +2526,12 @@ html[lang="fr"] .article-node small {
   }
 
   .hero-intro {
-    top: 50%;
+    top: calc(50% + var(--header-height) / 2 + 12px);
+  }
+
+  .hero-scroll-cue {
+    top: auto;
+    bottom: 24px;
   }
 
   .hero-shell,
@@ -2614,13 +2643,17 @@ html[lang="fr"] .article-node small {
   }
 
   .hero-sticky {
-    min-height: 560px;
+    min-height: 740px;
     padding: 150px 16px 24px;
   }
 
+  .home-page[data-home-theme="be-present"] .hero-sticky {
+    min-height: 800px;
+  }
+
   .hero-intro {
-    top: 51%;
-    gap: 18px;
+    top: calc(50% + var(--header-height) / 2);
+    gap: 48px;
   }
 
   .hero-intro .identity-stage {
@@ -2646,7 +2679,8 @@ html[lang="fr"] .article-node small {
   }
 
   .hero-scroll-cue {
-    top: 84%;
+    top: auto;
+    bottom: 24px;
   }
 
   .content-section {
