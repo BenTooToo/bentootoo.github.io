@@ -7,6 +7,28 @@
 - 个人主页本身的功能、结构或重要视觉更新仍记录在 `devlog.js`。
 - 本文件不在网站导航或页面中提供入口。
 
+## 2026-10-30
+
+### 思索之屋手机按钮比例 / Mobile House of Reflection button proportions / Proportions des boutons mobiles de la Maison de réflexion
+
+**用户决定 / User decisions / Décisions utilisateur**
+
+- 手机端思索之屋按钮太大，边框内空间不足，缩小手机窗口下的按钮。
+- Reduce the House of Reflection buttons on mobile because they take up too much space within the border.
+- Réduire les boutons de la Maison de réflexion sur mobile, car ils occupent trop de place dans le cadre.
+
+**AI 实现 / AI implementation / Réalisation IA**
+
+- 在不超过 620px 的窗口中将圆形节点直径缩小 22%，文章文字与间距同比缩小，碰撞范围跟随实际尺寸更新；保留原有边框、拖动和双指缩放。切回桌面时清除手机文字样式，刷新图谱脚本缓存。本次为局部比例调整，不新增公开日志或递增网站版本。
+- Reduced circular node diameters by 22% at viewport widths up to 620px, scaling article text and spacing proportionally and updating collision bounds to the actual size; retained the existing border, dragging and pinch zoom. Clear mobile text styles when returning to desktop and refreshed the map script cache. This local proportion adjustment adds no public log entry or site version increment.
+- Diamètre des nœuds circulaires réduit de 22% jusqu’à 620px, avec réduction proportionnelle du texte et des espacements des articles et adaptation des collisions aux dimensions réelles ; cadre, glissement et zoom à deux doigts conservés. Suppression des styles de texte mobiles au retour sur ordinateur et cache du script actualisé. Cet ajustement local ne crée ni entrée publique ni nouveau numéro de version.
+
+**验证 / Validation / Vérification**
+
+- 无头 Edge 检查 320、390、430、620、1440px 与中英法三语共 15 种组合，逐个对比修改前后节点尺寸；手机文字无溢出，桌面尺寸与文章字号保持一致，无页面错误。检查 390px 截图，JavaScript 语法与差异空白检查通过。
+- Headless Edge checked 15 combinations of five widths (320, 390, 430, 620 and 1440px) and three languages, comparing each node against the baseline; no mobile text overflow, unchanged desktop sizes and article fonts, and no page errors. Reviewed the 390px screenshot; JavaScript syntax and diff whitespace checks passed.
+- Edge sans interface a vérifié 15 combinaisons de cinq largeurs (320, 390, 430, 620 et 1440px) et trois langues, en comparant chaque nœud à la référence ; aucun débordement du texte mobile, dimensions et corps des articles inchangés sur ordinateur, aucune erreur de page. Capture à 390px examinée ; syntaxe JavaScript et espaces du diff validés.
+
 ## 2026-10-20
 
 ### 首页声音律动 / Homepage audio response / Réaction sonore de l’accueil

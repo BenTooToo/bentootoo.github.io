@@ -733,6 +733,7 @@ const COLLISION_PADDING = 18;
 const COMPACT_COLLISION_PADDING = 12;
 const ORBIT_LAYER_CAPACITY = 5;
 const COMPACT_INITIAL_SCALE = 0.68;
+const COMPACT_NODE_SCALE = 0.78;
 const WALL_OVERSCAN_RATIO = 0.48;
 const WALL_REVEAL_RATIO = 0.12;
 const WALL_REVEAL_MIN = 70;
@@ -1312,13 +1313,17 @@ function groupChildLinks(links) {
 }
 
 function prepareCompactNode(node, kind) {
+  const copy = node.querySelector('.article-copy');
+  const labels = copy ? [...copy.children] : [];
+  labels.forEach(label => { label.style.fontSize = ''; });
+  if (copy) copy.style.gap = '';
   if (!compactMapQuery.matches) return;
   const diameter = kind === 'article' ? 224 : kind === 'center' ? 184 : 164;
   node.style.setProperty('--node-size', diameter + 'px');
-  if (kind !== 'article') return;
-  const copy = node.querySelector('.article-copy');
-  const labels = [...copy.children];
-  labels.forEach(label => { label.style.fontSize = ''; });
+  if (kind !== 'article') {
+    node.style.setProperty('--node-size', diameter * COMPACT_NODE_SCALE + 'px');
+    return;
+  }
   let size = diameter;
   // Fit the full copy inside a square inscribed in the circular card.
   while (copy.scrollHeight > node.clientWidth * 0.70 && size < 320) {
@@ -1337,6 +1342,14 @@ function prepareCompactNode(node, kind) {
     });
     if (!changed) break;
   }
+  // Scale the fitted circle and its copy together, leaving more room inside the walls.
+  const fontSizes = labels.map(label => parseFloat(getComputedStyle(label).fontSize));
+  const gap = parseFloat(getComputedStyle(copy).gap);
+  node.style.setProperty('--node-size', size * COMPACT_NODE_SCALE + 'px');
+  labels.forEach((label, index) => {
+    label.style.fontSize = fontSizes[index] * COMPACT_NODE_SCALE + 'px';
+  });
+  copy.style.gap = gap * COMPACT_NODE_SCALE + 'px';
 }
 
 function buildGraphState() {
