@@ -6,6 +6,13 @@ const devlogContent = {
     closeLabel: "关闭开发日志",
     entries: [
       {
+        date: "2026-11-03",
+        version: "v0.5.5",
+        done: [
+          "缩小思索之屋手机端的圆形按钮，同步调整文字与间距，为边框内留出更多空间。"
+        ]
+      },
+      {
         date: "2026-10-27",
         version: "v0.5.4",
         done: [
@@ -190,6 +197,13 @@ const devlogContent = {
     closeLabel: "Close development log",
     entries: [
       {
+        date: "2026-11-03",
+        version: "v0.5.5",
+        done: [
+          "Reduced the circular buttons in the House of Reflection on mobile, adjusting text and spacing to leave more room within the border."
+        ]
+      },
+      {
         date: "2026-10-27",
         version: "v0.5.4",
         done: [
@@ -373,6 +387,13 @@ const devlogContent = {
     intro: "Cette intro a été caché",
     closeLabel: "Fermer le journal de développement",
     entries: [
+      {
+        date: "2026-11-03",
+        version: "v0.5.5",
+        done: [
+          "Réduit les boutons circulaires de la Maison de réflexion sur mobile et ajusté le texte et les espacements pour laisser davantage de place dans le cadre."
+        ]
+      },
       {
         date: "2026-10-27",
         version: "v0.5.4",
